@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryView Component should match snapshot 1`] = `
+<div>
+  <nav
+    aria-label="breadcrumb"
+  >
+    <ol
+      className="breadcrumb"
+    >
+      <li
+        className="breadcrumb-item"
+      >
+        <a
+          href="/categories"
+        >
+          Scorecard
+        </a>
+      </li>
+      <li
+        aria-current="page"
+        className="breadcrumb-item active"
+      >
+        Test Name
+      </li>
+    </ol>
+  </nav>
+  <form>
+    <div
+      className="pb-4"
+    >
+      <div
+        className="form-group"
+      >
+        <label>
+          Title
+        </label>
+        <input
+          className="form-control"
+          defaultValue="Test Name"
+          disabled={true}
+          id="category-title-1"
+          type="text"
+        />
+      </div>
+      <div
+        className="form-check"
+      >
+        <input
+          className="form-check-input"
+          defaultChecked={true}
+          disabled={true}
+          type="checkbox"
+        />
+        <label
+          className="form-check-label"
+          htmlFor="category-active-1"
+        >
+          Active
+        </label>
+      </div>
+    </div>
+    <label>
+      Criteria
+    </label>
+    <div
+      className="card mb-2"
+    >
+      <div
+        className="card-body"
+      >
+        <h5
+          className="card-title"
+        >
+          Test Item
+        </h5>
+        <div
+          className="card-text"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="category-item-1"
+            >
+              Recommendation Text
+            </label>
+            <input
+              className="form-control"
+              disabled={true}
+              id="category-item-1"
+            />
+          </div>
+          <div
+            className="form-check"
+          >
+            <input
+              className="form-check-input"
+              defaultChecked={true}
+              disabled={true}
+              type="checkbox"
+            />
+            <label
+              className="form-check-label"
+              htmlFor="category-item-active-1"
+            >
+              Active
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <hr
+    className="pb-0"
+  />
+  <div
+    className="d-flex align-items-end justify-content-end"
+  >
+    <button
+      className="btn btn-primary"
+    >
+      Edit
+    </button>
+  </div>
+</div>
+`;

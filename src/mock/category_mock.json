@@ -1,45 +1,75 @@
 [
   {
+    "id": 1,
     "name": "Definition of Domestic Violence",
     "items": [
       {
-        "name": "Includes economic abuse framework"
+        "id": 1,
+        "name": "Includes economic abuse framework",
+        "recommendation_text": "This is recommendation text",
+        "active": true
       },
       {
-        "name": "Uses a coercive control framework"
+        "id": 2,
+        "name": "Uses a coercive control framework",
+        "recommendation_text": "This is recommendation text",
+        "active": false
       }
     ],
     "active": true
   },
   {
+    "id": 2,
     "name": "Worker Protections",
     "items": [
       {
-        "name": "Protected Safe Leave"
+        "id": 3,
+        "name": "Protected Safe Leave",
+        "recommendation_text": "This is recommendation text",
+        "active": true
       },
       {
-        "name": "Paid Safe Leave"
+        "id": 4,
+        "name": "Paid Safe Leave",
+        "recommendation_text": "This is recommendation text",
+        "active": false
       },
       {
-        "name": "Survivors protected against discrimination by their employer"
+        "id": 5,
+        "name": "Survivors protected against discrimination by their employer",
+        "recommendation_text": "This is recommendation text",
+        "active": true
       },
       {
-        "name": "Employer must provide reasonable work accommodations "
+        "id": 6,
+        "name": "Employer must provide reasonable work accommodations ",
+        "recommendation_text": "This is recommendation text",
+        "active": false
       },
       {
-        "name": "Employer required to keep survivor’s status confidential"
+        "id": 7,
+        "name": "Employer required to keep survivor’s status confidential",
+        "recommendation_text": "This is recommendation text",
+        "active": true
       }
     ],
     "active": true
   },
   {
+    "id": 3,
     "name": "Civil Remedies",
     "items": [
       {
-        "name": "State has a designated domestic violence tort "
+        "id": 8,
+        "name": "State has a designated domestic violence tort ",
+        "recommendation_text": "This is recommendation text",
+        "active": true
       },
       {
-        "name": "Statute of limitations of  “XX” number of years or more statute "
+        "id": 9,
+        "name": "Statute of limitations of  “XX” number of years or more statute ",
+        "recommendation_text": "This is recommendation text",
+        "active": true
       }
     ],
     "active": false

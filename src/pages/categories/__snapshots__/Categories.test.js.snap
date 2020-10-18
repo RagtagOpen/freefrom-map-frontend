@@ -37,7 +37,7 @@ exports[`Categories Component should match snapshot 1`] = `
             </span>
             <a
               className="btn btn-sm btn-primary ml-4"
-              href="#"
+              href="/categories/1"
             >
               Edit
             </a>
