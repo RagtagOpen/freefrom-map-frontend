@@ -4,7 +4,6 @@ import { createSlice } from '@reduxjs/toolkit';
 let mockCategoryData;
 if (process.env.REACT_APP_LOCAL_CATEGORIES) {
     mockCategoryData = require('../../mock/category_mock.json');
-    console.log(mockCategoryData);
 }
 
 export const categorySlice = createSlice({
