@@ -1,8 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './pages/home/App';
-import store from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 
@@ -13,12 +10,25 @@ import {
     Route,
 } from 'react-router-dom';
 
-// Custom SCSS and Bootstrap
+// Redux
+import store from './app/store';
+
+// Some common tools
+import 'popper.js';
+import 'jquery';
+import 'bootstrap';
+import 'lodash';
+
+// CSS
+import './index.css'
+// Custom/Bootstrap SCSS
 import './custom.scss';
 
 // Components/Pages
 import Navbar from './common/Navbar';
-import Layout from './layouts/default'
+import DefaultLayout from './layouts/DefaultLayout'
+import Home from './pages/home/Home';
+import Categories from './pages/categories/Categories';
 
 ReactDOM.render(
     <Router>
@@ -27,9 +37,14 @@ ReactDOM.render(
             <Provider store={ store }>
                 <Switch>
                     <Route exact path="/">
-                        <Layout>
-                            <App />
-                        </Layout>
+                        <DefaultLayout active="home">
+                            <Home />
+                        </DefaultLayout>
+                    </Route>
+                    <Route exact path="/categories">
+                        <DefaultLayout active="categories">
+                            <Categories />
+                        </DefaultLayout>
                     </Route>
                 </Switch>
             </Provider>

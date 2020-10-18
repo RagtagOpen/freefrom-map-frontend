@@ -1,7 +1,7 @@
 import React from 'react';
-import 'pages/home/App.css';
+import 'pages/home/Home.css';
 
-function App() {
+function Home() {
     return (
         <div>
             <h1>Home Page</h1>
@@ -9,4 +9,4 @@ function App() {
     );
 }
 
-export default App;
+export default Home;
