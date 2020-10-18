@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Definition of Domestic Violence",
+    "items": [
+      {
+        "name": "Includes economic abuse framework"
+      },
+      {
+        "name": "Uses a coercive control framework"
+      }
+    ],
+    "active": true
+  },
+  {
+    "name": "Worker Protections",
+    "items": [
+      {
+        "name": "Protected Safe Leave"
+      },
+      {
+        "name": "Paid Safe Leave"
+      },
+      {
+        "name": "Survivors protected against discrimination by their employer"
+      },
+      {
+        "name": "Employer must provide reasonable work accommodations "
+      },
+      {
+        "name": "Employer required to keep survivor’s status confidential"
+      }
+    ],
+    "active": true
+  },
+  {
+    "name": "Civil Remedies",
+    "items": [
+      {
+        "name": "State has a designated domestic violence tort "
+      },
+      {
+        "name": "Statute of limitations of  “XX” number of years or more statute "
+      }
+    ],
+    "active": false
+  }
+]

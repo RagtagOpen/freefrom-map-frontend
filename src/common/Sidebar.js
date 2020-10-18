@@ -1,11 +1,34 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
-function Sidebar() {
+function Sidebar(props) {
+    function navClasses(active) {
+        let navClass = 'nav-link text-lg-center';
+
+        if (active === props.active) {
+            navClass += ' active'
+        }
+
+        return navClass;
+    }
+
     return (
-        <div>
-            <p>Sidebar</p>
-        </div>
+        <ul className="nav nav-pills">
+            <li className="nav-item w-100">
+                <a className={navClasses('categories')} href="/categories" title="Scorecard">Scorecard</a>
+            </li>
+            <li className="nav-item w-100">
+                <a className={navClasses('#')} href="#" title="State Scores">State Scores</a>
+            </li>
+            <li className="nav-item w-100">
+                <a className={navClasses('#')} href="#" title="Copy">Copy</a>
+            </li>
+        </ul>
     )
+}
+
+Sidebar.propTypes = {
+    active: PropTypes.string
 }
 
 export default Sidebar;
