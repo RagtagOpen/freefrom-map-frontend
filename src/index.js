@@ -29,6 +29,7 @@ import Navbar from './common/Navbar';
 import DefaultLayout from './layouts/DefaultLayout'
 import Home from './pages/home/Home';
 import Categories from './pages/categories/Categories';
+import CategoryView from './pages/categories/CategoryView';
 
 ReactDOM.render(
     <Router>
@@ -44,6 +45,11 @@ ReactDOM.render(
                     <Route exact path="/categories">
                         <DefaultLayout active="categories">
                             <Categories />
+                        </DefaultLayout>
+                    </Route>
+                    <Route path="/categories/:id">
+                        <DefaultLayout active="categories">
+                            <CategoryView />
                         </DefaultLayout>
                     </Route>
                 </Switch>

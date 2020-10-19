@@ -5,12 +5,12 @@ import Sidebar from 'common/Sidebar';
 
 function DefaultLayout(props) {
     return (
-        <div className="container">
+        <div className="container mt-2 mb-4">
             <div className="row">
-                <div className="col-sm-12 col-md-3 bg-light vh-100">
+                <div className="col-sm-12 col-md-3 bg-light pt-2">
                     <Sidebar active={props.active} />
                 </div>
-                <div className="col-md-9">
+                <div className="col-md-9 pt-2">
                     { props.children }
                 </div>
             </div>
@@ -20,7 +20,7 @@ function DefaultLayout(props) {
 
 DefaultLayout.propTypes = {
     active: PropTypes.string,
-    children: PropTypes.array
+    children: PropTypes.object
 }
 
 export default DefaultLayout;

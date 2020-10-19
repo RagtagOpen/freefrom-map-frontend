@@ -13,17 +13,22 @@ function Sidebar(props) {
     }
 
     return (
-        <ul className="nav nav-pills">
-            <li className="nav-item w-100">
-                <a className={navClasses('categories')} href="/categories" title="Scorecard">Scorecard</a>
-            </li>
-            <li className="nav-item w-100">
-                <a className={navClasses('#')} href="#" title="State Scores">State Scores</a>
-            </li>
-            <li className="nav-item w-100">
-                <a className={navClasses('#')} href="#" title="Copy">Copy</a>
-            </li>
-        </ul>
+        <div className="h-100">
+            <ul className="nav nav-pills">
+                <li className="nav-item w-100">
+                    <a className={navClasses('home')} href="/" title="Home">Home</a>
+                </li>
+                <li className="nav-item w-100">
+                    <a className={navClasses('categories')} href="/categories" title="Scorecard">Scorecard</a>
+                </li>
+                <li className="nav-item w-100">
+                    <a className={navClasses('#')} href="#" title="State Scores">State Scores</a>
+                </li>
+                <li className="nav-item w-100">
+                    <a className={navClasses('#')} href="#" title="Copy">Copy</a>
+                </li>
+            </ul>
+        </div>
     )
 }
 

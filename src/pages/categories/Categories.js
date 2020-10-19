@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+
+// Redux
 import { getData, selectCategories } from './categorySlice';
 
 function Categories() {
@@ -29,7 +31,7 @@ function Categories() {
                             { category.active ?
                                 <span className="badge badge-success badge-pill">Active</span> :
                                 <span className="badge badge-danger badge-pill">Inactive</span> }
-                            <a className="btn btn-sm btn-primary ml-4" href="#">Edit</a>
+                            <a className="btn btn-sm btn-primary ml-4" href={`/categories/${category.id}`}>Edit</a>
                         </div>
 
                     </h5>

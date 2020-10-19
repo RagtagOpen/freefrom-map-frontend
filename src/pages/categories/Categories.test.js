@@ -18,6 +18,7 @@ describe('Categories Component', () => {
                 loaded: true,
                 data: [
                     {
+                        "id": 1,
                         "name": "Test Name",
                         "items": [
                             {"name": "Test Item"}

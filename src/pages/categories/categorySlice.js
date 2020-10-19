@@ -32,6 +32,15 @@ export const getData = () => dispatch => {
     // TODO: Fetch from a back end here
 }
 
-export const selectCategories = state => state.categories;
+export const selectCategories = state => {
+    return state.categories;
+}
+export const selectCategory = id => state => {
+    if (state.categories.loaded === false) {
+        return {};
+    }
+
+    return state.categories.data.filter((category) => category.id === parseInt(id))[0];
+}
 
 export default categorySlice.reducer;
