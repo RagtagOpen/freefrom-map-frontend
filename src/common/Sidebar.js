@@ -16,6 +16,9 @@ function Sidebar(props) {
         <div className="h-100">
             <ul className="nav nav-pills">
                 <li className="nav-item w-100">
+                    <a className={navClasses('home')} href="/" title="Home">Home</a>
+                </li>
+                <li className="nav-item w-100">
                     <a className={navClasses('categories')} href="/categories" title="Scorecard">Scorecard</a>
                 </li>
                 <li className="nav-item w-100">
