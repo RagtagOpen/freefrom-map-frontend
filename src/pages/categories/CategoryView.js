@@ -92,7 +92,7 @@ function CategoryView() {
             </form>
             <hr className="pb-0" />
             <div className="d-flex align-items-end justify-content-end">
-                <button className="btn btn-primary">Edit</button>
+                <a href={`/categories/${id}/edit`} title="Edit" className="btn btn-primary">Edit</a>
             </div>
         </div>
     );

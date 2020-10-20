@@ -68,11 +68,13 @@ exports[`Categories Component should match snapshot 1`] = `
   <div
     className="d-flex align-items-end justify-content-end"
   >
-    <button
+    <a
       className="btn btn-primary"
+      href="/categories/new"
+      title="Create new category"
     >
       Create
-    </button>
+    </a>
   </div>
 </div>
 `;
