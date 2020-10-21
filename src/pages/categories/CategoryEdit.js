@@ -125,6 +125,7 @@ function CategoryEdit() {
                         </div>
                         <div className="form-check">
                             <input
+                                id={`category-item-active-${category.id}`}
                                 className="form-check-input"
                                 name="active"
                                 type="checkbox"
@@ -155,7 +156,7 @@ function CategoryEdit() {
             <form>
                 <div className="pb-4">
                     <div className="form-group">
-                        <label>Title</label>
+                        <label htmlFor={`category-title-${category.id}`}>Title</label>
                         <input
                             id={`category-title-${category.id}`}
                             type="text"
@@ -167,6 +168,7 @@ function CategoryEdit() {
 
                     <div className="form-check">
                         <input
+                            id={`category-active-${category.id}`}
                             className="form-check-input"
                             type="checkbox"
                             name="active"
@@ -180,7 +182,7 @@ function CategoryEdit() {
 
 
                 <div className="d-flex justify-content-between align-items-center">
-                    <label><h4>Criteria</h4></label>
+                    <h4>Criteria</h4>
                     <button className="btn btn-sm btn-success" onClick={ createItem }>Create</button>
                 </div>
 
