@@ -32,7 +32,9 @@ exports[`CategoryEdit Component should match create new snapshot 1`] = `
       <div
         className="form-group"
       >
-        <label>
+        <label
+          htmlFor="category-title-1"
+        >
           Title
         </label>
         <input
@@ -50,6 +52,7 @@ exports[`CategoryEdit Component should match create new snapshot 1`] = `
         <input
           className="form-check-input"
           defaultChecked={true}
+          id="category-active-1"
           name="active"
           onClick={[Function]}
           type="checkbox"
@@ -65,11 +68,9 @@ exports[`CategoryEdit Component should match create new snapshot 1`] = `
     <div
       className="d-flex justify-content-between align-items-center"
     >
-      <label>
-        <h4>
-          Criteria
-        </h4>
-      </label>
+      <h4>
+        Criteria
+      </h4>
       <button
         className="btn btn-sm btn-success"
         onClick={[Function]}
@@ -127,6 +128,7 @@ exports[`CategoryEdit Component should match create new snapshot 1`] = `
             <input
               className="form-check-input"
               defaultChecked={true}
+              id="category-item-active-1"
               name="active"
               type="checkbox"
             />
@@ -190,7 +192,9 @@ exports[`CategoryEdit Component should match edit view snapshot 1`] = `
       <div
         className="form-group"
       >
-        <label>
+        <label
+          htmlFor="category-title-undefined"
+        >
           Title
         </label>
         <input
@@ -206,6 +210,7 @@ exports[`CategoryEdit Component should match edit view snapshot 1`] = `
       >
         <input
           className="form-check-input"
+          id="category-active-undefined"
           name="active"
           onClick={[Function]}
           type="checkbox"
@@ -221,11 +226,9 @@ exports[`CategoryEdit Component should match edit view snapshot 1`] = `
     <div
       className="d-flex justify-content-between align-items-center"
     >
-      <label>
-        <h4>
-          Criteria
-        </h4>
-      </label>
+      <h4>
+        Criteria
+      </h4>
       <button
         className="btn btn-sm btn-success"
         onClick={[Function]}
