@@ -8,7 +8,7 @@ import CategoryView from './CategoryView';
 const mockStore = configureStore([]);
 
 jest.mock('react-router-dom', () => ({
-    ...jest.requireActual('react-router-dom'), // use actual for all non-hook parts
+    ...jest.requireActual('react-router-dom'),
     useParams: () => ({
         id: 1
     }),

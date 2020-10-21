@@ -30,6 +30,7 @@ import DefaultLayout from './layouts/DefaultLayout'
 import Home from './pages/home/Home';
 import Categories from './pages/categories/Categories';
 import CategoryView from './pages/categories/CategoryView';
+import CategoryEdit from './pages/categories/CategoryEdit';
 
 ReactDOM.render(
     <Router>
@@ -47,9 +48,19 @@ ReactDOM.render(
                             <Categories />
                         </DefaultLayout>
                     </Route>
-                    <Route path="/categories/:id">
+                    <Route exact path="/categories/new">
+                        <DefaultLayout active="categories">
+                            <CategoryEdit />
+                        </DefaultLayout>
+                    </Route>
+                    <Route exact path="/categories/:id">
                         <DefaultLayout active="categories">
                             <CategoryView />
+                        </DefaultLayout>
+                    </Route>
+                    <Route path="/categories/:id/edit">
+                        <DefaultLayout active="categories">
+                            <CategoryEdit />
                         </DefaultLayout>
                     </Route>
                 </Switch>

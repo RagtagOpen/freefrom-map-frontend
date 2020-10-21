@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { findWithAttr } from "helpers/utils";
 
 // Require mock data if our env var is set to true
 let mockCategoryData;
@@ -18,11 +19,23 @@ export const categorySlice = createSlice({
             state.loading = false;
             state.loaded = true;
             state.data = action.payload;
+        },
+        saveData: (state, action) => {
+            const index = findWithAttr(state.data, 'id', action.payload.id);
+
+            // TODO: Perform PATCH to update server data. Right now, we'll just update our local state
+            if (action.payload.id === null) {
+                console.log(`Creating New Category: `, action.payload);
+            } else {
+                console.log(`Updating Category (#${action.payload.id}: `, action.payload);
+            }
+
+            state.data[index] = action.payload;
         }
     }
 });
 
-export const { setData } = categorySlice.actions;
+export const { saveData, setData } = categorySlice.actions;
 
 export const getData = () => dispatch => {
     if (process.env.REACT_APP_LOCAL_CATEGORIES) {

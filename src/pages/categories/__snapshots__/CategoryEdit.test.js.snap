@@ -1,0 +1,255 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryEdit Component should match create new snapshot 1`] = `
+<div>
+  <nav
+    aria-label="breadcrumb"
+  >
+    <ol
+      className="breadcrumb"
+    >
+      <li
+        className="breadcrumb-item"
+      >
+        <a
+          href="/categories"
+        >
+          Scorecard
+        </a>
+      </li>
+      <li
+        aria-current="page"
+        className="breadcrumb-item active"
+      >
+        Test Name
+      </li>
+    </ol>
+  </nav>
+  <form>
+    <div
+      className="pb-4"
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="category-title-1"
+        >
+          Title
+        </label>
+        <input
+          className="form-control"
+          defaultValue="Test Name"
+          id="category-title-1"
+          name="name"
+          onKeyUp={[Function]}
+          type="text"
+        />
+      </div>
+      <div
+        className="form-check"
+      >
+        <input
+          className="form-check-input"
+          defaultChecked={true}
+          id="category-active-1"
+          name="active"
+          onClick={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="form-check-label"
+          htmlFor="category-active-1"
+        >
+          Active
+        </label>
+      </div>
+    </div>
+    <div
+      className="d-flex justify-content-between align-items-center"
+    >
+      <h4>
+        Criteria
+      </h4>
+      <button
+        className="btn btn-sm btn-success"
+        onClick={[Function]}
+      >
+        Create
+      </button>
+    </div>
+    <div
+      className="card mb-2"
+    >
+      <div
+        className="card-body"
+      >
+        <h5
+          className="card-title"
+        >
+          Test Item
+        </h5>
+        <div
+          className="card-text"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="category-item-1-title"
+            >
+              Title
+            </label>
+            <input
+              className="form-control"
+              defaultValue="Test Item"
+              id="category-item-1-title"
+              name="name"
+              onKeyUp={[Function]}
+            />
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="category-item-1-rec"
+            >
+              Recommendation Text
+            </label>
+            <input
+              className="form-control"
+              id="category-item-1-rec"
+              name="recommendation_text"
+            />
+          </div>
+          <div
+            className="form-check"
+          >
+            <input
+              className="form-check-input"
+              defaultChecked={true}
+              id="category-item-active-1"
+              name="active"
+              type="checkbox"
+            />
+            <label
+              className="form-check-label"
+              htmlFor="category-item-active-1"
+            >
+              Active
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <hr
+    className="pb-0"
+  />
+  <div
+    className="d-flex align-items-end justify-content-end"
+  >
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      onClick={[Function]}
+    >
+      Save
+    </button>
+  </div>
+</div>
+`;
+
+exports[`CategoryEdit Component should match edit view snapshot 1`] = `
+<div>
+  <nav
+    aria-label="breadcrumb"
+  >
+    <ol
+      className="breadcrumb"
+    >
+      <li
+        className="breadcrumb-item"
+      >
+        <a
+          href="/categories"
+        >
+          Scorecard
+        </a>
+      </li>
+      <li
+        aria-current="page"
+        className="breadcrumb-item active"
+      >
+        New Category
+      </li>
+    </ol>
+  </nav>
+  <form>
+    <div
+      className="pb-4"
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="category-title-undefined"
+        >
+          Title
+        </label>
+        <input
+          className="form-control"
+          id="category-title-undefined"
+          name="name"
+          onKeyUp={[Function]}
+          type="text"
+        />
+      </div>
+      <div
+        className="form-check"
+      >
+        <input
+          className="form-check-input"
+          id="category-active-undefined"
+          name="active"
+          onClick={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="form-check-label"
+          htmlFor="category-active-undefined"
+        >
+          Active
+        </label>
+      </div>
+    </div>
+    <div
+      className="d-flex justify-content-between align-items-center"
+    >
+      <h4>
+        Criteria
+      </h4>
+      <button
+        className="btn btn-sm btn-success"
+        onClick={[Function]}
+      >
+        Create
+      </button>
+    </div>
+  </form>
+  <hr
+    className="pb-0"
+  />
+  <div
+    className="d-flex align-items-end justify-content-end"
+  >
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      onClick={[Function]}
+    >
+      Save
+    </button>
+  </div>
+</div>
+`;

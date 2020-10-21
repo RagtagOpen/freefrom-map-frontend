@@ -60,7 +60,7 @@ function Categories() {
             </div>
             <hr className="pb-0" />
             <div className="d-flex align-items-end justify-content-end">
-                <button className="btn btn-primary">Create</button>
+                <a href="/categories/new" title="Create new category" className="btn btn-primary">Create</a>
             </div>
         </div>
     );

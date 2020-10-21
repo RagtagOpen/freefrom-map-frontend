@@ -117,11 +117,13 @@ exports[`CategoryView Component should match snapshot 1`] = `
   <div
     className="d-flex align-items-end justify-content-end"
   >
-    <button
+    <a
       className="btn btn-primary"
+      href="/categories/1/edit"
+      title="Edit"
     >
       Edit
-    </button>
+    </a>
   </div>
 </div>
 `;
