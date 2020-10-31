@@ -22,7 +22,7 @@ function Sidebar(props) {
                     <a className={navClasses('categories')} href="/categories" title="Scorecard">Scorecard</a>
                 </li>
                 <li className="nav-item w-100">
-                    <a className={navClasses('#')} href="#" title="State Scores">State Scores</a>
+                    <a className={navClasses('states')} href="/states" title="State Scores">State Scores</a>
                 </li>
                 <li className="nav-item w-100">
                     <a className={navClasses('#')} href="#" title="Copy">Copy</a>

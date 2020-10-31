@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Maine",
+    "abbrev": "ME",
+    "grade": 0
+  },
+  {
+    "id": 2,
+    "name": "Florida",
+    "abbrev": "FL",
+    "grade": 4
+  },
+  {
+    "id": 3,
+    "name": "Minnesota",
+    "abbrev": "MN",
+    "grade": 1
+  },
+  {
+    "id": 4,
+    "name": "Nebraska",
+    "abbrev": "NE",
+    "grade": 3
+  },
+  {
+    "id": 5,
+    "name": "California",
+    "abbrev": "CA",
+    "grade": 2
+  }
+]

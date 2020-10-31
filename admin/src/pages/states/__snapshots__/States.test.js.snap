@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`States Component should match snapshot 1`] = `
+<div>
+  <h1>
+    State Scores
+  </h1>
+  <div
+    id="accordion"
+  >
+    <div
+      className="card"
+    >
+      <div
+        className="card-header"
+        id="heading-0"
+      >
+        <h5
+          className="mb-0 d-flex justify-content-between align-items-center"
+        >
+          <div
+            className="align-items-start"
+          >
+            <span
+              style={
+                Object {
+                  "display": "inline-block",
+                  "width": "200px",
+                }
+              }
+            >
+              State Name
+            </span>
+            <div
+              className="btn btn-success"
+            >
+              A
+            </div>
+          </div>
+          <a
+            className="btn btn-sm btn-primary ml-4"
+            href="/states/1"
+          >
+            Edit
+          </a>
+        </h5>
+      </div>
+    </div>
+  </div>
+  <hr
+    className="pb-0"
+  />
+  <div
+    className="d-flex align-items-end justify-content-end"
+  >
+    <a
+      className="btn btn-primary"
+      href="/states/new"
+      title="Create new state"
+    >
+      Create
+    </a>
+  </div>
+</div>
+`;

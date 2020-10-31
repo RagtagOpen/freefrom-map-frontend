@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StateView Component should match snapshot 1`] = `
+<div>
+  <nav
+    aria-label="breadcrumb"
+  >
+    <ol
+      className="breadcrumb"
+    >
+      <li
+        className="breadcrumb-item"
+      >
+        <a
+          href="/states"
+        >
+          State Scores
+        </a>
+      </li>
+      <li
+        aria-current="page"
+        className="breadcrumb-item active"
+      >
+        State Name
+      </li>
+    </ol>
+  </nav>
+  <form>
+    <div
+      className="pb-4"
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="state-name-1"
+        >
+          Name
+        </label>
+        <input
+          className="form-control"
+          defaultValue="State Name"
+          disabled={true}
+          id="state-name-1"
+          type="text"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="state-abbrev-1"
+        >
+          Abbreviation
+        </label>
+        <input
+          className="form-control"
+          defaultValue="SN"
+          disabled={true}
+          id="state-abbrev-1"
+          name="abbrev"
+          type="text"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="state-grade-1"
+        >
+          Grade
+        </label>
+        <select
+          className="form-control"
+          disabled={true}
+          id="state-grade-1"
+          name="grade"
+          value={0}
+        >
+          <option
+            value="0"
+          >
+            A
+          </option>
+          <option
+            value="1"
+          >
+            B
+          </option>
+          <option
+            value="2"
+          >
+            C
+          </option>
+          <option
+            value="3"
+          >
+            D
+          </option>
+          <option
+            value="4"
+          >
+            F
+          </option>
+        </select>
+      </div>
+    </div>
+  </form>
+  <hr
+    className="pb-0"
+  />
+  <div
+    className="d-flex align-items-end justify-content-end"
+  >
+    <a
+      className="btn btn-primary"
+      href="/states/1/edit"
+      title="Edit"
+    >
+      Edit
+    </a>
+  </div>
+</div>
+`;
