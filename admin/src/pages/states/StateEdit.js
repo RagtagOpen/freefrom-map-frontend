@@ -42,7 +42,6 @@ function StateEdit() {
         }
 
         if (_.isEmpty(state) && !_.isEmpty(data)) {
-            console.log('settingState');
             setState(_.cloneDeep(data));
         }
     });
@@ -72,7 +71,6 @@ function StateEdit() {
     }
 
     const updateState = (e, id, categoryItem = null) => {
-        console.log(e, id, categoryItem);
         const value = getValue(e);
 
         let updatedState;
@@ -118,7 +116,6 @@ function StateEdit() {
             }
         }
 
-        console.log(updatedState);
         setState(updatedState);
     }
 
