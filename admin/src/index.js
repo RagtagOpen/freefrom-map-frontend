@@ -11,7 +11,7 @@ import {
 } from 'react-router-dom';
 
 // Redux
-import store from './app/store';
+import store from './store/store';
 
 // Some common tools
 import 'popper.js';
@@ -80,12 +80,12 @@ ReactDOM.render(
                             <StateEdit />
                         </DefaultLayout>
                     </Route>
-                    <Route exact path="/states/:id">
+                    <Route exact path="/states/:abbrev">
                         <DefaultLayout active="states">
                             <StateView />
                         </DefaultLayout>
                     </Route>
-                    <Route path="/states/:id/edit">
+                    <Route path="/states/:abbrev/edit">
                         <DefaultLayout active="states">
                             <StateEdit />
                         </DefaultLayout>

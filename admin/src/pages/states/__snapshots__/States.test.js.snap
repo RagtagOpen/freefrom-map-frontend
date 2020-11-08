@@ -32,14 +32,12 @@ exports[`States Component should match snapshot 1`] = `
               State Name
             </span>
             <div
-              className="btn btn-success"
-            >
-              A
-            </div>
+              className="btn undefined"
+            />
           </div>
           <a
             className="btn btn-sm btn-primary ml-4"
-            href="/states/1"
+            href="/states/SN"
           >
             Edit
           </a>

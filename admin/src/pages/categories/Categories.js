@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 // Redux
-import { getData, selectCategories } from './categorySlice';
+import { getCategoryData, selectCategories } from 'store/categorySlice';
 
 function Categories() {
     const state = useSelector(selectCategories);
@@ -10,11 +10,11 @@ function Categories() {
 
     useEffect(() => {
         if (state.loaded === false) {
-            dispatch(getData());
+            dispatch(getCategoryData());
         }
     });
 
-    function renderCategories(category, index) {
+    function renderCategory(category, index) {
         return (
             <div className="card" key={`category-${index}`}>
                 <div className="card-header" id={`heading-${index}`}>
@@ -56,7 +56,7 @@ function Categories() {
         <div>
             <h1>Scorecard</h1>
             <div id="accordion">
-                { state.data.map((category, index) => renderCategories(category, index)) }
+                { state.data.map((category, index) => renderCategory(category, index)) }
             </div>
             <hr className="pb-0" />
             <div className="d-flex align-items-end justify-content-end">

@@ -1,0 +1,40 @@
+{
+  "states": {
+    "loading": false,
+    "loaded": true,
+    "data": [
+      {
+        "id": 1,
+        "name": "State Name",
+        "abbrev": "SN",
+        "items": [
+          {
+            "id": 1,
+            "category_item_id": 1,
+            "meets_criteria": true,
+            "link_to_code": "https://google.com"
+          }
+        ]
+      }
+    ]
+  },
+  "categories": {
+    "loading": false,
+    "loaded": true,
+    "data": [
+      {
+        "id": 1,
+        "name": "Test Category Name",
+        "items": [
+          {
+            "id": 1,
+            "name": "Test Category Item Name",
+            "recommendation_text": "This is recommendation text",
+            "active": true
+          }
+        ],
+        "active": true
+      }
+    ]
+  }
+}

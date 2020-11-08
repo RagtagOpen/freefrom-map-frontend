@@ -7,6 +7,11 @@ exports[`StateView Component should match snapshot 1`] = `
   >
     <ol
       className="breadcrumb"
+      style={
+        Object {
+          "lineHeight": "30px",
+        }
+      }
     >
       <li
         className="breadcrumb-item"
@@ -19,9 +24,20 @@ exports[`StateView Component should match snapshot 1`] = `
       </li>
       <li
         aria-current="page"
-        className="breadcrumb-item active"
+        className="breadcrumb-item active align-items-center"
       >
-        State Name
+        <select
+          className="form-control form-control-sm"
+          id="stateSelectDropdown"
+          onChange={[Function]}
+          value="SN"
+        >
+          <option
+            value="SN"
+          >
+            State Name
+          </option>
+        </select>
       </li>
     </ol>
   </nav>
@@ -62,47 +78,122 @@ exports[`StateView Component should match snapshot 1`] = `
           type="text"
         />
       </div>
+      <h4>
+        Score Card
+      </h4>
       <div
-        className="form-group"
+        id="accordion"
       >
-        <label
-          htmlFor="state-grade-1"
+        <div
+          className="card"
         >
-          Grade
-        </label>
-        <select
-          className="form-control"
-          disabled={true}
-          id="state-grade-1"
-          name="grade"
-          value={0}
-        >
-          <option
-            value="0"
+          <div
+            className="card-header"
+            id="heading-0"
           >
-            A
-          </option>
-          <option
-            value="1"
+            <h5
+              className="mb-0 d-flex justify-content-between align-items-center"
+            >
+              <button
+                aria-controls="collapse-0"
+                aria-expanded="false"
+                className="btn btn-link collapsed"
+                data-target="#collapse-0"
+                data-toggle="collapse"
+                type="button"
+              >
+                Test Category Name
+              </button>
+              <div
+                className="btn btn-warning"
+              >
+                C
+              </div>
+            </h5>
+          </div>
+          <div
+            aria-labelledby="heading-0"
+            className="collapse"
+            data-parent="#accordion"
+            id="collapse-0"
           >
-            B
-          </option>
-          <option
-            value="2"
-          >
-            C
-          </option>
-          <option
-            value="3"
-          >
-            D
-          </option>
-          <option
-            value="4"
-          >
-            F
-          </option>
-        </select>
+            <div
+              className="card-body"
+            >
+              <div
+                id="accordion-0"
+              >
+                <div
+                  className="card"
+                >
+                  <div
+                    className="card-header"
+                    id="heading-category-0-item-0"
+                  >
+                    <p
+                      className="mb-0 d-flex justify-content-between align-items-center"
+                    >
+                      <button
+                        aria-controls="collapse-category-0-item-0"
+                        aria-expanded="false"
+                        className="btn btn-sm btn-link collapsed"
+                        data-target="#collapse-category-0-item-0"
+                        data-toggle="collapse"
+                        type="button"
+                      >
+                        Test Category Item Name
+                      </button>
+                    </p>
+                  </div>
+                  <div
+                    aria-labelledby="heading-category-0-item-0"
+                    className="collapse"
+                    data-parent="#accordion-0"
+                    id="collapse-category-0-item-0"
+                  >
+                    <div
+                      className="card-body"
+                    >
+                      <div
+                        className="form-check pb-4"
+                      >
+                        <input
+                          className="form-check-input"
+                          defaultChecked={true}
+                          disabled={true}
+                          id="category-item-criteria-category-0-item-0"
+                          type="checkbox"
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="category-item-criteria-category-0-item-0"
+                        >
+                          Meets Criteria
+                        </label>
+                      </div>
+                      <div
+                        className="form-group"
+                      >
+                        <label
+                          htmlFor="category-item-link-category-0-item-0"
+                        >
+                          Link to State Code
+                        </label>
+                        <input
+                          className="form-control"
+                          defaultValue="https://google.com"
+                          disabled={true}
+                          id="category-item-link-category-0-item-0"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </form>
@@ -110,11 +201,20 @@ exports[`StateView Component should match snapshot 1`] = `
     className="pb-0"
   />
   <div
-    className="d-flex align-items-end justify-content-end"
+    className="d-flex align-items-center justify-content-between"
   >
+    <h5>
+      State Name
+       Overall Score: 
+      <div
+        className="btn btn-warning"
+      >
+        C
+      </div>
+    </h5>
     <a
       className="btn btn-primary"
-      href="/states/1/edit"
+      href="/states/SN/edit"
       title="Edit"
     >
       Edit

@@ -5,17 +5,18 @@ import configureStore from 'redux-mock-store';
 
 import StateEdit from './StateEdit';
 
+let mockState = require('mock/store_mock.json');
 const mockStore = configureStore([]);
 
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
     useParams: () => ({
-        id: 1
+        abbrev: 'SN'
     }),
     useLocation: () => ({
-        pathname: "/states/1/edit"
+        pathname: "/states/SN/edit"
     }),
-    useRouteMatch: () => ({ url: '/states/1/edit' }),
+    useRouteMatch: () => ({ url: '/states/SN/edit' }),
 }));
 
 describe('StateEdit Component', () => {
@@ -24,20 +25,7 @@ describe('StateEdit Component', () => {
 
     beforeEach(() => {
 
-        store = mockStore({
-            states: {
-                loading: false,
-                loaded: true,
-                data: [
-                    {
-                        "id": 1,
-                        "name": "State Name",
-                        "abbrev": "SN",
-                        "grade": 0
-                    }
-                ]
-            }
-        });
+        store = mockStore(mockState);
 
         component = renderer.create(
             <Provider store={ store }>

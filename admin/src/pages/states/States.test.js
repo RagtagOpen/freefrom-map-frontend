@@ -5,6 +5,7 @@ import configureStore from 'redux-mock-store';
 
 import States from './States';
 
+let mockState = require('mock/store_mock.json');
 const mockStore = configureStore([]);
 
 describe('States Component', () => {
@@ -12,20 +13,7 @@ describe('States Component', () => {
     let component;
 
     beforeEach(() => {
-        store = mockStore({
-            states: {
-                loading: false,
-                loaded: true,
-                data: [
-                    {
-                        "id": 1,
-                        "name": "State Name",
-                        "abbrev": "SN",
-                        "grade": 0
-                    }
-                ]
-            }
-        });
+        store = mockStore(mockState);
 
         component = renderer.create(
             <Provider store={ store }>

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 // Redux
-import { getData, selectStates } from './stateSlice';
+import { getStateData, selectStates } from 'store/stateSlice';
 
 // Components
 import StateGrade from "./StateGrade";
@@ -13,7 +13,7 @@ function States() {
 
     useEffect(() => {
         if (state.loaded === false) {
-            dispatch(getData());
+            dispatch(getStateData());
         }
     });
 
@@ -26,7 +26,7 @@ function States() {
                             <span style={{width: "200px", display: "inline-block"}}>{ state.name }</span>
                             <StateGrade grade={ state.grade } />
                         </div>
-                        <a className="btn btn-sm btn-primary ml-4" href={`/states/${state.id}`}>Edit</a>
+                        <a className="btn btn-sm btn-primary ml-4" href={`/states/${state.abbrev}`}>Edit</a>
                     </h5>
                 </div>
             </div>

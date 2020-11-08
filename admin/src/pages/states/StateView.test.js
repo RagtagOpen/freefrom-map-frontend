@@ -5,14 +5,15 @@ import configureStore from 'redux-mock-store';
 
 import StateView from './StateView';
 
+let mockState = require('mock/store_mock.json');
 const mockStore = configureStore([]);
 
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
     useParams: () => ({
-        id: 1
+        abbrev: 'SN'
     }),
-    useRouteMatch: () => ({ url: '/states/1' }),
+    useRouteMatch: () => ({ url: '/states/SN' }),
 }));
 
 describe('StateView Component', () => {
@@ -20,21 +21,7 @@ describe('StateView Component', () => {
     let component;
 
     beforeEach(() => {
-
-        store = mockStore({
-            states: {
-                loading: false,
-                loaded: true,
-                data: [
-                    {
-                        "id": 1,
-                        "name": "State Name",
-                        "abbrev": "SN",
-                        "grade": 0
-                    }
-                ]
-            }
-        });
+        store = mockStore(mockState);
 
         component = renderer.create(
             <Provider store={ store }>

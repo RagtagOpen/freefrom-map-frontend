@@ -3,8 +3,8 @@ import { findWithAttr } from "helpers/utils";
 
 // Require mock data if our env var is set to true
 let mockStateData;
-if (process.env.REACT_APP_LOCAL_STATES) {
-    mockStateData = require('../../mock/state_mock.json');
+if (process.env.REACT_APP_LOCAL_DATA) {
+    mockStateData = require('mock/state_mock.json');
 }
 
 export const stateSlice = createSlice({
@@ -15,7 +15,7 @@ export const stateSlice = createSlice({
         data: []
     },
     reducers: {
-        setData: (state, action) => {
+        setStateData: (state, action) => {
             state.loading = false;
             state.loaded = true;
 
@@ -23,7 +23,7 @@ export const stateSlice = createSlice({
             const sortedStates = action.payload.sort((a, b) => a.name.localeCompare(b.name));
             state.data = sortedStates;
         },
-        saveData: (state, action) => {
+        saveStateData: (state, action) => {
             const index = findWithAttr(state.data, 'id', action.payload.id);
 
             // TODO: Perform PATCH to update server data. Right now, we'll just update our local state
@@ -38,11 +38,11 @@ export const stateSlice = createSlice({
     }
 });
 
-export const { saveData, setData } = stateSlice.actions;
+export const { saveStateData, setStateData } = stateSlice.actions;
 
-export const getData = () => dispatch => {
-    if (process.env.REACT_APP_LOCAL_STATES) {
-        dispatch(setData(mockStateData));
+export const getStateData = () => dispatch => {
+    if (process.env.REACT_APP_LOCAL_DATA) {
+        dispatch(setStateData(mockStateData));
     }
 
     // TODO: Fetch from a back end here
@@ -51,12 +51,13 @@ export const getData = () => dispatch => {
 export const selectStates = state => {
     return state.states;
 }
-export const selectState = id => state => {
+
+export const selectState = abbrev => state => {
     if (state.states.loaded === false) {
         return {};
     }
 
-    return state.states.data.filter((state) => state.id === parseInt(id))[0];
+    return state.states.data.filter((state) => state.abbrev === abbrev)[0];
 }
 
 export default stateSlice.reducer;
