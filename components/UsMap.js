@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import statesLived from "../public/data/stateslived.json"
 import stateScores from "../public/data/state-scores.json"
 import usData from "../public/data/us-states.json"
 import * as d3 from "d3"
@@ -9,11 +8,9 @@ class UsMap extends Component {
 
   componentDidMount() {
 
-
-    this.statesLived = statesLived;
     this.stateScores = stateScores;
     this.usData = usData;
-    this.height = 500; (64, 0, 64)
+    this.height = 500;
     this.width = 960;
     this.colorRange = [
       // lightest
@@ -45,12 +42,7 @@ class UsMap extends Component {
   renderMap() {
 
     // just unpacking for tidier variable names downstream
-    let usData = this.usData;
-    let statesLived = this.statesLived;
-    let colorRange = this.colorRange;
-    let width = this.width;
-    let height = this.height;
-    let stateScores = this.stateScores;
+    let { usData, colorRange, width, height, stateScores } = this;
 
     // add the values to the state objects
     // usData = this.mapStatesToValues(statesLived, usData);
@@ -97,8 +89,6 @@ class UsMap extends Component {
           .style({ opacity: '0.75' })
           .append("text")
           .text(function (d) {
-            console.log(d.properties.name)
-            console.log(d.properties.score)
             return d.properties.score
           });
 
@@ -120,10 +110,7 @@ class UsMap extends Component {
 
   }
 
-  render() {
-    return <div id={"#" + this.props.id
-    } ></div >
-  }
+  render() { return <div id={"#" + this.props.id} ></div > }
 
 }
 
