@@ -14,11 +14,11 @@ class UsMap extends Component {
     this.width = 960;
     this.colorRange = [
       // lightest
-      "rgb(168,0,168)",
-      "rgb(128,0,128)",
-      "rgb(98,0,98)",
-      "rgb(78,0,78)",
-      "rgb(58,0,58)"
+      "rgb(191,209,229)",
+      "rgb(166,189,219)",
+      "rgb(104,149,197)",
+      "rgb(72,120,170)",
+      "rgb(7,87,152)"
     ]
     this.renderMap();
   }
@@ -62,7 +62,8 @@ class UsMap extends Component {
 
     let color = d3
       .scale
-      .linear()
+      .ordinal()
+      .domain(d3.range(1, 5, 1))
       .range(colorRange);
 
     let tooltip = d3
