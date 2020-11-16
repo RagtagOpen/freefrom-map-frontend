@@ -4,7 +4,7 @@ import { useParams, useLocation } from "react-router-dom";
 import _ from 'lodash';
 
 // Redux
-import { saveData, getData, selectCategories, selectCategory } from './categorySlice';
+import { saveCategoryData, getCategoryData, selectCategories, selectCategory } from 'store/categorySlice';
 import {findWithAttr} from "helpers/utils";
 
 function CategoryEdit() {
@@ -20,7 +20,7 @@ function CategoryEdit() {
 
     useEffect(() => {
         if (categories.loaded === false) {
-            dispatch(getData());
+            dispatch(getCategoryData());
         }
 
         if (id === undefined && location.pathname === '/categories/new') {
@@ -94,7 +94,7 @@ function CategoryEdit() {
         e.preventDefault();
         e.target.textContent = "Saving..."
         setSaving(true);
-        dispatch(saveData(category));
+        dispatch(saveCategoryData(category));
         e.target.textContent = "Saved!"
         setSaving(false);
         e.target.textContent = "Save"

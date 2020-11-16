@@ -9,7 +9,7 @@ This is the Freefrom Map front-end. It will consist of the following apps:
 
 ## Setup
 1. Copy `.env.example` to a new file named `.env.local`
-1. Open `.env.local` and change `REACT_APP_LOCAL_CATEGORIES=false` to `REACT_APP_LOCAL_CATEGORIES=true`
+1. Open `.env.local` and change `REACT_APP_LOCAL_DATA=false` to `REACT_APP_LOCAL_DATA=true`
 1. Run `npm install` to install dependencies
 1. Run `npm start` to start the app
 

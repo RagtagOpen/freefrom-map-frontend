@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import _ from 'lodash';
 
 // Redux
-import { getData, selectCategories, selectCategory } from './categorySlice';
+import { getCategoryData, selectCategories, selectCategory } from 'store/categorySlice';
 
 function CategoryView() {
     const { id } = useParams();
@@ -15,7 +15,7 @@ function CategoryView() {
 
     useEffect(() => {
         if (categories.loaded === false) {
-            dispatch(getData());
+            dispatch(getCategoryData());
         }
     });
 

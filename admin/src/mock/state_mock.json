@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "name": "Maine",
+    "abbrev": "ME",
+    "items": [
+      {
+        "id": 1,
+        "category_item_id": 1,
+        "meets_criteria": false,
+        "link_to_code": "https://google.com"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Florida",
+    "abbrev": "FL",
+    "items": [
+      {
+        "id": 2,
+        "category_item_id": 3,
+        "meets_criteria": true,
+        "link_to_code": "https://google.com"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Minnesota",
+    "abbrev": "MN",
+    "items": [
+      {
+        "id": 3,
+        "category_item_id": 3,
+        "meets_criteria": false,
+        "link_to_code": "https://google.com"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Nebraska",
+    "abbrev": "NE",
+    "items": [
+      {
+        "id": 4,
+        "category_item_id": 3,
+        "meets_criteria": true,
+        "link_to_code": "https://google.com"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "California",
+    "abbrev": "CA",
+    "items": [
+      {
+        "id": 1,
+        "category_item_id": 1,
+        "meets_criteria": true,
+        "link_to_code": "https://google.com"
+      }
+    ]
+  }
+]
