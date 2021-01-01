@@ -1,24 +1,16 @@
+# Freefrom Map Front-end
+This is the Freefrom Map front-end. It will consist of the following apps:
 
-## Notes:
+1. Visual tool for users to find states
+1. CMS for administrators to control states
 
-This is a modified version of [this code](http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922) which itself was taken from a few diffreent examples.
+# Structure
+The admin CMS is under the `admin` directory which is a React application. To start that application, follow the `README`
+instructions within the folder.
 
-## Getting Started
+The user facing map is under the `client` directory, whcih is a NextJS application. To start the front end application,
+follow the `README` within that folder.
 
-To install:
-
-```bash
-yarn install
-# or
-npm install
-```
-
-Then, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Contributing
+This project is developed by [Ragtag](https://ragtag.org/) volunteers. You can volunteer with us by filling out our [sign-up form](https://id.ragtag.org/join/)!
+If you have any questions, you can get help in the #proj-freefrom-map-dev Slack channel.
