@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
+import CustomPopUp from './PopUp'
 import stateScores from "../public/data/state-scores.json"
 import usData from "../public/data/us-states.json"
 import * as d3 from "d3"
-
 
 class UsMap extends Component {
 
@@ -118,10 +118,13 @@ class UsMap extends Component {
           .text("Click detected on " + d.properties.name + ", create card here")
 
           alert(d.properties.name)
+          
       })
   }
 
-  render() { return <div id={"#" + this.props.id} ></div > }
+  render() { return <div id={"#" + this.props.id} >
+    <CustomPopUp></CustomPopUp>
+  </div > }
 
 }
 
