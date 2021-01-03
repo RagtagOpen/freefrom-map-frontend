@@ -8,9 +8,16 @@
     "start": "next start"
   },
   "dependencies": {
+    "bootstrap": "^4.5.3",
     "d3": "3",
+    "lodash": "^4.17.20",
     "next": "9.5.5",
     "react": "16.14.0",
     "react-dom": "16.14.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.17.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.22.0"
   }
 }
