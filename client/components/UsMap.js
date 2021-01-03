@@ -71,8 +71,11 @@ class UsMap extends Component {
       .append('div')
       .attr('id', 'tooltip')
       .attr('style', 'position: absolute; opacity: 0;');
+    
 
-    d3.select("body")
+
+    let svg = d3
+      .select("body")
       .append("svg")
       .attr("width", width)
       .attr("height", height)
@@ -86,10 +89,14 @@ class UsMap extends Component {
       .style("fill", function (d) {
         return color(d.properties.score)
       })
-      /* hover and mouse effects */
 
+    let box = d3
+      .select("body")
+      .append("g")
+
+      /* hover and mouse effects */
       // mousover score
-      .on('mouseover', function (d) {
+      svg.on('mouseover', function (d) {
         d3.select(this)
           .style({ opacity: '0.75' })
           .append("text")
@@ -115,16 +122,22 @@ class UsMap extends Component {
           .transition()
           .duration(200)
           .style('opacity', 1)
-          .text("Click detected on " + d.properties.name + ", create card here")
+          // .text("Click detected on " + d.properties.name + ", create card here")
+          box.text(`some info about that ${d.properties.name}`)
 
-          alert(d.properties.name)
+
           
       })
   }
 
-  render() { return <div id={"#" + this.props.id} >
-    <CustomPopUp></CustomPopUp>
-  </div > }
+  popUp() {
+    null
+  }
+
+  render() { 
+    // return <div id ={"#" + this.props.id} > <CustomPopUp> </CustomPopUp> </div>
+    return <div id ={"#" + this.props.id} > </div>
+  }
 
 }
 
