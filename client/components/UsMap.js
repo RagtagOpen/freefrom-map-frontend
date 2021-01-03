@@ -85,30 +85,40 @@ class UsMap extends Component {
       .style("stroke-width", "1")
       .style("fill", function (d) {
         return color(d.properties.score)
-      }).on('mouseover', function (d) {
+      })
+      /* hover and mouse effects */
+
+      // mousover score
+      .on('mouseover', function (d) {
         d3.select(this)
           .style({ opacity: '0.75' })
           .append("text")
           .text(function (d) {
             return d.properties.score
           });
-
+        // tooltip opacity change
         tooltip
           .transition()
           .duration(200)
           .style('opacity', 1)
           .text(d.properties.name + ': ' + d.properties.score)
 
-      }).on('mouseout', function (d) {
+      })
+      // returns opacity to normal when mouse leaves
+      .on('mouseout', function (d) {
         d3.select(this).style({ opacity: '1.0' });
-      }).on("click", function (d) {
+      })
+      // click events
+      .on("click", function (d) {
+
         tooltip
           .transition()
           .duration(200)
           .style('opacity', 1)
           .text("Click detected on " + d.properties.name + ", create card here")
-      });
 
+          alert(d.properties.name)
+      })
   }
 
   render() { return <div id={"#" + this.props.id} ></div > }
