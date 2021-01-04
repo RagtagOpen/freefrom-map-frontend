@@ -109,7 +109,7 @@ class UsMap extends Component {
       // add the state infor to the tooltip
       d3.select("#tooltip")
         .selectAll("text")
-        .text(d.properties.name + ': ' + d.properties.score + "(click for more info)")
+        .text(d.properties.name + ': ' + d.properties.score + " (click for more info)")
 
       })
       // mouseOUT - the mouse leaves the selection
