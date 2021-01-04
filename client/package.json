@@ -8,10 +8,16 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "bootstrap": "^4.5.3",
     "d3": "3",
+    "jquery": "^3.5.1",
     "lodash": "^4.17.20",
-    "next": "9.5.5",
+    "next": "^10.0.4",
+    "popper": "^1.0.1",
     "react": "16.14.0",
     "react-dom": "16.14.0"
   },
