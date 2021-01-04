@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import CustomPopUp from './PopUp'
 import stateScores from "../public/data/state-scores.json"
 import usData from "../public/data/us-states.json"
 import * as d3 from "d3"
@@ -24,7 +23,6 @@ class UsMap extends Component {
   }
 
   mapScoresToStates(scoreData, usData) {
-
     for (var i = 0; i < scoreData.length; i++) {
       let scoreStateName = scoreData[i].state;
       var stateScores = scoreData[i].score;
@@ -66,14 +64,6 @@ class UsMap extends Component {
       .domain(d3.range(1, 5, 1))
       .range(colorRange);
 
-    let tooltip = d3
-      .select('body')
-      .append('div')
-      .attr('id', 'tooltip')
-      .attr('style', 'position: absolute; opacity: 0;');
-    
-
-
     let svg = d3
       .select("body")
       .append("svg")
@@ -88,54 +78,67 @@ class UsMap extends Component {
       .style("stroke-width", "1")
       .style("fill", function (d) {
         return color(d.properties.score)
-      })
+      });
 
-    let box = d3
+    // create tooltip div
+    let tooltip = d3
       .select("body")
-      .append("g")
+      .append("div")
+      .attr("class", "tooltip")				
+      .style("opacity", 0)
 
-      /* hover and mouse effects */
-      // mousover score
-      svg.on('mouseover', function (d) {
-        d3.select(this)
-          .style({ opacity: '0.75' })
-          .append("text")
-          .text(function (d) {
-            return d.properties.score
-          });
-        // tooltip opacity change
-        tooltip
-          .transition()
-          .duration(200)
-          .style('opacity', 1)
-          .text(d.properties.name + ': ' + d.properties.score)
+    // div is finished, add a text
+    tooltip
+      .attr("id", "tooltip")
+      .append("text")
+
+
+
+    // mouseOVER, user scrolls onto
+    svg.on('mouseover', function (d) {
+      
+      // decreases opacity slightly to provide feedback of selection
+      d3.select(this)
+        .style({opacity: '0.75'})
+        .append("text")
+        .text(function (d) {
+          console.log(d.properties.score)
+          return d.properties.score
+        });
+
+      // add the state infor to the tooltip
+      d3.select("#tooltip")
+        .selectAll("text")
+        .text(d.properties.name + ': ' + d.properties.score + "(click for more info)")
 
       })
-      // returns opacity to normal when mouse leaves
+      // mouseOUT - the mouse leaves the selection
       .on('mouseout', function (d) {
+
+        // returns opacity to normal when mouse leaves
         d3.select(this).style({ opacity: '1.0' });
+        // destroy tooltip when hovering over nothing  
+        tooltip
+          .style("opacity", 0)
+          // .append("text")
+      })
+      // mouseMOVE - continuous version of mouseOVER
+      .on('mousemove', function(d) {
+
+        // reveal the tooltip on mouseover
+        tooltip
+          .style("opacity", 1)
+          .style("left", (d3.event.pageX - 0) + "px")
+          .style("top", (d3.event.pageY - 0) + "px")
+ 
       })
       // click events
       .on("click", function (d) {
-
-        tooltip
-          .transition()
-          .duration(200)
-          .style('opacity', 1)
-          // .text("Click detected on " + d.properties.name + ", create card here")
-          box.text(`some info about that ${d.properties.name}`)
-
-
-          
+        alert("Click detected on " + d.properties.name + ", redirecting")
       })
   }
 
-  popUp() {
-    null
-  }
-
   render() { 
-    // return <div id ={"#" + this.props.id} > <CustomPopUp> </CustomPopUp> </div>
     return <div id ={"#" + this.props.id} > </div>
   }
 
