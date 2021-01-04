@@ -65,7 +65,7 @@ class UsMap extends Component {
       .range(colorRange);
 
     let svg = d3
-      .select("body")
+      .select("#us-map")
       .append("svg")
       .attr("width", width)
       .attr("height", height)
@@ -138,9 +138,7 @@ class UsMap extends Component {
       })
   }
 
-  render() { 
-    return <div id ={"#" + this.props.id} > </div>
-  }
+  render() { return <div id='us-map'></div > }
 
 }
 
