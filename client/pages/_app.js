@@ -1,11 +1,17 @@
-// Bootstrap 4
-import 'bootstrap/dist/css/bootstrap.min.css'
+import { useEffect } from "react"
 
-// Custom styles
+// CSS
+import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
+    useEffect(() => {
+        import("jquery").then($ => {
+            // jQuery must be installed to the `window`:
+            window.$ = window.jQuery = $;
+            return import("bootstrap");
+        });
+    }, []);
+
     return <Component {...pageProps} />
 }
-
-export default MyApp

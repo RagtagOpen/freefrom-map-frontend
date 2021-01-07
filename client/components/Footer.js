@@ -7,8 +7,8 @@ import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 function Footer() {
     return (
-        <div className="footer d-flex justify-content-between align-items-center">
-            <div>
+        <div className="footer d-flex justify-content-lg-around justify-content-center align-items-center flex-column flex-md-row p-2 py-md-5">
+            <div className="py-2 my-md-0">
                 <h2>Follow FreeFrom</h2>
                 <a>
                     <span className="fa-layers fa-fw fa-3x ml-1">
@@ -29,7 +29,7 @@ function Footer() {
                     </span>
                 </a>
             </div>
-            <div>
+            <div className="my-4 my-md-0">
                 <ul className="nav flex-column">
                     <li className="nav-item">
                         <a className="nav-link" href="https://freefrom.org">FreeFrom Homepage</a>
@@ -51,7 +51,7 @@ function Footer() {
                     </li>
                 </ul>
             </div>
-            <div>
+            <div className="my-2 my-md-0">
                 <Image
                     className="img img-fluid "
                     src="/images/empowered-by-ragtag.png"
