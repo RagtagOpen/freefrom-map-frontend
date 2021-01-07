@@ -8,7 +8,7 @@ export default function Breadcrumbs({ className, text, currentPageTitle }) {
 
     return (
         <div className={ `breadcrumbs mt-2 mb-3 ${className}` }>
-            <span onClick={() => router.back()}>{ text }</span>
+            <span onClick={() => router.push('/')}>{ text }</span>
             <span className="mx-2">/</span>
             <span>{ currentPageTitle }</span>
         </div>
@@ -18,7 +18,7 @@ export default function Breadcrumbs({ className, text, currentPageTitle }) {
 Breadcrumbs.propTypes = {
     text: PropTypes.string,
     className: PropTypes.string,
-    currentPageTitle: PropTypes.string.isRequired
+    currentPageTitle: PropTypes.string
 }
 
 Breadcrumbs.defaultProps = {
