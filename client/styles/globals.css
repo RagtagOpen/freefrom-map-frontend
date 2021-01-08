@@ -1,10 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://use.typekit.net/zvb2tiw.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
 html,
 body {
   padding: 0;
   margin: 0;
   height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
 }
 
 #__next {
@@ -13,21 +20,107 @@ body {
   height: 100%;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
   box-sizing: border-box;
 }
 
+p {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  color: #000;
+}
+
+h1 {
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 42px;
+  letter-spacing: 0.05em;
+}
+
 .shared-layout {
+  padding-top: 95px; /* sticky navbar */
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
+.back-button {
+  color: #32b4b4;
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.back-button:hover {
+  cursor: pointer;
+}
+
+.breadcrumbs span {
+  color: #000;
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.breadcrumbs span:first-of-type {
+  color: #32b4b4;
+}
+
+.breadcrumbs span:first-of-type:hover {
+  cursor: pointer;
+}
+
 .content {
   flex: 1;
+}
+
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #efefef;
+}
+
+.header .logo {
+  max-width: 134px;
+}
+
+.header .nav-item a {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.05em;
+  color: #000;
+  margin-left: 40px;
+}
+
+.header .nav-item-safety a {
+  color: #f06449;
+}
+
+.footer {
+  background-color: #000;
+  color: #fff;
+}
+
+.footer h2 {
+  margin-bottom: 30px;
+}
+
+.footer .nav-item a {
+  color: #fff;
+  font-size: 18px;
+  line-height: 28px;
 }
