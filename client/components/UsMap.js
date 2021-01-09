@@ -39,6 +39,22 @@ class UsMap extends Component {
 
   renderMap() {
 
+    // a function to determine if the mouse is on the tooltip so we can 
+    // avoid redrawing it until they aren't use it (prevents states "under"
+    // the tool tip from triggering and redraw while card is in use)
+    function mouseInsideTooltip(location) {
+      let x = d3.event.pageX;
+      let y = d3.event.pageY;
+      // in the left/right bounds?
+      if(x > location.left && x < location.right) {
+        // in the up/down bounds? (inverted y)
+        if(y < location.bottom && y > location.top) {
+          return true
+        }
+      }
+      return false
+    }
+
     // just unpacking for tidier variable names downstream
     let { usData, colorRange, width, height, stateScores } = this;
 
@@ -92,50 +108,52 @@ class UsMap extends Component {
       .attr("id", "tooltip")
       .append("text")
 
-
-
     // mouseOVER, user scrolls onto
     svg.on('mouseover', function (d) {
-      
+      // on rollover, note the location of the mouse
+      let tooltipDimensions = document.getElementById('tooltip').getBoundingClientRect()
+      // only redraw the tooltip if we're NOT in the bounds of a tool tip card
+      let mouseInHovercard = mouseInsideTooltip(tooltipDimensions);
+      console.log(mouseInHovercard);
+      if(mouseInHovercard == false) {
+
       // decreases opacity slightly to provide feedback of selection
       d3.select(this)
         .style({opacity: '0.75'})
-        .append("text")
-        .text(function (d) {
-          console.log(d.properties.score)
-          return d.properties.score
-        });
-
-      // add the state infor to the tooltip
-      d3.select("#tooltip")
-        .selectAll("text")
-        .text(d.properties.name + ': ' + d.properties.score + " (click for more info)")
-
-      })
-      // mouseOUT - the mouse leaves the selection
-      .on('mouseout', function (d) {
-
-        // returns opacity to normal when mouse leaves
-        d3.select(this).style({ opacity: '1.0' });
-        // destroy tooltip when hovering over nothing  
-        tooltip
-          .style("opacity", 0)
-          // .append("text")
-      })
-      // mouseMOVE - continuous version of mouseOVER
-      .on('mousemove', function(d) {
-
-        // reveal the tooltip on mouseover
-        tooltip
-          .style("opacity", 1)
-          .style("left", (d3.event.pageX - 0) + "px")
-          .style("top", (d3.event.pageY - 0) + "px")
- 
-      })
-      // click events
-      .on("click", function (d) {
-        alert("Click detected on " + d.properties.name + ", redirecting")
-      })
+      
+      // make the card visible
+      tooltip
+        .style("opacity", 1)
+        .style("left", (d3.event.pageX - 40) + "px")
+        .style("top", (d3.event.pageY - 40) + "px")
+      }
+    })
+    // mouseOUT - the mouse leaves the selection
+    .on('mouseout', function (d) {
+      // returns opacity to normal when mouse leaves
+      d3.select(this).style({ opacity: '1.0' });
+    })
+    // mouseMOVE - continuous version of mouseOVER
+    .on('mousemove', function(d) {
+      // will finish soon
+      // let x = d3.event.pageX;
+      // let y = d3.event.pageY;
+      // console.log(y)
+      // // if the mouse is way off the map, hide card
+      // if(y > 550 || y < 75 || x > 900 || x < 75) {
+      //   tooltip
+      //     .style("opacity", 0)
+      // }
+      let tooltipDimensions = document.getElementById('tooltip').getBoundingClientRect()
+      // only redraw the tooltip if we're NOT in the bounds of a tool tip card
+      let mouseInHovercard = mouseInsideTooltip(tooltipDimensions);
+      console.log(mouseInHovercard);
+    })
+    // click events
+    .on("click", function (d) {
+      // whatever redirect we want to do goes here
+      alert("Click detected on " + d.properties.name + ", redirecting")
+    })
   }
 
   render() { return <div id='us-map'></div > }
@@ -143,3 +161,9 @@ class UsMap extends Component {
 }
 
 export default UsMap
+
+// I can probably do this by using the mouse coordinates to *create* it 
+// but making it a hover only? I think this will break if they move the 
+// mouse outside of the state though. might make it finicky, might need
+// to ask people if we need to tweak this idea? I'll try it and see what
+// happens. What if I make it stay until there is a click? we shall see
