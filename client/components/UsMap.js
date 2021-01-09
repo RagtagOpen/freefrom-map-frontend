@@ -161,9 +161,3 @@ class UsMap extends Component {
 }
 
 export default UsMap
-
-// I can probably do this by using the mouse coordinates to *create* it 
-// but making it a hover only? I think this will break if they move the 
-// mouse outside of the state though. might make it finicky, might need
-// to ask people if we need to tweak this idea? I'll try it and see what
-// happens. What if I make it stay until there is a click? we shall see
