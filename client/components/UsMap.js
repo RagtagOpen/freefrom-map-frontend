@@ -157,5 +157,6 @@ class UsMap extends Component {
   }
 
   render() { return <div id='us-map'></div > }
+}
 
 export default UsMap
