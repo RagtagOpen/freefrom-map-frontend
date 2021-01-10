@@ -32,7 +32,7 @@ class UsMap extends Component {
           usData.features[j].properties.score = stateScores;
           break;
         }
-      }
+        return usData
     }
     return usData
   }
@@ -157,7 +157,5 @@ class UsMap extends Component {
   }
 
   render() { return <div id='us-map'></div > }
-
-}
 
 export default UsMap
