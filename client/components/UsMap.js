@@ -39,7 +39,6 @@ class UsMap extends Component {
     }
 
     renderMap() {
-
         // just unpacking for tidier variable names downstream
         let { usData, colorRange, width, height, stateScores } = this;
 
