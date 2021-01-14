@@ -30,7 +30,7 @@
 }
 
 .title {
-    font-family: ProximaNova;
+    font-family: proxima-nova, sans-serif;
     font-weight: 700;
     font-size: 22px;
     line-height: 26px;

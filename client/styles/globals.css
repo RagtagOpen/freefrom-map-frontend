@@ -33,6 +33,11 @@ p {
   color: #000;
 }
 
+.small {
+  font-size: 15px;
+  line-height: 20px;
+}
+
 h1 {
   font-family: proxima-nova, sans-serif;
   font-style: normal;
