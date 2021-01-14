@@ -35,6 +35,7 @@
 
 .submit:hover {
     color: #f06449;
+    text-decoration: underline;
 }
 
 .submit:active {

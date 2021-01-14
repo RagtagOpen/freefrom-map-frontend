@@ -7,3 +7,11 @@
     text-transform: uppercase;
     color: #32B4B4;
 }
+
+.take-action-link:hover {
+    color: #32B4B4;
+}
+
+.take-action-link:active {
+    color: #32B4B4;
+}

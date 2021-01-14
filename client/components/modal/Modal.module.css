@@ -1,0 +1,38 @@
+.button {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #F06449;
+    background-color: transparent;
+    border: none;
+}
+
+.button:hover, .button:focus, .button:active {
+    text-decoration: underline;
+    color: #F06449 !important;
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.content {
+    border: none;
+    border-radius: 0;
+}
+
+.header {
+    border: none;
+}
+
+.title {
+    font-family: ProximaNova;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 0.05em;
+}
