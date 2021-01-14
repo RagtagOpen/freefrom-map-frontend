@@ -11,13 +11,16 @@ class UsMap extends Component {
         this.usData = usData;
         this.height = 500;
         this.width = 960;
+        // I created this color scale using this: https://pinetools.com/lighten-color
+        // I started with #32B4B4 and lightened by 20% and used that as the next step.
+        // I continued to put the output color back into the 20% lightner until done
         this.colorRange = [
             // lightest
-            "rgb(191,209,229)",
-            "rgb(166,189,219)",
-            "rgb(104,149,197)",
-            "rgb(72,120,170)",
-            "rgb(7,87,152)"
+            "rgb(164,229,229)",
+            "rgb(142,223,223)",
+            "rgb(114,215,215)",
+            "rgb(79,206,206)",
+            "rgb(50,180,180)"
         ]
         this.renderMap();
     }
