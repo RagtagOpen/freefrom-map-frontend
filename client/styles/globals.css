@@ -33,6 +33,11 @@ p {
   color: #000;
 }
 
+.small {
+  font-size: 15px;
+  line-height: 20px;
+}
+
 h1 {
   font-family: proxima-nova, sans-serif;
   font-style: normal;
@@ -42,6 +47,16 @@ h1 {
   letter-spacing: 0.05em;
 }
 
+/* Colors */
+.text-ff-teal {
+  color: #32b4b4;
+}
+
+.text-ff-red {
+  color: #F06449;
+}
+
+/* Components */
 .shared-layout {
   padding-top: 95px; /* sticky navbar */
   display: flex;
