@@ -117,7 +117,6 @@ class UsMap extends Component {
             let tooltipDimensions = document.getElementById('tooltip').getBoundingClientRect()
             // only redraw the tooltip if we're NOT in the bounds of a tool tip card
             let mouseInHovercard = mouseInsideTooltip(tooltipDimensions);
-            console.log(mouseInHovercard);
             if(mouseInHovercard == false) {
 
                 // decreases opacity slightly to provide feedback of selection
