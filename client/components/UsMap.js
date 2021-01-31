@@ -34,25 +34,76 @@ class UsMap extends Component {
         }
         return usData
     }
-    return usData
-  }
 
-  renderMap() {
+    renderMap() {
+        // just unpacking for tidier variable names downstream
+        let { usData, colorRange, width, height, stateScores } = this;
 
-    // a function to determine if the mouse is on the tooltip so we can 
-    // avoid redrawing it until they aren't use it (prevents states "under"
-    // the tool tip from triggering and redraw while card is in use)
-    function mouseInsideTooltip(location) {
-      let x = d3.event.pageX;
-      let y = d3.event.pageY;
-      // in the left/right bounds?
-      if(x > location.left && x < location.right) {
-        // in the up/down bounds? (inverted y)
-        if(y < location.bottom && y > location.top) {
-          return true
-        }
-      }
-      return false
+        // add the values to the state objects
+        // usData = this.mapStatesToValues(statesLived, usData);
+        usData = this.mapScoresToStates(stateScores, usData)
+
+        // initalize the pojection and path
+        let projection = d3
+            .geo
+            .albersUsa()
+            .translate([width / 2, height / 2])
+            .scale([1000]);
+
+        let path = d3
+            .geo
+            .path()
+            .projection(projection);
+
+        let color = d3
+            .scale
+            .ordinal()
+            .domain(d3.range(1, 5, 1))
+            .range(colorRange);
+
+        let tooltip = d3
+            .select('#us-map')
+            .append('div')
+            .attr('id', 'tooltip')
+            .attr('style', 'position: absolute; opacity: 0;');
+
+        d3.select("#us-map")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .selectAll("path")
+            .data(usData.features)
+            .enter()
+            .append("path")
+            .attr("d", path)
+            .style("stroke", "#fff")
+            .style("stroke-width", "1")
+            .style("fill", function (d) {
+                return color(d.properties.score)
+            }).on('mouseover', function (d) {
+                d3.select(this)
+                    .style({ opacity: '0.75' })
+                    .append("text")
+                    .text(function (d) {
+                        return d.properties.score
+                    });
+
+                tooltip
+                    .transition()
+                    .duration(200)
+                    .style('opacity', 1)
+                    .text(d.properties.name + ': ' + d.properties.score)
+
+            }).on('mouseout', function (d) {
+                d3.select(this).style({ opacity: '1.0' });
+            }).on("click", function (d) {
+                tooltip
+                    .transition()
+                    .duration(200)
+                    .style('opacity', 1)
+                    .text("Click detected on " + d.properties.name + ", create card here")
+            });
+
     }
 
     // just unpacking for tidier variable names downstream

@@ -1,17 +1,20 @@
 import React from "react";
+import PropTypes from "prop-types"
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-function SharedLayout({ children }) {
+export default function SharedLayout({ children }) {
     return (
         <div className='shared-layout'>
             <Navbar />
             <div className='container'>
-                {children}
+                { children }
             </div>
             <Footer />
         </div>
     );
 }
 
-export default SharedLayout;
+SharedLayout.propTypes = {
+    children: PropTypes.array
+}

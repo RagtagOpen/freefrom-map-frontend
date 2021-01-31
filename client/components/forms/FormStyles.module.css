@@ -1,0 +1,43 @@
+.label {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.input {
+    border: 0;
+    border-bottom: 1px solid #292F36;
+    border-radius: 0;
+}
+
+.select {
+    border: 0;
+    border-bottom: 1px solid #292F36;
+    border-radius: 0;
+}
+
+.checkbox-label {
+    font-weight: 400;
+}
+
+.submit {
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #f06449;
+}
+
+.submit:hover {
+    color: #f06449;
+    text-decoration: underline;
+}
+
+.submit:active {
+    color: #f06449;
+}
