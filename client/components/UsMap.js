@@ -152,7 +152,12 @@ class UsMap extends Component {
         }).on("click", function (d) {
             // whatever redirect we want to do goes here
             alert("Click detected on " + d.properties.name + ", redirecting")
-        })
+            // for now right clicking removes the card
+        }).on("contextmenu", function () {
+            d3.event.preventDefault();
+            tooltip
+                .style("opacity", 0)
+        });
     }
 
     render() { return <div id='us-map'></div > }
