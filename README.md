@@ -8,7 +8,7 @@ This is the Freefrom Map front-end. It will consist of the following apps:
 The admin CMS is under the `admin` directory which is a React application. To start that application, follow the `README`
 instructions within the folder.
 
-The user facing map is under the `client` directory, whcih is a NextJS application. To start the front end application,
+The user facing map is under the `client` directory, which is a NextJS application. To start the front end application,
 follow the `README` within that folder.
 
 ## Contributing
