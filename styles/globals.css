@@ -24,15 +24,15 @@ body {
   box-sizing: border-box;
 }
 
-div.tooltip {		
+div.tooltip {
   position: absolute;
-  width: 220px;					
-  height: 60px;					
-  padding: 2px;				
-  font: 12px sans-serif;		
-  background: rgb(240, 100, 73);	
-  border: 0px;		
-  border-radius: 8px;			
+  width: 220px;
+  height: 60px;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: rgb(240, 100, 73);
+  border: 0px;
+  border-radius: 8px;
   pointer-events: none;
 }
 
@@ -50,13 +50,28 @@ p {
   line-height: 20px;
 }
 
-h1 {
+h1, h2, h3, h4 {
   font-family: proxima-nova, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 42px;
   line-height: 42px;
   letter-spacing: 0.05em;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-top: 18px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
 }
 
 /* Colors */
@@ -143,6 +158,7 @@ h1 {
 }
 
 .footer h2 {
+  font-weight: 400;
   margin-bottom: 30px;
 }
 
@@ -150,4 +166,12 @@ h1 {
   color: #fff;
   font-size: 18px;
   line-height: 28px;
+}
+
+.no-bullets {
+  list-style-type: none;
+}
+
+.no-indents {
+  padding-left: 0;
 }
