@@ -7,6 +7,4 @@ workflows:
       - heroku/deploy-via-git:
         filters:
           branches:
-            only:
-              - circleci
-              - staging
+            only: staging
