@@ -8,7 +8,7 @@ export default function BackButton({ text, className }) {
 
     return (
         <div className={ className }>
-            <span className={`back-button`} onClick={() => router.back()}>{ text }</span>
+            <span className={`back-button`} onClick={() => router.push('/')}>{ text }</span>
         </div>
     )
 }
