@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 import { useRouter } from 'next/router'
 import { regenCycle } from 'constants'
@@ -6,27 +8,44 @@ import { regenCycle } from 'constants'
 import SharedLayout from "components/SharedLayout";
 import PlaceholderText from "components/mock/Placeholder";
 import Breadcrumbs from "components/common/Breadcrumbs";
+import ReportMissingInfo from 'components/common/ReportMissingInfo'
+import StateUpdates from 'components/common/StateUpdates'
 
 export default function State() {
     const router = useRouter()
     const { state } = router.query
-
+    const stateCapitalized = state ? state[0].toUpperCase() + state.substr(1) : ''
+    const imageUrl = "https://via.placeholder.com/600x370"
     return (
         <SharedLayout>
             <Breadcrumbs currentPageTitle={ state } />
-            <h1>{ state }</h1>
-            <p>How does { state } measure up to supporting survivor wealth?</p>
+            <h1>{ stateCapitalized } Survivor Wealth Policy Report</h1>
+            <p>How does { stateCapitalized } measure up to supporting survivor wealth?</p>
             <div className="row">
-                <div className="col-3">
-                    <p>State goes here</p>
+                <div className="col-4">
+                    <img className="img-fluid" src={imageUrl} />
+                    <StateUpdates />
+                    <ReportMissingInfo />
+                    <ShareButtons />
                 </div>
-                <div className="col-9">
+                <div className="col-7">
                     <PlaceholderText />
                 </div>
             </div>
         </SharedLayout>
     )
 }
+
+const ShareButtons = () => (
+    <>
+        <button type="button" className="btn btn-sm btn-primary mr-2">
+            <FontAwesomeIcon icon={ faFacebook } className="mr-1" /> Share
+        </button>
+        <button type="button" className="btn btn-sm btn-primary">
+            <FontAwesomeIcon icon={ faTwitter } className="mr-1" /> Tweet
+        </button>
+    </>
+)
 
 // // This function gets called at build time
 // export async function getStaticPaths() {
