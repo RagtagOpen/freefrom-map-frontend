@@ -1,6 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 import { useRouter } from 'next/router'
 import { regenCycle } from 'constants'
@@ -9,6 +7,7 @@ import SharedLayout from "components/SharedLayout";
 import PlaceholderText from "components/mock/Placeholder";
 import Breadcrumbs from "components/common/Breadcrumbs";
 import ReportMissingInfo from 'components/common/ReportMissingInfo'
+import ShareButtons from 'components/common/ShareButtons'
 import StateUpdates from 'components/common/StateUpdates'
 
 export default function State() {
@@ -26,7 +25,7 @@ export default function State() {
                     <img className="img-fluid" src={imageUrl} />
                     <StateUpdates />
                     <ReportMissingInfo />
-                    <ShareButtons />
+                    <ShareButtons className='mb-5' />
                 </div>
                 <div className="col-12 col-md-7">
                     <PlaceholderText />
@@ -35,17 +34,6 @@ export default function State() {
         </SharedLayout>
     )
 }
-
-const ShareButtons = () => (
-    <div className="mb-5">
-        <button type="button" className="btn btn-sm btn-primary mr-2">
-            <FontAwesomeIcon icon={ faFacebook } className="mr-1" /> Share
-        </button>
-        <button type="button" className="btn btn-sm btn-primary">
-            <FontAwesomeIcon icon={ faTwitter } className="mr-1" /> Tweet
-        </button>
-    </div>
-)
 
 // // This function gets called at build time
 // export async function getStaticPaths() {
