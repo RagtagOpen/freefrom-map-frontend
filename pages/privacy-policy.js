@@ -1,7 +1,6 @@
 import React from 'react'
 import SharedLayout from 'components/SharedLayout'
 import BackButton from "components/navigation/BackButton";
-import PlaceholderText from "components/mock/Placeholder";
 
 export default function PrivacyPolicy() {
     return (
