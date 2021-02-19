@@ -8,7 +8,7 @@ const ShareButtons = ({ className }) => (
         <button type="button" className="btn btn-sm btn-primary mr-2">
             <FontAwesomeIcon icon={ faFacebook } className="mr-1" /> Share
         </button>
-        <button type="button" className="btn btn-sm btn-primary">
+        <button type="button" className="btn btn-sm btn-primary" style={{backgroundColor: '#1b95e0', borderColor: '#1b95e0'}}>
             <FontAwesomeIcon icon={ faTwitter } className="mr-1" /> Tweet
         </button>
     </div>
