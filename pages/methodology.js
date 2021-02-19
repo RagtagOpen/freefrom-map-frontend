@@ -1,6 +1,5 @@
 import SharedLayout from "components/SharedLayout";
 import BackButton from "components/navigation/BackButton";
-import PlaceholderText from "components/mock/Placeholder";
 import React from "react";
 
 export default function Methodology() {
