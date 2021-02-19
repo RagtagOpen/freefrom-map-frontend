@@ -22,13 +22,13 @@ export default function State() {
             <h1>{ stateCapitalized } Survivor Wealth Policy Report</h1>
             <p>How does { stateCapitalized } measure up to supporting survivor wealth?</p>
             <div className="row">
-                <div className="col-4">
+                <div className="col-12 col-md-4">
                     <img className="img-fluid" src={imageUrl} />
                     <StateUpdates />
                     <ReportMissingInfo />
                     <ShareButtons />
                 </div>
-                <div className="col-7">
+                <div className="col-12 col-md-7">
                     <PlaceholderText />
                 </div>
             </div>
@@ -37,14 +37,14 @@ export default function State() {
 }
 
 const ShareButtons = () => (
-    <>
+    <div className="mb-5">
         <button type="button" className="btn btn-sm btn-primary mr-2">
             <FontAwesomeIcon icon={ faFacebook } className="mr-1" /> Share
         </button>
         <button type="button" className="btn btn-sm btn-primary">
             <FontAwesomeIcon icon={ faTwitter } className="mr-1" /> Tweet
         </button>
-    </>
+    </div>
 )
 
 // // This function gets called at build time
