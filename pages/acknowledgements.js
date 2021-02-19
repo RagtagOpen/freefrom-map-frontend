@@ -9,7 +9,7 @@ export default function Acknowledgements() {
             <BackButton className="mt-3 mb-2" />
             <h1>Acknowledgements</h1>
             <p>We want to take a moment to acknowledge that the Policy Map and Scorecard could not have been made possible without the support and contributions made by the law firms, research volunteers and all those involved in this project! We thank you for all of your work and contribution to making this tool a success!</p>
-            <h4>Pro Bono Partners</h4>
+            <h2>Pro Bono Partners</h2>
             <ul class="no-bullets no-indents">
               <li>Alston & Bird, LLP</li>
               <li>DLA Piper, LLP</li>
@@ -20,7 +20,7 @@ export default function Acknowledgements() {
               <li>Seyfarth Shaw, LLP</li>
               <li>Womble Bond Dickinson (US) LLP</li>
             </ul>
-            <h4>Legal Research Volunteers</h4>
+            <h2>Legal Research Volunteers</h2>
             <ul class="no-bullets no-indents">
               <li>Nick Beard </li>
               <li>Tracy Boak </li>
@@ -35,11 +35,11 @@ export default function Acknowledgements() {
               <li>Brooke Thacher </li>
               <li>Monica Towarnicky</li>
             </ul>
-            <h4>Consultant</h4>
+            <h2>Consultant</h2>
             <ul class="no-bullets no-indents">
               <li>Priyamvada Kumar</li>
             </ul>
-            <h4>Ragtag.org Tech Volunteers</h4>
+            <h2>Ragtag.org Tech Volunteers</h2>
             <ul class="no-bullets no-indents">
               <li>Jenn Czeck</li>
               <li>Emily Giurleo</li>
@@ -50,13 +50,13 @@ export default function Acknowledgements() {
               <li>Grant Stromgren</li>
               <li>Thaydryan Sweeney</li>
             </ul>
-            <h4>FreeFrom Project Leads</h4>
+            <h2>FreeFrom Project Leads</h2>
             <ul class="no-bullets no-indents">
               <li>Sabrina Hamm, Policy Specialist</li>
               <li>Amy Durrence, Director of Systems Change Initiatives</li>
               <li>Sonya Passi, CEO & Founder</li>
             </ul>
-            <h4>FreeFrom Outreach Team</h4>
+            <h2>FreeFrom Outreach Team</h2>
             <ul class="no-bullets no-indents">
               <li>Tannia Ventura</li>
               <li>Chriseithia Collins</li>
