@@ -9,8 +9,9 @@ class UsMap extends Component {
 
         this.stateScores = stateScores;
         this.usData = usData;
-        this.height = 500;
-        this.width = 960;
+        // FIXME: resize map on page resize?
+        this.width = window.innerWidth * 0.75 - 40;
+        this.height = this.width * 0.55;
         // I created this color scale using this: https://pinetools.com/lighten-color
         // I started with #32B4B4 and lightened by 20% and used that as the next step.
         // I continued to put the output color back into the 20% lightner until done
@@ -42,7 +43,7 @@ class UsMap extends Component {
 
     renderMap() {
 
-        // a function to determine if the mouse is on the tooltip so we can 
+        // a function to determine if the mouse is on the tooltip so we can
         // avoid redrawing it until they aren't use it (prevents states "under"
         // the tool tip from triggering and redraw while card is in use)
         function mouseInsideTooltip(location) {
@@ -70,7 +71,7 @@ class UsMap extends Component {
             .geo
             .albersUsa()
             .translate([width / 2, height / 2])
-            .scale([1000]);
+            .scale([1200]);
 
         let path = d3
             .geo
@@ -103,7 +104,7 @@ class UsMap extends Component {
         let tooltip = d3
             .select("body")
             .append("div")
-            .attr("class", "tooltip")				
+            .attr("class", "tooltip")
             .style("opacity", 0)
 
         // div is finished, add a text
@@ -122,17 +123,19 @@ class UsMap extends Component {
                 // decreases opacity slightly to provide feedback of selection
                 d3.select(this)
                     .style({opacity: '0.75'})
-      
+
                 // make the card visible
                 tooltip
                     .style("opacity", 1)
                     .style("left", (d3.event.pageX - 40) + "px")
                     .style("top", (d3.event.pageY - 40) + "px")
             }
-            
+
         }).on('mouseout', function () {
-            // returns opacity to normal when mouse leaves
+            // returns opacity to normal (and hide tooltip) when mouse leaves
             d3.select(this).style({ opacity: '1.0' });
+            tooltip
+                .style("opacity", 0)
             // mouseMOVE - continuous version of mouseOVER
         }).on('mousemove', function() {
             // will finish soon
