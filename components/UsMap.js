@@ -46,7 +46,8 @@ class UsMap extends Component {
         // a function to determine if the mouse is on the tooltip so we can
         // avoid redrawing it until they aren't use it (prevents states "under"
         // the tool tip from triggering and redraw while card is in use)
-        function mouseInsideTooltip(location) {
+        function mouseInsideTooltip() {
+            const location = document.getElementById('tooltip').getBoundingClientRect()
             let x = d3.event.pageX;
             let y = d3.event.pageY;
             // in the left/right bounds?
@@ -115,10 +116,8 @@ class UsMap extends Component {
         // mouseOVER, user scrolls onto
         svg.on('mouseover', function () {
             // on rollover, note the location of the mouse
-            let tooltipDimensions = document.getElementById('tooltip').getBoundingClientRect()
             // only redraw the tooltip if we're NOT in the bounds of a tool tip card
-            let mouseInHovercard = mouseInsideTooltip(tooltipDimensions);
-            if(mouseInHovercard == false) {
+            if(!mouseInsideTooltip()) {
 
                 // decreases opacity slightly to provide feedback of selection
                 d3.select(this)
@@ -132,10 +131,14 @@ class UsMap extends Component {
             }
 
         }).on('mouseout', function () {
-            // returns opacity to normal (and hide tooltip) when mouse leaves
+            // returns opacity to normal when mouse leaves
             d3.select(this).style({ opacity: '1.0' });
-            tooltip
-                .style("opacity", 0)
+            // Hide tooltip if mouse outside tooltip (covers the case where the
+            // mouse leaves the svg boundary).
+            if(!mouseInsideTooltip()) {
+                tooltip
+                    .style("opacity", 0)
+            }
             // mouseMOVE - continuous version of mouseOVER
         }).on('mousemove', function() {
             // will finish soon
@@ -147,10 +150,8 @@ class UsMap extends Component {
             //   tooltip
             //     .style("opacity", 0)
             // }
-            let tooltipDimensions = document.getElementById('tooltip').getBoundingClientRect()
             // only redraw the tooltip if we're NOT in the bounds of a tool tip card
-            let mouseInHovercard = mouseInsideTooltip(tooltipDimensions);
-            console.log(mouseInHovercard);
+            console.log(mouseInsideTooltip());
             // click events
         }).on("click", function (d) {
             // whatever redirect we want to do goes here
