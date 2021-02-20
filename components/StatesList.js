@@ -27,14 +27,21 @@ class StatesList extends Component {
                     value={search}
                 />
                 <div className='mt-1' style={{height: '500px', overflowY: 'scroll'}}>
-                    <ul style={{border: '1px solid #DDDDDD', backgroundColor: 'white', padding: 0}}>
-                        {visibleStates.map(state =>
-                            <>
-                                <StateCard key={state.state} score={state.score} state={state.state} />
-                                <hr style={{margin: 0, width: '95%'}}/>
-                            </>
-                        )}
-                    </ul>
+                    {visibleStates.length > 0
+                        ? <ul style={{border: '1px solid #DDDDDD', backgroundColor: 'white', padding: 0}}>
+                            {visibleStates.map(state => (
+                                <>
+                                    <StateCard
+                                        score={state.score}
+                                        state={state.state} />
+                                    <hr style={{margin: 0, width: '95%'}}/>
+                                </>
+                            ))}
+                        </ul>
+                        : <p className='mt-2'>
+                            No states found for search term.
+                        </p>
+                    }
                 </div>
             </>
         )
