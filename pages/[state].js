@@ -6,21 +6,28 @@ import { regenCycle } from 'constants'
 import SharedLayout from "components/SharedLayout";
 import PlaceholderText from "components/mock/Placeholder";
 import Breadcrumbs from "components/common/Breadcrumbs";
+import ReportMissingInfo from 'components/common/ReportMissingInfo'
+import ShareButtons from 'components/common/ShareButtons'
+import StateUpdates from 'components/common/StateUpdates'
 
 export default function State() {
     const router = useRouter()
     const { state } = router.query
-
+    const stateCapitalized = state ? state[0].toUpperCase() + state.substr(1) : ''
+    const imageUrl = "https://via.placeholder.com/600x370"
     return (
         <SharedLayout>
             <Breadcrumbs currentPageTitle={ state } />
-            <h1>{ state }</h1>
-            <p>How does { state } measure up to supporting survivor wealth?</p>
+            <h1>{ stateCapitalized } Survivor Wealth Policy Report</h1>
+            <p>How does { stateCapitalized } measure up to supporting survivor wealth?</p>
             <div className="row">
-                <div className="col-3">
-                    <p>State goes here</p>
+                <div className="col-12 col-md-4">
+                    <img className="img-fluid" src={imageUrl} />
+                    <StateUpdates />
+                    <ReportMissingInfo />
+                    <ShareButtons className="mb-5" />
                 </div>
-                <div className="col-9">
+                <div className="col-12 col-md-7">
                     <PlaceholderText />
                 </div>
             </div>
