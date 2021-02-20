@@ -23,12 +23,12 @@ class StatesList extends Component {
                 <input
                     placeholder="Search for a state..."
                     onChange={this._onChangeSearch}
-                    style={{height: '60px', width: '100%'}}
+                    style={{height: '60px', width: '100%', paddingLeft: 7}}
                     value={search}
                 />
                 <div className='mt-1' style={{height: '500px', overflowY: 'scroll'}}>
                     {visibleStates.length > 0
-                        ? <ul style={{border: '1px solid #DDDDDD', backgroundColor: 'white', padding: 0}}>
+                        ? <ul style={{border: '1px solid #DDDDDD', backgroundColor: 'white', padding: 7}}>
                             {visibleStates.map(state => (
                                 <>
                                     <StateCard
