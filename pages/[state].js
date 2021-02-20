@@ -25,7 +25,7 @@ export default function State() {
                     <img className="img-fluid" src={imageUrl} />
                     <StateUpdates />
                     <ReportMissingInfo />
-                    <ShareButtons className='mb-5' />
+                    <ShareButtons className="mb-5" />
                 </div>
                 <div className="col-12 col-md-7">
                     <PlaceholderText />

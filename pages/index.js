@@ -10,10 +10,10 @@ export default function Home() {
     return (
         <SharedLayout>
             <UsMap />
-            <div className='d-flex'>
+            <div className="d-flex">
                 <StateUpdates />
                 <ReportMissingInfo />
-                <ShareButtons />
+                <ShareButtons className="ml-3" />
             </div>
         </SharedLayout>
     )
