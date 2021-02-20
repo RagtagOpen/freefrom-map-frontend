@@ -88,8 +88,7 @@ class UsMap extends Component {
         let svg = d3
             .select("#us-map")
             .append("svg")
-            .attr("width", width)
-            .attr("height", height)
+            .attr("viewBox", "0 0 " + width + " " + height)
             .selectAll("path")
             .data(usData.features)
             .enter()
