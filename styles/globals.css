@@ -195,7 +195,7 @@ h4 {
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
-.overall {
+.scorecard-container > .overall {
     display: flex;
     align-items: center;
     font-size: 1.2em;

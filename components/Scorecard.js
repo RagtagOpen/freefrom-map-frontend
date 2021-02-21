@@ -7,11 +7,9 @@ import ScoreLabel from './common/ScoreLabel'
 
 const Scorecard = ({categories, overallScore}) => (
     <div className='scorecard-container'>
-        <div className='mt-5 mb-3'>
-            <div className='overall'>
-                <span className='mr-2'>Overall:</span>
-                <ScoreLabel score={overallScore}/>
-            </div>
+        <div className='overall mt-5 mb-3'>
+            <span className='label mr-2'>Overall:</span>
+            <ScoreLabel score={overallScore}/>
         </div>
         <p><em>This state prioritizes...</em></p>
         <div className="scorecard accordion" id="scorecard">
@@ -23,7 +21,8 @@ const Scorecard = ({categories, overallScore}) => (
 )
 
 Scorecard.propTypes = {
-    categories: PropTypes.array
+    categories: PropTypes.array,
+    overallScore: PropTypes.number
 }
 
 const Category = ({ category }) => {
