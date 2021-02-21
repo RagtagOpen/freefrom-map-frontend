@@ -195,6 +195,14 @@ h4 {
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
+.overall {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
 .guide-heading {
     text-transform: uppercase;
 }
@@ -207,7 +215,7 @@ h4 {
 
 .checklist-item {
     display: flex;
-    align-items: center
+    align-items: center;
 }
 
 .score-label {
