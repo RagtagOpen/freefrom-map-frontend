@@ -30,7 +30,7 @@ const Category = ({ category }) => {
     const collapseId = `collapse-${category.id}`
     const headingId = `heading-${category.id}`
     return (
-        <div className="category" style={{borderTop: '1px solid black'}}>
+        <div className="category accordion-i" style={{borderTop: '1px solid black'}}>
             <div id={headingId}
                 className="pt-3 pb-3"
                 type="button"
@@ -48,11 +48,11 @@ const Category = ({ category }) => {
                 </h2>
             </div>
             <div id={collapseId}
-                className="collapse pb-3"
+                className="collapse"
                 aria-labelledby={headingId}
                 data-parent="#scorecard"
             >
-                <div className="p-0 card-body small font-italic">
+                <div className="p-0 pb-3 card-body small font-italic">
                     {category.help_text}
                 </div>
             </div>
