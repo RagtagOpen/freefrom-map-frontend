@@ -4,18 +4,38 @@ import { useRouter } from 'next/router'
 import { regenCycle } from 'constants'
 
 import SharedLayout from "components/SharedLayout";
-import PlaceholderText from "components/mock/Placeholder";
 import Breadcrumbs from "components/common/Breadcrumbs";
 import ReportMissingInfo from 'components/common/ReportMissingInfo'
+import ScoreLabel from 'components/common/ScoreLabel'
+import ScoringGuide from 'components/common/ScoringGuide'
 import ShareButtons from 'components/common/ShareButtons'
 import StateUpdates from 'components/common/StateUpdates'
 import Glossary from 'components/common/Glossary';
+import ModalButton from "components/modal/ModalButton";
+import Scorecard from 'components/Scorecard';
 
 export default function State() {
     const router = useRouter()
     const { state } = router.query
     const stateCapitalized = state ? state[0].toUpperCase() + state.substr(1) : ''
     const imageUrl = "https://via.placeholder.com/600x370"
+    // TODO: Replace with data from back end.
+    const categories = [
+        {
+            active: true,
+            deactivated_at: null,
+            help_text: "We cannot begin to address economic abuse (which occurs in 99% of intimate partner violence cases) without properly defining it in state laws.",
+            id: 1,
+            title: "Economic Abuse Defined in State Laws"
+        },
+        {
+            active: true,
+            deactivated_at: null,
+            help_text: "Survivors in the U.S. lose an estimated 8 million days of paid work each year dealing with the consequences of the intimate partner violence they’ve experienced. Paid and protected leave ensures survivors do not jeopardize their financial security or risk unemployment by taking time off.",
+            id: 2,
+            title: "Paid and Protective Leave"
+        }
+    ]
     return (
         <SharedLayout>
             <Breadcrumbs currentPageTitle={ state } />
@@ -29,9 +49,15 @@ export default function State() {
                     <ShareButtons className="mb-5" />
                 </div>
                 <div className="col-12 col-md-7">
-                    <PlaceholderText />
+                    <div className="float-right">
+                        {/* FIXME: add url to report */}
+                        <ModalButton href="#" text="Download report" />
+                    </div>
+                    <Scorecard categories={categories} overallScore={2} />
                     <h2>Understanding this report</h2>
+                    <ScoringGuide />
                     <Glossary />
+                    <h2>Take action</h2>
                 </div>
             </div>
         </SharedLayout>

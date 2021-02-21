@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import ScoreLabel from 'components/common/ScoreLabel'
 import ModalButton from "./modal/ModalButton"
 import stateScores from "../public/data/state-scores.json"
 
@@ -54,9 +55,7 @@ const StateCard = ({state, score}) => (
         <div className="card-body p-2 mt-2">
             <h5 className="card-title" style={{textTransform: 'uppercase'}}>{state}</h5>
             <h6 className="card-subtitle mb-2 text-muted">Rank: {score}st</h6>
-            <div style={{borderRadius: '5px', width: 'fit-content', fontSize: '0.8em', textTransform: 'uppercase', backgroundColor: '#F29C9A', padding: '5px 7px'}}>
-                little accountability
-            </div>
+            <ScoreLabel score={score} />
             <p className="card-text mb-1 font-weight-lighter font-italic" style={{fontSize: '0.7em'}}>
                 This state does not prioritize...
             </p>
