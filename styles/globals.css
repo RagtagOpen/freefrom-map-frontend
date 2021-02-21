@@ -90,7 +90,12 @@ h4 {
   padding-top: 95px; /* sticky navbar */
   display: flex;
   flex-direction: column;
-  height: 100%;
+}
+
+.shared-layout > .container-fluid {
+  background-color: #FDFAF9;
+  /* Ensure a min height for the container that scales to the viewport */
+  min-height: calc(100vh - 300px);
 }
 
 .shared-layout > .container-fluid {

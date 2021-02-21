@@ -253,7 +253,7 @@ export default function Methodology() {
             <h2>How we interpreted and assigned a policy category score</h2>
             <p>Every state statute was interpreted to determine and measure the extent to which they aligned with the Model Policy characteristics as outlined in each policy category. Each policy category score was tabulated based on the number of possible Model Policy characteristics. However, in any case where a category has an Adverse Policy characteristic, the total possible number of Model Policy characteristics were negated and the category was assigned an Adverse Policy score. Adverse policy characteristics are parts of the policy that can be harmful to survivors and / or drastically reduce the accessibility of the respective protections, resources or services.</p>
             <p>Below is the grading criteria for each policy category:</p>
-            <ul class="no-bullets">
+            <ul className="no-bullets">
               <li><em>Model policy</em> - This policy has all of our model policy characteristics</li>
               <li><em>Strong policy</em> - This policy includes a majority of our model policy characteristics</li>
               <li><em>Promising policy</em> - This policy includes some of our Model Policy characteristics, but needs improvement</li>
@@ -261,13 +261,13 @@ export default function Methodology() {
               <li><em>No policy</em> - This state does not have this policy</li>
             </ul>
             <p>For each characteristic, states were given the following:</p>
-            <ul class="no-bullets">
+            <ul className="no-bullets">
             <li><img src="images/criteria-met.png" alt="Criteria Met"/> This state’s policy includes this characteristic</li>
             <li><img src="images/criteria-maybe-met.png" alt="Criteria Maybe Met"/> It is unclear whether this state’s policy includes this characteristic</li>
             <li><img src="images/criteria-not-met.png" alt="Criteria Not Met"/> This state’s policy does not include this characteristic</li>
             </ul>
             <p>States were given recognition for innovative policy ideas and other policies that were similar to the policy categories but not quite aligned with the aspects in the scorecard. However, these items did not factor in the score.</p>
-            <ul class="no-bullets">
+            <ul className="no-bullets">
               <li><img src="images/innovative-idea.png" alt="Innovative Idea"/> Innovative idea: Thinking outside the box on policy solutions</li>
               <li><img src="images/honorable-mention.png" alt="Honorable Mention"/> Honorable mention: A promising policy that doesn’t quite fit within the listed policy categories and / or characteristics.</li>
             </ul>
@@ -275,7 +275,7 @@ export default function Methodology() {
             <h2>How we assigned an overall state score</h2>
             <p>The overall state score was calculated based on the total number of Model Policy characteristics present in the state across all policy categories excluding any of those in a policy category scored as Adverse.</p>
             <p>We assigned each state an overall score based on the following:</p>
-            <ul class="no-bullets">
+            <ul className="no-bullets">
               <li><strong>Model state</strong> (45-65 characteristics, ~ 69% to 100%): This state prioritizes survivors’ financial security across all policy categories and is a model for other states to follow!</li>
               <li><strong>Survivor wealth friendly state</strong> (27-44 characteristics, ~41% to 68%): This state is prioritizing survivors’ financial security in a broad range of policies and is on its way to becoming a Model State!</li>
               <li><strong>Taking steps to becoming a survivor friendly state</strong> (14-25 characteristics, ~21% to 38%): This state considers survivors’ financial security in multiple policies, and is making progress towards becoming a survivor wealth friendly state.</li>
@@ -291,7 +291,7 @@ export default function Methodology() {
             <p>We hope Policy Map and Scorecard not only brings greater insight on the current landscape of survivor wealth policies across the nation, but also sparks policy change and innovation in the coming years. With this, we will continue to update and add to this existing tool as new legislation is passed and innovate policies are made.</p>
 
             <hr></hr>
-            <div class="footnotes">
+            <div className="footnotes">
               <sup id="fn1">1. CDC, Costs of Intimate Partner Violence Against Women in the United States (2003). <a href="https://www.cdc.gov/violenceprevention/pdf/IPVBook-a.pdf" target="_blank">https://www.cdc.gov/violenceprevention/pdf/IPVBook-a.pdf</a> <a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
               <br/>
               <sup id="fn2">2. FreeFrom, Survivors Know Best: How to Disrupt Intimate Partner Violence During COVID-19 and Beyond 2020. <a href="https://static1.squarespace.com/static/56a24df4d8af10a5072bed7c/t/5f358b263ca8db1d891a3fc9/1597344678710/Survivors+Know+Best+Report.pdf" target="_blank">https://static1.squarespace.com/static/56a24df4d8af10a5072bed7c/t/5f358b263ca8db1d891a3fc9/1597344678710/Survivors+Know+Best+Report.pdf</a> <a href="#ref2" title="Jump back to footnote 2 in the text.">↩</a></sup>
