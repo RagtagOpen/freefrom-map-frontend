@@ -9,6 +9,7 @@ import Breadcrumbs from "components/common/Breadcrumbs";
 import ReportMissingInfo from 'components/common/ReportMissingInfo'
 import ShareButtons from 'components/common/ShareButtons'
 import StateUpdates from 'components/common/StateUpdates'
+import Glossary from 'components/common/Glossary';
 
 export default function State() {
     const router = useRouter()
@@ -29,6 +30,8 @@ export default function State() {
                 </div>
                 <div className="col-12 col-md-7">
                     <PlaceholderText />
+                    <h2>Understanding this report</h2>
+                    <Glossary />
                 </div>
             </div>
         </SharedLayout>
