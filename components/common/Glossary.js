@@ -102,7 +102,7 @@ const Glossary = () => (
       the person who caused the injury in court to recover some of the costs the
       injury caused. Some examples of costs that can be covered in a tort case
       include medical bills, damaged property, mental health costs, and
-      attorneys’ fees.{" "}
+      attorneys’ fees.
     </p>
 
     <p>
