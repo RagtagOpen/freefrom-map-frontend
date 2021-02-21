@@ -9,8 +9,9 @@ class UsMap extends Component {
 
         this.stateScores = stateScores;
         this.usData = usData;
-        this.height = 500;
-        this.width = 960;
+        // FIXME: resize map on page resize?
+        this.width = window.innerWidth * 0.75 - 40;
+        this.height = this.width * 0.55;
         // I created this color scale using this: https://pinetools.com/lighten-color
         // I started with #32B4B4 and lightened by 20% and used that as the next step.
         // I continued to put the output color back into the 20% lightner until done
@@ -42,10 +43,11 @@ class UsMap extends Component {
 
     renderMap() {
 
-        // a function to determine if the mouse is on the tooltip so we can 
+        // a function to determine if the mouse is on the tooltip so we can
         // avoid redrawing it until they aren't use it (prevents states "under"
         // the tool tip from triggering and redraw while card is in use)
-        function mouseInsideTooltip(location) {
+        function mouseInsideTooltip() {
+            const location = document.getElementById('tooltip').getBoundingClientRect()
             let x = d3.event.pageX;
             let y = d3.event.pageY;
             // in the left/right bounds?
@@ -70,7 +72,7 @@ class UsMap extends Component {
             .geo
             .albersUsa()
             .translate([width / 2, height / 2])
-            .scale([1000]);
+            .scale([1200]);
 
         let path = d3
             .geo
@@ -86,8 +88,7 @@ class UsMap extends Component {
         let svg = d3
             .select("#us-map")
             .append("svg")
-            .attr("width", width)
-            .attr("height", height)
+            .attr("viewBox", "0 0 " + width + " " + height)
             .selectAll("path")
             .data(usData.features)
             .enter()
@@ -103,7 +104,7 @@ class UsMap extends Component {
         let tooltip = d3
             .select("body")
             .append("div")
-            .attr("class", "tooltip")				
+            .attr("class", "tooltip")
             .style("opacity", 0)
 
         // div is finished, add a text
@@ -114,25 +115,29 @@ class UsMap extends Component {
         // mouseOVER, user scrolls onto
         svg.on('mouseover', function () {
             // on rollover, note the location of the mouse
-            let tooltipDimensions = document.getElementById('tooltip').getBoundingClientRect()
             // only redraw the tooltip if we're NOT in the bounds of a tool tip card
-            let mouseInHovercard = mouseInsideTooltip(tooltipDimensions);
-            if(mouseInHovercard == false) {
+            if(!mouseInsideTooltip()) {
 
                 // decreases opacity slightly to provide feedback of selection
                 d3.select(this)
                     .style({opacity: '0.75'})
-      
+
                 // make the card visible
                 tooltip
                     .style("opacity", 1)
                     .style("left", (d3.event.pageX - 40) + "px")
                     .style("top", (d3.event.pageY - 40) + "px")
             }
-            
+
         }).on('mouseout', function () {
             // returns opacity to normal when mouse leaves
             d3.select(this).style({ opacity: '1.0' });
+            // Hide tooltip if mouse outside tooltip (covers the case where the
+            // mouse leaves the svg boundary).
+            if(!mouseInsideTooltip()) {
+                tooltip
+                    .style("opacity", 0)
+            }
             // mouseMOVE - continuous version of mouseOVER
         }).on('mousemove', function() {
             // will finish soon
@@ -144,10 +149,8 @@ class UsMap extends Component {
             //   tooltip
             //     .style("opacity", 0)
             // }
-            let tooltipDimensions = document.getElementById('tooltip').getBoundingClientRect()
             // only redraw the tooltip if we're NOT in the bounds of a tool tip card
-            let mouseInHovercard = mouseInsideTooltip(tooltipDimensions);
-            console.log(mouseInHovercard);
+            console.log(mouseInsideTooltip());
             // click events
         }).on("click", function (d) {
             // whatever redirect we want to do goes here
