@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import styles from './Common.module.css';
 
 const links = [
-    {path: "/contact-your-legislators", label: "Contact Your Legislators"},
+    {path: "/contact-legislators", label: "Contact Your Legislators"},
     {path: "/survivor-power", label: "Build Collective Survivor Power"},
     {path: "/partner-with-freefrom", label: "Partner with Freefrom"},
     {path: "/policy-ideas", label: "Share Your Policy Ideas"}
