@@ -11,10 +11,11 @@ import StatesList from 'components/StatesList'
 import UsMap from 'components/UsMap'
 
 export default function Home() {
+    // On screens smaller than medium, only show one of the map or list.
     const [visibleComponent, setVisibleComponent] = useState('list');
     const showList = visibleComponent === 'list'
-    const mapClass = showList ? ' d-none d-sm-block' : ''
-    const listClass = showList ? '' : ' d-none d-sm-block'
+    const mapClass = showList ? ' d-none d-md-block' : ''
+    const listClass = showList ? '' : ' d-none d-md-block'
     return (
         <SharedLayout>
             <div className="row">
@@ -26,7 +27,8 @@ export default function Home() {
                         How well does your state support survivors&apos; financial security?
                     </p>
                 </div>
-                <div className='col-12 d-block d-sm-none mb-3'>
+                {/* Show toggle button on smaller than medium screens */}
+                <div className='col-12 d-sm-block d-md-none mb-3'>
                     <button
                         className='orange-button btn btn-primary'
                         onClick={() => setVisibleComponent(showList ? 'map' : 'list')}>
@@ -34,10 +36,10 @@ export default function Home() {
                         Switch to {showList ? 'map' : 'list'} view
                     </button>
                 </div>
-                <div className={`col-12 col-md-3${listClass}`}>
+                <div className={`col-sm-12 col-md-3${listClass}`}>
                     <StatesList />
                 </div>
-                <div className={`col-12 col-md-9${mapClass}`}>
+                <div className={`col-sm-12 col-md-9${mapClass}`}>
                     <UsMap />
                 </div>
                 <div className={`col-12 mb-4${mapClass}`}>
