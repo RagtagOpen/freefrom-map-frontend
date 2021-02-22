@@ -13,7 +13,7 @@ const ReportMissingInfo = () => (
         <form>
             <Input name="what-is-outdated" required={ true } label="What information is missing or outdated?
   (Please provide as much information as you can.)"/>
-            <Input name="email" label="Your email" />
+            <Input name="email" label="Your email (optional)" />
             <Submit />
         </form>
     </Modal>
