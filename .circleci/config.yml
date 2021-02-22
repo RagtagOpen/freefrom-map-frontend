@@ -8,3 +8,6 @@ workflows:
           filters:
             branches:
               only: staging
+          # Force push to heroku to account for any differences in heroku's
+          # local repo.
+          force: true
