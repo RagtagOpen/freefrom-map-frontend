@@ -209,6 +209,7 @@ h4 {
     margin-bottom: 0px;
 }
 
+/* FIXME: Consolidate state page modal button css with take action css */
 .state-page .understanding-report .modal-button {
     font-family: 'Roboto';
     font-weight: 700;
