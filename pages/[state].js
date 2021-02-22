@@ -62,7 +62,7 @@ export default function State() {
                             <Glossary />
                             <ModalButton href="/methodology" text="Full methodology" />
                         </div>
-                        <TakeAction />
+                        <TakeAction showPartnerLink />
                     </div>
                 </div>
             </div>
