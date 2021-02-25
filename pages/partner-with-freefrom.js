@@ -17,7 +17,6 @@ import TakeAction from "components/common/TakeAction";
 import { states } from 'constants/forms';
 
 export default function PartnerWithFreefrom() {
-
     return (
         <div>
             <Head>
@@ -28,11 +27,24 @@ export default function PartnerWithFreefrom() {
                 <h1>Partner with FreeFrom</h1>
                 <p>Is your organization interested in partnering with FreeFrom? Please fill out the following information and we will get back to you as soon as possible.</p>
                 <Formik
-                    initialValues={{ name: "", email: "" }}
+                    initialValues={{}}
                     onSubmit={async values => {
-                        console.log(values)
-                        // await new Promise(resolve => setTimeout(resolve, 500));
-                        // alert(JSON.stringify(values, null, 2));
+                        // FIXME: CORS issue!
+                        const res = await fetch(
+                            // FIXME: use process.env.API_ENDPOINT
+                            `http://localhost:5000/forms/partner_with_freefrom`,
+                            {
+                                body: JSON.stringify(values),
+                                headers: {
+                                    'Access-Control-Allow-Origin': '*',
+                                    'Authorization': `Bearer ${'my_token'}`,
+                                    'Content-Type': 'application/json'
+                                },
+                                method: 'POST'
+                            }
+                        )
+                        const result = await res.json()
+                        console.log(result)
                     }}
                 >
                     <Form className="col-12 col-lg-8 mb-5">
