@@ -5,6 +5,7 @@ import BackButton from "components/navigation/BackButton";
 import { site } from "constants/index"
 import SharedLayout from "components/SharedLayout";
 
+import Form from "components/forms/Form";
 import Input from "components/forms/Input";
 import Select from "components/forms/Select";
 import Checkbox from "components/forms/Checkbox";
@@ -27,7 +28,7 @@ export default function BuildCollectiveSurvivorPower() {
                 <h1>Build Collective Survivor Power</h1>
                 <p>Survivors are often left out of the policy-making process, even when the policies being considered will directly impact our lives. At FreeFrom, we want to change that! We are working to create spaces and materials to support survivors who want to play an active role in creating and advocating for policies in their state that will improve their lives and the lives of their families.</p>
                 <p>Are you a survivor interested in being more involved in policy advocacy in your state? If so, please take a few moments to fill out this information and we will get back to you as soon as possible.</p>
-                <form className="col-12 col-lg-8 mb-5">
+                <Form className="col-12 col-lg-8 mb-5" path="build_collective_survivor_power">
                     <Input label="Your name" name="name" required={ true } />
                     <Input label="Your pronouns" name="pronouns" required={ true } />
                     <div className="form-group">
@@ -49,7 +50,7 @@ export default function BuildCollectiveSurvivorPower() {
                     <Input label="Your email" name="email" type="email" />
                     <p><em>To contact FreeFrom, please email us at <a href="mailto:info@freefrom.org">info@freefrom.org</a>.</em></p>
                     <Submit />
-                </form>
+                </Form>
 
                 <TakeAction />
             </SharedLayout>
