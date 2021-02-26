@@ -3,13 +3,12 @@ import React from 'react'
 import ReportMissingInfo from 'components/common/ReportMissingInfo'
 import ShareButtons from 'components/common/ShareButtons'
 import StateUpdates from 'components/common/StateUpdates'
-import PlaceholderText from 'components/mock/Placeholder'
 import SharedLayout from 'components/SharedLayout'
 import StatesList from 'components/StatesList'
 import UsMap from 'components/UsMap'
 import ModalButton from 'components/modal/ModalButton'
 
-export default function Home() {
+function Home({ states }) {
     return (
         <SharedLayout>
             <div className="row">
@@ -22,10 +21,10 @@ export default function Home() {
                     </p>
                 </div>
                 <div className="col-12 col-md-3">
-                    <StatesList />
+                    <StatesList states={states} />
                 </div>
                 <div className="col-12 col-md-9">
-                    <UsMap />
+                    <UsMap states={states} />
                 </div>
                 <div className='col-12 mb-4'>
                     <div className='float-right'>
@@ -75,3 +74,16 @@ export default function Home() {
         </SharedLayout>
     )
 }
+
+export async function getStaticProps() {
+    // FIXME: Use process.env.API_ENDPOINT
+    const res = await fetch('http://localhost:5000/states')
+    const states = await res.json()
+    return {
+        props: {
+            states,
+        },
+    }
+}
+
+export default Home

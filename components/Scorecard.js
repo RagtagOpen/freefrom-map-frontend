@@ -5,16 +5,16 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 import ScoreLabel from './common/ScoreLabel'
 
-const Scorecard = ({categories, overallScore}) => (
+const Scorecard = ({categories, stateData}) => (
     <div className='scorecard-container'>
         <div className='overall mt-5 mb-3'>
             <span className='label mr-2'>Overall:</span>
-            <ScoreLabel score={overallScore}/>
+            <ScoreLabel score={stateData.grade.grade}/>
         </div>
         <p><em>This state prioritizes...</em></p>
         <div className="scorecard accordion" id="scorecard">
             {categories.map(category => (
-                <Category category={category} key={category.id} />
+                <Category category={category} key={category.id} stateData={stateData} />
             ))}
         </div>
     </div>
@@ -22,10 +22,12 @@ const Scorecard = ({categories, overallScore}) => (
 
 Scorecard.propTypes = {
     categories: PropTypes.array,
-    overallScore: PropTypes.number
+    overallScore: PropTypes.number,
+    stateData: PropTypes.object // FIXME
 }
 
-const Category = ({ category }) => {
+const Category = ({ category, stateData }) => {
+    const categoryScore = stateData.category_grades.find(c => c.category_id === category.id) || {}
     const collapseId = `collapse-${category.id}`
     const headingId = `heading-${category.id}`
     return (
@@ -41,7 +43,7 @@ const Category = ({ category }) => {
                 <h2 className="m-0" style={{textTransform: 'uppercase', fontSize: '0.75em'}}>
                     {category.title}
                     <div className="float-right">
-                        <span className='mr-3'><ScoreLabel score={2}/></span>
+                        <span className='mr-3'><ScoreLabel score={categoryScore.grade}/></span>
                         <FontAwesomeIcon className='fa-2x' icon={ faCaretDown } />
                     </div>
                 </h2>
