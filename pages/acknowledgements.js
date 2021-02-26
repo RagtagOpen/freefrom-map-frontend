@@ -47,6 +47,7 @@ export default function Acknowledgements() {
               <li>Pratap Jayaram</li>
               <li>Danny Kim</li>
               <li>Brittany Lau</li>
+              <li>Landon Reed</li>
               <li>Grant Stromgren</li>
               <li>Thaydryan Sweeney</li>
             </ul>
