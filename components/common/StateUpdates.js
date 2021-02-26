@@ -13,11 +13,13 @@ const StateUpdates = () => (
             We'll be updating our mapping tool as states pass new policies. Sign up below and we'll send you an email when the state(s) you select passes a policy that impacts survivors' financial security.
         </p>
         {/* FIXME: Form.js component needs to be hooked to mailchimp */}
-        <Form mailchimp>
-            <Input name="email" label="Your email" required />
-            <p>Lorem ipsum states list</p>
-            <Submit />
-        </Form>
+        <Form mailchimp form={() => (
+            <form>
+                <Input name="email" label="Your email" required />
+                <p>Lorem ipsum states list</p>
+                <Submit />
+            </form>
+        )}/>
     </Modal>
 )
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik, Form as FormikForm } from 'formik';
 import PropTypes from 'prop-types';
 
-const Form = ({ children, className, path }) => (
+const Form = ({ children, className, form, path }) => (
     <Formik
         initialValues={{}}
         onSubmit={async values => {
@@ -25,11 +25,8 @@ const Form = ({ children, className, path }) => (
                 alert('Error submitting form! Please try again later.')
             }
         }}
-    >
-        <FormikForm className={ className }>
-            {children}
-        </FormikForm>
-    </Formik>
+        render={form}
+    />
 )
 
 Form.propTypes = {
