@@ -18,7 +18,7 @@ export default function Home() {
                         The National Survivor Wealth Policy Map and Scorecard
                     </h1>
                     <p className='mb-5'>
-                        How well does your state support survivors&apos; financial security?
+                        How well does your state support survivors’ financial security?
                     </p>
                 </div>
                 <div className="col-12 col-md-3">
