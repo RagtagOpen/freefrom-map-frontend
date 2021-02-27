@@ -65,9 +65,9 @@ export const states = [
 
 export const aboutYou = [
   { value: "survivor", label: "I am a survivor" },
-  { value: "service-provider", label: "I support survivors as a service provider" },
+  { value: "service_provider", label: "I support survivors as a service provider" },
   { value: "advocate", label: "I work in policy advocacy at an organization or coalition" },
-  { value: "elected-official", label: "I am or work on behalf of an elected official in my state" },
+  { value: "elected_official", label: "I am or work on behalf of an elected official in my state" },
   { value: "other", label: "Other" }
 ]
 
