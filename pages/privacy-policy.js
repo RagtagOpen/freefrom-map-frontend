@@ -33,7 +33,7 @@ export default function PrivacyPolicy() {
             </ul>
             <p>We may use your Personal Data to contact you with emails, materials, and other information that may be of interest to you. You may opt out of receiving any, or all, of these communications from us by following the unsubscribe link or instructions provided in any email we send or by contacting us</p>
             <h4>USAGE DATA</h4>
-            <p>We may also collect information on how the Site is accessed and used (“Usage Data“). This Usage Data may include information such as your computer's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Site that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
+            <p>We may also collect information on how the Site is accessed and used (“Usage Data“). This Usage Data may include information such as your computer’s Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Site that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
             <h4>TRACKING COOKIES DATA</h4>
             <p>We use cookies and similar tracking technologies to track the activity on our Site and we hold certain information.</p>
             <p>A cookie is a small file placed on the hard drive of your computer. You may refuse to accept browser cookies by activating the appropriate setting on your browser. However, if you select this setting you may be unable to access certain parts of our Site.</p>
@@ -84,12 +84,12 @@ export default function PrivacyPolicy() {
             <h4>GOOGLE ANALYTICS</h4>
             <p>Google Analytics is a web analytics service offered by Google that tracks and reports website traffic. Google uses the data collected to track and monitor the use of our Site. This data is shared with other Google services. Google may use the collected data to contextualize and personalize the ads of its own advertising network.</p>
             <p>You can opt-out of having made your activity on the Site available to Google Analytics by installing the Google Analytics opt-out browser add-on. The add-on prevents the Google Analytics JavaScript (ga.js, analytics.js and dc.js) from sharing information with Google Analytics about visits activity.</p>
-            <p>For more information on the privacy practices of Google, please visit the Google Privacy Terms web page: <a href="https://policies.google.com/privacy?hl=en" target="_blank">https://policies.google.com/privacy?hl=en</a>.</p>
+            <p>For more information on the privacy practices of Google, please visit the Google Privacy Terms web page: <a href="https://policies.google.com/privacy?hl=en" target="_blank" rel="noreferrer">https://policies.google.com/privacy?hl=en</a>.</p>
 
             <h2>Links to Other Sites</h2>
             <p>Our site may contain links to other sites that are not operated by us. If you click a third party link, you will be directed to that third party’s site. We strongly advise you to review the Privacy Policy of every site you visit. We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
 
-            <h2>Children's Privacy</h2>
+            <h2>Children’s Privacy</h2>
             <p>Our Site is not intended for children under the age of 18. We do not knowingly collect personally identifiable information from anyone under the age of 18. If you are a parent or guardian and you are award that your child has provided us with Personal Data, please contact us. If we become aware that we have collected Personal Data from children without verification of parental consent, we take steps to remove that information from our servers.</p>
 
             <h2>Changes to this Policy</h2>
