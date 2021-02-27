@@ -30,29 +30,38 @@ export default function BuildCollectiveSurvivorPower() {
                 <p>Are you a survivor interested in being more involved in policy advocacy in your state? If so, please take a few moments to fill out this information and we will get back to you as soon as possible.</p>
                 <Form
                     className="col-12 col-lg-8 mb-5"
-                    path="build_collective_survivor_power"
-                    form={() => (
+                    path="survivor-power"
+                    form={props => (
                         <form>
                             <Input label="Your name" name="name" required={ true } />
                             <Input label="Your pronouns" name="pronouns" required={ true } />
                             <div className="form-group">
                                 <FormLabel required={ true }>Which of the following are you interested in? (Select as many as you'd like.)</FormLabel>
-                                <Checkbox name="">Learning how to be a policy advocacte in my state</Checkbox>
-                                <Checkbox name="">Connecting with other survivors in my state</Checkbox>
-                                <Checkbox name="">Joining or starting a survivor-led policy advocacy coalition in my state</Checkbox>
-                                <Checkbox name="">Learning more about Peer to Peer Financial Support Group</Checkbox>
-                                <Checkbox name="">Other</Checkbox>
+                                <Checkbox name="interest_area" value="be_policy_advocate">Learning how to be a policy advocate in my state</Checkbox>
+                                <Checkbox name="interest_area" value="connect_with_survivors">Connecting with other survivors in my state</Checkbox>
+                                <Checkbox name="interest_area" value="advocacy_coalition">Joining or starting a survivor-led policy advocacy coalition in my state</Checkbox>
+                                <Checkbox name="interest_area" value="p2p_financial_support_group">Learning more about Peer to Peer Financial Support Group</Checkbox>
+                                <Checkbox name="interest_area" value="other">Other</Checkbox>
                             </div>
+                            {props.values.interest_area && props.values.interest_area.indexOf("other") !== -1 &&
+                              <Input label="Please describe..." name="interest_area_other"/>
+                            }
                             <div className="form-group">
                                 <FormLabel required={ true }>The safest way to contact you is...</FormLabel>
-                                <Checkbox name="text">Text</Checkbox>
-                                <Checkbox name="call">Phone call</Checkbox>
-                                <Checkbox name="email">Email</Checkbox>
-                                <Checkbox name="none">There is not a safe way to contact me, I will contact you</Checkbox>
+                                <Checkbox name="contact_method" value="text">Text</Checkbox>
+                                <Checkbox name="contact_method" value="call">Phone call</Checkbox>
+                                <Checkbox name="contact_method" value="email">Email</Checkbox>
+                                <Checkbox name="contact_method" value="none">There is not a safe way to contact me, I will contact you</Checkbox>
                             </div>
-                            <Input label="Your phone number" name="phone" type="phone" />
-                            <Input label="Your email" name="email" type="email" />
-                            <p><em>To contact FreeFrom, please email us at <a href="mailto:info@freefrom.org">info@freefrom.org</a>.</em></p>
+                            {props.values.contact_method && (props.values.contact_method.indexOf("call") !== -1 || props.values.contact_method.indexOf("text") !== -1) &&
+                              <Input label="Your phone number" name="phone" type="phone" />
+                            }
+                            {props.values.contact_method && props.values.contact_method.indexOf("email") !== -1 &&
+                              <Input label="Your email" name="email" type="email" />
+                            }
+                            {props.values.contact_method && props.values.contact_method.indexOf("none") !== -1 &&
+                              <p><em>To contact FreeFrom, please email us at <a href="mailto:info@freefrom.org">info@freefrom.org</a>.</em></p>
+                            }
                             <Submit />
                         </form>
                     )}
