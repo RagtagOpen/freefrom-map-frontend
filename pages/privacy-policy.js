@@ -28,8 +28,8 @@ export default function PrivacyPolicy() {
             <h4>PERSONAL DATA</h4>
             <p>While using our Site, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you (“Personal Data“). Personally identifiable information may include, but is not limited to:</p>
             <ul>
-              <li>Email address</li>
-              <li>Cookies and Usage Data</li>
+                <li>Email address</li>
+                <li>Cookies and Usage Data</li>
             </ul>
             <p>We may use your Personal Data to contact you with emails, materials, and other information that may be of interest to you. You may opt out of receiving any, or all, of these communications from us by following the unsubscribe link or instructions provided in any email we send or by contacting us</p>
             <h4>USAGE DATA</h4>
@@ -41,14 +41,14 @@ export default function PrivacyPolicy() {
             <h2>Use of Data</h2>
             <p>We use the collected data for various purposes:</p>
             <ul>
-              <li>To present our Site and its contents to you</li>
-              <li>To allow you to participate in interactive features of our Site when you choose to do so</li>
-              <li>To gather analysis or valuable information so that we can improve our Site</li>
-              <li>To monitor the usage of our Site</li>
-              <li>To detect, prevent, and address technical issues</li>
-              <li>To communicate with you about your experience after you leave our Site, such as sending you short follow-up surveys about your pursuit of compensation and sending you newsletters to keep you informed of our work unless you have opted not to receive such information</li>
-              <li>In any other way we may describe with you provide the information</li>
-              <li>For any other purpose with your consent</li>
+                <li>To present our Site and its contents to you</li>
+                <li>To allow you to participate in interactive features of our Site when you choose to do so</li>
+                <li>To gather analysis or valuable information so that we can improve our Site</li>
+                <li>To monitor the usage of our Site</li>
+                <li>To detect, prevent, and address technical issues</li>
+                <li>To communicate with you about your experience after you leave our Site, such as sending you short follow-up surveys about your pursuit of compensation and sending you newsletters to keep you informed of our work unless you have opted not to receive such information</li>
+                <li>In any other way we may describe with you provide the information</li>
+                <li>For any other purpose with your consent</li>
             </ul>
 
             <h2>Transfer of Data</h2>
@@ -63,11 +63,11 @@ export default function PrivacyPolicy() {
             <h3>Legal Requirements</h3>
             <p>We may disclose your Personal Data in the good faith belief that such action is necessary to:</p>
             <ul>
-              <li>Comply with a legal obligation</li>
-              <li>Protect and defend our rights or property</li>
-              <li>Prevent or investigate possible wrongdoing in connection with the Site</li>
-              <li>Protect the personal safety of users of the Site or the public</li>
-              <li>To protect against legal liability</li>
+                <li>Comply with a legal obligation</li>
+                <li>Protect and defend our rights or property</li>
+                <li>Prevent or investigate possible wrongdoing in connection with the Site</li>
+                <li>Protect the personal safety of users of the Site or the public</li>
+                <li>To protect against legal liability</li>
             </ul>
 
             <h2>Security of Data</h2>
