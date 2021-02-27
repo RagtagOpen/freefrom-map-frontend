@@ -67,6 +67,10 @@ class UsMap extends Component {
         // usData = this.mapStatesToValues(statesLived, usData);
         usData = this.mapScoresToStates(stateScores, usData)
 
+        let northeastZoom = false;
+
+        /* create structures for map, tooltip, and buttons */
+
         // initalize the pojection and path
         let projection = d3
             .geo
@@ -85,9 +89,19 @@ class UsMap extends Component {
             .domain(d3.range(1, 5, 1))
             .range(colorRange);
 
-        let svg = d3
+        // an outer div for the map svg and the zoom button
+        let mapContainer = d3
             .select("#us-map")
+            .append("div")
+            .attr("id", "map-container")
+        
+        // an svg for the map itself
+        let svg = d3
+            .select("#map-container")
             .append("svg")
+            .style("width", "95%")
+            .style("float", "left")
+            .attr("id", "us-map-svg")
             .attr("viewBox", "0 0 " + width + " " + height)
             .selectAll("path")
             .data(usData.features)
@@ -99,6 +113,24 @@ class UsMap extends Component {
             .style("fill", function (d) {
                 return color(d.properties.score)
             });
+
+        // button next to map - toggle a zoom-in on the small states of the eastern seaboard
+        let northeastFocusButton = d3
+            .select("#map-container")
+            .append("button")
+            .attr("id", "northeast-focus-button")
+            .attr("type", "button")
+            .text("Zoom to Small States")
+            .style("width", "5%")
+            .style("float", "right")
+            .on("click", function(){
+                if(northeastZoom) {
+                    document.getElementById("us-map-svg").setAttribute("viewBox", "0 0 1440 700");
+                } else {
+                    document.getElementById("us-map-svg").setAttribute("viewBox", "700 85 540 545");
+                }
+                northeastZoom = !northeastZoom
+            })
 
         // create tooltip div
         let tooltip = d3
@@ -112,15 +144,15 @@ class UsMap extends Component {
             .attr("id", "tooltip")
             .append("text")
 
-        // mouseOVER, user scrolls onto
+
+        /* handle inputs */
+
+        // mouseOVER: user scrolls onto map
         svg.on('mouseover', function () {
-            // on rollover, note the location of the mouse
             // only redraw the tooltip if we're NOT in the bounds of a tool tip card
             if(!mouseInsideTooltip()) {
-
                 // decreases opacity slightly to provide feedback of selection
-                d3.select(this)
-                    .style({opacity: '0.75'})
+                d3.select(this).style({opacity: '0.75'})
 
                 // make the card visible
                 tooltip
@@ -128,38 +160,25 @@ class UsMap extends Component {
                     .style("left", (d3.event.pageX - 40) + "px")
                     .style("top", (d3.event.pageY - 40) + "px")
             }
-
         }).on('mouseout', function () {
             // returns opacity to normal when mouse leaves
             d3.select(this).style({ opacity: '1.0' });
             // Hide tooltip if mouse outside tooltip (covers the case where the
             // mouse leaves the svg boundary).
             if(!mouseInsideTooltip()) {
-                tooltip
-                    .style("opacity", 0)
+                tooltip.style("opacity", 0)
             }
             // mouseMOVE - continuous version of mouseOVER
         }).on('mousemove', function() {
-            // will finish soon
-            // let x = d3.event.pageX;
-            // let y = d3.event.pageY;
-            // console.log(y)
-            // // if the mouse is way off the map, hide card
-            // if(y > 550 || y < 75 || x > 900 || x < 75) {
-            //   tooltip
-            //     .style("opacity", 0)
-            // }
-            // only redraw the tooltip if we're NOT in the bounds of a tool tip card
-            console.log(mouseInsideTooltip());
-            // click events
+            // not sure what if anything we'll need in here - used to debug "mouseInsideTooltip()"
+            // console.log(mouseInsideTooltip());
         }).on("click", function (d) {
             // whatever redirect we want to do goes here
             alert("Click detected on " + d.properties.name + ", redirecting")
             // for now right clicking removes the card
         }).on("contextmenu", function () {
             d3.event.preventDefault();
-            tooltip
-                .style("opacity", 0)
+            tooltip.style("opacity", 0)
         });
     }
 
