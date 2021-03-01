@@ -129,7 +129,8 @@ const Category = ({ category, stateData }) => {
   const adversePolicies = category.criteria.filter((c) => c.adverse) || [];
   const collapseId = `collapse-${category.id}`;
   const headingId = `heading-${category.id}`;
-  const links = stateData.resource_links.filter((l) => l.category_id === category.id) || [];
+  const links = stateData.resource_links
+    .filter((l) => l.category_id === category.id && l.active) || [];
   return (
     <div
       className="category accordion-i"
@@ -254,6 +255,14 @@ Category.propTypes = {
   }),
 };
 
+const overallScoreLabels = {
+  "-1": "This state does not prioritize survivors’ financial security or consider their unique circumstances or needs.",
+  0: "This state somewhat considers survivors’ financial security in a few policies, but has a lot of work to do.",
+  1: "This state considers survivors’ financial security in multiple policies, and is making progress towards becoming a survivor wealth friendly state.",
+  2: "This state is prioritizing survivors’ financial security in a broad range of policies and is on its way to becoming a Model State!",
+  3: "This state prioritizes survivors’ financial security across all policy categories and is a model for other states to follow!"
+};
+
 const Scorecard = ({ categories, stateData }) => (
   <div className="scorecard-container">
     <div className="overall mt-5 mb-3">
@@ -261,7 +270,7 @@ const Scorecard = ({ categories, stateData }) => (
       <ScoreLabel score={stateData.grade.grade} />
     </div>
     <p>
-      <em>This state prioritizes...</em>
+      <em>{overallScoreLabels[stateData.grade.grade]}</em>
     </p>
     <div className="scorecard accordion" id="scorecard">
       {categories.map((category) => (
