@@ -61,7 +61,7 @@ export async function getStaticProps({ params }) {
     // FIXME: Use process.env.API_ENDPOINT
     const stateResponse = await fetch(`http://localhost:5000/states/${params.state}`)
     const stateData = await stateResponse.json()
-    const categoriesResponse = await fetch('http://localhost:5000/categories')
+    const categoriesResponse = await fetch('http://localhost:5000/categories?withCriteria=true')
     const categories = await categoriesResponse.json()
     return {
         props: {

@@ -20,6 +20,12 @@ const Scorecard = ({categories, stateData}) => (
     </div>
 )
 
+Scorecard.propTypes = {
+    categories: PropTypes.arrayOf(Category.PropTypes.category),
+    overallScore: PropTypes.number,
+    stateData: Category.PropTypes.stateData,
+}
+
 const HonorableMention = ({honorableMentionData}) => (
     <div className='honorable-mention'>
         <div className="d-flex flex-row align-items-center">
@@ -37,6 +43,15 @@ const HonorableMention = ({honorableMentionData}) => (
         </p>
     </div>
 )
+
+HonorableMention.propTypes = {
+    honorableMentionData: PropTypes.shape({
+        category_id: PropTypes.number,
+        description: PropTypes.string,
+        text: PropTypes.string,
+        url: PropTypes.string,
+    })
+}
 
 const InnovativePolicyIdea = ({innovativePolicyIdeaData}) => (
     <div className='honorable-mention'>
@@ -56,11 +71,15 @@ const InnovativePolicyIdea = ({innovativePolicyIdeaData}) => (
     </div>
 )
 
-Scorecard.propTypes = {
-    categories: PropTypes.array,
-    overallScore: PropTypes.number,
-    stateData: PropTypes.object // FIXME
+InnovativePolicyIdea.propTypes = {
+    innovativePolicyIdeaData: PropTypes.shape({
+        category_id: PropTypes.number,
+        description: PropTypes.string,
+        text: PropTypes.string,
+        url: PropTypes.string,
+    })
 }
+
 
 const Category = ({ category, stateData }) => {
     const categoryScore = stateData.category_grades.find(c => c.category_id === category.id) || {}
@@ -110,8 +129,33 @@ const Category = ({ category, stateData }) => {
 }
 
 Category.propTypes = {
-    category: PropTypes.object,
-    overallScore: PropTypes.number
+    category: PropTypes.shape({
+        id: PropTypes.number,
+        title: PropTypes.string,
+        help_text: PropTypes.string,
+        criteria: PropTypes.arrayOf(PropTypes.shape({
+            adverse: PropTypes.bool,
+            title: PropTypes.string,
+        }))
+    }),
+    stateData: PropTypes.shape({
+        category_grades: PropTypes.arrayOf(PropTypes.shape({
+            category_id: PropTypes.number,
+            grade: PropTypes.number
+        })),
+        code: PropTypes.string,
+        criterion_scores: PropTypes.arrayOf(PropTypes.shape({
+            criterion_id: PropTypes.number,
+            meets_criterion: PropTypes.string, // "yes", "no", "maybe"
+        })),
+        grade: PropTypes.shape({
+            grade: PropTypes.number,
+        }),
+        honorable_mentions: PropTypes.arrayOf(HonorableMention.propTypes),
+        innovative_policy_ideas: PropTypes.arrayOf(InnovativePolicyIdea.propTypes),
+        name: PropTypes.string,
+        resource_links: PropTypes.array,
+    })
 }
 
 export default Scorecard
