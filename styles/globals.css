@@ -195,6 +195,41 @@ h4 {
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
+.state-page .take-action > h1 {
+    font-size: 34px;
+}
+
+.state-page .take-action > h1 {
+    font-size: 34px;
+    margin-bottom: 0px;
+}
+
+.state-page .understanding-report button {
+    font-size: 34px;
+    margin-bottom: 0px;
+}
+
+/* FIXME: Consolidate state page modal button css with take action css */
+.state-page .understanding-report .modal-button {
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #32B4B4 !important;
+    margin: 27px;
+    padding: 0px;
+}
+
+.state-page .understanding-report .modal-button:hover {
+    color: #32B4B4 !important;
+}
+
+.state-page .understanding-report .modal-button:active {
+    color: #32B4B4 !important;
+}
+
 .scorecard-container > .overall {
     display: flex;
     align-items: center;

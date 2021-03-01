@@ -24,18 +24,22 @@ class StatesList extends Component {
                 <input
                     placeholder="Search for a state..."
                     onChange={this._onChangeSearch}
-                    style={{height: '60px', width: '100%', paddingLeft: 7}}
+                    className="p-2"
+                    style={{height: '60px', width: '100%'}}
                     value={search}
                 />
                 <div className='mt-1' style={{height: '500px', overflowY: 'scroll'}}>
                     {visibleStates.length > 0
-                        ? <ul style={{border: '1px solid #DDDDDD', backgroundColor: 'white', padding: 7}}>
-                            {visibleStates.map(state => (
+                        ? <ul style={{border: '1px solid #DDDDDD', backgroundColor: 'white', padding: 0}}>
+                            {visibleStates.map((state, index) => (
                                 <>
                                     <StateCard
                                         score={state.score}
                                         state={state.state} />
-                                    <hr style={{margin: 0, width: '95%'}}/>
+                                    {/* Do not render hr after last card. */}
+                                    {index !== visibleStates.length - 1 &&
+                                        <hr style={{margin: '0 auto', width: '95%'}}/>
+                                    }
                                 </>
                             ))}
                         </ul>
