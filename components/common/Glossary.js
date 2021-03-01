@@ -12,7 +12,7 @@ const Glossary = () => (
       harmful and devastating for survivors. Read{" "}
       <a
         href="https://www.freefrom.org/news/2020/6/8/defund-the-police-and-redistribute-resources-to-support-long-term-safety-for-survivors"
-        target="_blank" rel="noreferrer"
+        target="_blank" 
         rel="noopener noreferrer"
       >
         our statement on defunding the police
