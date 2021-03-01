@@ -12,6 +12,16 @@ import { EmptySquare } from "./common/ScoringGuide";
 
 import ScoreLabel from "./common/ScoreLabel";
 
+const resourceLinkType = PropTypes.shape({
+  active: PropTypes.bool,
+  category_id: PropTypes.number,
+  deactivated_at: PropTypes.string,
+  id: PropTypes.number,
+  state: PropTypes.string,
+  text: PropTypes.string,
+  url: PropTypes.string
+})
+
 const HonorableMention = ({ honorableMentionData }) => (
   <div className="honorable-mention">
     <div className="d-flex flex-row align-items-center">
@@ -97,6 +107,14 @@ Policy.propTypes = {
   }),
 };
 
+const ResourceLink = ({ link }) => (
+  <p className="card-body small m-0 d-flex flex-row">
+    <a href={link.url}>{link.text}</a>
+  </p>
+)
+
+ResourceLink.propTypes = { link: resourceLinkType }
+
 const Category = ({ category, stateData }) => {
   const categoryScore =
     stateData.category_grades.find((c) => c.category_id === category.id) || {};
@@ -111,7 +129,7 @@ const Category = ({ category, stateData }) => {
   const adversePolicies = category.criteria.filter((c) => c.adverse) || [];
   const collapseId = `collapse-${category.id}`;
   const headingId = `heading-${category.id}`;
-
+  const links = stateData.resource_links.filter((l) => l.category_id === category.id) || [];
   return (
     <div
       className="category accordion-i"
@@ -179,6 +197,20 @@ const Category = ({ category, stateData }) => {
             return <Policy policyData={policy} score={score} key={policy.id} />;
           })}
         </div>
+
+        <div className="adverse-policies p-0 card-body mb-3 small">
+          <h3 className="m-0" style={{ fontSize: "1em" }}>
+            Related sources:
+          </h3>
+          {links.length > 0
+              ? links.map((link) => (
+              <ResourceLink link={link} key={link.id} />
+            ))
+              : <p className="card-body small m-0 d-flex flex-row">
+                No {category.title} resources found for {stateData.name}.
+              </p>
+          }
+        </div>
       </div>
     </div>
   );
@@ -216,7 +248,9 @@ Category.propTypes = {
     honorable_mentions: PropTypes.array,
     innovative_policy_ideas: PropTypes.array,
     name: PropTypes.string,
-    resource_links: PropTypes.array,
+    resource_links: PropTypes.arrayOf(
+      resourceLinkType
+    ),
   }),
 };
 
