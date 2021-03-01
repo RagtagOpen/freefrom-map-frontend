@@ -7,7 +7,7 @@ import Modal from '../modal/Modal'
 import ScoreLabel from './ScoreLabel'
 
 // TODO: Determine if there's a suitable free icon substitute for this?
-const EmptySquare = () => (
+export const EmptySquare = () => (
     <span className='empty-square-icon' style={{fontSize: '2em', paddingBottom: '2px'}}>
         &#9633;
     </span>
