@@ -10,19 +10,19 @@ function Footer() {
         <div className="footer d-flex justify-content-lg-around justify-content-center align-items-center flex-column flex-md-row p-2 py-md-5">
             <div className="py-2 my-md-0">
                 <h2>Follow FreeFrom</h2>
-                <a href="https://www.facebook.com/freefrom.org" target="_blank" rel="noreferrer">
+                <a href="https://www.facebook.com/freefrom.org" target="_blank" rel="noopener noreferrer">
                     <span className="fa-layers fa-fw fa-3x ml-1">
                         <FontAwesomeIcon icon={ faCircle } color="white" />
                         <FontAwesomeIcon icon={ faFacebookF } color="black" transform="shrink-6" />
                     </span>
                 </a>
-                <a href="https://twitter.com/freefromorg" target="_blank" rel="noreferrer">
+                <a href="https://twitter.com/freefromorg" target="_blank" rel="noopener noreferrer">
                     <span className="fa-layers fa-fw fa-3x ml-1">
                         <FontAwesomeIcon icon={ faCircle } color="white" />
                         <FontAwesomeIcon icon={ faTwitter } color="black" transform="shrink-6" />
                     </span>
                 </a>
-                <a href="https://www.instagram.com/freefromdotorg" target="_blank" rel="noreferrer">
+                <a href="https://www.instagram.com/freefromdotorg" target="_blank" rel="noopener noreferrer">
                     <span className="fa-layers fa-fw fa-3x ml-1">
                         <FontAwesomeIcon icon={ faCircle } color="white" />
                         <FontAwesomeIcon icon={ faInstagram } color="black" transform="shrink-6" />
@@ -32,7 +32,7 @@ function Footer() {
             <div className="my-4 my-md-0">
                 <ul className="nav flex-column">
                     <li className="nav-item">
-                        <a className="nav-link" href="https://freefrom.org" target="_blank" rel="noreferrer">FreeFrom Homepage</a>
+                        <a className="nav-link" href="https://freefrom.org" target="_blank" rel="noopener noreferrer">FreeFrom Homepage</a>
                     </li>
                 </ul>
                 <ul className="nav flex-column">
