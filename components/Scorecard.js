@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { faCaretDown, faAward, faLightbulb } from '@fortawesome/free-solid-svg-icons'
 
 import ScoreLabel from './common/ScoreLabel'
 
@@ -20,6 +20,42 @@ const Scorecard = ({categories, stateData}) => (
     </div>
 )
 
+const HonorableMention = ({honorableMentionData}) => (
+    <div className='honorable-mention'>
+        <div className="d-flex flex-row align-items-center">
+            <FontAwesomeIcon className='mr-2' icon={ faAward } />
+            <h3 className='m-0' style={{fontSize: '1em'}}>Honorable Mention</h3>
+        </div>
+
+        <p className='card-body small m-0 pt-1'>
+            {honorableMentionData.description}{' '}
+            (
+                <a href={honorableMentionData.url} rel='noopener noreferrer'>
+                    {honorableMentionData.text}
+                </a>
+            )
+        </p>
+    </div>
+)
+
+const InnovativePolicyIdea = ({innovativePolicyIdeaData}) => (
+    <div className='honorable-mention'>
+        <div className="d-flex flex-row align-items-center">
+            <FontAwesomeIcon className='mr-2' icon={ faLightbulb } />
+            <h3 className='m-0' style={{fontSize: '1em'}}>Innovative Policy Idea</h3>
+        </div>
+
+        <p className='card-body small m-0 pt-1'>
+            {innovativePolicyIdeaData.description}{' '}
+            (
+                <a href={innovativePolicyIdeaData.url} rel='noopener noreferrer'>
+                    {innovativePolicyIdeaData.text}
+                </a>
+            )
+        </p>
+    </div>
+)
+
 Scorecard.propTypes = {
     categories: PropTypes.array,
     overallScore: PropTypes.number,
@@ -28,8 +64,12 @@ Scorecard.propTypes = {
 
 const Category = ({ category, stateData }) => {
     const categoryScore = stateData.category_grades.find(c => c.category_id === category.id) || {}
+    const honorableMentionData = stateData.honorable_mentions.find(hm => hm.category_id === category.id) || null
+    const innovativePolicyIdeaData = stateData.innovative_policy_ideas.find(ip => ip.category_id === category.id) || null
     const collapseId = `collapse-${category.id}`
     const headingId = `heading-${category.id}`
+
+    debugger;
     return (
         <div className="category accordion-i" style={{borderTop: '1px solid black'}}>
             <div id={headingId}
@@ -43,7 +83,7 @@ const Category = ({ category, stateData }) => {
                 <h2 className="m-0" style={{textTransform: 'uppercase', fontSize: '0.75em'}}>
                     {category.title}
                     <div className="float-right">
-                        <span className='mr-3'><ScoreLabel score={categoryScore.grade}/></span>
+                        <span className='mr-3'><ScoreLabel score={categoryScore.grade} type='category'/></span>
                         <FontAwesomeIcon className='fa-2x' icon={ faCaretDown } />
                     </div>
                 </h2>
@@ -56,6 +96,14 @@ const Category = ({ category, stateData }) => {
                 <div className="p-0 pb-3 card-body small font-italic">
                     {category.help_text}
                 </div>
+                { honorableMentionData ?
+                    <HonorableMention honorableMentionData={honorableMentionData} />
+                    : null
+                }
+                { innovativePolicyIdeaData ?
+                    <InnovativePolicyIdea innovativePolicyIdeaData={innovativePolicyIdeaData} />
+                    : null
+                }
             </div>
         </div>
     )

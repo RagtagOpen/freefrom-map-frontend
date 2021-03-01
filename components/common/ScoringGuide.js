@@ -21,13 +21,13 @@ const ScoringGuide = () => (
             <div className="row">
                 <h4 className="guide-heading">Overall State Score</h4>
                 <div className='overall scoring-guide'>
-                    {[4, 3, 2, 1, 0].map(score => (
+                    {[3, 2, 1, 0, -1].map(score => (
                         <ScoreDescription key={score} score={score}/>
                     ))}
                 </div>
                 <h4 className="guide-heading">Policy Category Scores</h4>
                 <div className='category scoring-guide'>
-                    {[4, 3, 2, 1, 0].map(score => (
+                    {[3, 2, 1, 0, -1].map(score => (
                         <ScoreDescription key={score} type='category' score={score}/>
                     ))}
                 </div>
