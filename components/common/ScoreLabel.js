@@ -12,7 +12,7 @@ const labels = {
     'category': {
         0: 'none',
         1: 'adverse',
-        2: 'promisinig',
+        2: 'promising',
         3: 'strong',
         4: 'model'
     }
