@@ -76,8 +76,7 @@ function Home({ states }) {
 }
 
 export async function getStaticProps() {
-    // FIXME: Use process.env.API_ENDPOINT
-    const res = await fetch('http://localhost:5000/states')
+    const res = await fetch(process.env.API_ENDPOINT + '/states')
     const states = await res.json()
     return {
         props: {
