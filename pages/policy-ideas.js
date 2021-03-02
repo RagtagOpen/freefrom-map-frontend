@@ -29,10 +29,9 @@ export default function PolicyIdeas() {
                 <h1>Share Your Policy Ideas</h1>
                 <p>At FreeFrom, we are constantly iterating and brainstorming new ways that we can support survivors through policy change at the federal, state, and local levels. We encourage you to share any new policy ideas or changes to current policies that would help you, your loved ones, or others in your community that have experienced violence. Thank you for sharing!</p>
                 <Form
-                    className="col-12 col-lg-8 mb-5"
                     path="policy-ideas"
                     form={props => (
-                        <form>
+                        <form className="col-12 col-lg-8 mb-5">
                             <Input label="What policies and issues should FreeFrom prioritize?" name="policies_to_prioritize" required={ true } />
                             <Input label="What policies and issues are important to you but are not included on the map?" name="policies_not_included" required={ true } />
                             <Select label="Your state" name="state" required={ true } options={ states }/>
