@@ -19,8 +19,59 @@ const resourceLinkType = PropTypes.shape({
   id: PropTypes.number,
   state: PropTypes.string,
   text: PropTypes.string,
-  url: PropTypes.string
-})
+  url: PropTypes.string,
+});
+
+const honorableMentionType = PropTypes.shape({
+  id: PropTypes.number,
+  category_id: PropTypes.number,
+  description: PropTypes.string,
+  text: PropTypes.string,
+  url: PropTypes.string,
+});
+
+const innovativePolicyIdeaType = PropTypes.shape({
+  id: PropTypes.number,
+  category_id: PropTypes.number,
+  description: PropTypes.string,
+  text: PropTypes.string,
+  url: PropTypes.string,
+});
+
+const categoryType = PropTypes.shape({
+  id: PropTypes.number,
+  title: PropTypes.string,
+  help_text: PropTypes.string,
+  criteria: PropTypes.arrayOf(
+    PropTypes.shape({
+      adverse: PropTypes.bool,
+      title: PropTypes.string,
+    })
+  ),
+});
+
+const criterionScoreType = PropTypes.shape({
+  criterion_id: PropTypes.number,
+  meets_criterion: PropTypes.string, // "yes", "no", "maybe"
+});
+
+const categoryGradeType = PropTypes.shape({
+  category_id: PropTypes.number,
+  grade: PropTypes.number,
+});
+
+const stateDataType = PropTypes.shape({
+  category_grades: PropTypes.arrayOf(categoryGradeType),
+  code: PropTypes.string,
+  criterion_scores: PropTypes.arrayOf(criterionScoreType),
+  grade: PropTypes.shape({
+    grade: PropTypes.number,
+  }),
+  honorable_mentions: PropTypes.arrayOf(honorableMentionType),
+  innovative_policy_ideas: PropTypes.arrayOf(innovativePolicyIdeaType),
+  name: PropTypes.string,
+  resource_links: PropTypes.arrayOf(resourceLinkType),
+});
 
 const HonorableMention = ({ honorableMentionData }) => (
   <div className="honorable-mention">
@@ -42,12 +93,7 @@ const HonorableMention = ({ honorableMentionData }) => (
 );
 
 HonorableMention.propTypes = {
-  honorableMentionData: PropTypes.shape({
-    category_id: PropTypes.number,
-    description: PropTypes.string,
-    text: PropTypes.string,
-    url: PropTypes.string,
-  }),
+  honorableMentionData: honorableMentionType,
 };
 
 const InnovativePolicyIdea = ({ innovativePolicyIdeaData }) => (
@@ -70,12 +116,7 @@ const InnovativePolicyIdea = ({ innovativePolicyIdeaData }) => (
 );
 
 InnovativePolicyIdea.propTypes = {
-  innovativePolicyIdeaData: PropTypes.shape({
-    category_id: PropTypes.number,
-    description: PropTypes.string,
-    text: PropTypes.string,
-    url: PropTypes.string,
-  }),
+  innovativePolicyIdeaData: innovativePolicyIdeaType,
 };
 
 const renderIcon = (implementsPolicy) => {
@@ -113,9 +154,9 @@ const ResourceLink = ({ link }) => (
       {link.text}
     </a>
   </p>
-)
+);
 
-ResourceLink.propTypes = { link: resourceLinkType }
+ResourceLink.propTypes = { link: resourceLinkType };
 
 const Category = ({ category, stateData }) => {
   const categoryScore =
@@ -131,8 +172,10 @@ const Category = ({ category, stateData }) => {
   const adversePolicies = category.criteria.filter((c) => c.adverse) || [];
   const collapseId = `collapse-${category.id}`;
   const headingId = `heading-${category.id}`;
-  const links = stateData.resource_links
-    .filter((l) => l.category_id === category.id && l.active) || [];
+  const links =
+    stateData.resource_links.filter(
+      (l) => l.category_id === category.id && l.active
+    ) || [];
   return (
     <div
       className="category accordion-i"
@@ -205,14 +248,13 @@ const Category = ({ category, stateData }) => {
           <h3 className="m-0" style={{ fontSize: "1em" }}>
             Related sources:
           </h3>
-          {links.length > 0
-              ? links.map((link) => (
-              <ResourceLink link={link} key={link.id} />
-            ))
-              : <p className="card-body small m-0 d-flex flex-row">
-                No {category.title} resources found for {stateData.name}.
-              </p>
-          }
+          {links.length > 0 ? (
+            links.map((link) => <ResourceLink link={link} key={link.id} />)
+          ) : (
+            <p className="card-body small m-0 d-flex flex-row">
+              No {category.title} resources found for {stateData.name}.
+            </p>
+          )}
         </div>
       </div>
     </div>
@@ -220,49 +262,17 @@ const Category = ({ category, stateData }) => {
 };
 
 Category.propTypes = {
-  category: PropTypes.shape({
-    id: PropTypes.number,
-    title: PropTypes.string,
-    help_text: PropTypes.string,
-    criteria: PropTypes.arrayOf(
-      PropTypes.shape({
-        adverse: PropTypes.bool,
-        title: PropTypes.string,
-      })
-    ),
-  }),
-  stateData: PropTypes.shape({
-    category_grades: PropTypes.arrayOf(
-      PropTypes.shape({
-        category_id: PropTypes.number,
-        grade: PropTypes.number,
-      })
-    ),
-    code: PropTypes.string,
-    criterion_scores: PropTypes.arrayOf(
-      PropTypes.shape({
-        criterion_id: PropTypes.number,
-        meets_criterion: PropTypes.string, // "yes", "no", "maybe"
-      })
-    ),
-    grade: PropTypes.shape({
-      grade: PropTypes.number,
-    }),
-    honorable_mentions: PropTypes.array,
-    innovative_policy_ideas: PropTypes.array,
-    name: PropTypes.string,
-    resource_links: PropTypes.arrayOf(
-      resourceLinkType
-    ),
-  }),
+  category: categoryType,
+  stateData: stateDataType,
 };
 
 const overallScoreLabels = {
-  "-1": "This state does not prioritize survivors’ financial security or consider their unique circumstances or needs.",
+  "-1":
+    "This state does not prioritize survivors’ financial security or consider their unique circumstances or needs.",
   0: "This state somewhat considers survivors’ financial security in a few policies, but has a lot of work to do.",
   1: "This state considers survivors’ financial security in multiple policies, and is making progress towards becoming a survivor wealth friendly state.",
   2: "This state is prioritizing survivors’ financial security in a broad range of policies and is on its way to becoming a Model State!",
-  3: "This state prioritizes survivors’ financial security across all policy categories and is a model for other states to follow!"
+  3: "This state prioritizes survivors’ financial security across all policy categories and is a model for other states to follow!",
 };
 
 const Scorecard = ({ categories, stateData }) => (
@@ -283,9 +293,9 @@ const Scorecard = ({ categories, stateData }) => (
 );
 
 Scorecard.propTypes = {
-  categories: PropTypes.arrayOf(Category.propTypes.category),
+  categories: PropTypes.arrayOf(categoryType),
   overallScore: PropTypes.number,
-  stateData: Category.propTypes.stateData,
+  stateData: stateDataType,
 };
 
 export default Scorecard;
