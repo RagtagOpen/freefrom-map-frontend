@@ -19,7 +19,6 @@ const Form = ({ children, className, form, path }) => (
             )
             try {
                 const result = await res.json()
-                console.log(result)
                 alert('Thanks for your response! Someone will be in touch with you soon.')
             } catch (error) {
                 alert('Error submitting form! Please try again later.')
