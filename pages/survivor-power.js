@@ -43,7 +43,7 @@ export default function BuildCollectiveSurvivorPower() {
                                 <Checkbox name="interest_area" value="other">Other</Checkbox>
                             </div>
                             {props.values.interest_area && props.values.interest_area.indexOf("other") !== -1 &&
-                              <Input label="Please describe..." name="interest_area_other"/>
+                              <Input label="Please describe..." name="interest_area_other" required={ true } />
                             }
                             <div className="form-group">
                                 <FormLabel required={ true }>The safest way to contact you is...</FormLabel>
@@ -53,10 +53,10 @@ export default function BuildCollectiveSurvivorPower() {
                                 <Checkbox name="contact_method" value="none">There is not a safe way to contact me, I will contact you</Checkbox>
                             </div>
                             {props.values.contact_method && (props.values.contact_method.indexOf("call") !== -1 || props.values.contact_method.indexOf("text") !== -1) &&
-                              <Input label="Your phone number" name="phone" type="phone" />
+                              <Input label="Your phone number" name="phone" type="phone" required={ true } />
                             }
                             {props.values.contact_method && props.values.contact_method.indexOf("email") !== -1 &&
-                              <Input label="Your email" name="email" type="email" />
+                              <Input label="Your email" name="email" type="email" required={ true } />
                             }
                             {props.values.contact_method && props.values.contact_method.indexOf("none") !== -1 &&
                               <p><em>To contact FreeFrom, please email us at <a href="mailto:info@freefrom.org">info@freefrom.org</a>.</em></p>

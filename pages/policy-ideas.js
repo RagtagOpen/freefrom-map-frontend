@@ -40,7 +40,7 @@ export default function PolicyIdeas() {
                             <Input label="Your email (optional)" name="email" type="email" />
                             <Select label="We’re eager to learn where new policy ideas and changes come from. If you’re comfortable, please tell us more about you." name="about_you" options={ aboutYou }/>
                             {props.values.about_you && props.values.about_you.indexOf("other") !== -1 &&
-                              <Input label="Please describe..." name="about_you_other"/>
+                              <Input label="Please describe..." name="about_you_other" required={ true } />
                             }
                             <Submit />
                         </form>

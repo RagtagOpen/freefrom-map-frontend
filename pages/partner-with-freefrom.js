@@ -45,7 +45,7 @@ export default function PartnerWithFreefrom() {
                             </div>
                             {props.values.goals && props.values.goals.indexOf("pass_survivor_wealth_centered_legislation") !== -1 &&
                               <div className="form-group">
-                                  <FormLabel>What phase of the process are you in?</FormLabel>
+                                  <FormLabel required={ true }>What phase of the process are you in?</FormLabel>
                                   <Checkbox name="process_phase" value="need_guidance">I need guidance on centering my organization’s policy priorities to be more survivor-wealth informed</Checkbox>
                                   <Checkbox name="process_phase" value="have_an_idea">I have a policy idea but need help with getting started</Checkbox>
                                   <Checkbox name="process_phase" value="developed_a_coalition">I’ve developed a coalition or a network to support my policy idea</Checkbox>
