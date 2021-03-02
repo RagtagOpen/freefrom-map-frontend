@@ -17,7 +17,7 @@ function State({ categories, stateData }) {
     console.log(categories, stateData)
     const router = useRouter()
     const { state } = router.query
-    const name = ''
+    const name = stateData.name;
     const imageUrl = "https://via.placeholder.com/600x370"
     return (
         <SharedLayout>
