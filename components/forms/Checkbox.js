@@ -15,7 +15,7 @@ export default function Checkbox({ className, name, children, value }) {
 
 Checkbox.propTypes = {
     className: PropTypes.string,
-    children: PropTypes.object,
+    children: PropTypes.string,
     name: PropTypes.string,
     value: PropTypes.string
 }
