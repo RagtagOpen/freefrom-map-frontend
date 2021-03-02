@@ -34,15 +34,15 @@ const ScoringGuide = () => (
                 <h4 className="guide-heading">Checklist Legend</h4>
                 <div className='checklist-item small'>
                     <FontAwesomeIcon icon={ faCheck } className="mr-2" />
-                    This state&apos;s policy includes this characteristic
+                    This state’s policy includes this characteristic
                 </div>
                 <div className='checklist-item small'>
                     <FontAwesomeIcon icon={ faQuestion } style={{marginRight: '13px'}} />
-                    It is unclear whether this state&apos;s includes this characteristic
+                    It is unclear whether this state’s includes this characteristic
                 </div>
                 <div className='checklist-item small'>
                     <EmptySquare className="mr-2" />
-                    This state&apos;s policy does not include this characteristic
+                    This state’s policy does not include this characteristic
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@ const ScoreDescription = ({score, type}) => (
         </div>
         <div className="col-6">
             <p className='small'>
-                This state is prioritizing survivors&apos; financial security...
+                This state is prioritizing survivors’ financial security...
             </p>
         </div>
     </div>
