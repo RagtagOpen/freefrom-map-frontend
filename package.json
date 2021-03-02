@@ -20,8 +20,7 @@
     "next": "^10.0.7",
     "popper.js": "^1.16.1",
     "react": "16.14.0",
-    "react-dom": "16.14.0",
-    "yarn": "^1.22.10"
+    "react-dom": "16.14.0"
   },
   "devDependencies": {
     "eslint": "^7.17.0",
