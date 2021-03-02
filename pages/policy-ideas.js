@@ -15,7 +15,7 @@ import TakeAction from "components/common/TakeAction";
 import { states } from 'constants/forms';
 import { aboutYou } from 'constants/forms';
 
-import { submitForm } from '../util'
+import { submitForm } from 'utils'
 
 export default function PolicyIdeas() {
 

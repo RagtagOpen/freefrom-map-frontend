@@ -17,7 +17,7 @@ import TakeAction from "components/common/TakeAction";
 import { toolUseful } from 'constants/forms';
 import { learnFromTool } from 'constants/forms';
 
-import { submitForm } from '../util'
+import { submitForm } from 'utils'
 
 export default function GiveFeedback() {
 

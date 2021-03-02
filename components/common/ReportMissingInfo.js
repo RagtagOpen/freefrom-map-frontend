@@ -4,8 +4,8 @@ import { Formik, Form } from 'formik';
 import Modal from "components/modal/Modal";
 import Input from "components/forms/Input";
 import Submit from "components/forms/Submit";
-import { submitForm } from '../util'
-
+import { submitForm } from 'utils'
+console.log(submitForm)
 const ReportMissingInfo = () => (
     <Modal target="report-missing-info"
         text="Report missing info"

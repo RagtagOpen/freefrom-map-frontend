@@ -16,7 +16,7 @@ import TakeAction from "components/common/TakeAction";
 
 import { states } from 'constants/forms';
 
-import { submitForm } from '../util'
+import { submitForm } from 'utils'
 
 export default function PartnerWithFreefrom() {
     return (

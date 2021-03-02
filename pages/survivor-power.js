@@ -13,7 +13,7 @@ import Submit from "components/forms/Submit";
 
 import TakeAction from "components/common/TakeAction";
 
-import { submitForm } from '../util'
+import { submitForm } from 'utils'
 
 export default function BuildCollectiveSurvivorPower() {
 
