@@ -18,7 +18,6 @@ import Scorecard from 'components/Scorecard';
 function State({ categories, stateData }) {
     const router = useRouter()
     const { state } = router.query
-    if (!stateData) return null;
     const { name } = stateData;
     const imageUrl = "https://via.placeholder.com/600x370"
     return (
@@ -53,7 +52,7 @@ export async function getStaticPaths() {
     const res = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + '/states')
     const states = await res.json()
     return {
-        paths: states.map(state => ({ params: { state: state.name }})),
+        paths: states.map(state => ({ params: { state: state.name.toLowerCase() }})),
         fallback: false
     };
 }
