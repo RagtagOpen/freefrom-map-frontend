@@ -10,13 +10,13 @@ import styles from './Modal.module.css';
 export default function ModalButton({ href, target, text }) {
     if (href) {
         return (
-            <a type="button" className={`btn btn-primary ${styles.button}`} href={href}>
+            <a type="button" className={`btn btn-primary modal-button ${styles.button}`} href={href}>
                 <FontAwesomeIcon icon={ faArrowRight } className="mr-1" /> { text }
             </a>
         )
     }
     return (
-        <button type="button" className={`btn btn-primary ${styles.button}`} data-toggle="modal" data-target={ `#${target}` }>
+        <button type="button" className={`btn btn-primary modal-button ${styles.button}`} data-toggle="modal" data-target={ `#${target}` }>
             <FontAwesomeIcon icon={ faArrowRight } className="mr-1" /> { text }
         </button>
     )

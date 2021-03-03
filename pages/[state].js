@@ -5,10 +5,12 @@ import { regenCycle } from 'constants'
 
 import SharedLayout from "components/SharedLayout";
 import Breadcrumbs from "components/common/Breadcrumbs";
+import styles from 'components/common/Common.module.css';
 import ReportMissingInfo from 'components/common/ReportMissingInfo'
 import ScoringGuide from 'components/common/ScoringGuide'
 import ShareButtons from 'components/common/ShareButtons'
 import StateUpdates from 'components/common/StateUpdates'
+import TakeAction from 'components/common/TakeAction'
 import Glossary from 'components/common/Glossary';
 import ModalButton from "components/modal/ModalButton";
 import Scorecard from 'components/Scorecard';

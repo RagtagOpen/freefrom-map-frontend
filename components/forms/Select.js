@@ -1,4 +1,5 @@
 import React from 'react';
+import { Field } from "formik";
 import PropTypes from 'prop-types';
 
 import { checkRequired } from './helpers';
@@ -20,10 +21,10 @@ export default function Select({ className, label, name, options, smallText, req
     return (
         <div className={ `form-group pb-4 ${className}` }>
             <label htmlFor={ name } className={ styles.label }>{ label }{ checkRequired(required) }</label>
-            <select className={`form-control ${ styles.select }`} name={ name } required={ required }>
+            <Field component="select" className={`form-control ${ styles.select }`} name={ name } required={ required }>
                 <option value="">Select One</option>
                 { options.map((option, index) => renderOption(option, index)) }
-            </select>
+            </Field>
             { small() }
         </div>
     )
