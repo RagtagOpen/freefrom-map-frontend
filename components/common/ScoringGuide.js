@@ -7,7 +7,7 @@ import Modal from '../modal/Modal'
 import ScoreLabel from './ScoreLabel'
 
 // TODO: Determine if there's a suitable free icon substitute for this?
-const EmptySquare = () => (
+export const EmptySquare = () => (
     <span className='empty-square-icon' style={{fontSize: '2em', paddingBottom: '2px'}}>
         &#9633;
     </span>
@@ -21,13 +21,13 @@ const ScoringGuide = () => (
             <div className="row">
                 <h4 className="guide-heading">Overall State Score</h4>
                 <div className='overall scoring-guide'>
-                    {[4, 3, 2, 1, 0].map(score => (
+                    {[3, 2, 1, 0, -1].map(score => (
                         <ScoreDescription key={score} score={score}/>
                     ))}
                 </div>
                 <h4 className="guide-heading">Policy Category Scores</h4>
                 <div className='category scoring-guide'>
-                    {[4, 3, 2, 1, 0].map(score => (
+                    {[3, 2, 1, 0, -1].map(score => (
                         <ScoreDescription key={score} type='category' score={score}/>
                     ))}
                 </div>
