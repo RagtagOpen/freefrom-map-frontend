@@ -46,7 +46,7 @@ const StateCard = ({state}) => {
                 <p className="card-text mb-1 font-weight-lighter font-italic" style={{fontSize: '0.7em'}}>
                     This state does not prioritize...
                 </p>
-                <ModalButton text="Learn more" href={`/${name.toLowerCase()}`}/>
+                <ModalButton text="Learn more" href={`/states/${name.toLowerCase()}`}/>
             </div>
         </li>
     )
