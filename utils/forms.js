@@ -1,7 +1,7 @@
 export const submitForm = path => {
     return async values => {
         const res = await fetch(
-            `${process.env.API_ENDPOINT}/forms/${path}`,
+            `${process.env.NEXT_PUBLIC_API_ENDPOINT}/forms/${path}`,
             {
                 body: JSON.stringify(values),
                 headers: {
