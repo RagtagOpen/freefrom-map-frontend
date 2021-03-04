@@ -49,7 +49,7 @@ function State({ categories, stateData }) {
 }
 
 export async function getStaticPaths() {
-    const res = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + '/states')
+    const res = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + '/states?details=false')
     const states = await res.json()
     return {
         paths: states.map(state => ({ params: { state: state.name.toLowerCase() }})),
@@ -59,7 +59,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     // Get all states so that we find the state code from the name param.
-    const res = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + '/states')
+    const res = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + '/states?details=false')
     const states = await res.json()
     const state = states.find(s => s.name.toLowerCase() === params.state.toLowerCase())
     // Fetch state data by code.
