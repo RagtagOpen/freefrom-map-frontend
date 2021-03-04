@@ -16,10 +16,9 @@ import ModalButton from "components/modal/ModalButton";
 import Scorecard from 'components/Scorecard';
 
 function State({ categories, stateData }) {
-    console.log(categories, stateData)
     const router = useRouter()
     const { state } = router.query
-    const name = stateData.name;
+    const { name } = stateData;
     const imageUrl = "https://via.placeholder.com/600x370"
     return (
         <SharedLayout>
@@ -53,13 +52,18 @@ export async function getStaticPaths() {
     const res = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + '/states')
     const states = await res.json()
     return {
-        paths: states.map(state => ({ params: { state: state.code }})),
-        fallback: true
+        paths: states.map(state => ({ params: { state: state.name.toLowerCase() }})),
+        fallback: false
     };
 }
 
 export async function getStaticProps({ params }) {
-    const stateResponse = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + `/states/${params.state}`)
+    // Get all states so that we find the state code from the name param.
+    const res = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + '/states')
+    const states = await res.json()
+    const state = states.find(s => s.name.toLowerCase() === params.state.toLowerCase())
+    // Fetch state data by code.
+    const stateResponse = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + `/states/${state.code}`)
     const stateData = await stateResponse.json()
     const categoriesResponse = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + '/categories?withCriteria=true')
     const categories = await categoriesResponse.json()

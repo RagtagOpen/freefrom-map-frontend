@@ -20,10 +20,10 @@ function StatesList({ states }) {
                 {visibleStates.length > 0
                     ? <ul style={{border: '1px solid #DDDDDD', backgroundColor: 'white', padding: 7}}>
                         {visibleStates.map(state => (
-                            <>
+                            <React.Fragment key={state.code}>
                                 <StateCard state={state} />
                                 <hr style={{margin: 0, width: '95%'}}/>
-                            </>
+                            </React.Fragment>
                         ))}
                     </ul>
                     : <p className='mt-2'>
@@ -46,7 +46,7 @@ const StateCard = ({state}) => {
                 <p className="card-text mb-1 font-weight-lighter font-italic" style={{fontSize: '0.7em'}}>
                     This state does not prioritize...
                 </p>
-                <ModalButton text="Learn more" href={`/${code}`}/>
+                <ModalButton text="Learn more" href={`/states/${name.toLowerCase()}`}/>
             </div>
         </li>
     )
