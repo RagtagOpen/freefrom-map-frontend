@@ -76,7 +76,7 @@ function Home({ states }) {
 }
 
 export async function getStaticProps() {
-    const res = await fetch(process.env.API_ENDPOINT + '/states')
+    const res = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + '/states')
     const states = await res.json()
     return {
         props: {

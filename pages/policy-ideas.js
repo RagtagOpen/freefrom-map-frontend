@@ -1,21 +1,21 @@
 import React from 'react';
+import { Formik, Form } from 'formik';
 import Head from 'next/head';
 
 import BackButton from "components/navigation/BackButton";
 import { site } from "constants/index"
 import SharedLayout from "components/SharedLayout";
 
-import Form from "components/forms/Form";
 import Input from "components/forms/Input";
 import Select from "components/forms/Select";
-import Checkbox from "components/forms/Checkbox";
-import FormLabel from "components/forms/FormLabel";
 import Submit from "components/forms/Submit";
 
 import TakeAction from "components/common/TakeAction";
 
 import { states } from 'constants/forms';
 import { aboutYou } from 'constants/forms';
+
+import { submitForm } from 'utils'
 
 export default function PolicyIdeas() {
 
@@ -28,10 +28,9 @@ export default function PolicyIdeas() {
                 <BackButton className="mt-3 mb-2" />
                 <h1>Share Your Policy Ideas</h1>
                 <p>At FreeFrom, we are constantly iterating and brainstorming new ways that we can support survivors through policy change at the federal, state, and local levels. We encourage you to share any new policy ideas or changes to current policies that would help you, your loved ones, or others in your community that have experienced violence. Thank you for sharing!</p>
-                <Form
-                    path="policy-ideas"
-                    form={props => (
-                        <form className="col-12 col-lg-8 mb-5">
+                <Formik initialValues={{}} onSubmit={submitForm("policy-ideas")}>
+                    {props => (
+                        <Form className="col-12 col-lg-8 mb-5">
                             <Input label="What policies and issues should FreeFrom prioritize?" name="policies_to_prioritize" required={ true } />
                             <Input label="What policies and issues are important to you but are not included on the map?" name="policies_not_included" required={ true } />
                             <Select label="Your state" name="state" required={ true } options={ states }/>
@@ -43,9 +42,9 @@ export default function PolicyIdeas() {
                               <Input label="Please describe..." name="about_you_other" required={ true } />
                             }
                             <Submit />
-                        </form>
+                        </Form>
                     )}
-                />
+                </Formik>
                 <TakeAction />
             </SharedLayout>
         </div>

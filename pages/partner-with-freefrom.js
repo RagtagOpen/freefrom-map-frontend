@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Formik, Form } from 'formik';
 import Head from 'next/head';
 
 import BackButton from "components/navigation/BackButton";
@@ -8,13 +9,14 @@ import SharedLayout from "components/SharedLayout";
 import Input from "components/forms/Input";
 import Select from "components/forms/Select";
 import Checkbox from "components/forms/Checkbox";
-import Form from "components/forms/Form";
 import FormLabel from "components/forms/FormLabel";
 import Submit from "components/forms/Submit";
 
 import TakeAction from "components/common/TakeAction";
 
 import { states } from 'constants/forms';
+
+import { submitForm } from 'utils'
 
 export default function PartnerWithFreefrom() {
     return (
@@ -26,10 +28,9 @@ export default function PartnerWithFreefrom() {
                 <BackButton className="mt-3 mb-2" />
                 <h1>Partner with FreeFrom</h1>
                 <p>Is your organization interested in partnering with FreeFrom? Please fill out the following information and we will get back to you as soon as possible.</p>
-                <Form
-                    path="partner-with-freefrom"
-                    form={props => (
-                        <form className="col-12 col-lg-8 mb-5">
+                <Formik initialValues={{}} onSubmit={submitForm("partner-with-freefrom")}>
+                    {props => (
+                        <Form className="col-12 col-lg-8 mb-5">
                             <Input label="Your name" name="name" required={ true } />
                             <Input label="Your email" name="email" required={ true } type="email" />
                             <Input label="Your pronouns" name="pronouns" required={ true } />
@@ -55,8 +56,9 @@ export default function PartnerWithFreefrom() {
                               </div>
                             }
                             <Submit />
-                        </form>
-                    )} />
+                        </Form>
+                    )}
+                </Formik>
                 <TakeAction />
             </SharedLayout>
         </div>
