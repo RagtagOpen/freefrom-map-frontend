@@ -1,3 +1,4 @@
-import { submitForm } from 'utils/forms';
+import { submitForm } from "utils/forms";
+import { getStatesData, getStateData, getCategoriesData } from "utils/data";
 
-export { submitForm }
+export { submitForm, getStatesData, getStateData, getCategoriesData };

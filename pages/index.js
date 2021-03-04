@@ -7,6 +7,7 @@ import SharedLayout from 'components/SharedLayout'
 import StatesList from 'components/StatesList'
 import UsMap from 'components/UsMap'
 import ModalButton from 'components/modal/ModalButton'
+import { getStatesData } from 'utils';
 
 function Home({ states }) {
     return (
@@ -76,12 +77,17 @@ function Home({ states }) {
 }
 
 export async function getStaticProps() {
-    const res = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + '/states')
-    const states = await res.json()
+    let states;
+    await getStatesData().then(data => {
+        states = data;
+    }).catch(_ => {
+        states = []
+    });
+
     return {
         props: {
-            states,
-        },
+            states
+        }
     }
 }
 
