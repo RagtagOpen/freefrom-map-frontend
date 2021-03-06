@@ -5,5 +5,15 @@ import { learnFromTool } from 'constants/forms';
 import { states } from 'constants/forms';
 import { aboutYou } from 'constants/forms';
 import { mockSelect } from 'constants/forms';
-
-export { site, regenCycle, toolUseful, learnFromTool, states, aboutYou, mockSelect }
+import { OVERALL_SCORE_LABELS } from 'constants/labels';
+console.log(OVERALL_SCORE_LABELS)
+export {
+    site,
+    regenCycle,
+    toolUseful,
+    learnFromTool,
+    states,
+    aboutYou,
+    mockSelect,
+    OVERALL_SCORE_LABELS
+}

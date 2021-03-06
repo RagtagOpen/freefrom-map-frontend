@@ -11,6 +11,7 @@ import {
 import { EmptySquare } from "./common/ScoringGuide";
 
 import ScoreLabel from "./common/ScoreLabel";
+import { OVERALL_SCORE_LABELS } from '../constants'
 
 const resourceLinkType = PropTypes.shape({
   active: PropTypes.bool,
@@ -266,15 +267,6 @@ Category.propTypes = {
   stateData: stateDataType,
 };
 
-const overallScoreLabels = {
-  "-1":
-    "This state does not prioritize survivors’ financial security or consider their unique circumstances or needs.",
-  0: "This state somewhat considers survivors’ financial security in a few policies, but has a lot of work to do.",
-  1: "This state considers survivors’ financial security in multiple policies, and is making progress towards becoming a survivor wealth friendly state.",
-  2: "This state is prioritizing survivors’ financial security in a broad range of policies and is on its way to becoming a Model State!",
-  3: "This state prioritizes survivors’ financial security across all policy categories and is a model for other states to follow!",
-};
-
 const Scorecard = ({ categories, stateData }) => (
   <div className="scorecard-container">
     <div className="overall mt-5 mb-3">
@@ -282,7 +274,7 @@ const Scorecard = ({ categories, stateData }) => (
       <ScoreLabel score={stateData.grade.grade} />
     </div>
     <p>
-      <em>{overallScoreLabels[stateData.grade.grade]}</em>
+      <em>{OVERALL_SCORE_LABELS[stateData.grade.grade]}</em>
     </p>
     <div className="scorecard accordion" id="scorecard">
       {categories.map((category) => (
