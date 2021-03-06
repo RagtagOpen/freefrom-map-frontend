@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 
-import ScoreLabel from 'components/common/ScoreLabel'
-import ModalButton from "./modal/ModalButton"
-import { toSlug } from 'utils'
+import StateCard from './StateCard'
 
 function StatesList({ states }) {
     const [search, setSearch] = useState('')
@@ -21,10 +19,10 @@ function StatesList({ states }) {
                 {visibleStates.length > 0
                     ? <ul style={{border: '1px solid #DDDDDD', backgroundColor: 'white', padding: 7}}>
                         {visibleStates.map(state => (
-                            <React.Fragment key={state.code}>
+                            <li key={state.code}>
                                 <StateCard state={state} />
                                 <hr style={{margin: 0, width: '95%'}}/>
-                            </React.Fragment>
+                            </li>
                         ))}
                     </ul>
                     : <p className='mt-2'>
@@ -33,23 +31,6 @@ function StatesList({ states }) {
                 }
             </div>
         </>
-    )
-}
-
-const StateCard = ({state}) => {
-    const {code, grade, name} = state
-    return (
-        <li>
-            <div className="card-body p-2 mt-2">
-                <h5 className="card-title" style={{textTransform: 'uppercase'}}>{name}</h5>
-                <h6 className="card-subtitle mb-2 text-muted">Rank: {grade.grade}st</h6>
-                <ScoreLabel score={grade.grade} />
-                <p className="card-text mb-1 font-weight-lighter font-italic" style={{fontSize: '0.7em'}}>
-                    This state does not prioritize...
-                </p>
-                <ModalButton text="Learn more" href={`/states/${toSlug(name)}`}/>
-            </div>
-        </li>
     )
 }
 

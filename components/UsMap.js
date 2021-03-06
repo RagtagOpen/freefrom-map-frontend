@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
-import stateScores from "../public/data/state-scores.json"
-import usData from "../public/data/us-states.json"
 import * as d3 from "d3"
+import ReactDOM from 'react-dom'
+
+import StateCard from './StateCard'
+import usData from "../public/data/us-states.json"
 
 class UsMap extends Component {
-
     componentDidMount() {
-
-        this.stateScores = stateScores;
         this.usData = usData;
         // FIXME: resize map on page resize?
         this.width = window.innerWidth * 0.75 - 40;
@@ -26,19 +25,14 @@ class UsMap extends Component {
         this.renderMap();
     }
 
-    mapScoresToStates(scoreData, usData) {
-        for (var i = 0; i < scoreData.length; i++) {
-            let scoreStateName = scoreData[i].state;
-            var stateScores = scoreData[i].score;
-            for (var j = 0; j < usData.features.length; j++) {
-                var jsonStateName = usData.features[j].properties.name;
-                if (scoreStateName == jsonStateName) {
-                    usData.features[j].properties.score = stateScores;
-                    break;
-                }
-            }
-        }
-        return usData
+    mapScoresToStates(states, mapData) {
+        // Iterate over states and assign score/grade to map data.
+        states.forEach(state => {
+            const { name } = state
+            const feature = mapData.features.find(f => f.properties.name === name)
+            feature.properties = state
+        })
+        return mapData
     }
 
     renderMap() {
@@ -59,13 +53,14 @@ class UsMap extends Component {
             }
             return false
         }
-
+        // States data comes from props
+        const { states } = this.props
         // just unpacking for tidier variable names downstream
-        let { usData, colorRange, width, height, stateScores } = this;
+        let { usData, colorRange, width, height } = this;
 
         // add the values to the state objects
         // usData = this.mapStatesToValues(statesLived, usData);
-        usData = this.mapScoresToStates(stateScores, usData)
+        usData = this.mapScoresToStates(states, usData)
 
         // initalize the pojection and path
         let projection = d3
@@ -82,7 +77,8 @@ class UsMap extends Component {
         let color = d3
             .scale
             .ordinal()
-            .domain(d3.range(1, 5, 1))
+            // Scores range from -1 to 4
+            .domain(d3.range(-1, 4, 1))
             .range(colorRange);
 
         let svg = d3
@@ -97,7 +93,8 @@ class UsMap extends Component {
             .style("stroke", "#fff")
             .style("stroke-width", "1")
             .style("fill", function (d) {
-                return color(d.properties.score)
+                // FIXME: Puerto Rico is undefined!
+                return color(d.properties.grade && d.properties.grade.grade)
             });
 
         // create tooltip div
@@ -113,7 +110,7 @@ class UsMap extends Component {
             .append("text")
 
         // mouseOVER, user scrolls onto
-        svg.on('mouseover', function () {
+        svg.on('mouseover', function (d) {
             // on rollover, note the location of the mouse
             // only redraw the tooltip if we're NOT in the bounds of a tool tip card
             if(!mouseInsideTooltip()) {
@@ -127,6 +124,8 @@ class UsMap extends Component {
                     .style("opacity", 1)
                     .style("left", (d3.event.pageX - 40) + "px")
                     .style("top", (d3.event.pageY - 40) + "px")
+                // Render state data into tooltip.
+                ReactDOM.render(<StateCard state={d.properties} />, document.getElementById('tooltip'))
             }
 
         }).on('mouseout', function () {
@@ -153,8 +152,10 @@ class UsMap extends Component {
             console.log(mouseInsideTooltip());
             // click events
         }).on("click", function (d) {
-            // whatever redirect we want to do goes here
-            alert("Click detected on " + d.properties.name + ", redirecting")
+            // Navigate to state on click
+            // FIXME: replace with toSlug method from utils
+            const { name } = d.properties
+            window.location.href = `${window.location.href}states/${name.toLowerCase().replace(' ', '-')}`
             // for now right clicking removes the card
         }).on("contextmenu", function () {
             d3.event.preventDefault();
@@ -163,7 +164,10 @@ class UsMap extends Component {
         });
     }
 
-    render() { return <div id='us-map'></div > }
+    render() {
+
+        return <div id='us-map'></div >
+    }
 
 }
 
