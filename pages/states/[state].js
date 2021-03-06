@@ -14,6 +14,7 @@ import TakeAction from 'components/common/TakeAction'
 import Glossary from 'components/common/Glossary';
 import ModalButton from "components/modal/ModalButton";
 import Scorecard from 'components/Scorecard';
+import { toSlug } from 'utils';
 
 function State({ categories, stateData }) {
     const router = useRouter()
@@ -52,7 +53,7 @@ export async function getStaticPaths() {
     const res = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + '/states?details=false')
     const states = await res.json()
     return {
-        paths: states.map(state => ({ params: { state: state.name.toLowerCase() }})),
+        paths: states.map(state => ({ params: { state: toSlug(state.name) }})),
         fallback: false
     };
 }
@@ -61,7 +62,7 @@ export async function getStaticProps({ params }) {
     // Get all states so that we find the state code from the name param.
     const res = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + '/states?details=false')
     const states = await res.json()
-    const state = states.find(s => s.name.toLowerCase() === params.state.toLowerCase())
+    const state = states.find(s => toSlug(s.name) === params.state)
     // Fetch state data by code.
     const stateResponse = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + `/states/${state.code}`)
     const stateData = await stateResponse.json()
