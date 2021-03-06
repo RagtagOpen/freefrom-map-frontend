@@ -1,18 +1,21 @@
 import React from 'react';
+import { Field } from "formik";
 import PropTypes from 'prop-types';
 
 import styles from './FormStyles.module.css';
 
-export default function Checkbox({ className, name, children }) {
+export default function Checkbox({ className, name, children, value }) {
     return (
         <div className={`custom-control custom-checkbox ${className}`}>
-            <input type="checkbox" className="custom-control-input" id={ name } />
-            <label className={`custom-control-label ${ styles.label }`} htmlFor={ name }>{ children }</label>
+            <Field type="checkbox" className="custom-control-input" id={ value } name={name } value={ value } />
+            <label className={`custom-control-label ${ styles.label }`} htmlFor={ value }>{ children }</label>
         </div>
     )
 }
 
 Checkbox.propTypes = {
     className: PropTypes.string,
+    children: PropTypes.string,
     name: PropTypes.string,
+    value: PropTypes.string
 }

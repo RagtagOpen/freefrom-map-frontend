@@ -31,7 +31,7 @@ function Navbar() {
                         <a className="nav-link" href="https://freefrom.org">Back to FreeFrom Home</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Give Feedback</a>
+                        <a className="nav-link" href="/give-feedback">Give Feedback</a>
                     </li>
                     <li className="nav-item nav-item-safety d-none d-lg-block">
                         <a className="nav-link" href="https://weather.com">Safety Exit</a>
