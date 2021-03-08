@@ -26,11 +26,10 @@ body {
 
 div.tooltip {
   position: absolute;
-  width: 220px;
-  height: 60px;
   padding: 2px;
+  width: 375px;
   font: 12px sans-serif;
-  background: rgb(240, 100, 73);
+  background: #fff;
   border: 0px;
   border-radius: 8px;
   pointer-events: none;

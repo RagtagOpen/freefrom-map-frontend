@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 import ReportMissingInfo from 'components/common/ReportMissingInfo'
 import ShareButtons from 'components/common/ShareButtons'
@@ -74,6 +75,16 @@ function Home({ states }) {
         </SharedLayout>
     )
 }
+
+Home.propTypes = {
+    states: PropTypes.arrayOf(PropTypes.shape({
+        grade: PropTypes.shape({
+            grade: PropTypes.number
+        }),
+        name: PropTypes.string
+    }))
+}
+
 
 export async function getStaticProps() {
     const res = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + '/states?details=false')
