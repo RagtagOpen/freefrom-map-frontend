@@ -26,11 +26,10 @@ body {
 
 div.tooltip {
   position: absolute;
-  width: 220px;
-  height: 60px;
   padding: 2px;
+  width: 375px;
   font: 12px sans-serif;
-  background: rgb(240, 100, 73);
+  background: #fff;
   border: 0px;
   border-radius: 8px;
   pointer-events: none;
@@ -218,6 +217,41 @@ h4 {
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
+.state-page .take-action > h1 {
+    font-size: 34px;
+}
+
+.state-page .take-action > h1 {
+    font-size: 34px;
+    margin-bottom: 0px;
+}
+
+.state-page .understanding-report button {
+    font-size: 34px;
+    margin-bottom: 0px;
+}
+
+/* FIXME: Consolidate state page modal button css with take action css */
+.state-page .understanding-report .modal-button {
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #32B4B4 !important;
+    margin: 27px;
+    padding: 0px;
+}
+
+.state-page .understanding-report .modal-button:hover {
+    color: #32B4B4 !important;
+}
+
+.state-page .understanding-report .modal-button:active {
+    color: #32B4B4 !important;
+}
+
 .scorecard-container > .overall {
     display: flex;
     align-items: center;
@@ -250,39 +284,39 @@ h4 {
   width: fit-content;
 }
 
-.score-label.overall-4 {
-    background-color: #6DC9CA;
-}
-
 .score-label.overall-3 {
-    background-color: #A2DEDF;
+    background-color: #6DC9CA;
 }
 
 .score-label.overall-2 {
-    background-color: #CFEFEF;
-}
-
-.score-label.overall-1 {
-    background-color: #F6C3C2;
-}
-
-.score-label.overall-0 {
-    background-color: #F29C9A;
-}
-
-.score-label.category-4 {
-    background-color: #6DC9CA;
-}
-
-.score-label.category-3 {
     background-color: #A2DEDF;
 }
 
-.score-label.category-2 {
+.score-label.overall-1 {
     background-color: #CFEFEF;
 }
 
+.score-label.overall-0 {
+    background-color: #F6C3C2;
+}
+
+.score-label.overall--1 {
+    background-color: #F29C9A;
+}
+
+.score-label.category-3 {
+    background-color: #6DC9CA;
+}
+
+.score-label.category-2 {
+    background-color: #A2DEDF;
+}
+
 .score-label.category-1 {
+    background-color: #CFEFEF;
+}
+
+.score-label.category--1 {
     background-color: #F29C9A;
 }
 

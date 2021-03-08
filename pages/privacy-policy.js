@@ -28,12 +28,12 @@ export default function PrivacyPolicy() {
             <h4>PERSONAL DATA</h4>
             <p>While using our Site, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you (“Personal Data“). Personally identifiable information may include, but is not limited to:</p>
             <ul>
-              <li>Email address</li>
-              <li>Cookies and Usage Data</li>
+                <li>Email address</li>
+                <li>Cookies and Usage Data</li>
             </ul>
             <p>We may use your Personal Data to contact you with emails, materials, and other information that may be of interest to you. You may opt out of receiving any, or all, of these communications from us by following the unsubscribe link or instructions provided in any email we send or by contacting us</p>
             <h4>USAGE DATA</h4>
-            <p>We may also collect information on how the Site is accessed and used (“Usage Data“). This Usage Data may include information such as your computer's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Site that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
+            <p>We may also collect information on how the Site is accessed and used (“Usage Data“). This Usage Data may include information such as your computer’s Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Site that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
             <h4>TRACKING COOKIES DATA</h4>
             <p>We use cookies and similar tracking technologies to track the activity on our Site and we hold certain information.</p>
             <p>A cookie is a small file placed on the hard drive of your computer. You may refuse to accept browser cookies by activating the appropriate setting on your browser. However, if you select this setting you may be unable to access certain parts of our Site.</p>
@@ -41,14 +41,14 @@ export default function PrivacyPolicy() {
             <h2>Use of Data</h2>
             <p>We use the collected data for various purposes:</p>
             <ul>
-              <li>To present our Site and its contents to you</li>
-              <li>To allow you to participate in interactive features of our Site when you choose to do so</li>
-              <li>To gather analysis or valuable information so that we can improve our Site</li>
-              <li>To monitor the usage of our Site</li>
-              <li>To detect, prevent, and address technical issues</li>
-              <li>To communicate with you about your experience after you leave our Site, such as sending you short follow-up surveys about your pursuit of compensation and sending you newsletters to keep you informed of our work unless you have opted not to receive such information</li>
-              <li>In any other way we may describe with you provide the information</li>
-              <li>For any other purpose with your consent</li>
+                <li>To present our Site and its contents to you</li>
+                <li>To allow you to participate in interactive features of our Site when you choose to do so</li>
+                <li>To gather analysis or valuable information so that we can improve our Site</li>
+                <li>To monitor the usage of our Site</li>
+                <li>To detect, prevent, and address technical issues</li>
+                <li>To communicate with you about your experience after you leave our Site, such as sending you short follow-up surveys about your pursuit of compensation and sending you newsletters to keep you informed of our work unless you have opted not to receive such information</li>
+                <li>In any other way we may describe with you provide the information</li>
+                <li>For any other purpose with your consent</li>
             </ul>
 
             <h2>Transfer of Data</h2>
@@ -63,11 +63,11 @@ export default function PrivacyPolicy() {
             <h3>Legal Requirements</h3>
             <p>We may disclose your Personal Data in the good faith belief that such action is necessary to:</p>
             <ul>
-              <li>Comply with a legal obligation</li>
-              <li>Protect and defend our rights or property</li>
-              <li>Prevent or investigate possible wrongdoing in connection with the Site</li>
-              <li>Protect the personal safety of users of the Site or the public</li>
-              <li>To protect against legal liability</li>
+                <li>Comply with a legal obligation</li>
+                <li>Protect and defend our rights or property</li>
+                <li>Prevent or investigate possible wrongdoing in connection with the Site</li>
+                <li>Protect the personal safety of users of the Site or the public</li>
+                <li>To protect against legal liability</li>
             </ul>
 
             <h2>Security of Data</h2>
@@ -84,12 +84,12 @@ export default function PrivacyPolicy() {
             <h4>GOOGLE ANALYTICS</h4>
             <p>Google Analytics is a web analytics service offered by Google that tracks and reports website traffic. Google uses the data collected to track and monitor the use of our Site. This data is shared with other Google services. Google may use the collected data to contextualize and personalize the ads of its own advertising network.</p>
             <p>You can opt-out of having made your activity on the Site available to Google Analytics by installing the Google Analytics opt-out browser add-on. The add-on prevents the Google Analytics JavaScript (ga.js, analytics.js and dc.js) from sharing information with Google Analytics about visits activity.</p>
-            <p>For more information on the privacy practices of Google, please visit the Google Privacy Terms web page: <a href="https://policies.google.com/privacy?hl=en" target="_blank">https://policies.google.com/privacy?hl=en</a>.</p>
+            <p>For more information on the privacy practices of Google, please visit the Google Privacy Terms web page: <a href="https://policies.google.com/privacy?hl=en" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy?hl=en</a>.</p>
 
             <h2>Links to Other Sites</h2>
             <p>Our site may contain links to other sites that are not operated by us. If you click a third party link, you will be directed to that third party’s site. We strongly advise you to review the Privacy Policy of every site you visit. We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
 
-            <h2>Children's Privacy</h2>
+            <h2>Children’s Privacy</h2>
             <p>Our Site is not intended for children under the age of 18. We do not knowingly collect personally identifiable information from anyone under the age of 18. If you are a parent or guardian and you are award that your child has provided us with Personal Data, please contact us. If we become aware that we have collected Personal Data from children without verification of parental consent, we take steps to remove that information from our servers.</p>
 
             <h2>Changes to this Policy</h2>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Field } from "formik";
 import PropTypes from 'prop-types';
 
 import { checkRequired } from './helpers';
@@ -14,7 +15,7 @@ export default function Input({ className, type, label, name, smallText, require
     return (
         <div className={ `form-group pb-4 ${className}` }>
             <label htmlFor={ name } className={ styles.label }>{ label }{ checkRequired(required) }</label>
-            <input
+            <Field
                 type={ type }
                 id={ name }
                 name={ name }
