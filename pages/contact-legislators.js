@@ -1,41 +1,39 @@
 import React, { useState } from 'react';
 import { Formik, Form } from 'formik';
 import Head from 'next/head';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 import BackButton from "components/navigation/BackButton";
 import { site } from "constants/index"
 import SharedLayout from "components/SharedLayout";
 
 import Input from "components/forms/Input";
-import Select from "components/forms/Select";
-import Checkbox from "components/forms/Checkbox";
-import FormLabel from "components/forms/FormLabel";
 import Submit from "components/forms/Submit";
 
 import TakeAction from "components/common/TakeAction";
-
-import { toolUseful } from 'constants/forms';
-import { learnFromTool } from 'constants/forms';
-
-import { submitForm } from 'utils'
 
 /**
  * This method uses the Google Civic Info API to get representatives for a zip
  * code. API documentation is here:
  * https://developers.google.com/civic-information/docs/v2/representatives/representativeInfoByAddress
  */
-async function getRepresentativesByZip (zip) {
-  const res = await fetch(`https://content-civicinfo.googleapis.com/civicinfo/v2/representatives?address=${zip}&key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}`)
-  const {officials} = await res.json()
-  console.log(officials)
-  return officials
+async function getRepresentativesByAddress (addressInput) {
+    const res = await fetch(`https://content-civicinfo.googleapis.com/civicinfo/v2/representatives?address=${addressInput}&key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}&roles=legislatorUpperBody&roles=legislatorLowerBody&roles=headOfGovernment`)
+    const json = await res.json()
+    console.log(json)
+    json.offices.forEach(office => {
+      office.officialIndices.forEach(i => json.officials[i].name = `${office.name} ${json.officials[i].name}`)
+    })
+    return json.officials
 }
 
 function ContactLegislators() {
     const [officials, setOfficials] = useState([])
     const submitZipCode = async values => {
-      const officials = await getRepresentativesByZip(values.zip_code)
-      setOfficials(officials)
+        const officials = await getRepresentativesByAddress(values.zip_code)
+        setOfficials(officials)
     }
     return (
         <div>
@@ -51,13 +49,20 @@ function ContactLegislators() {
                     onSubmit={submitZipCode}
                 >
                     {props => (
-                        <Form className="col-12 col-lg-8 mb-5">
-                            <Input label="Enter your zip code to find your legislators:" name="zip_code" required={ true } />
+                        <Form className="col-3 col-lg-8">
+                            <Input
+                                label="Enter your zip code (or address) to find your legislators:"
+                                name="zip_code"
+                                required={ true }
+                                smallText='Note: we are not saving your info and will never do anything with it. It is only used to search for your represenatives, which will only be shared with you in the below list of results.'
+                            />
                             <Submit />
                         </Form>
                     )}
                 </Formik>
-                {officials.map(o => <Official key={o.name} official={o} />)}
+                <div className='mb-5'>
+                    {officials.map(o => <Official key={o.name} official={o} />)}
+                </div>
                 <TakeAction />
             </SharedLayout>
         </div>
@@ -65,30 +70,50 @@ function ContactLegislators() {
 }
 
 const Official = ({official}) => (
-  <div>
-    <h2>{official.name}</h2>
-    <ul>
-      {<Channels channels={official.channels || []} />}
-      {<Comms email items={official.emails || []} />}
-      {<Comms phone items={official.phones || []} />}
-    </ul>
-  </div>
+    <div>
+        <p>{official.name}</p>
+        <ul className='list-inline small'>
+            {<Channels channels={official.channels} />}
+            {<Comms type='email' items={official.emails} />}
+            {<Comms type='phone' items={official.phones} />}
+        </ul>
+    </div>
 )
 
 const Channels = ({channels}) => (
-  <>
-    {channels.map(c => (
-      <li key={c.id}>{c.type}: {c.id}</li>
-    ))}
-  </>
+    <>
+        {channels && channels.length > 0
+            ? channels.map(c => {
+                  const icon = c.type === 'Twitter'
+                      ? faTwitter
+                      : c.type === 'Facebook'
+                          ? faFacebook
+                          : faInstagram
+                  return (
+                    <li className='list-inline-item mr-3' key={c.id}>
+                        <FontAwesomeIcon icon={ icon } className="mr-1" />{c.type === 'Twitter' && '@'}{c.id}
+                    </li>
+                )}
+              )
+            : <li className='list-inline-item mr-3'>[No social media found]</li>
+        }
+    </>
 )
 
-const Comms = ({email, items, phone}) => (
-  <>
-    {items.map(item => (
-      <li key={item}>{email && 'email: '}{phone && 'phone: '}{item}</li>
-    ))}
-  </>
-)
+const Comms = ({items, type}) => {
+    const icon = type === 'email' ? faEnvelope : faPhone
+    return (
+        <>
+            {items && items.length > 0
+                ? items.map(item => (
+                    <li className='list-inline-item mr-3' key={item}>
+                        <FontAwesomeIcon icon={ icon } className="mr-1" />{item}
+                    </li>
+                ))
+                : <li className='list-inline-item mr-3'>[No {type} found]</li>
+            }
+        </>
+    )
+}
 
 export default ContactLegislators
