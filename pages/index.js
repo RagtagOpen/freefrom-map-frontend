@@ -1,5 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import ReportMissingInfo from 'components/common/ReportMissingInfo'
 import ShareButtons from 'components/common/ShareButtons'
@@ -10,6 +12,11 @@ import UsMap from 'components/UsMap'
 import ModalButton from 'components/modal/ModalButton'
 
 function Home({ states }) {
+    // On screens smaller than medium, only show one of the map or list.
+    const [visibleComponent, setVisibleComponent] = useState('list');
+    const showList = visibleComponent === 'list'
+    const mapClass = showList ? ' d-none d-md-block' : ''
+    const listClass = showList ? '' : ' d-none d-md-block'
     return (
         <SharedLayout>
             <div className="row">
@@ -21,13 +28,22 @@ function Home({ states }) {
                         How well does your state support survivors’ financial security?
                     </p>
                 </div>
-                <div className="col-12 col-md-3">
+                {/* Show toggle button on smaller than medium screens */}
+                <div className='col-12 d-sm-block d-md-none mb-3'>
+                    <button
+                        className='orange-button btn btn-primary'
+                        onClick={() => setVisibleComponent(showList ? 'map' : 'list')}>
+                        <FontAwesomeIcon icon={ faArrowRight } className="mr-1" />{' '}
+                        Switch to {showList ? 'map' : 'list'} view
+                    </button>
+                </div>
+                <div className={`col-sm-12 col-md-3${listClass}`}>
                     <StatesList states={states} />
                 </div>
-                <div className="col-12 col-md-9">
+                <div className={`col-sm-12 col-md-9${mapClass}`}>
                     <UsMap states={states} />
                 </div>
-                <div className='col-12 mb-4'>
+                <div className={`col-12 mb-4${mapClass}`}>
                     <div className='float-right'>
                         <div><small>Survivor wealth friendliness</small></div>
                         <div id='legend' style={{height: '40px', width: '200px', backgroundColor: 'blue'}}/>
