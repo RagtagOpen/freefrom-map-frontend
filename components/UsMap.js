@@ -16,11 +16,11 @@ class UsMap extends Component {
         // I continued to put the output color back into the 20% lightner until done
         this.colorRange = [
             // lightest
-            "rgb(164,229,229)",
-            "rgb(142,223,223)",
-            "rgb(114,215,215)",
-            "rgb(79,206,206)",
-            "rgb(50,180,180)"
+            "#c1e8e8",
+            "#6fcaca",
+            "#289090",
+            "#1e6c6c",
+            "#0f3636"
         ]
         this.renderMap();
     }

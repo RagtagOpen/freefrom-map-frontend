@@ -285,41 +285,46 @@ h4 {
 }
 
 .score-label.overall-3 {
-    background-color: #6DC9CA;
+    background-color: #0f3636;
+    color: white;
 }
 
 .score-label.overall-2 {
-    background-color: #A2DEDF;
+    background-color: #1e6c6c;
+    color: white;
 }
 
 .score-label.overall-1 {
-    background-color: #CFEFEF;
+    background-color: #289090;
+    color: white;
 }
 
 .score-label.overall-0 {
-    background-color: #F6C3C2;
+    background-color: #6fcaca;
 }
 
 .score-label.overall--1 {
-    background-color: #F29C9A;
+    background-color: #c1e8e8;
 }
 
 .score-label.category-3 {
-    background-color: #6DC9CA;
+    background-color: #0f3636;
+    color: white;
 }
 
 .score-label.category-2 {
-    background-color: #A2DEDF;
+    background-color: #289090;
+    color: white;
 }
 
 .score-label.category-1 {
-    background-color: #CFEFEF;
-}
-
-.score-label.category--1 {
-    background-color: #F29C9A;
+    background-color: #c1e8e8;
 }
 
 .score-label.category-0 {
     background-color: #CDCDCD;
+}
+
+.score-label.category--1 {
+    background-color: #F29C9A;
 }

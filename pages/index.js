@@ -10,6 +10,7 @@ import SharedLayout from 'components/SharedLayout'
 import StatesList from 'components/StatesList'
 import UsMap from 'components/UsMap'
 import ModalButton from 'components/modal/ModalButton'
+import Image from 'next/image'
 
 function Home({ states }) {
     // On screens smaller than medium, only show one of the map or list.
@@ -44,9 +45,9 @@ function Home({ states }) {
                     <UsMap states={states} />
                 </div>
                 <div className={`col-12 mb-4${mapClass}`}>
-                    <div className='float-right'>
+                    <div className='float-right' aria-hidden="true">
                         <div><small>Survivor wealth friendliness</small></div>
-                        <div id='legend' style={{height: '40px', width: '200px', backgroundColor: 'blue'}}/>
+                        <Image src="/images/legend.png" height="40" width="200"/>
                     </div>
                 </div>
                 <div className='col-12 mb-4'>
