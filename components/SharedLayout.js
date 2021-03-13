@@ -7,7 +7,7 @@ export default function SharedLayout({ children }) {
     return (
         <div className='shared-layout'>
             <Navbar />
-            <div className='container-fluid pl-5 pb-5'>
+            <div className='container-fluid pl-5 pr-5 pb-5'>
                 { children }
             </div>
             <Footer />
