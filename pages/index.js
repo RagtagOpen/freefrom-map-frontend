@@ -39,7 +39,7 @@ function Home({ states }) {
             </div>
 
             <div className='d-flex flex-row flex-fill'>
-                <div className={`col-md-3${listClass}`} style={{ minWidth: '300px' }}>
+                <div className={`col-md-3 p-0${listClass}`} style={{ minWidth: '300px' }}>
                     <StatesList states={states} />
                 </div>
 
@@ -56,7 +56,7 @@ function Home({ states }) {
             </div>
 
             <div className='d-md-flex flex-row justify-content-end mt-5'>
-                <div className='d-flex flex-row justify-content-between text-nowrap flex-wrap' style={{minWidth: '60%'}}>
+                <div className='d-flex flex-row justify-content-between flex-wrap' style={{minWidth: '60%'}}>
                     <StateUpdates />
                     <ReportMissingInfo />
                     <ShareButtons />
