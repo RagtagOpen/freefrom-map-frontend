@@ -56,9 +56,13 @@ function Home({ states }) {
             </div>
 
             <div className='d-md-flex flex-row justify-content-end mt-5'>
-                <div className='d-flex flex-row justify-content-between flex-wrap' style={{minWidth: '60%'}}>
-                    <StateUpdates />
-                    <ReportMissingInfo />
+                <div className='d-flex flex-column flex-md-row justify-content-md-between' style={{minWidth: '60%'}}>
+                    <div className='pr-3'>
+                        <StateUpdates />
+                    </div>
+                    <div className='pr-3'>
+                        <ReportMissingInfo />
+                    </div>
                     <ShareButtons />
                 </div>
             </div>
