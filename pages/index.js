@@ -63,7 +63,7 @@ function Home({ states }) {
                     <div className='pr-3'>
                         <ReportMissingInfo />
                     </div>
-                    <ShareButtons />
+                    <ShareButtons className='d-flex flex-row flex-nowrap' />
                 </div>
             </div>
 
