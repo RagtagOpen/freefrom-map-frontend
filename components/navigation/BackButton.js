@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import styles from '../common/Common.module.css';
 
 import { useRouter } from 'next/router';
 
@@ -8,7 +11,7 @@ export default function BackButton({ text, className }) {
 
     return (
         <div className={ className }>
-            <span className={`back-button`} onClick={() => router.push('/')}>{ text }</span>
+            <span className={`back-button`} onClick={() => router.push('/')}> <FontAwesomeIcon icon={ faArrowLeft } className={`mr-1 ${styles["take-action-link"]}`} /> { text }</span>
         </div>
     )
 }
