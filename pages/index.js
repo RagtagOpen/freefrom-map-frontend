@@ -44,10 +44,9 @@ function Home({ states }) {
                 <div className={`col-sm-12 col-md-9${mapClass}`}>
                     <UsMap states={states} />
                 </div>
-                <div className={`col-12 mb-4${mapClass}`}>
+                <div className={`col-12 mt-4 mb-4${mapClass}`}>
                     <div className='float-right' aria-hidden="true">
-                        <div><small>Survivor wealth friendliness</small></div>
-                        <Image src="/images/legend.png" height="40" width="200"/>
+                        <Image src="/images/legend.png" height="97" width="449"/>
                     </div>
                 </div>
                 <div className='col-12 mb-4'>
