@@ -22,9 +22,8 @@ import TakeAction from "components/common/TakeAction";
 async function getRepresentativesByAddress (addressInput) {
     const res = await fetch(`https://content-civicinfo.googleapis.com/civicinfo/v2/representatives?address=${addressInput}&key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}&roles=legislatorUpperBody&roles=legislatorLowerBody&roles=headOfGovernment&roles=deputyHeadOfGovernment&levels=administrativeArea1`)
     const json = await res.json()
-    console.log(json)
     json.offices.forEach(office => {
-      office.officialIndices.forEach(i => json.officials[i].name = `${office.name} ${json.officials[i].name}`)
+        office.officialIndices.forEach(i => json.officials[i].name = `${office.name} ${json.officials[i].name}`)
     })
     return json.officials
 }
@@ -43,7 +42,6 @@ function ContactLegislators() {
             <SharedLayout>
                 <BackButton className="mt-3 mb-2" />
                 <h1>Contact Your Legislators</h1>
-                <p>The Policy Map and Scorecard will only be effective if it is useful to our users. We want to hear from you how you used the tool and whether it was helpful. If you didn’t find the tool helpful, feel free to share how we can make the necessary improvements. Thanks so much for sharing your feedback and for helping us make the Policy Map and Scorecard the best tool it can possibly be!</p>
                 <Formik
                     initialValues={{}}
                     onSubmit={submitZipCode}
@@ -81,21 +79,40 @@ const Official = ({official}) => (
     </div>
 )
 
+const SUBJECT = 'We need to prioritize the financial security of survivors of intimate partner violence'
+const BODY = 'Dear [Representative name],%0D%0A%0D%0ASurvivors of intimate partner violence need more legislative support to protect survivors of intimate partner violence.%0D%0A%0D%0A[Why this issue is important to me.]%0D%0A%0D%0ASincerely,%0D%0A%0D%0A[Your name]'
+
+const getUrlForType = (type, value) => {
+    switch (type) {
+    case 'Twitter': return `https://twitter.com/intent/tweet?text=@${value}`
+    case 'Facebook': return `https://facebook.com/${value}`
+    case 'email': return `mailto:${value}?subject=${SUBJECT}&body=${BODY}`
+    case 'phone': return `tel:${value}`
+    }
+}
+
 const Channels = ({channels}) => (
     <>
         {channels && channels.length > 0
             ? channels.map(c => {
-                  const icon = c.type === 'Twitter'
-                      ? faTwitter
-                      : c.type === 'Facebook'
-                          ? faFacebook
-                          : faInstagram
-                  return (
-                    <li className='list-inline-item mr-3' key={c.id}>
-                        <FontAwesomeIcon icon={ icon } className="mr-1" />{c.type === 'Twitter' && '@'}{c.id}
+                const icon = c.type === 'Twitter'
+                    ? faTwitter
+                    : c.type === 'Facebook'
+                        ? faFacebook
+                        : faInstagram
+                return (
+                    <li className='list-inline-item mr-3' key={`${c.type}-${c.id}`}>
+                        <FontAwesomeIcon icon={ icon } className="mr-1" />
+                        <a
+                            href={getUrlForType(c.type, c.id)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {c.type === 'Twitter' && '@'}{c.id}
+                        </a>
                     </li>
                 )}
-              )
+            )
             : <li className='list-inline-item mr-3'>[No social media found]</li>
         }
     </>
@@ -108,7 +125,14 @@ const Comms = ({items, type}) => {
             {items && items.length > 0
                 ? items.map(item => (
                     <li className='list-inline-item mr-3' key={item}>
-                        <FontAwesomeIcon icon={ icon } className="mr-1" />{item}
+                        <FontAwesomeIcon icon={ icon } className="mr-1" />
+                        <a
+                            href={getUrlForType(type, item)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {item}
+                        </a>
                     </li>
                 ))
                 : <li className='list-inline-item mr-3'>[No {type} found]</li>
