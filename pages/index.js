@@ -50,8 +50,7 @@ function Home({ states }) {
 
             <div aria-hidden='true' className={`d-md-flex flex-row justify-content-end${mapClass}`}>
                 <div className='d-flex flex-column'>
-                    <small>Survivor wealth friendliness</small>
-                    <Image src="/images/legend.png" height="40" width="200"/>
+                    <Image src="/images/legend.png" height="97" width="449"/>
                 </div>
             </div>
 
