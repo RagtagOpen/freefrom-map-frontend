@@ -17,7 +17,7 @@ const StateUpdates = () => (
             <form action="https://freefrom.us11.list-manage.com/subscribe/post?u=709a0a051cd8a5f3df002da88&amp;id=54b262f0fa" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" novalidate>
                 <div id="mc_embed_signup_scroll">
                     <div className="mc-field-group mb-3">
-                        <p className="mb-1 small">How will updates be useful for you? <span className="asterisk">*</span></p>
+                        <p className="mb-1 small">Your email <span className="asterisk">*</span></p>
                     	  <input type="email" name="EMAIL" className="required email" id="mce-EMAIL"/>
                     </div>
                     <div className="mc-field-group input-group">
