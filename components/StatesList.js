@@ -12,7 +12,7 @@ function StatesList({ states }) {
             <input
                 placeholder="Search for a state..."
                 onChange={(evt) => setSearch(evt.target.value)}
-                style={{height: '60px', width: '100%', paddingLeft: 7}}
+                style={{height: '60px', width: '100%', paddingLeft: 7, border: '1px solid #767676', borderRadius: '2px'}}
                 value={search}
             />
             <div className='mt-1' style={{height: '500px', overflowY: 'scroll'}}>

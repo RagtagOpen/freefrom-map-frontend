@@ -75,6 +75,17 @@ h4 {
   line-height: 20px;
 }
 
+input {
+  border: 0;
+  border-bottom: 1px solid #292F36;
+  border-radius: 0;
+}
+
+.checkbox {
+  display: inline;
+  padding-left: 5px;
+}
+
 /* Colors */
 .text-ff-teal {
   color: #32b4b4;
@@ -327,4 +338,8 @@ h4 {
 
 .score-label.category--1 {
     background-color: #ff9797;
+}
+
+.asterisk {
+  color: #F06449;
 }
