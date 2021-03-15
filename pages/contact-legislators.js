@@ -20,7 +20,7 @@ import TakeAction from "components/common/TakeAction";
  * https://developers.google.com/civic-information/docs/v2/representatives/representativeInfoByAddress
  */
 async function getRepresentativesByAddress (addressInput) {
-    const res = await fetch(`https://content-civicinfo.googleapis.com/civicinfo/v2/representatives?address=${addressInput}&key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}&roles=legislatorUpperBody&roles=legislatorLowerBody&roles=headOfGovernment`)
+    const res = await fetch(`https://content-civicinfo.googleapis.com/civicinfo/v2/representatives?address=${addressInput}&key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}&roles=legislatorUpperBody&roles=legislatorLowerBody&roles=headOfGovernment&roles=deputyHeadOfGovernment&levels=administrativeArea1`)
     const json = await res.json()
     console.log(json)
     json.offices.forEach(office => {
