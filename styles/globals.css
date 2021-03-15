@@ -31,7 +31,7 @@ div.tooltip {
   font: 12px sans-serif;
   background: #fff;
   border: 0px;
-  border-radius: 8px;
+  border-radius: 5px;
   pointer-events: none;
 }
 
@@ -296,40 +296,40 @@ input {
 }
 
 .score-label.overall-3 {
-    background-color: #0f3636;
+    background-color: #136b5a;
     color: white;
 }
 
 .score-label.overall-2 {
-    background-color: #1e6c6c;
+    background-color: #48cacc;
     color: white;
 }
 
 .score-label.overall-1 {
-    background-color: #289090;
-    color: white;
+    background-color: #abe4e1;
 }
 
 .score-label.overall-0 {
-    background-color: #6fcaca;
+    background-color: #ff9797;
 }
 
 .score-label.overall--1 {
-    background-color: #c1e8e8;
+    background-color: #f0654a;
+    color: white;
 }
 
 .score-label.category-3 {
-    background-color: #0f3636;
+    background-color: #136b5a;
     color: white;
 }
 
 .score-label.category-2 {
-    background-color: #289090;
+    background-color: #48cacc;
     color: white;
 }
 
 .score-label.category-1 {
-    background-color: #c1e8e8;
+    background-color: #abe4e1;
 }
 
 .score-label.category-0 {
@@ -337,7 +337,7 @@ input {
 }
 
 .score-label.category--1 {
-    background-color: #F29C9A;
+    background-color: #ff9797;
 }
 
 .asterisk {
