@@ -8,13 +8,13 @@ export default function PrivacyPolicy() {
             <BackButton className="mt-3 mb-2" />
             <h1>Privacy Policy</h1>
             <p>Effective date: March 1, 2021</p>
-            <p>FreeFrom (“us“, “we“, or “our“) operates the National Survivor Wealth Policy Map and Scorecard (hereinafter referred to as the “Site“).</p>
+            <p>FreeFrom (“us“, “we“, or “our“) operates the National Survivor Financial Security Policy Map and Scorecard (hereinafter referred to as the “Site“).</p>
             <p>This page informs you of our policies regarding the collection, use and disclosure of personal data when you use our Site and the choices you have associated with that data.</p>
             <p>Please read this policy carefully to understand our policies and practices regarding your information and how we will treat it. By accessing or using this Site, you agree to this Privacy Policy.</p>
 
             <h2>Definitions</h2>
             <h3>Site</h3>
-            <p>The site is the National Survivor Wealth Policy Map and Scorecard operated by FreeFrom.</p>
+            <p>The site is the National Survivor Financial Security Policy Map and Scorecard operated by FreeFrom.</p>
             <h3>Personal Data</h3>
             <p>Personal Data means data about a living individual who can be identified from that data (or from that and other information in our possession or likely to come into our possession).</p>
             <h3>Usage Data</h3>
