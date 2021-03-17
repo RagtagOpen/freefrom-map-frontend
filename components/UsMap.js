@@ -155,7 +155,6 @@ class UsMap extends Component {
             // click events
         }).on("click", function (d) {
             // Navigate to state on click
-            // FIXME: replace with toSlug method from utils
             const { name } = d.properties
             window.location.href = `${window.location.href}states/${toSlug(name)}`
             // for now right clicking removes the card
