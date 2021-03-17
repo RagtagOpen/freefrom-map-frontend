@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 
 import StateCard from './StateCard'
 import usData from "../public/data/us-states.json"
+import { toSlug } from 'utils'
 
 class UsMap extends Component {
     componentDidMount() {
@@ -156,7 +157,7 @@ class UsMap extends Component {
             // Navigate to state on click
             // FIXME: replace with toSlug method from utils
             const { name } = d.properties
-            window.location.href = `${window.location.href}states/${name.toLowerCase().replace(' ', '-')}`
+            window.location.href = `${window.location.href}states/${toSlug(name)}`
             // for now right clicking removes the card
         }).on("contextmenu", () => {
             d3.event.preventDefault();
