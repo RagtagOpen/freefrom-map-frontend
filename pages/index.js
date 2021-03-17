@@ -17,7 +17,6 @@ function Home({ states }) {
     const showList = visibleComponent === 'list'
     const mapClass = showList ? ' d-none d-md-block' : ''
     const listClass = showList ? '' : ' d-none d-md-block'
-
     return (
         <SharedLayout>
             <>
@@ -110,7 +109,27 @@ Home.propTypes = {
 
 export async function getStaticProps() {
     const res = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + '/states?details=false')
-    const states = await res.json()
+    let states = await res.json()
+    // Assign rank to states list
+    let lastTotal = Infinity
+    let lastRank = 0
+    states = states
+        .sort((a, b) => b.total - a.total)
+        .map((state, i) => {
+            if (state.total === lastTotal) {
+                // If there's a tie, use the previous rank.
+                state.rank = lastRank
+            }
+            if (state.total < lastTotal) {
+                // Get the next ranking (accounting for the gap left by any
+                // previous ties).
+                const newRank = i + 1 > lastRank ? i + 1 : lastRank + 1
+                // Update the last rank/total and set the state rank value
+                state.rank = lastRank = newRank
+                lastTotal = state.total
+            }
+            return state
+        })
     return {
         props: {
             states,
