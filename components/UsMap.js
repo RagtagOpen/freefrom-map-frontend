@@ -22,7 +22,7 @@ class UsMap extends Component {
             "#48cacc",
             "#136b5a"
         ]
-        this.renderMap();
+        this.renderMap()
     }
 
     mapScoresToStates(states, mapData) {
@@ -40,14 +40,16 @@ class UsMap extends Component {
         // a function to determine if the mouse is on the tooltip so we can
         // avoid redrawing it until they aren't use it (prevents states "under"
         // the tool tip from triggering and redraw while card is in use)
-        function mouseInsideTooltip() {
-            const location = document.getElementById('tooltip').getBoundingClientRect()
-            let x = d3.event.pageX;
-            let y = d3.event.pageY;
+        //
+        // Note: rectangle argument must be passed so that it is dynamically
+        // recalculated when the mouse event occurs.
+        function mouseInsideTooltip(rectangle) {
+            const {left, right, bottom, top} = rectangle
+            let {pageX: x, pageY: y} = d3.event
             // in the left/right bounds?
-            if(x > location.left && x < location.right) {
+            if(x >= left && x <= right) {
                 // in the up/down bounds? (inverted y)
-                if(y < location.bottom && y > location.top) {
+                if(y <= bottom && y >= top) {
                     return true
                 }
             }
@@ -113,8 +115,7 @@ class UsMap extends Component {
         svg.on('mouseover', function (d) {
             // on rollover, note the location of the mouse
             // only redraw the tooltip if we're NOT in the bounds of a tool tip card
-            if(!mouseInsideTooltip()) {
-
+            if(!mouseInsideTooltip(document.getElementById('tooltip').getBoundingClientRect())) {
                 // decreases opacity slightly to provide feedback of selection
                 d3.select(this)
                     .style({opacity: '0.75'})
@@ -133,12 +134,12 @@ class UsMap extends Component {
             d3.select(this).style({ opacity: '1.0' });
             // Hide tooltip if mouse outside tooltip (covers the case where the
             // mouse leaves the svg boundary).
-            if(!mouseInsideTooltip()) {
+            if(!mouseInsideTooltip(document.getElementById('tooltip').getBoundingClientRect())) {
                 tooltip
                     .style("opacity", 0)
             }
             // mouseMOVE - continuous version of mouseOVER
-        }).on('mousemove', function() {
+        }).on('mousemove', function () {
             // will finish soon
             // let x = d3.event.pageX;
             // let y = d3.event.pageY;
@@ -149,7 +150,7 @@ class UsMap extends Component {
             //     .style("opacity", 0)
             // }
             // only redraw the tooltip if we're NOT in the bounds of a tool tip card
-            console.log(mouseInsideTooltip());
+            // console.log(mouseInsideTooltip(document.getElementById('tooltip').getBoundingClientRect()));
             // click events
         }).on("click", function (d) {
             // Navigate to state on click
@@ -157,7 +158,7 @@ class UsMap extends Component {
             const { name } = d.properties
             window.location.href = `${window.location.href}states/${name.toLowerCase().replace(' ', '-')}`
             // for now right clicking removes the card
-        }).on("contextmenu", function () {
+        }).on("contextmenu", () => {
             d3.event.preventDefault();
             tooltip
                 .style("opacity", 0)
@@ -165,8 +166,7 @@ class UsMap extends Component {
     }
 
     render() {
-
-        return <div id='us-map'></div >
+        return <div id='us-map' />
     }
 
 }
