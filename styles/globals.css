@@ -301,3 +301,10 @@ h4 {
 .score-label.category-0 {
     background-color: #CDCDCD;
 }
+
+.ne-zoom-button {
+  background-color: #6DC9CA;
+  color:  #000000;
+  border-radius: 7px;
+}
+

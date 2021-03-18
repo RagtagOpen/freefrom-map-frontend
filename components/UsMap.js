@@ -60,6 +60,45 @@ class UsMap extends Component {
             return false
         }
 
+        // toggle a zoom-in on the small states of the eastern seaboard
+        function zoomNortheast(t) {
+            // approximate y axes to center vertically on small states of interest
+            let yCoordsObj = {
+                "VT": 65,
+                "NH": 65,
+                "MA": 75,
+                "CT": 95,
+                "RI": 150,
+                "NJ": 175,
+                "DE": 200,
+                "MD": 200,
+            }
+            let y = yCoordsObj[t];
+            if(northeastZoom) {
+                // is there a better way to do this interpolation?-------------------V
+                document.getElementById("us-map-svg").setAttribute("viewBox", "0 " + y + " 1440 700");
+            } else {
+                document.getElementById("us-map-svg").setAttribute("viewBox", "700 " + y + " 540 545");
+            }
+            // flip "zoomed" state
+            northeastZoom = !northeastZoom
+        }
+
+        // adds zoom buttons to top right of map to zoom in on small states
+        function addNortheastZoomButton(stateName) {
+
+            d3.select("#map-container")
+                .append("button")
+                .attr("id", "northeast-focus-button")
+                .attr("type", "button")
+                .text(stateName)
+                .attr("class", "ne-zoom-button")
+                .style("width", "5%")
+                .style("float", "right")
+                // the zoom function will reset the y axis location up or down the eastern seaboard based on the state name
+                .on("click", function(){ zoomNortheast(d3.select(this).text()) })
+        }
+
         // just unpacking for tidier variable names downstream
         let { usData, colorRange, width, height, stateScores } = this;
 
@@ -113,24 +152,16 @@ class UsMap extends Component {
             .style("fill", function (d) {
                 return color(d.properties.score)
             });
-
-        // button next to map - toggle a zoom-in on the small states of the eastern seaboard
-        let northeastFocusButton = d3
-            .select("#map-container")
-            .append("button")
-            .attr("id", "northeast-focus-button")
-            .attr("type", "button")
-            .text("Zoom to Small States")
-            .style("width", "5%")
-            .style("float", "right")
-            .on("click", function(){
-                if(northeastZoom) {
-                    document.getElementById("us-map-svg").setAttribute("viewBox", "0 0 1440 700");
-                } else {
-                    document.getElementById("us-map-svg").setAttribute("viewBox", "700 85 540 545");
-                }
-                northeastZoom = !northeastZoom
-            })
+        
+        // add zoom buttons for little northeastern states
+        addNortheastZoomButton("VT")
+        addNortheastZoomButton("NH")
+        addNortheastZoomButton("MA")
+        addNortheastZoomButton("CT")
+        addNortheastZoomButton("RI")
+        addNortheastZoomButton("NJ")
+        addNortheastZoomButton("MD")
+        addNortheastZoomButton("DE")
 
         // create tooltip div
         let tooltip = d3
