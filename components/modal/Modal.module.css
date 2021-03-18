@@ -10,6 +10,7 @@
     background-color: transparent;
     border: none;
     padding: 6.75px 0;
+    text-align: left;
 }
 
 .button:hover, .button:focus, .button:active {

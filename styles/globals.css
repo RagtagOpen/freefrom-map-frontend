@@ -26,13 +26,12 @@ body {
 
 div.tooltip {
   position: absolute;
-  width: 220px;
-  height: 60px;
   padding: 2px;
+  width: 375px;
   font: 12px sans-serif;
-  background: rgb(240, 100, 73);
+  background: #fff;
   border: 0px;
-  border-radius: 8px;
+  border-radius: 5px;
   pointer-events: none;
 }
 
@@ -74,6 +73,17 @@ h3 {
 h4 {
   font-size: 20px;
   line-height: 20px;
+}
+
+input {
+  border: 0;
+  border-bottom: 1px solid #292F36;
+  border-radius: 0;
+}
+
+.checkbox {
+  display: inline;
+  padding-left: 5px;
 }
 
 /* Colors */
@@ -187,6 +197,29 @@ h4 {
   padding-left: 0;
 }
 
+.orange-button {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #F06449;
+    background-color: transparent;
+    border: none;
+    padding: 6.75px 0;
+}
+
+.orange-button:hover, .orange-button:focus, .orange-button:active {
+    text-decoration: underline;
+    color: #F06449 !important;
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 .footnotes {
   white-space: pre-wrap;       /* css-3 */
   white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
@@ -263,43 +296,52 @@ h4 {
 }
 
 .score-label.overall-3 {
-    background-color: #6DC9CA;
+    background-color: #136b5a;
+    color: white;
 }
 
 .score-label.overall-2 {
-    background-color: #A2DEDF;
+    background-color: #48cacc;
+    color: white;
 }
 
 .score-label.overall-1 {
-    background-color: #CFEFEF;
+    background-color: #abe4e1;
 }
 
 .score-label.overall-0 {
-    background-color: #F6C3C2;
+    background-color: #ff9797;
 }
 
 .score-label.overall--1 {
-    background-color: #F29C9A;
+    background-color: #f0654a;
+    color: white;
 }
 
 .score-label.category-3 {
-    background-color: #6DC9CA;
+    background-color: #136b5a;
+    color: white;
 }
 
 .score-label.category-2 {
-    background-color: #A2DEDF;
+    background-color: #48cacc;
+    color: white;
 }
 
 .score-label.category-1 {
-    background-color: #CFEFEF;
-}
-
-.score-label.category--1 {
-    background-color: #F29C9A;
+    background-color: #abe4e1;
 }
 
 .score-label.category-0 {
     background-color: #CDCDCD;
+}
+
+.score-label.category--1 {
+    background-color: #ff9797;
+}
+
+.asterisk {
+  color: #F06449;
 }
 
 .ne-zoom-button {

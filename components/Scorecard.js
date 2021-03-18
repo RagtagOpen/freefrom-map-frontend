@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCaretDown,
+  faCaretUp,
   faAward,
   faLightbulb,
   faCheck,
@@ -11,6 +12,7 @@ import {
 import { EmptySquare } from "./common/ScoringGuide";
 
 import ScoreLabel from "./common/ScoreLabel";
+import { OVERALL_SCORE_LABELS } from '../constants'
 
 const resourceLinkType = PropTypes.shape({
   active: PropTypes.bool,
@@ -158,7 +160,7 @@ const ResourceLink = ({ link }) => (
 
 ResourceLink.propTypes = { link: resourceLinkType };
 
-const Category = ({ category, stateData }) => {
+const Category = ({ category, expanded, onClickExpand, stateData }) => {
   const categoryScore =
     stateData.category_grades.find((c) => c.category_id === category.id) || {};
   const honorableMentionData =
@@ -189,6 +191,7 @@ const Category = ({ category, stateData }) => {
         data-target={`#${collapseId}`}
         aria-expanded="false"
         aria-controls={collapseId}
+        onClick={onClickExpand}
       >
         <h2
           className="m-0"
@@ -199,7 +202,7 @@ const Category = ({ category, stateData }) => {
             <span className="mr-3">
               <ScoreLabel score={categoryScore.grade} type="category" />
             </span>
-            <FontAwesomeIcon className="fa-2x" icon={faCaretDown} />
+            <FontAwesomeIcon className="fa-2x" icon={expanded ? faCaretUp : faCaretDown} />
           </div>
         </h2>
       </div>
@@ -266,31 +269,34 @@ Category.propTypes = {
   stateData: stateDataType,
 };
 
-const overallScoreLabels = {
-  "-1":
-    "This state does not prioritize survivors’ financial security or consider their unique circumstances or needs.",
-  0: "This state somewhat considers survivors’ financial security in a few policies, but has a lot of work to do.",
-  1: "This state considers survivors’ financial security in multiple policies, and is making progress towards becoming a survivor wealth friendly state.",
-  2: "This state is prioritizing survivors’ financial security in a broad range of policies and is on its way to becoming a Model State!",
-  3: "This state prioritizes survivors’ financial security across all policy categories and is a model for other states to follow!",
+const Scorecard = ({ categories, stateData }) => {
+    const [expanded, setExpanded] = useState(null)
+    return (
+        <div className="scorecard-container">
+            <div className="overall mt-5 mb-3">
+                <span className="label mr-2">Overall:</span>
+                <ScoreLabel score={stateData.grade.grade} />
+            </div>
+            <p>
+                <em>{OVERALL_SCORE_LABELS[stateData.grade.grade]}</em>
+            </p>
+            <div className="scorecard accordion" id="scorecard">
+                {categories.map((category) => {
+                    const isExpanded = expanded === category.id
+                    const onClickExpand = () => setExpanded(isExpanded ? null : category.id)
+                    return (
+                        <Category
+                            category={category}
+                            expanded={isExpanded}
+                            key={category.id}
+                            onClickExpand={onClickExpand}
+                            stateData={stateData} />
+                    )
+                })}
+            </div>
+        </div>
+    )
 };
-
-const Scorecard = ({ categories, stateData }) => (
-  <div className="scorecard-container">
-    <div className="overall mt-5 mb-3">
-      <span className="label mr-2">Overall:</span>
-      <ScoreLabel score={stateData.grade.grade} />
-    </div>
-    <p>
-      <em>{overallScoreLabels[stateData.grade.grade]}</em>
-    </p>
-    <div className="scorecard accordion" id="scorecard">
-      {categories.map((category) => (
-        <Category category={category} key={category.id} stateData={stateData} />
-      ))}
-    </div>
-  </div>
-);
 
 Scorecard.propTypes = {
   categories: PropTypes.arrayOf(categoryType),
