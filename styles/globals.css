@@ -290,57 +290,53 @@ input {
 }
 
 .score-label {
-  border-radius: 5px;
+  border-radius: 30px;
   display: inline;
   font-size: 0.8em;
+  font-weight: 800;
   padding: 10px 7px;
   text-transform: uppercase;
   width: fit-content;
 }
 
 .score-label.overall-3 {
-    background-color: #136b5a;
-    color: white;
+    background-color: #FFB600;
 }
 
 .score-label.overall-2 {
-    background-color: #48cacc;
-    color: white;
+    background-color: #47CCCC;
 }
 
 .score-label.overall-1 {
-    background-color: #abe4e1;
+    background-color: #AAE5E1;
 }
 
 .score-label.overall-0 {
-    background-color: #ff9797;
+    background-color: #FF9797;
 }
 
 .score-label.overall--1 {
-    background-color: #f0654a;
-    color: white;
+    background-color: #F06449;
 }
 
 .score-label.category-3 {
-    background-color: #136b5a;
-    color: white;
+    background-color: #FFB600;
 }
 
 .score-label.category-2 {
-    background-color: #48cacc;
-    color: white;
+    background-color: #47CCCC;
 }
 
 .score-label.category-1 {
-    background-color: #abe4e1;
+    background-color: #AAE5E1;
 }
 
 .score-label.category-0 {
-    background-color: #CDCDCD;
+    background-color: #FF9797;
 }
 
 .score-label.category--1 {
-    background-color: #ff9797;
+    background-color: #F06449;
 }
 
 .asterisk {
