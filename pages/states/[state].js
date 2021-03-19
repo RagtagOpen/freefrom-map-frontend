@@ -27,10 +27,10 @@ function State({ categories, stateData }) {
                 <p>How does { name } measure up to supporting survivor wealth?</p>
                 <div className="row">
                     <div className="col-12 col-md-4">
-                        <img className="img-fluid" src={imageUrl} />
+                        <img className="img-fluid mb-3" src={imageUrl} />
                         <StateUpdates />
                         <ReportMissingInfo />
-                        <ShareButtons className="mb-5" />
+                        <ShareButtons className="mt-3 mb-5" />
                     </div>
                     <div className="col-12 col-md-7">
                         <div className="float-right">
@@ -38,6 +38,7 @@ function State({ categories, stateData }) {
                             <ModalButton href="#" text="Download report" />
                         </div>
                         <Scorecard categories={categories} stateData={stateData} />
+                        <img className="img-fluid my-3" src="/images/key.png" />
                         <div className="understanding-report">
                             <h2 className="mb-0" >Understanding this report</h2>
                             <ScoringGuide />
