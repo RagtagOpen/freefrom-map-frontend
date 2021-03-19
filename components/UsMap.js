@@ -70,7 +70,7 @@ class UsMap extends Component {
             let y = yCoordsObj[t];
             if(northeastZoom) {
                 // is there a better way to do this interpolation?-------------------V
-                document.getElementById("us-map-svg").setAttribute("viewBox", "0 " + y + " 1440 700");
+                document.getElementById("us-map-svg").setAttribute("viewBox", "0 0 1040 572");
             } else {
                 document.getElementById("us-map-svg").setAttribute("viewBox", "700 " + y + " 540 545");
             }
