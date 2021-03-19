@@ -7,7 +7,7 @@ import { faCircle } from '@fortawesome/free-solid-svg-icons';
 function Footer() {
     return (
         <div className="footer d-flex justify-content-lg-around justify-content-center align-items-center flex-column flex-md-row p-2 py-md-5">
-            <div className="py-2 my-md-0">
+            <div className="py-2 my-md-0 mt-4">
                 <h2 className="mt-0">Follow FreeFrom</h2>
                 <a href="https://www.facebook.com/freefrom.org" target="_blank" rel="noopener noreferrer">
                     <span className="fa-layers fa-fw fa-3x ml-1">

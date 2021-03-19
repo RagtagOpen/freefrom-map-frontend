@@ -23,7 +23,7 @@ function Home({ states }) {
                 <h1 className='mt-3'>
                     The National Survivor Financial Security Policy Map and Scorecard
                 </h1>
-                <p className='mb-5'>
+                <p className='mb-4'>
                     How well does your state support survivors’ financial security?
                 </p>
             </>
@@ -76,17 +76,17 @@ function Home({ states }) {
                 <h2 className='mt-5'>States to Watch</h2>
                 <div className="d-flex justify-content-lg-around justify-content-center align-items-center flex-column flex-md-row p-2">
                     <div className='d-flex flex-column flex-md-row justify-content-md-between' style={{minWidth: '60%'}}>
-                        <div className='pr-3'>
+                        <div className='pr-3 mb-3'>
                             <h3 className="mb-3">Maine</h3>
                             <img className="img-fluid mb-3" src="/images/state-to-watch-1.png" />
                             <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
-                        <div className='pr-3'>
+                        <div className='pr-3 mb-3'>
                             <h3 className="mb-3">Washington</h3>
                             <img className="img-fluid mb-3" src="/images/state-to-watch-2.png" />
                             <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
-                        <div className='pr-3'>
+                        <div className='pr-3 mb-3'>
                             <h3 className="mb-3">Colorado, Illinois, and Nevada</h3>
                             <img className="img-fluid mb-3" src="/images/state-to-watch-3.png" />
                             <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
