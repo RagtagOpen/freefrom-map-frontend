@@ -200,6 +200,12 @@ input {
   padding-left: 0;
 }
 
+.checklistIcon {
+  height: 24px;
+  width: 24px;
+  margin-right: 5px;
+}
+
 .orange-button {
     font-family: 'Poppins';
     font-style: normal;

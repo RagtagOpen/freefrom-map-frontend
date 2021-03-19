@@ -262,9 +262,9 @@ export default function Methodology() {
             </ul>
             <p>For each characteristic, states were given the following:</p>
             <ul className="no-bullets">
-                <li><img src="images/criteria-met.png" alt="Criteria Met"/> This state’s policy includes this characteristic</li>
-                <li><img src="images/criteria-maybe-met.png" alt="Criteria Maybe Met"/> It is unclear whether this state’s policy includes this characteristic</li>
-                <li><img src="images/criteria-not-met.png" alt="Criteria Not Met"/> This state’s policy does not include this characteristic</li>
+                <li><img src="images/criteria-met.png" className="checklistIcon" alt="Criteria Met"/> This state’s policy includes this characteristic</li>
+                <li><img src="images/criteria-maybe-met.png" className="checklistIcon" alt="Criteria Maybe Met"/> It is unclear whether this state’s policy includes this characteristic</li>
+                <li><img src="images/criteria-not-met.png" className="checklistIcon" alt="Criteria Not Met"/> This state’s policy does not include this characteristic</li>
             </ul>
             <p>States were given recognition for innovative policy ideas and other policies that were similar to the policy categories but not quite aligned with the aspects in the scorecard. However, these items did not factor in the score.</p>
             <ul className="no-bullets">

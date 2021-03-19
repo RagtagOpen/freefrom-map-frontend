@@ -1,7 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck, faQuestion } from '@fortawesome/free-solid-svg-icons'
 
 import Modal from '../modal/Modal'
 import ScoreLabel from './ScoreLabel'
@@ -32,16 +30,16 @@ const ScoringGuide = () => (
                     ))}
                 </div>
                 <h4 className="guide-heading">Checklist Legend</h4>
-                <div className='checklist-item small'>
-                    <FontAwesomeIcon icon={ faCheck } className="mr-2" />
+                <div className='checklist-item small mb-2'>
+                    <img src="/images/criteria-met.png" className="checklistIcon" alt="Criteria Met"/>
                     This state’s policy includes this characteristic
                 </div>
-                <div className='checklist-item small'>
-                    <FontAwesomeIcon icon={ faQuestion } style={{marginRight: '13px'}} />
+                <div className='checklist-item small mb-2'>
+                    <img src="/images/criteria-maybe-met.png" className="checklistIcon" alt="Criteria Maybe Met"/>
                     It is unclear whether this state’s includes this characteristic
                 </div>
-                <div className='checklist-item small'>
-                    <EmptySquare className="mr-2" />
+                <div className='checklist-item small mb-2'>
+                    <img src="/images/criteria-not-met.png" className="checklistIcon" alt="Criteria Not Met"/>
                     This state’s policy does not include this characteristic
                 </div>
             </div>
