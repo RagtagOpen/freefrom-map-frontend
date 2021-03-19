@@ -1,5 +1,5 @@
 .label {
-    font-family: 'Open Sans';
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
     font-size: 15px;
@@ -23,7 +23,7 @@
 }
 
 .submit {
-    font-family: 'Roboto';
+    font-family: 'Poppins';
     font-weight: bold;
     font-size: 18px;
     line-height: 24px;
