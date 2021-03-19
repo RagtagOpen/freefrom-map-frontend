@@ -345,8 +345,12 @@ input {
 }
 
 .ne-zoom-button {
-  background-color: #6DC9CA;
+  background-color: #ffffff;
   color:  #000000;
-  border-radius: 7px;
+  border-radius: 2px;
+  font-size: 12px;
+  width: 100px;
+  height: 100px;
+  padding: 7px
 }
 
