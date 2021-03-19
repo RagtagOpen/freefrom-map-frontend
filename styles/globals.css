@@ -50,11 +50,12 @@ p {
 h1, h2, h3, h4 {
   font-family: 'Poppins';
   font-style: normal;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 48px;
   line-height: 48px;
   letter-spacing: 0.05em;
   margin-bottom: 18px;
+  text-transform: uppercase;
 }
 
 h2 {
