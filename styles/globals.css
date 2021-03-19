@@ -174,7 +174,7 @@ input {
 }
 
 .footer {
-  background-color: #000;
+  background-color: #47cccc;
   color: #fff;
 }
 
@@ -187,6 +187,10 @@ input {
   color: #fff;
   font-size: 18px;
   line-height: 28px;
+}
+
+.footer .nav-item a:hover {
+  text-decoration: underline;
 }
 
 .no-bullets {
