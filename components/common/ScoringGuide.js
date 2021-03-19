@@ -5,6 +5,7 @@ import { faCheck, faQuestion } from '@fortawesome/free-solid-svg-icons'
 
 import Modal from '../modal/Modal'
 import ScoreLabel from './ScoreLabel'
+import { OVERALL_SCORE_LABELS } from '../../constants/labels'
 
 // TODO: Determine if there's a suitable free icon substitute for this?
 export const EmptySquare = () => (
@@ -56,7 +57,7 @@ const ScoreDescription = ({score, type}) => (
         </div>
         <div className="col-6">
             <p className='small'>
-                This state is prioritizing survivors’ financial security...
+                {OVERALL_SCORE_LABELS[score]}
             </p>
         </div>
     </div>
