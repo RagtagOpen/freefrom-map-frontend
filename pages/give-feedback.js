@@ -27,8 +27,8 @@ export default function GiveFeedback() {
                 <title>Give Feedback - { site.name }</title>
             </Head>
             <SharedLayout>
-                <BackButton className="mt-3 mb-2" />
-                <h1>Give Feedback</h1>
+                <BackButton className="my-3" />
+                <h1 className="text-ff-red">Give Feedback</h1>
                 <p>The Policy Map and Scorecard will only be effective if it is useful to our users. We want to hear from you how you used the tool and whether it was helpful. If you didn’t find the tool helpful, feel free to share how we can make the necessary improvements. Thanks so much for sharing your feedback and for helping us make the Policy Map and Scorecard the best tool it can possibly be!</p>
                 <Formik
                     initialValues={{}}
@@ -36,9 +36,26 @@ export default function GiveFeedback() {
                 >
                     {props => (
                         <Form className="col-12 col-lg-8 mb-5">
-                            <Select label="Was this tool useful?" name="tool_useful" required={ true } options={ toolUseful }/>
-                            <Input label="Can you tell us more about how the tool was or was not useful for you?" name="tool_useful_details" required={ true } />
-                            <Select label="Did you learn anything about policies related to survivor wealth from the tool?" name="learn_from_tool" required={ true } options={ learnFromTool }/>
+                            <Select
+                                className="text-uppercase"
+                                label="Was this tool useful?"
+                                name="tool_useful"
+                                options={ toolUseful }
+                                required={ true }
+                            />
+                            <Input
+                                className="text-uppercase"
+                                label="Can you tell us more about how the tool was or was not useful for you?"
+                                name="tool_useful_details"
+                                required={ true }
+                            />
+                            <Select
+                                className="text-uppercase"
+                                label="Did you learn anything about policies related to survivor wealth from the tool?"
+                                name="learn_from_tool"
+                                options={ learnFromTool }
+                                required={ true }
+                            />
                             <div className="form-group">
                                 <FormLabel required={ true }>How do you plan to use this tool?</FormLabel>
                                 <Checkbox name="planned_use" value="inform_org_priorities">Inform my organization’s or state coalition’s policy priorities</Checkbox>
@@ -51,7 +68,12 @@ export default function GiveFeedback() {
                             {props.values.planned_use && props.values.planned_use.indexOf("other") !== -1 &&
                               <Input label="Please describe..." name="planned_use_other" required={ true } />
                             }
-                            <Input label="What can be improved or changed?" name="improve_or_change" required={ true } />
+                            <Input
+                                className="text-uppercase"
+                                label="What can be improved or changed?"
+                                name="improve_or_change"
+                                required={ true }
+                            />
                             <Submit />
                         </Form>
                     )}
