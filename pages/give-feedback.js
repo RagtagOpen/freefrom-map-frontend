@@ -40,21 +40,21 @@ export default function GiveFeedback() {
                                 className="text-uppercase"
                                 label="Was this tool useful?"
                                 name="tool_useful"
-                                options={ toolUseful }
-                                required={ true }
+                                options={toolUseful}
+                                required={true}
                             />
                             <Input
                                 className="text-uppercase"
                                 label="Can you tell us more about how the tool was or was not useful for you?"
                                 name="tool_useful_details"
-                                required={ true }
+                                required={true}
                             />
                             <Select
                                 className="text-uppercase"
                                 label="Did you learn anything about policies related to survivor wealth from the tool?"
                                 name="learn_from_tool"
-                                options={ learnFromTool }
-                                required={ true }
+                                options={learnFromTool}
+                                required={true}
                             />
                             <div className="form-group">
                                 <FormLabel required={ true }>How do you plan to use this tool?</FormLabel>
@@ -73,7 +73,7 @@ export default function GiveFeedback() {
                                 className="text-uppercase"
                                 label="What can be improved or changed?"
                                 name="improve_or_change"
-                                required={ true }
+                                required={true}
                             />
                             <Submit />
                         </Form>
