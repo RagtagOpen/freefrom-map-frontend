@@ -66,7 +66,7 @@ export default function GiveFeedback() {
                                 <Checkbox name="planned_use" value="other">Other</Checkbox>
                             </div>
                             {/* eslint-disable-next-line react/prop-types */}
-                            {props.values.planned_use && props.values.planned_use.indexOf("other") !== -1 &&
+                            {props.values.planned_use && props.values.planned_use.includes("other") &&
                               <Input label="Please describe..." name="planned_use_other" required={ true } />
                             }
                             <Input
