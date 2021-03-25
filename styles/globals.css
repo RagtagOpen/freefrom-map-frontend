@@ -35,6 +35,11 @@ div.tooltip {
   pointer-events: none;
 }
 
+#us-map path:hover {
+  fill-opacity: 0.75;
+  cursor: pointer;
+}
+
 p {
   font-family: 'Open Sans';
   font-style: normal;
