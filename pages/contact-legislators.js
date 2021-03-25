@@ -46,18 +46,16 @@ function ContactLegislators() {
                     initialValues={{}}
                     onSubmit={submitZipCode}
                 >
-                    {props => (
-                        <Form className="col-9">
-                            <Input
-                                label="Enter your zip code or full address:"
-                                name="zip_code"
-                                required={ true }
-                                smallText='Your information will not be stored or used in any way except to show you your elected officials. For your state legislators, please include your full street address.'
-                                className="mb-0"
-                            />
-                            <Submit />
-                        </Form>
-                    )}
+                    <Form className="col-9">
+                        <Input
+                            label="Enter your zip code or full address:"
+                            name="zip_code"
+                            required={ true }
+                            smallText='Your information will not be stored or used in any way except to show you your elected officials. For your state legislators, please include your full street address.'
+                            className="mb-0"
+                        />
+                        <Submit />
+                    </Form>
                 </Formik>
                 <div className='mb-5 pl-3' >
                     {officials.map(o => <Official key={o.name} official={o} />)}

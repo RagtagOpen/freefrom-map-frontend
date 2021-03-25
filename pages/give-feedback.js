@@ -17,7 +17,7 @@ import TakeAction from "components/common/TakeAction";
 import { toolUseful } from 'constants/forms';
 import { learnFromTool } from 'constants/forms';
 
-import { submitForm } from 'utils'
+import { checkFormStatus, submitForm } from 'utils'
 
 export default function GiveFeedback() {
 
@@ -34,50 +34,54 @@ export default function GiveFeedback() {
                     initialValues={{}}
                     onSubmit={submitForm("give-feedback")}
                 >
-                    {props => (
-                        <Form className="col-12 col-lg-8 mb-5">
-                            <Select
-                                className="text-uppercase"
-                                label="Was this tool useful?"
-                                name="tool_useful"
-                                options={toolUseful}
-                                required={true}
-                            />
-                            <Input
-                                className="text-uppercase"
-                                label="Can you tell us more about how the tool was or was not useful for you?"
-                                name="tool_useful_details"
-                                required={true}
-                            />
-                            <Select
-                                className="text-uppercase"
-                                label="Did you learn anything about policies related to survivor wealth from the tool?"
-                                name="learn_from_tool"
-                                options={learnFromTool}
-                                required={true}
-                            />
-                            <div className="form-group">
-                                <FormLabel required={ true }>How do you plan to use this tool?</FormLabel>
-                                <Checkbox name="planned_use" value="inform_org_priorities">Inform my organization’s or state coalition’s policy priorities</Checkbox>
-                                <Checkbox name="planned_use" value="inform_state_priorities">Inform my state’s policy priorities</Checkbox>
-                                <Checkbox name="planned_use" value="inform_officials">Inform elected officials in my state</Checkbox>
-                                <Checkbox name="planned_use" value="advocacy_tool">As an advocacy tool</Checkbox>
-                                <Checkbox name="planned_use" value="self_educating">Self-educating</Checkbox>
-                                <Checkbox name="planned_use" value="other">Other</Checkbox>
-                            </div>
-                            {/* eslint-disable-next-line react/prop-types */}
-                            {props.values.planned_use && props.values.planned_use.includes("other") &&
+                    {props => {
+                        const formStatus = checkFormStatus(props)
+                        if (formStatus) return formStatus
+                        return (
+                            <Form className="col-12 col-lg-8 mb-5">
+                                <Select
+                                    className="text-uppercase"
+                                    label="Was this tool useful?"
+                                    name="tool_useful"
+                                    options={toolUseful}
+                                    required={true}
+                                />
+                                <Input
+                                    className="text-uppercase"
+                                    label="Can you tell us more about how the tool was or was not useful for you?"
+                                    name="tool_useful_details"
+                                    required={true}
+                                />
+                                <Select
+                                    className="text-uppercase"
+                                    label="Did you learn anything about policies related to survivor wealth from the tool?"
+                                    name="learn_from_tool"
+                                    options={learnFromTool}
+                                    required={true}
+                                />
+                                <div className="form-group">
+                                    <FormLabel required={ true }>How do you plan to use this tool?</FormLabel>
+                                    <Checkbox name="planned_use" value="inform_org_priorities">Inform my organization’s or state coalition’s policy priorities</Checkbox>
+                                    <Checkbox name="planned_use" value="inform_state_priorities">Inform my state’s policy priorities</Checkbox>
+                                    <Checkbox name="planned_use" value="inform_officials">Inform elected officials in my state</Checkbox>
+                                    <Checkbox name="planned_use" value="advocacy_tool">As an advocacy tool</Checkbox>
+                                    <Checkbox name="planned_use" value="self_educating">Self-educating</Checkbox>
+                                    <Checkbox name="planned_use" value="other">Other</Checkbox>
+                                </div>
+                                {/* eslint-disable-next-line react/prop-types */}
+                                {props.values.planned_use && props.values.planned_use.includes("other") &&
                               <Input label="Please describe..." name="planned_use_other" required={ true } />
-                            }
-                            <Input
-                                className="text-uppercase"
-                                label="What can be improved or changed?"
-                                name="improve_or_change"
-                                required={true}
-                            />
-                            <Submit />
-                        </Form>
-                    )}
+                                }
+                                <Input
+                                    className="text-uppercase"
+                                    label="What can be improved or changed?"
+                                    name="improve_or_change"
+                                    required={true}
+                                />
+                                <Submit />
+                            </Form>
+                        )
+                    }}
                 </Formik>
                 <TakeAction />
             </SharedLayout>

@@ -15,7 +15,7 @@ import TakeAction from "components/common/TakeAction";
 import { states } from 'constants/forms';
 import { aboutYou } from 'constants/forms';
 
-import { submitForm } from 'utils'
+import { checkFormStatus, submitForm } from 'utils'
 
 export default function PolicyIdeas() {
 
@@ -29,21 +29,25 @@ export default function PolicyIdeas() {
                 <h1>Share Your Policy Ideas</h1>
                 <p>At FreeFrom, we are constantly iterating and brainstorming new ways that we can support survivors through policy change at the federal, state, and local levels. We encourage you to share any new policy ideas or changes to current policies that would help you, your loved ones, or others in your community that have experienced violence. Thank you for sharing!</p>
                 <Formik initialValues={{}} onSubmit={submitForm("policy-ideas")}>
-                    {props => (
-                        <Form className="col-12 col-lg-8 mb-5">
-                            <Input label="What policies and issues should FreeFrom prioritize?" name="policies_to_prioritize" required={ true } />
-                            <Input label="What policies and issues are important to you but are not included on the map?" name="policies_not_included" required={ true } />
-                            <Select label="Your state" name="state" required={ true } options={ states }/>
-                            <Input label="Your name (optional)" name="name" />
-                            <Input label="Your pronouns (optional)" name="pronouns" />
-                            <Input label="Your email (optional)" name="email" type="email" />
-                            <Select label="We’re eager to learn where new policy ideas and changes come from. If you’re comfortable, please tell us more about you." name="about_you" options={ aboutYou }/>
-                            {props.values.about_you && props.values.about_you.indexOf("other") !== -1 &&
+                    {props => {
+                        const formStatus = checkFormStatus(props)
+                        if (formStatus) return formStatus
+                        return (
+                            <Form className="col-12 col-lg-8 mb-5">
+                                <Input label="What policies and issues should FreeFrom prioritize?" name="policies_to_prioritize" required={ true } />
+                                <Input label="What policies and issues are important to you but are not included on the map?" name="policies_not_included" required={ true } />
+                                <Select label="Your state" name="state" required={ true } options={ states }/>
+                                <Input label="Your name (optional)" name="name" />
+                                <Input label="Your pronouns (optional)" name="pronouns" />
+                                <Input label="Your email (optional)" name="email" type="email" />
+                                <Select label="We’re eager to learn where new policy ideas and changes come from. If you’re comfortable, please tell us more about you." name="about_you" options={ aboutYou }/>
+                                {props.values.about_you && props.values.about_you.indexOf("other") !== -1 &&
                               <Input label="Please describe..." name="about_you_other" required={ true } />
-                            }
-                            <Submit />
-                        </Form>
-                    )}
+                                }
+                                <Submit />
+                            </Form>
+                        )
+                    }}
                 </Formik>
                 <TakeAction />
             </SharedLayout>

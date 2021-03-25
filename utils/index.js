@@ -1,4 +1,4 @@
-import { submitForm } from 'utils/forms';
+import { checkFormStatus, submitForm } from 'utils/forms';
 import { toSlug } from 'utils/routing';
 
-export { submitForm, toSlug }
+export { checkFormStatus, submitForm, toSlug }
