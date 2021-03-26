@@ -2,12 +2,11 @@ import React from 'react';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
-import {faCircle} from "@fortawesome/free-solid-svg-icons";
 
 function Navbar() {
     return (
         <nav className="navbar fixed-top navbar-expand-lg header">
-            <a className="navbar-brand logo" href="#">
+            <a className="navbar-brand logo" href="/">
                 <Image
                     className="img img-fluid"
                     src="/images/freefrom-logo.png"
