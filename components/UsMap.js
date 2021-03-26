@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 
 import StateCard from './StateCard'
 import usData from "../public/data/us-states.json"
+import { toSlug } from 'utils'
 
 class UsMap extends Component {
     componentDidMount() {
@@ -22,7 +23,7 @@ class UsMap extends Component {
             "#47CCCC",
             "#FFB600"
         ]
-        this.renderMap();
+        this.renderMap()
     }
 
     mapScoresToStates(states, mapData) {
@@ -36,23 +37,6 @@ class UsMap extends Component {
     }
 
     renderMap() {
-
-        // a function to determine if the mouse is on the tooltip so we can
-        // avoid redrawing it until they aren't use it (prevents states "under"
-        // the tool tip from triggering and redraw while card is in use)
-        function mouseInsideTooltip() {
-            const location = document.getElementById('tooltip').getBoundingClientRect()
-            let x = d3.event.pageX;
-            let y = d3.event.pageY;
-            // in the left/right bounds?
-            if(x > location.left && x < location.right) {
-                // in the up/down bounds? (inverted y)
-                if(y < location.bottom && y > location.top) {
-                    return true
-                }
-            }
-            return false
-        }
         // States data comes from props
         const { states } = this.props
         // just unpacking for tidier variable names downstream
@@ -110,54 +94,27 @@ class UsMap extends Component {
             .append("text")
 
         // mouseOVER, user scrolls onto
-        svg.on('mouseover', function (d) {
-            // on rollover, note the location of the mouse
-            // only redraw the tooltip if we're NOT in the bounds of a tool tip card
-            if(!mouseInsideTooltip()) {
-
-                // decreases opacity slightly to provide feedback of selection
-                d3.select(this)
-                    .style({opacity: '0.75'})
-
-                // make the card visible
-                tooltip
-                    .style("opacity", 1)
-                    .style("left", (d3.event.pageX - 40) + "px")
-                    .style("top", (d3.event.pageY - 40) + "px")
-                // Render state data into tooltip.
-                ReactDOM.render(<StateCard state={d.properties} />, document.getElementById('tooltip'))
-            }
-
-        }).on('mouseout', function () {
-            // returns opacity to normal when mouse leaves
-            d3.select(this).style({ opacity: '1.0' });
-            // Hide tooltip if mouse outside tooltip (covers the case where the
-            // mouse leaves the svg boundary).
-            if(!mouseInsideTooltip()) {
-                tooltip
-                    .style("opacity", 0)
-            }
+        svg.on('mouseover', (d) => {
+            // make the card visible
+            tooltip
+                .style("opacity", 1)
+                .style("left", (d3.event.pageX - 40) + "px")
+                .style("top", (d3.event.pageY - 40) + "px")
+            // Render state data into tooltip.
+            ReactDOM.render(
+                <StateCard hideLearnMore state={d.properties} />,
+                document.getElementById('tooltip')
+            )
+        }).on('mouseout', () => {
+            // Hide tooltip
+            tooltip.style("opacity", 0)
             // mouseMOVE - continuous version of mouseOVER
-        }).on('mousemove', function() {
-            // will finish soon
-            // let x = d3.event.pageX;
-            // let y = d3.event.pageY;
-            // console.log(y)
-            // // if the mouse is way off the map, hide card
-            // if(y > 550 || y < 75 || x > 900 || x < 75) {
-            //   tooltip
-            //     .style("opacity", 0)
-            // }
-            // only redraw the tooltip if we're NOT in the bounds of a tool tip card
-            console.log(mouseInsideTooltip());
-            // click events
-        }).on("click", function (d) {
+        }).on("click", (d) => {
             // Navigate to state on click
-            // FIXME: replace with toSlug method from utils
             const { name } = d.properties
-            window.location.href = `${window.location.href}states/${name.toLowerCase().replace(' ', '-')}`
+            window.location.href = `${window.location.href}states/${toSlug(name)}`
             // for now right clicking removes the card
-        }).on("contextmenu", function () {
+        }).on("contextmenu", () => {
             d3.event.preventDefault();
             tooltip
                 .style("opacity", 0)
@@ -165,8 +122,7 @@ class UsMap extends Component {
     }
 
     render() {
-
-        return <div id='us-map'></div >
+        return <div id='us-map' />
     }
 
 }

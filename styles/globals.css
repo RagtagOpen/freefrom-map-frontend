@@ -33,6 +33,11 @@ div.tooltip {
   pointer-events: none;
 }
 
+#us-map path:hover {
+  fill-opacity: 0.75;
+  cursor: pointer;
+}
+
 p {
   font-family: 'Poppins';
   font-style: normal;
