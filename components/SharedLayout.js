@@ -16,5 +16,5 @@ export default function SharedLayout({ children }) {
 }
 
 SharedLayout.propTypes = {
-    children: PropTypes.array
+    children: PropTypes.node
 }

@@ -31,5 +31,6 @@ Modal.propTypes = {
     target: PropTypes.string,
     text: PropTypes.string,
     title: PropTypes.string,
-    children: PropTypes.object
+    children: PropTypes.node,
+    className: PropTypes.string
 }
