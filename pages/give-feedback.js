@@ -12,8 +12,6 @@ import Checkbox from "components/forms/Checkbox";
 import FormLabel from "components/forms/FormLabel";
 import Submit from "components/forms/Submit";
 
-import TakeAction from "components/common/TakeAction";
-
 import { toolUseful } from 'constants/forms';
 import { learnFromTool } from 'constants/forms';
 
@@ -83,7 +81,6 @@ export default function GiveFeedback() {
                         )
                     }}
                 </Formik>
-                <TakeAction />
             </SharedLayout>
         </div>
     )
