@@ -76,7 +76,7 @@ const stateDataType = PropTypes.shape({
 const HonorableMention = ({ honorableMentionData }) => (
   <div className="honorable-mention">
     <div className="d-flex flex-row align-items-center">
-      <FontAwesomeIcon className="mr-2" icon={faAward} />
+      <img src="/images/honorable-mention.png" className="checklistIcon" alt="Honorable Mention"/>
       <h3 className="m-0" style={{ fontSize: "1em" }}>
         Honorable Mention
       </h3>
@@ -99,7 +99,7 @@ HonorableMention.propTypes = {
 const InnovativePolicyIdea = ({ innovativePolicyIdeaData }) => (
   <div className="honorable-mention">
     <div className="d-flex flex-row align-items-center">
-      <FontAwesomeIcon className="mr-2" icon={faLightbulb} />
+      <img src="/images/innovative-idea.png" className="checklistIcon" alt="Innovative Idea"/>;
       <h3 className="m-0" style={{ fontSize: "1em" }}>
         Innovative Policy Idea
       </h3>
