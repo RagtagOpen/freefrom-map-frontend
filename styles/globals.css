@@ -205,6 +205,10 @@ input {
   padding-left: 0;
 }
 
+.big-indents {
+  padding-left: 60px;
+}
+
 .checklistIcon {
   height: 24px;
   width: 24px;
