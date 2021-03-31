@@ -39,12 +39,20 @@ const ScoringGuide = () => (
                     This state’s policy includes this characteristic
                 </div>
                 <div className='checklist-item small mb-2'>
-                    <img src="/images/criteria-maybe-met.png" className="checklistIcon" alt="Criteria Maybe Met"/>
-                    It is unclear whether this state’s includes this characteristic
-                </div>
-                <div className='checklist-item small mb-2'>
                     <img src="/images/criteria-not-met.png" className="checklistIcon" alt="Criteria Not Met"/>
                     This state’s policy does not include this characteristic
+                </div>
+                <div className='checklist-item small mb-2'>
+                    <img src="/images/criteria-maybe-met.png" className="checklistIcon" alt="Criteria Maybe Met"/>
+                    It is unclear whether this state’s policy includes this characteristic
+                </div>
+                <div className='checklist-item small mb-2'>
+                    <img src="/images/honorable-mention.png" className="checklistIcon" alt="Honorable Mention"/>
+                    Honorable Mention: A promising policy that doesn’t quite fit
+                </div>
+                <div className='checklist-item small mb-2'>
+                    <img src="/images/innovative-idea.png" className="checklistIcon" alt="Innovative Idea"/>
+                    Innovative Idea: This state is thinking outside the box on policy solutions
                 </div>
             </div>
         </div>
