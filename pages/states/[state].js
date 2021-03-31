@@ -28,13 +28,14 @@ function State({ categories, stateData }) {
                 <div className="row">
                     <div className="col-12 col-md-4">
                         <img className="img-fluid mb-3" src={imageUrl} />
+                        <h4 className="mb-0">Key</h4>
+                        <img className="img-fluid my-3" src="/images/key.png" />
                         <StateUpdates />
                         <ReportMissingInfo />
                         <ShareButtons className="mt-3 mb-5" />
                     </div>
                     <div className="col-12 col-md-7">
                         <Scorecard categories={categories} stateData={stateData} />
-                        <img className="img-fluid my-3" src="/images/key.png" />
                         <div className="understanding-report">
                             <h2 className="mb-0" >Understanding this report</h2>
                             <ScoringGuide />
