@@ -268,8 +268,8 @@ export default function Methodology() {
             </ul>
             <p>States were given recognition for innovative policy ideas and other policies that were similar to the policy categories but not quite aligned with the aspects in the scorecard. However, these items did not factor in the score.</p>
             <ul className="no-bullets">
-                <li><img src="images/innovative-idea.png" alt="Innovative Idea"/> Innovative idea: Thinking outside the box on policy solutions</li>
-                <li><img src="images/honorable-mention.png" alt="Honorable Mention"/> Honorable mention: A promising policy that doesn’t quite fit within the listed policy categories and / or characteristics.</li>
+                <li><img src="images/innovative-idea.png" className="checklistIcon" alt="Innovative Idea"/> Innovative idea: Thinking outside the box on policy solutions</li>
+                <li><img src="images/honorable-mention.png" className="checklistIcon" alt="Honorable Mention"/> Honorable mention: A promising policy that doesn’t quite fit within the listed policy categories and / or characteristics.</li>
             </ul>
 
             <h2>How we assigned an overall state score</h2>
