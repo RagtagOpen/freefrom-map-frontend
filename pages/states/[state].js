@@ -33,10 +33,6 @@ function State({ categories, stateData }) {
                         <ShareButtons className="mt-3 mb-5" />
                     </div>
                     <div className="col-12 col-md-7">
-                        <div className="float-right">
-                            {/* FIXME: add url to report */}
-                            <ModalButton href="#" text="Download report" />
-                        </div>
                         <Scorecard categories={categories} stateData={stateData} />
                         <img className="img-fluid my-3" src="/images/key.png" />
                         <div className="understanding-report">
