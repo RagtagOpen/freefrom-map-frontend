@@ -192,11 +192,11 @@ const Category = ({ category, expanded, onClickExpand, stateData }) => {
         onClick={onClickExpand}
       >
         <h2
-          className="m-0"
+          className="m-0 d-flex flex-row justify-content-between"
           style={{ textTransform: "uppercase", fontSize: "0.75em" }}
         >
           {category.title}
-          <div className="float-right">
+          <div className="d-flex flex-row justify-content-between">
             <span className="mr-3">
               <ScoreLabel score={categoryScore.grade} type="category" />
             </span>
