@@ -5,9 +5,7 @@ import {
   faCaretDown,
   faCaretUp,
   faAward,
-  faLightbulb,
-  faCheck,
-  faQuestion,
+  faLightbulb
 } from "@fortawesome/free-solid-svg-icons";
 import { EmptySquare } from "./common/ScoringGuide";
 
@@ -124,11 +122,11 @@ InnovativePolicyIdea.propTypes = {
 const renderIcon = (implementsPolicy) => {
   switch (implementsPolicy) {
     case "yes":
-      return <FontAwesomeIcon icon={faCheck} className="mr-2" />;
+      return <img src="/images/criteria-met.png" className="checklistIcon" alt="Criteria Met"/>;
     case "maybe":
-      return <FontAwesomeIcon icon={faQuestion} className="mr-2" />;
+      return <img src="/images/criteria-maybe-met.png" className="checklistIcon" alt="Criteria Maybe Met"/>;
     case "no":
-      return <EmptySquare />;
+      return<img src="/images/criteria-not-met.png" className="checklistIcon" alt="Criteria Not Met"/>;
   }
 };
 
@@ -273,7 +271,7 @@ const Scorecard = ({ categories, stateData }) => {
     const [expanded, setExpanded] = useState(null)
     return (
         <div className="scorecard-container">
-            <div className="overall mt-5 mb-3">
+            <div className="overall mt-4 mb-3">
                 <span className="label mr-2">Overall:</span>
                 <ScoreLabel score={stateData.grade.grade} />
             </div>

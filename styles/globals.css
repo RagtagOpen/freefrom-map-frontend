@@ -1,13 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url("https://use.typekit.net/zvb2tiw.css");
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 html,
 body {
   padding: 0;
   margin: 0;
   height: 100%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -35,8 +33,13 @@ div.tooltip {
   pointer-events: none;
 }
 
+#us-map path:hover {
+  fill-opacity: 0.75;
+  cursor: pointer;
+}
+
 p {
-  font-family: 'Open Sans';
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -50,13 +53,14 @@ p {
 }
 
 h1, h2, h3, h4 {
-  font-family: proxima-nova, sans-serif;
+  font-family: 'Poppins';
   font-style: normal;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 48px;
   line-height: 48px;
   letter-spacing: 0.05em;
   margin-bottom: 18px;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -114,7 +118,7 @@ input {
 
 .back-button {
   color: #32b4b4;
-  font-family: Arial;
+  font-family: 'Poppins';
   font-weight: bold;
   font-size: 16px;
   line-height: 20px;
@@ -128,7 +132,7 @@ input {
 
 .breadcrumbs span {
   color: #000;
-  font-family: Arial;
+  font-family: 'Poppins';
   font-weight: bold;
   font-size: 16px;
   line-height: 20px;
@@ -158,7 +162,7 @@ input {
 }
 
 .header .nav-item a {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins';
   text-transform: uppercase;
   font-size: 18px;
   font-style: normal;
@@ -174,7 +178,7 @@ input {
 }
 
 .footer {
-  background-color: #000;
+  background-color: #47cccc;
   color: #fff;
 }
 
@@ -189,6 +193,10 @@ input {
   line-height: 28px;
 }
 
+.footer .nav-item a:hover {
+  text-decoration: underline;
+}
+
 .no-bullets {
   list-style-type: none;
 }
@@ -197,8 +205,14 @@ input {
   padding-left: 0;
 }
 
+.checklistIcon {
+  height: 24px;
+  width: 24px;
+  margin-right: 5px;
+}
+
 .orange-button {
-    font-family: Roboto;
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -244,7 +258,7 @@ input {
 
 /* FIXME: Consolidate state page modal button css with take action css */
 .state-page .understanding-report .modal-button {
-    font-family: 'Roboto';
+    font-family: 'Poppins';
     font-weight: 700;
     font-size: 18px;
     line-height: 24px;
@@ -287,57 +301,53 @@ input {
 }
 
 .score-label {
-  border-radius: 5px;
+  border-radius: 30px;
   display: inline;
   font-size: 0.8em;
+  font-weight: 800;
   padding: 10px 7px;
   text-transform: uppercase;
   width: fit-content;
 }
 
 .score-label.overall-3 {
-    background-color: #136b5a;
-    color: white;
+    background-color: #FFB600;
 }
 
 .score-label.overall-2 {
-    background-color: #48cacc;
-    color: white;
+    background-color: #47CCCC;
 }
 
 .score-label.overall-1 {
-    background-color: #abe4e1;
+    background-color: #AAE5E1;
 }
 
 .score-label.overall-0 {
-    background-color: #ff9797;
+    background-color: #FF9797;
 }
 
 .score-label.overall--1 {
-    background-color: #f0654a;
-    color: white;
+    background-color: #F06449;
 }
 
 .score-label.category-3 {
-    background-color: #136b5a;
-    color: white;
+    background-color: #FFB600;
 }
 
 .score-label.category-2 {
-    background-color: #48cacc;
-    color: white;
+    background-color: #47CCCC;
 }
 
 .score-label.category-1 {
-    background-color: #abe4e1;
+    background-color: #AAE5E1;
 }
 
 .score-label.category-0 {
-    background-color: #CDCDCD;
+    background-color: #FF9797;
 }
 
 .score-label.category--1 {
-    background-color: #ff9797;
+    background-color: #F06449;
 }
 
 .asterisk {
@@ -348,9 +358,10 @@ input {
   background-color: #ffffff;
   color:  #000000;
   border-radius: 2px;
-  font-size: 12px;
-  width: 100px;
-  height: 100px;
-  padding: 7px
+  font-size:0.75em;
+  text-align: left;
+  /* width: 100px;
+  height: 100px; */
+  padding: 3.5px;
 }
 
