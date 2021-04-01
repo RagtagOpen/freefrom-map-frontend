@@ -23,8 +23,8 @@ function State({ categories, stateData }) {
         <SharedLayout>
             <div className='state-page'>
                 <Breadcrumbs currentPageTitle={ state } />
-                <h1>{ name } Survivor Financial Security Policy Report</h1>
-                <p>How does { name } measure up to supporting survivor wealth?</p>
+                <h1>{ name } Survivor Financial Security Policy Scorecard</h1>
+                <p>How well does { name } support survivors’ financial security?</p>
                 <div className="row">
                     <div className="col-12 col-md-4">
                         <img className="img-fluid mb-3" src={imageUrl} />
