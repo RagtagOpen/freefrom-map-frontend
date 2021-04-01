@@ -49,7 +49,8 @@ function Home({ states }) {
 
             <div aria-hidden='true' className={`d-md-flex flex-row justify-content-end${mapClass}`}>
                 <div className='d-flex flex-column'>
-                    <Image src="/images/legend.png" height="186" width="228"/>
+                    <h4 className="mb-0">Key</h4>
+                    <Image src="/images/legend.png" height="129" width="230"/>
                 </div>
             </div>
 
