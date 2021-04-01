@@ -67,6 +67,11 @@ h1 {
 text-transform: capitalize;
 }
 
+.subpage-header {
+  text-transform: uppercase;
+  color: #F06449;
+}
+
 h2 {
   font-size: 34px;
   line-height: 34px;

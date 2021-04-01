@@ -6,7 +6,7 @@ export default function About() {
     return (
         <SharedLayout>
             <BackButton className="mt-3 mb-2" />
-            <h1>About This Tool</h1>
+            <h1 className="subpage-header">About This Tool</h1>
             <p>The #1 obstacle to a survivor’s long-term safety is financial insecurity. This means that we cannot disrupt the cycle of intimate partner violence in the U.S. until we move beyond the current focus on crisis response and prioritize policies that support financial security and long-term safety for survivors and their families. That is, we must prioritize policies that support survivor wealth.</p>
             <p>Our National Survivor Financial Security Policy Map and Scorecard (Policy Map and Scorecard) acts as both a resource and a roadmap for action. For each state, the map outlines the existing laws impacting a survivor’s ability to build and maintain financial security, and provides state-specific policy recommendations that will ensure that all survivors have access to the financial resources and support they need to thrive and live free from abuse.</p>
             <h3>What does it do?</h3>

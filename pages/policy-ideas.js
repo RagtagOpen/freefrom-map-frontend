@@ -26,7 +26,7 @@ export default function PolicyIdeas() {
             </Head>
             <SharedLayout>
                 <BackButton className="mt-3 mb-2" />
-                <h1>Share Your Policy Ideas</h1>
+                <h1 className="subpage-header">Share Your Policy Ideas</h1>
                 <p>At FreeFrom, we are constantly iterating and brainstorming new ways that we can support survivors through policy change at the federal, state, and local levels. We encourage you to share any new policy ideas or changes to current policies that would help you, your loved ones, or others in your community that have experienced violence. Thank you for sharing!</p>
                 <Formik initialValues={{}} onSubmit={submitForm("policy-ideas")}>
                     {props => {

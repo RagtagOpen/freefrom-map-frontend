@@ -6,7 +6,7 @@ export default function PrivacyPolicy() {
     return (
         <SharedLayout>
             <BackButton className="mt-3 mb-2" />
-            <h1>Privacy Policy</h1>
+            <h1 className="subpage-header">Privacy Policy</h1>
             <p>Effective date: March 1, 2021</p>
             <p>FreeFrom (“us“, “we“, or “our“) operates the National Survivor Financial Security Policy Map and Scorecard (hereinafter referred to as the “Site“).</p>
             <p>This page informs you of our policies regarding the collection, use and disclosure of personal data when you use our Site and the choices you have associated with that data.</p>

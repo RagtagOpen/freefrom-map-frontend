@@ -26,7 +26,7 @@ export default function GiveFeedback() {
             </Head>
             <SharedLayout>
                 <BackButton className="my-3" />
-                <h1 className="text-ff-red">Give Feedback</h1>
+                <h1 className="subpage-header">Give Feedback</h1>
                 <p>The Policy Map and Scorecard will only be effective if it is useful to our users. We want to hear from you how you used the tool and whether it was helpful. If you didn’t find the tool helpful, feel free to share how we can make the necessary improvements. Thanks so much for sharing your feedback and for helping us make the Policy Map and Scorecard the best tool it can possibly be!</p>
                 <Formik
                     initialValues={{}}

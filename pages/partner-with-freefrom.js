@@ -26,7 +26,7 @@ export default function PartnerWithFreefrom() {
             </Head>
             <SharedLayout>
                 <BackButton className="mt-3 mb-2" />
-                <h1>Partner with FreeFrom</h1>
+                <h1 className="subpage-header">Partner with FreeFrom</h1>
                 <p>Is your organization interested in partnering with FreeFrom? Please fill out the following information and we will get back to you as soon as possible.</p>
                 <Formik initialValues={{}} onSubmit={submitForm("partner-with-freefrom")}>
                     {props => {

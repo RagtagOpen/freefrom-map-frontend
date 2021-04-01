@@ -6,7 +6,7 @@ export default function Methodology() {
     return (
         <SharedLayout>
             <BackButton className="mt-3 mb-2" />
-            <h1>Methodology</h1>
+            <h1 className="subpage-header">Methodology</h1>
 
             <h2>How we chose these categories</h2>
             <p>We are working to build a world in which every policy maker at all levels of government considers survivors’ financial security as well as their unique circumstances and needs in all policies, regardless of whether they seem to directly relate to survivors or intimate partner violence.</p>
