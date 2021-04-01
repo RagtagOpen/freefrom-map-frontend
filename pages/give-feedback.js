@@ -58,7 +58,7 @@ export default function GiveFeedback() {
                                     required={true}
                                 />
                                 <div className="form-group">
-                                    <FormLabel required={ true }>How do you plan to use this tool?</FormLabel>
+                                    <div className="text-uppercase"><FormLabel required={ true }>How do you plan to use this tool?</FormLabel></div>
                                     <Checkbox name="planned_use" value="inform_org_priorities">Inform my organization’s or state coalition’s policy priorities</Checkbox>
                                     <Checkbox name="planned_use" value="inform_state_priorities">Inform my state’s policy priorities</Checkbox>
                                     <Checkbox name="planned_use" value="inform_officials">Inform elected officials in my state</Checkbox>
@@ -68,7 +68,7 @@ export default function GiveFeedback() {
                                 </div>
                                 {/* eslint-disable-next-line react/prop-types */}
                                 {props.values.planned_use && props.values.planned_use.includes("other") &&
-                              <Input label="Please describe..." name="planned_use_other" required={ true } />
+                              <Input className="text-uppercase" label="Please describe..." name="planned_use_other" required={ true } />
                                 }
                                 <Input
                                     className="text-uppercase"
