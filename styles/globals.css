@@ -228,18 +228,18 @@ input {
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #F06449;
-    background-color: transparent;
     border: none;
     padding: 6.75px 0;
+    background-color: rgba(255, 151, 151, 0.1);
 }
 
 .orange-button:hover, .orange-button:focus, .orange-button:active {
     text-decoration: underline;
     color: #F06449 !important;
-    background-color: transparent !important;
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
+    background-color: rgba(255, 151, 151, 0.1) !important;
 }
 
 .footnotes {
@@ -275,14 +275,17 @@ input {
     color: #32B4B4 !important;
     margin: 27px;
     padding: 0px;
+    background-color: rgba(170,229,225,0.1) !important;
 }
 
 .state-page .understanding-report .modal-button:hover {
     color: #32B4B4 !important;
+    background-color: rgba(170,229,225,0.1) !important;
 }
 
 .state-page .understanding-report .modal-button:active {
     color: #32B4B4 !important;
+    background-color: rgba(170,229,225,0.1) !important;
 }
 
 .scorecard-container > .overall {
