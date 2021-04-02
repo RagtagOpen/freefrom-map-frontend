@@ -7,6 +7,8 @@ export default function About() {
         <SharedLayout>
             <BackButton className="mt-3 mb-2" />
             <h1>About This Tool</h1>
+            <h2>Important Information</h2>
+            <p>The National Survivor Wealth Policy Map and Scorecard evaluates legislation in each state that has either been passed or enacted. While we understand that there are an endless number of policies and issues that impact survivors' ability to build wealth, we’ve selected policies that we have determined are most directly linked to a survivor’s ability to build and maintain financial security. This is a living tool, which means it will be regularly updated and expanded. Be sure to read the full Methodology to learn more!</p>
             <p>The #1 obstacle to a survivor’s long-term safety is financial insecurity. This means that we cannot disrupt the cycle of intimate partner violence in the U.S. until we move beyond the current focus on crisis response and prioritize policies that support financial security and long-term safety for survivors and their families. That is, we must prioritize policies that support survivor wealth.</p>
             <p>Our National Survivor Financial Security Policy Map and Scorecard (Policy Map and Scorecard) acts as both a resource and a roadmap for action. For each state, the map outlines the existing laws impacting a survivor’s ability to build and maintain financial security, and provides state-specific policy recommendations that will ensure that all survivors have access to the financial resources and support they need to thrive and live free from abuse.</p>
             <h3>What does it do?</h3>
