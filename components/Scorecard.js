@@ -84,7 +84,7 @@ const HonorableMention = ({ honorableMentionData }) => (
 
     <p className="card-body small m-0 pt-1">
       {honorableMentionData.description} (
-      <a href={honorableMentionData.url} rel="noopener noreferrer">
+      <a href={honorableMentionData.url} target="_blank" rel="noopener noreferrer">
         {honorableMentionData.text}
       </a>
       )
@@ -107,7 +107,7 @@ const InnovativePolicyIdea = ({ innovativePolicyIdeaData }) => (
 
     <p className="card-body small m-0 pt-1">
       {innovativePolicyIdeaData.description} (
-      <a href={innovativePolicyIdeaData.url} rel="noopener noreferrer">
+      <a href={innovativePolicyIdeaData.url} target="_blank" rel="noopener noreferrer">
         {innovativePolicyIdeaData.text}
       </a>
       )
@@ -150,7 +150,7 @@ Policy.propTypes = {
 
 const ResourceLink = ({ link }) => (
   <p className="card-body small m-0 d-flex flex-row">
-    <a href={link.url} rel="noopener noreferrer">
+    <a href={link.url} target="_blank" rel="noopener noreferrer">
       {link.text}
     </a>
   </p>
