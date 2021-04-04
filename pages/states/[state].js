@@ -18,7 +18,7 @@ function State({ categories, stateData }) {
     const router = useRouter()
     const { state } = router.query
     const { name } = stateData;
-    const imageUrl = "../images/state-outlines/" + state + ".png"
+    const imageUrl = "../images/states/" + state + ".png"
     return (
         <SharedLayout>
             <div className='state-page'>

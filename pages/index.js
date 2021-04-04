@@ -80,21 +80,21 @@ function Home({ states }) {
                         <div className='pr-3 mb-3'>
                             <h3 className="mb-3">Maine</h3>
                             <strong className="mb-3">Maine leads the way in protecting survivors against coerced and fraudulent debt</strong>
-                            <img className="img-fluid mb-3" src="/images/state-outlines/maine.png" />
+                            <img className="img-fluid mb-3" src="/images/states/maine.png" />
                             <p className="mb-1">Maine recently passed strong legislation that prevents debt collectors from collecting on debts incurred as a result of economic abuse, providing survivors with much needed relief.</p>
                             <a href="https://legislature.maine.gov/statutes/32/title32sec11013.html" target="_blank" rel="noopener noreferrer">Me. Stat. tit. 32, § 11013</a>
                         </div>
                         <div className='pr-3 mb-3'>
                             <h3 className="mb-3">Washington</h3>
                             <strong className="mb-3">Washington demonstrates how to protect survivors against litigation abuse</strong>
-                            <img className="img-fluid mb-3" src="/images/state-outlines/washington.png" />
+                            <img className="img-fluid mb-3" src="/images/states/washington.png" />
                             <p className="mb-1">Washington gives survivors the most comprehensive protections against litigation abuse in the nation. The State requires harm-doers to pay attorneys’ fees and costs associated with abusive litigation tactics, holding them accountable for misusing the court system to further harm and abuse survivors.</p>
                             <a href="" target="_blank" rel="noopener noreferrer">Link goes here</a>
                         </div>
                         <div className='pr-3 mb-3'>
                             <h3 className="mb-3">Nevada</h3>
                             <strong className="mb-3">Nevada is <em>so close</em> to model paid and protected leave</strong>
-                            <img className="img-fluid mb-3" src="/images/state-outlines/nevada.png" />
+                            <img className="img-fluid mb-3" src="/images/states/nevada.png" />
                             <p className="mb-1">Nevada offers at least 10 days of protected leave for survivors to deal with the consequences of abuse that does not deplete accrued leave. If Nevada were to guarantee that the leave is paid it would be a Model policy.</p>
                             <a href="https://www.leg.state.nv.us/nrs/nrs-608.html#NRS608Sec0198" target="_blank" rel="noopener noreferrer">N.R.S. § 608.0198</a>
                         </div>
