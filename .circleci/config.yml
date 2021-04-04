@@ -5,14 +5,16 @@ workflows:
   heroku_deploy:
     jobs:
       - heroku/deploy-via-git:
-          environment:
-            HEROKU_APP_NAME: freefrom-map-frontend
+          pre-steps:
+            - run:
+              command: HEROKU_APP_NAME=freefrom-map-frontend
           filters:
             branches:
               only: staging
       - heroku/deploy-via-git:
-          environment:
-            HEROKU_APP_NAME: freefrom-map-frontend-prod
+          pre-steps:
+            - run:
+              command: HEROKU_APP_NAME=freefrom-map-frontend-prod
           filters:
             branches:
               only: prod
