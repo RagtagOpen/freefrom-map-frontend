@@ -26,14 +26,14 @@ function Navbar() {
             </button>
             <div className="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul className="navbar-nav ml-auto">
-                    <li className="nav-item active">
-                        <a className="nav-link" href="https://freefrom.org">Back to FreeFrom Home</a>
-                    </li>
                     <li className="nav-item">
                         <a className="nav-link" href="/about">About This Tool</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="/give-feedback">Give Feedback</a>
+                    </li>
+                    <li className="nav-item active">
+                        <a className="nav-link" href="https://freefrom.org">About FreeFrom</a>
                     </li>
                     <li className="nav-item nav-item-safety d-none d-lg-block">
                         <a className="nav-link" href="https://weather.com">Safety Exit</a>
