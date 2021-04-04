@@ -14,30 +14,34 @@ export default function Acknowledgements() {
                 <li>Alston & Bird, LLP</li>
                 <li>DLA Piper, LLP</li>
                 <li>Foley and Lardner, LLP</li>
-                <li>Lex Mundi Pro Bono Foundation </li>
-                <li>Morrison and Foerester, LLP </li>
+                <li>Lex Mundi Pro Bono Foundation</li>
+                <li>Morrison and Foerester, LLP</li>
                 <li>Proskauer Rose, LLP</li>
                 <li>Seyfarth Shaw, LLP</li>
                 <li>Womble Bond Dickinson (US) LLP</li>
             </ul>
             <h2>Legal Research Volunteers</h2>
             <ul className="no-bullets no-indents">
-                <li>Nick Beard </li>
-                <li>Tracy Boak </li>
-                <li>Odinaka Ezeokoli </li>
-                <li>Susan Goland </li>
-                <li>Meredith Hightower </li>
-                <li>Lauren Keefe </li>
-                <li>Kathleen Kennedy </li>
-                <li>Mary Mabey </li>
-                <li>Emily Plowcha </li>
-                <li>Shelley Smith </li>
-                <li>Brooke Thacher </li>
+                <li>Dr. Monica Beard</li>
+                <li>Tracy L. Boak, Perlman & Perlman, LLP</li>
+                <li>Odinaka Ezeokoli</li>
+                <li>Susan Goland</li>
+                <li>Meredith Hightower</li>
+                <li>Lauren Keefe</li>
+                <li>Kathleen Kennedy</li>
+                <li>Mary Mabey</li>
+                <li>Emily Plowcha, Cozen O'Connor</li>
+                <li>Shelley Smith</li>
+                <li>Brooke Thacher</li>
                 <li>Monica Towarnicky</li>
             </ul>
             <h2>Consultant</h2>
             <ul className="no-bullets no-indents">
                 <li>Priyamvada Kumar</li>
+            </ul>
+            <h2>Design</h2>
+            <ul className="no-bullets no-indents">
+                <li>Tiffany Hernandez</li>
             </ul>
             <h2>Ragtag.org Tech Volunteers</h2>
             <ul className="no-bullets no-indents">
@@ -53,11 +57,11 @@ export default function Acknowledgements() {
             </ul>
             <h2>FreeFrom Project Leads</h2>
             <ul className="no-bullets no-indents">
-                <li>Sabrina Hamm, Policy Specialist</li>
+                <li>Sabrina Hamm, Policy and Advocacy Specialist</li>
                 <li>Amy Durrence, Director of Systems Change Initiatives</li>
                 <li>Sonya Passi, CEO & Founder</li>
             </ul>
-            <h2>FreeFrom Outreach Team</h2>
+            <h2>FreeFrom Outreach and Dissemination Team</h2>
             <ul className="no-bullets no-indents">
                 <li>Tannia Ventura</li>
                 <li>Chriseithia Collins</li>
