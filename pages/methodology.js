@@ -10,7 +10,7 @@ export default function Methodology() {
 
             <h2>How we chose these categories</h2>
             <p>We are working to build a world in which every policy maker at all levels of government considers survivors’ financial security as well as their unique circumstances and needs in all policies, regardless of whether they seem to directly relate to survivors or intimate partner violence.</p>
-            <p>In the meantime, we selected thirteen policy categories to include within our Policy Map and Scorecard that we identified as being the most directly connected to survivors’ ability to build financial security.</p>
+            <p>In the meantime, we selected thirteen policy categories to include within the National Survivor Financial Security Policy Map and Scorecard (Policy Map and Scorecard) that we identified as being the most directly connected to survivors’ ability to build financial security.</p>
             <p>Specifically, we identified these thirteen policy categories based on the lived experiences of survivors and with the benefit of survivor guidance and feedback.</p>
             <p>The thirteen policy categories including within the Policy Map and Scorecard are as follows:</p>
             <ul className="big-indents">
@@ -53,7 +53,7 @@ export default function Methodology() {
             <h2>How we conducted the research</h2>
             <p>We conducted policy research for all 50 States, plus the District of Columbia with the support of pro bono law partners and legal researchers. The team researched each state’s respective government websites and used legal resources to identify statutes related to the thirteen policy categories listed above.</p>
 
-            <h2>Why include economic abuse defined in state laws...?</h2>
+            <h2>Why include economic abuse in defining intimate partner violence...?</h2>
             <p>We cannot begin to address economic abuse as it relates to intimate partner violence without properly acknowledging it in state laws. This requires that economic abuse be included in the legal definition of intimate partner violence. We know that in 99% of intimate partner violence cases, survivors also experience economic abuse, which occurs when a harm-doer exerts control over a survivor’s finances, rendering the survivor economically dependent on the harm-doer. Economic abuse tactics include monitoring and controlling a survivor’s bank accounts, incurring debt in a survivor’s name via coercion or fraud, and stealing a survivor’s paychecks. States must provide a comprehensive definition of economic abuse in their laws.</p>
             <em>Model policy is a definition of intimate partner violence that includes all or similar language:</em>
             <ul className="big-indents">
@@ -76,13 +76,14 @@ export default function Methodology() {
                 <li>Leave is available to all employees regardless of employer, sector or employee status (PT/FT)</li>
                 <li>Leave policy provides an exhaustive list of reasons to take time off for work to deal with the consequences of abuse</li>
                 <li>Survivors are not required to prove that they have experienced intimate partner violence to access leave, or can access leave with a sworn statement from either the survivor or a qualified third party that intimate partner violence occurred</li>
+                <li>Employers must keep employees’ reasoning for leave and related documentation confidential</li>
             </ul>
             <em>Adverse policies include the following characteristics:</em>
             <ul className="big-indents">
                 <li>Survivors are required to produce a protective order or police report proving that intimate partner violence has occurred in order to access leave</li>
             </ul>
 
-            <h2>Why include safe workplaces...?</h2>
+            <h2>Why include safe workplace policies...?</h2>
             <p>77% of survivors report that a harm-doer has prevented or disrupted their ability to earn an income, and survivors report losing an average of $23,076 in income as the result of intimate partner violence each year.<sup><a href="#fn2" id="ref2">2</a></sup> Steady and secure employment is vital to a survivor’s financial security. This means that it is not enough to simply help survivors find a job, but instead we must work to help survivors keep their jobs. At minimum, employers must be required to ensure that their survivor-employees are able to work in safe, secure workplaces with dignity. Safe work standards include availability to reasonable workplace accommodations, job protection, and privacy / confidentiality.</p>
             <em>Model policies include the following characteristics:</em>
             <ul className="big-indents">
@@ -269,26 +270,26 @@ export default function Methodology() {
             <p>States were given recognition for innovative policy ideas and other policies that were similar to the policy categories but not quite aligned with the aspects in the scorecard. However, these items did not factor in the score.</p>
             <ul className="no-bullets">
                 <li><img src="images/innovative-idea.png" className="checklistIcon" alt="Innovative Idea"/> Innovative idea: Thinking outside the box on policy solutions</li>
-                <li><img src="images/honorable-mention.png" className="checklistIcon" alt="Honorable Mention"/> Honorable mention: A promising policy that doesn’t quite fit within the listed policy categories and / or characteristics.</li>
+                <li><img src="images/honorable-mention.png" className="checklistIcon" alt="Honorable Mention"/> Honorable mention: A policy that is not quite aligned within the listed Model Policy categories and/or characteristics, but is promising nonetheless</li>
             </ul>
 
             <h2>How we assigned an overall state score</h2>
-            <p>The overall state score was calculated based on the total number of Model Policy characteristics present in the state across all policy categories excluding any of those in a policy category scored as Adverse.</p>
+            <p>The overall state score was calculated based on the total number of Model Policy characteristics present in the state across all policy categories excluding any of those in a policy category scored as Adverse. For every policy category, each Model Policy characteristic received a plus one. The total number of possible Model Policy characteristics across all categories is 70.</p>
             <p>We assigned each state an overall score based on the following:</p>
             <ul className="no-bullets">
-                <li><strong>Model state</strong> (45-65 characteristics, ~ 69% to 100%): This state prioritizes survivors’ financial security across all policy categories and is a model for other states to follow!</li>
-                <li><strong>Survivor wealth friendly state</strong> (27-44 characteristics, ~41% to 68%): This state is prioritizing survivors’ financial security in a broad range of policies and is on its way to becoming a Model State!</li>
-                <li><strong>Taking steps to becoming a survivor friendly state</strong> (14-25 characteristics, ~21% to 38%): This state considers survivors’ financial security in multiple policies, and is making progress towards becoming a survivor wealth friendly state.</li>
-                <li><strong>Some accountability by the state</strong> (8-13 characteristics, ~12% to 20%): This state somewhat considers survivors’ financial security in a few policies, but has a lot of work to do.</li>
-                <li><strong>Little accountability by the state</strong> (7 characteristics or below, ~11% and below): This state does not prioritize survivors’ financial security or consider their unique circumstances or needs.</li>
+                <li><strong>Model state</strong> (48-70 characteristics, ~ 69% to 100%): This state prioritizes survivors’ financial security across all policy categories and is a model for other states to follow!</li>
+                <li><strong>Financial security friendly state</strong> (28-47 characteristics, ~41% to 68%): This state is prioritizing survivors’ financial security in a broad range of policies and is on its way to becoming a Model State!</li>
+                <li><strong>Taking steps to becoming a survivor friendly state</strong> (15-27 characteristics, ~21% to 38%): This state considers survivors’ financial security in multiple policies and is making progress towards becoming a survivor financial security friendly state.</li>
+                <li><strong>Some accountability by the state</strong> (8-14 characteristics, ~12% to 20%): This state somewhat considers survivors’ financial security in a few policies but has a lot of work to do.</li>
+                <li><strong>Little accountability by the state</strong> (7 characteristics or below, ~11% and below): This state does not prioritize survivors’ financial security or consider survivors’ unique circumstances or needs when passing legislation.</li>
             </ul>
 
             <h2>Challenges and what’s next</h2>
             <p>While the majority of the researchers had access to legal search engines, we made it a point to use publicly available resources that link directly to state laws as the main citation source. In doing so, we found navigating states’ websites posed the greatest challenge.</p>
             <p>While many states offer easy to understand and navigate systems to search for current state laws, a majority made this process much more difficult. For example, some states require a user to navigate multiple search engines and websites simply to find state laws and did not make it clear if there are other locations on their site a user should search.</p>
             <p>We also found that some states’ navigation systems made it difficult to link directly to a statute and /or locked users out after extended periods of searching. We did our best to cite directly to a state’s websites but in cases where this was not possible, we resulted in citing trusted third party websites.</p>
-            <p>From a broader perspective, this lack of access creates a level of disenfranchisement to the citizens of those respective states. It is the duty of the state to make their laws readily accessible so their citizens can better find the laws that impact their lives. As part of our work with states to pass survivor wealth-centered policies, we will also elevate this important access to justice issue.</p>
-            <p>We hope Policy Map and Scorecard not only brings greater insight on the current landscape of survivor wealth policies across the nation, but also sparks policy change and innovation in the coming years. With this, we will continue to update and add to this existing tool as new legislation is passed and innovate policies are made.</p>
+            <p>From a broader perspective, this lack of access creates a level of disenfranchisement to the citizens of those respective states. It is the duty of the state to make their laws readily accessible so their citizens can better find the laws that impact their lives. As part of our work with states to pass policies that support and center survivors’ financial security, we will also elevate this important access to justice issue.</p>
+            <p>We hope our Policy Map and Scorecard not only brings greater insight to the current landscape of policies across the nation that impact survivors’ financial security, but also sparks policy change and innovation in the coming years. With this, we will continue to update and add to this existing tool as new legislation is passed and innovate policies are made.</p>
 
             <hr></hr>
             <div className="footnotes">
