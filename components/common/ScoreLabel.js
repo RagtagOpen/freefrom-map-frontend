@@ -19,7 +19,7 @@ const labels = {
 }
 
 const ScoreLabel = ({score = 0, type = 'overall'}) => (
-    <div className={`score-label ${type}-${score}`}>
+    <div className={`score-label ${type}-${score} text-nowrap`}>
         {labels[type][score]}
     </div>
 )
