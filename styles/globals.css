@@ -10,6 +10,7 @@ body {
   font-weight: normal;
   font-size: 18px;
   line-height: 28px;
+  overflow-x: hidden;
 }
 
 #__next {
@@ -25,7 +26,7 @@ body {
 div.tooltip {
   position: absolute;
   padding: 2px;
-  width: 375px;
+  width: 3px;
   font: 12px sans-serif;
   background: #fff;
   border: 0px;
