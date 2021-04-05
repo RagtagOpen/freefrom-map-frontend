@@ -65,6 +65,8 @@
             const { states } = this.props
             // just unpacking for tidier variable names downstream
             let { usData, colorRange, width, height } = this;
+            console.log(width);
+            console.log(height);
             // add the values to the state objects
             // usData = this.mapStatesToValues(statesLived, usData);
             usData = this.mapScoresToStates(states, usData)
