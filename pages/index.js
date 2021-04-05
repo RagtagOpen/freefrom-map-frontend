@@ -82,14 +82,14 @@ function Home({ states }) {
                             <strong className="mb-3">Maine leads the way in protecting survivors against coerced and fraudulent debt</strong>
                             <img className="img-fluid mb-3" src="/images/states/maine.png" />
                             <p className="mb-1">Maine recently passed strong legislation that prevents debt collectors from collecting on debts incurred as a result of economic abuse, providing survivors with much needed relief.</p>
-                            <a href="https://legislature.maine.gov/statutes/32/title32sec11013.html" target="_blank" rel="noopener noreferrer">Me. Stat. tit. 32, § 11013</a>
+                            <a href=" https://www.mainelegislature.org/legis/statutes/10/title10sec1310-H.html" target="_blank" rel="noopener noreferrer">Me. Stat. tit. 10, § 1310-H</a>
                         </div>
                         <div className='pr-3 mb-3'>
                             <h3 className="mb-3">Washington</h3>
                             <strong className="mb-3">Washington demonstrates how to protect survivors against litigation abuse</strong>
                             <img className="img-fluid mb-3" src="/images/states/washington.png" />
                             <p className="mb-1">Washington gives survivors the most comprehensive protections against litigation abuse in the nation. The State requires harm-doers to pay attorneys’ fees and costs associated with abusive litigation tactics, holding them accountable for misusing the court system to further harm and abuse survivors.</p>
-                            <a href="" target="_blank" rel="noopener noreferrer">Link goes here</a>
+                            <a href="https://app.leg.wa.gov/RCW/default.aspx?cite=26.51&full=true#26.51.010" target="_blank" rel="noopener noreferrer">Wash. Rev. Code § 26.51.010 - 901</a>
                         </div>
                         <div className='pr-3 mb-3'>
                             <h3 className="mb-3">Nevada</h3>
