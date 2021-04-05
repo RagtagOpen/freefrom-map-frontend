@@ -97,7 +97,6 @@
                 .select("#us-map")
                 .append("div")
                 .attr("id", "map-container")
-                .attr("viewBox", "0 0 " + width + " " + height)
                 .style("max-width", width);
 
             
