@@ -65,6 +65,8 @@
             const { states } = this.props
             // just unpacking for tidier variable names downstream
             let { usData, colorRange, width, height } = this;
+            console.log(width);
+            console.log(height);
             // add the values to the state objects
             // usData = this.mapStatesToValues(statesLived, usData);
             usData = this.mapScoresToStates(states, usData)
@@ -127,8 +129,8 @@
                 .attr("type", "button")
                 .text("Zoom to small states")
                 .attr("class", "ne-zoom-button")
-                // .style("width", "10%")
-                // .style("float", "right")
+                .style("width", "10%")
+                .style("float", "right")
                 // the zoom function will reset the y axis location up or down the eastern seaboard based on the state name
                 .on("click", function(){ zoomNortheast(d3.select(this).text()) })
 

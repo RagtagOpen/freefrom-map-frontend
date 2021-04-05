@@ -376,7 +376,15 @@ input {
   border-radius: 2px;
   font-size:0.75em;
   text-align: left;
+<<<<<<< HEAD
   padding: 3.5px;
   float: none;
   max-width: 10%;
 }
+=======
+  /* width: 100px;
+  height: 100px; */
+  padding: 3.5px;
+}
+
+>>>>>>> staging
