@@ -41,7 +41,7 @@ function ContactLegislators() {
             </Head>
             <SharedLayout>
                 <BackButton className="mt-3 mb-2" />
-                <h1>Contact Your Legislators</h1>
+                <h1 className="subpage-header">Contact Your Legislators</h1>
                 <Formik
                     initialValues={{}}
                     onSubmit={submitZipCode}
