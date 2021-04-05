@@ -33,7 +33,7 @@ function State({ categories, stateData }) {
                         <ShareButtons className="mt-3 mb-5" />
                     </div>
                     <div className="col-12 col-md-7">
-                        <div className="float-right">
+                        <div className="mb-3 w-100 d-flex flex-row justify-content-end">
                             {/* FIXME: add url to report */}
                             <ModalButton href="#" text="Download report" />
                         </div>

@@ -353,3 +353,15 @@ input {
 .asterisk {
   color: #F06449;
 }
+
+.ne-zoom-button {
+  background-color: #ffffff;
+  color:  #000000;
+  border-radius: 2px;
+  font-size:0.75em;
+  text-align: left;
+  /* width: 100px;
+  height: 100px; */
+  padding: 3.5px;
+}
+
