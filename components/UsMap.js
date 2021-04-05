@@ -97,7 +97,6 @@
                 .select("#us-map")
                 .append("div")
                 .attr("id", "map-container")
-                .attr("viewBox", "0 0 " + width + " " + height)
                 .style("max-width", width);
 
             
@@ -128,8 +127,6 @@
                 .attr("type", "button")
                 .text("Zoom to small states")
                 .attr("class", "ne-zoom-button")
-                // .style("width", "10%")
-                // .style("float", "right")
                 // the zoom function will reset the y axis location up or down the eastern seaboard based on the state name
                 .on("click", function(){ zoomNortheast(d3.select(this).text()) })
 
