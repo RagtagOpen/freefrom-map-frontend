@@ -4,16 +4,6 @@ export const checkFormStatus = (props) => {
     // If status has not been updated, form has not yet been submitted.
     if (!props.status) return null
 
-    if (props.status.loading) {
-        return(
-            <div className="col-12 col-lg-8 mb-5 mt-5 alert alert-info" role="alert">
-                <strong>
-                    Sending your response...
-                </strong>
-            </div>
-        )
-    }
-
     if (props.status.success) {
         return (
             <div className="col-12 col-lg-8 mb-5 mb-5 mt-5 alert alert-success" role="alert">
@@ -21,6 +11,14 @@ export const checkFormStatus = (props) => {
                 <a type="button" className="ml-1 alert-link" onClick={props.resetForm}>
                 Submit another response
                 </a>
+            </div>
+        )
+    } else if (props.status.loading) {
+        return(
+            <div className="col-12 col-lg-8 mb-5 mt-5 alert alert-info" role="alert">
+                <strong>
+                    Sending your response...
+                </strong>
             </div>
         )
     } else {
