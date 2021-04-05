@@ -52,11 +52,9 @@ export const submitForm = path => {
                 const message = result && result.description || 'Unknown error'
                 throw new Error(message)
             }
-            setStatus({loading: false})
             setStatus({success: true})
         } catch (error) {
             console.log(error)
-            setStatus({loading: false})
             setStatus({success: false})
             setSubmitting(false)
             setErrors({submit: error.message})
