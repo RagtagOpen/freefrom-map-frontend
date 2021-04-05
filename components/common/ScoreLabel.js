@@ -6,7 +6,7 @@ const labels = {
         "-1": 'little accountability',
         0: 'some accountability',
         1: 'taking steps',
-        2: 'survivor wealth friendly',
+        2: 'financial security friendly',
         3: 'model state'
     },
     'category': {

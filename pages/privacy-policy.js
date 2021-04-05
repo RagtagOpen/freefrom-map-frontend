@@ -6,7 +6,7 @@ export default function PrivacyPolicy() {
     return (
         <SharedLayout>
             <BackButton className="mt-3 mb-2" />
-            <h1>Privacy Policy</h1>
+            <h1 className="subpage-header">Privacy Policy</h1>
             <p>Effective date: March 1, 2021</p>
             <p>FreeFrom (“us“, “we“, or “our“) operates the National Survivor Financial Security Policy Map and Scorecard (hereinafter referred to as the “Site“).</p>
             <p>This page informs you of our policies regarding the collection, use and disclosure of personal data when you use our Site and the choices you have associated with that data.</p>
@@ -27,7 +27,7 @@ export default function PrivacyPolicy() {
             <h3>Types of Data Collected</h3>
             <h4>PERSONAL DATA</h4>
             <p>While using our Site, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you (“Personal Data“). Personally identifiable information may include, but is not limited to:</p>
-            <ul>
+            <ul className="big-indents">
                 <li>Email address</li>
                 <li>Cookies and Usage Data</li>
             </ul>
@@ -40,7 +40,7 @@ export default function PrivacyPolicy() {
 
             <h2>Use of Data</h2>
             <p>We use the collected data for various purposes:</p>
-            <ul>
+            <ul className="big-indents">
                 <li>To present our Site and its contents to you</li>
                 <li>To allow you to participate in interactive features of our Site when you choose to do so</li>
                 <li>To gather analysis or valuable information so that we can improve our Site</li>
@@ -62,7 +62,7 @@ export default function PrivacyPolicy() {
             <p>Under certain circumstances, we may be required to disclose your Personal Data if required to do so by law or in response to valid requests by public authorities (for example, a court of a government agency).</p>
             <h3>Legal Requirements</h3>
             <p>We may disclose your Personal Data in the good faith belief that such action is necessary to:</p>
-            <ul>
+            <ul className="big-indents">
                 <li>Comply with a legal obligation</li>
                 <li>Protect and defend our rights or property</li>
                 <li>Prevent or investigate possible wrongdoing in connection with the Site</li>

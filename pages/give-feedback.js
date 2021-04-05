@@ -26,7 +26,7 @@ export default function GiveFeedback() {
             </Head>
             <SharedLayout>
                 <BackButton className="my-3" />
-                <h1 className="text-ff-red">Give Feedback</h1>
+                <h1 className="subpage-header">Give Feedback</h1>
                 <p>The Policy Map and Scorecard will only be effective if it is useful to our users. We want to hear from you how you used the tool and whether it was helpful. If you didn’t find the tool helpful, feel free to share how we can make the necessary improvements. Thanks so much for sharing your feedback and for helping us make the Policy Map and Scorecard the best tool it can possibly be!</p>
                 <Formik
                     initialValues={{}}
@@ -58,7 +58,7 @@ export default function GiveFeedback() {
                                     required={true}
                                 />
                                 <div className="form-group">
-                                    <FormLabel required={ true }>How do you plan to use this tool?</FormLabel>
+                                    <div className="text-uppercase"><FormLabel required={ true }>How do you plan to use this tool?</FormLabel></div>
                                     <Checkbox name="planned_use" value="inform_org_priorities">Inform my organization’s or state coalition’s policy priorities</Checkbox>
                                     <Checkbox name="planned_use" value="inform_state_priorities">Inform my state’s policy priorities</Checkbox>
                                     <Checkbox name="planned_use" value="inform_officials">Inform elected officials in my state</Checkbox>
@@ -68,7 +68,7 @@ export default function GiveFeedback() {
                                 </div>
                                 {/* eslint-disable-next-line react/prop-types */}
                                 {props.values.planned_use && props.values.planned_use.includes("other") &&
-                              <Input label="Please describe..." name="planned_use_other" required={ true } />
+                              <Input className="text-uppercase" label="Please describe..." name="planned_use_other" required={ true } />
                                 }
                                 <Input
                                     className="text-uppercase"
