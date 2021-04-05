@@ -49,7 +49,8 @@ function Home({ states }) {
 
             <div aria-hidden='true' className={`d-md-flex flex-row justify-content-end${mapClass}`}>
                 <div className='d-flex flex-column'>
-                    <Image src="/images/legend.png" height="186" width="228"/>
+                    <h4 className="mb-0">Key</h4>
+                    <Image src="/images/legend.png" height="129" width="230"/>
                 </div>
             </div>
 
@@ -78,18 +79,24 @@ function Home({ states }) {
                     <div className='d-flex flex-column flex-md-row justify-content-md-between' style={{minWidth: '60%'}}>
                         <div className='pr-3 mb-3'>
                             <h3 className="mb-3">Maine</h3>
-                            <img className="img-fluid mb-3" src="/images/state-to-watch-1.png" />
-                            <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <strong className="mb-3">Maine leads the way in protecting survivors against coerced and fraudulent debt</strong>
+                            <img className="img-fluid mb-3" src="/images/states/maine.png" />
+                            <p className="mb-1">Maine recently passed strong legislation that prevents debt collectors from collecting on debts incurred as a result of economic abuse, providing survivors with much needed relief.</p>
+                            <a href=" https://www.mainelegislature.org/legis/statutes/10/title10sec1310-H.html" target="_blank" rel="noopener noreferrer">Me. Stat. tit. 10, § 1310-H</a>
                         </div>
                         <div className='pr-3 mb-3'>
                             <h3 className="mb-3">Washington</h3>
-                            <img className="img-fluid mb-3" src="/images/state-to-watch-2.png" />
-                            <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <strong className="mb-3">Washington demonstrates how to protect survivors against litigation abuse</strong>
+                            <img className="img-fluid mb-3" src="/images/states/washington.png" />
+                            <p className="mb-1">Washington gives survivors the most comprehensive protections against litigation abuse in the nation. The State requires harm-doers to pay attorneys’ fees and costs associated with abusive litigation tactics, holding them accountable for misusing the court system to further harm and abuse survivors.</p>
+                            <a href="https://app.leg.wa.gov/RCW/default.aspx?cite=26.51&full=true#26.51.010" target="_blank" rel="noopener noreferrer">Wash. Rev. Code § 26.51.010 - 901</a>
                         </div>
                         <div className='pr-3 mb-3'>
-                            <h3 className="mb-3">Colorado, Illinois, and Nevada</h3>
-                            <img className="img-fluid mb-3" src="/images/state-to-watch-3.png" />
-                            <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <h3 className="mb-3">Nevada</h3>
+                            <strong className="mb-3">Nevada is <em>so close</em> to model paid and protected leave</strong>
+                            <img className="img-fluid mb-3" src="/images/states/nevada.png" />
+                            <p className="mb-1">Nevada offers at least 10 days of protected leave for survivors to deal with the consequences of abuse that does not deplete accrued leave. If Nevada were to guarantee that the leave is paid it would be a Model policy.</p>
+                            <a href="https://www.leg.state.nv.us/nrs/nrs-608.html#NRS608Sec0198" target="_blank" rel="noopener noreferrer">N.R.S. § 608.0198</a>
                         </div>
                     </div>
                 </div>
