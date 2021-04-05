@@ -10,6 +10,7 @@ body {
   font-weight: normal;
   font-size: 18px;
   line-height: 28px;
+  overflow-x: hidden;
 }
 
 #__next {
