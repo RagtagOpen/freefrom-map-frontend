@@ -26,7 +26,7 @@ export default function PartnerWithFreefrom() {
             </Head>
             <SharedLayout>
                 <BackButton className="mt-3 mb-2" />
-                <h1>Partner with FreeFrom</h1>
+                <h1 className="subpage-header">Partner with FreeFrom</h1>
                 <p>Is your organization interested in partnering with FreeFrom? Please fill out the following information and we will get back to you as soon as possible.</p>
                 <Formik initialValues={{}} onSubmit={submitForm("partner-with-freefrom")}>
                     {props => {
@@ -34,14 +34,14 @@ export default function PartnerWithFreefrom() {
                         if (formStatus) return formStatus
                         return (
                             <Form className="col-12 col-lg-8 mb-5">
-                                <Input label="Your name" name="name" required={ true } />
-                                <Input label="Your email" name="email" required={ true } type="email" />
-                                <Input label="Your pronouns" name="pronouns" required={ true } />
-                                <Input label="Your organization" name="organization" required={ true } />
-                                <Input label="Your title" name="title" required={ true } />
-                                <Select label="Your state" name="state" required={ true } options={ states }/>
+                                <Input className="text-uppercase" label="Your name" name="name" required={ true } />
+                                <Input className="text-uppercase" label="Your email" name="email" required={ true } type="email" />
+                                <Input className="text-uppercase" label="Your pronouns" name="pronouns" required={ true } />
+                                <Input className="text-uppercase" label="Your organization" name="organization" required={ true } />
+                                <Input className="text-uppercase" label="Your title" name="title" required={ true } />
+                                <Select className="text-uppercase" label="Your state" name="state" required={ true } options={ states }/>
                                 <div className="form-group">
-                                    <FormLabel required={ true }>How would you like to partner with FreeFrom?</FormLabel>
+                                    <div className="text-uppercase"><FormLabel required={ true }>How would you like to partner with FreeFrom?</FormLabel></div>
                                     <Checkbox name="goals" value="policy_innovation_sprint">Request a policy innovation sprint</Checkbox>
                                     <Checkbox name="goals" value="help_drafting_legislation">Help with drafting legislation</Checkbox>
                                     <Checkbox name="goals" value="plan_event_or_webinar">Plan a policy related event or webinar</Checkbox>
@@ -49,7 +49,7 @@ export default function PartnerWithFreefrom() {
                                 </div>
                                 {props.values.goals && props.values.goals.indexOf("pass_survivor_wealth_centered_legislation") !== -1 &&
                               <div className="form-group">
-                                  <FormLabel required={ true }>What phase of the process are you in?</FormLabel>
+                                  <div className="text-uppercase"><FormLabel required={ true }>What phase of the process are you in?</FormLabel></div>
                                   <Checkbox name="process_phase" value="need_guidance">I need guidance on centering my organization’s policy priorities to be more survivor-wealth informed</Checkbox>
                                   <Checkbox name="process_phase" value="have_an_idea">I have a policy idea but need help with getting started</Checkbox>
                                   <Checkbox name="process_phase" value="developed_a_coalition">I’ve developed a coalition or a network to support my policy idea</Checkbox>

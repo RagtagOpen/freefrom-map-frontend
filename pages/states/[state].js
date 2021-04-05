@@ -18,27 +18,24 @@ function State({ categories, stateData }) {
     const router = useRouter()
     const { state } = router.query
     const { name } = stateData;
-    const imageUrl = "../images/state-outlines/" + state + ".png"
+    const imageUrl = "../images/states/" + state + ".png"
     return (
         <SharedLayout>
             <div className='state-page'>
                 <Breadcrumbs currentPageTitle={ state } />
-                <h1>{ name } Survivor Financial Security Policy Report</h1>
-                <p>How does { name } measure up to supporting survivor wealth?</p>
+                <h1>{ name } Survivor Financial Security Policy Scorecard</h1>
+                <p>How well does { name } support survivors’ financial security?</p>
                 <div className="row">
                     <div className="col-12 col-md-4">
                         <img className="img-fluid mb-3" src={imageUrl} />
+                        <h4 className="mb-0">Key</h4>
+                        <img className="img-fluid my-3" src="/images/key.png" />
                         <StateUpdates />
                         <ReportMissingInfo />
                         <ShareButtons className="mt-3 mb-5" />
                     </div>
                     <div className="col-12 col-md-7">
-                        <div className="mb-3 w-100 d-flex flex-row justify-content-end">
-                            {/* FIXME: add url to report */}
-                            <ModalButton href="#" text="Download report" />
-                        </div>
                         <Scorecard categories={categories} stateData={stateData} />
-                        <img className="img-fluid my-3" src="/images/key.png" />
                         <div className="understanding-report">
                             <h2 className="mb-0" >Understanding this report</h2>
                             <ScoringGuide />

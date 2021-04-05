@@ -7,19 +7,19 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #F06449;
-    background-color: transparent;
     border: none;
     padding: 6.75px 0;
     text-align: left;
+    background-color: rgba(255, 151, 151, 0.1);
 }
 
 .button:hover, .button:focus, .button:active {
     text-decoration: underline;
     color: #F06449 !important;
-    background-color: transparent !important;
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
+    background-color: rgba(255, 151, 151, 0.1) !important;
 }
 
 .content {

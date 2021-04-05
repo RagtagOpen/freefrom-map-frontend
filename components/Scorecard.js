@@ -76,7 +76,7 @@ const stateDataType = PropTypes.shape({
 const HonorableMention = ({ honorableMentionData }) => (
   <div className="honorable-mention">
     <div className="d-flex flex-row align-items-center">
-      <FontAwesomeIcon className="mr-2" icon={faAward} />
+      <img src="/images/honorable-mention.png" className="checklistIcon" alt="Honorable Mention"/>
       <h3 className="m-0" style={{ fontSize: "1em" }}>
         Honorable Mention
       </h3>
@@ -84,7 +84,7 @@ const HonorableMention = ({ honorableMentionData }) => (
 
     <p className="card-body small m-0 pt-1">
       {honorableMentionData.description} (
-      <a href={honorableMentionData.url} rel="noopener noreferrer">
+      <a href={honorableMentionData.url} target="_blank" rel="noopener noreferrer">
         {honorableMentionData.text}
       </a>
       )
@@ -99,7 +99,7 @@ HonorableMention.propTypes = {
 const InnovativePolicyIdea = ({ innovativePolicyIdeaData }) => (
   <div className="honorable-mention">
     <div className="d-flex flex-row align-items-center">
-      <FontAwesomeIcon className="mr-2" icon={faLightbulb} />
+      <img src="/images/innovative-idea.png" className="checklistIcon" alt="Innovative Idea"/>;
       <h3 className="m-0" style={{ fontSize: "1em" }}>
         Innovative Policy Idea
       </h3>
@@ -107,7 +107,7 @@ const InnovativePolicyIdea = ({ innovativePolicyIdeaData }) => (
 
     <p className="card-body small m-0 pt-1">
       {innovativePolicyIdeaData.description} (
-      <a href={innovativePolicyIdeaData.url} rel="noopener noreferrer">
+      <a href={innovativePolicyIdeaData.url} target="_blank" rel="noopener noreferrer">
         {innovativePolicyIdeaData.text}
       </a>
       )
@@ -150,7 +150,7 @@ Policy.propTypes = {
 
 const ResourceLink = ({ link }) => (
   <p className="card-body small m-0 d-flex flex-row">
-    <a href={link.url} rel="noopener noreferrer">
+    <a href={link.url} target="_blank" rel="noopener noreferrer">
       {link.text}
     </a>
   </p>
