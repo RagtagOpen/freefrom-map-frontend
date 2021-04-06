@@ -71,9 +71,6 @@ function Home({ states }) {
                 <h2 className='mt-5'>Snapshot of Survivor Financial Security Policies By State</h2>
                 <img className="img-fluid" src="/images/snapshot-by-state.png" />
 
-                <h2 className='mt-5'>Snapshot of Survivor Financial Security Policies By Category</h2>
-                <img className="img-fluid" src="/images/snapshot-by-category.png" />
-
                 <h2 className='mt-5'>States to Watch</h2>
                 <div className="d-flex justify-content-lg-around justify-content-center align-items-center flex-column flex-md-row p-2">
                     <div className='d-flex flex-column flex-md-row justify-content-md-between' style={{minWidth: '60%'}}>
@@ -91,7 +88,7 @@ function Home({ states }) {
                             <p className="mb-1">Washington gives survivors the most comprehensive protections against litigation abuse in the nation. The State requires harm-doers to pay attorneys’ fees and costs associated with abusive litigation tactics, holding them accountable for misusing the court system to further harm and abuse survivors.</p>
                             <a href="https://app.leg.wa.gov/RCW/default.aspx?cite=26.51&full=true#26.51.010" target="_blank" rel="noopener noreferrer">Wash. Rev. Code § 26.51.010 - 901</a>
                         </div>
-                        <div className='pr-3 mb-3'>
+                        <div className='pr-3'>
                             <h3 className="mb-3">Nevada</h3>
                             <strong className="mb-3">Nevada is <em>so close</em> to model paid and protected leave</strong>
                             <img className="img-fluid mb-3" src="/images/states/nevada.png" />
@@ -100,6 +97,9 @@ function Home({ states }) {
                         </div>
                     </div>
                 </div>
+
+                <h2 className='mt-5'>Snapshot of Survivor Financial Security Policies By Category</h2>
+                <img className="img-fluid mb-5" src="/images/snapshot-by-category.png" />
 
                 <TakeAction />
 
