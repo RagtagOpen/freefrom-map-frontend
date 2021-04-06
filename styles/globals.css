@@ -378,6 +378,7 @@ input {
   font-size:0.75em;
   font-weight: 400;
   text-align: left;
+  line-height: 20px;
   padding: 3px;
   float: none;
   width: 50px;
