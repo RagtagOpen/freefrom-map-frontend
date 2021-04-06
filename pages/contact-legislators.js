@@ -115,7 +115,7 @@ const Channels = ({channels}) => (
                     </li>
                 )}
             )
-            : <li className='list-inline-item mr-3'>[No social media found]</li>
+            : <span></span>
         }
     </>
 )
