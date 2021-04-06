@@ -28,15 +28,6 @@ function Home({ states }) {
                 </p>
             </>
 
-            <div className='d-sm-block d-md-none mb-3'>
-                <button
-                    className='orange-button btn btn-primary'
-                    onClick={() => setVisibleComponent(showList ? 'map' : 'list')}>
-                    <FontAwesomeIcon icon={ faArrowRight } className="mr-1" />{' '}
-                    Switch to {showList ? 'map' : 'list'} view
-                </button>
-            </div>
-
             <div className='d-flex flex-row flex-fill'>
                 <div className={`col-md-3 p-0${listClass}`} style={{ minWidth: '300px' }}>
                     <StatesList states={states} />
