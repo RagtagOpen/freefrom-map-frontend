@@ -43,36 +43,39 @@ function Home({ states }) {
                 </div>
 
                 <div className={`col-md-9${mapClass}`}>
+                    <div aria-hidden='true' className={`mb-4 ml-3 d-md-flex flex-row justify-content-start${mapClass}`}>
+                        <div className='d-flex flex-column'>
+                            <h4 className="mb-0">Key</h4>
+                            <img className="img-fluid" src="/images/legend.png" style={{maxWidth: '415px'}}/>
+                        </div>
+                    </div>
                     <UsMap states={states} />
+
+
                 </div>
             </div>
 
-            <div aria-hidden='true' className={`d-md-flex flex-row justify-content-end${mapClass}`}>
-                <div className='d-flex flex-column'>
-                    <h4 className="mb-0">Key</h4>
-                    <Image src="/images/legend.png" height="129" width="230"/>
-                </div>
-            </div>
-
-            <div className='d-md-flex flex-row justify-content-end mt-5'>
-                <div className='d-flex flex-column flex-md-row justify-content-md-between' style={{minWidth: '60%'}}>
-                    <div className='pr-3'>
+            <div className='d-md-flex flex-row justify-content-start mt-4'>
+                <div className='d-flex flex-column flex-md-row' style={{minWidth: '60%'}}>
+                    <div className='pr-3 mb-3'>
+                        <ShareButtons className='d-flex flex-row flex-nowrap' />
+                    </div>
+                    <div className='pr-3 mb-3'>
                         <StateUpdates />
                     </div>
                     <div className='pr-3'>
                         <ReportMissingInfo />
                     </div>
-                    <ShareButtons className='d-flex flex-row flex-nowrap' />
                 </div>
             </div>
 
             <>
 
-                <h2 className='mt-5'>Snapshot of Survivor Financial Security Policies By State</h2>
-                <img className="img-fluid" src="/images/snapshot-by-state.png" />
+                <h2 className='mt-4'>Snapshot of Survivor Financial Security Policies By State</h2>
+                <img className="img-fluid" src="/images/snapshot-by-state.png" style={{width: '100%', maxWidth: '800px'}}/>
 
                 <h2 className='mt-5'>Snapshot of Survivor Financial Security Policies By Category</h2>
-                <img className="img-fluid" src="/images/snapshot-by-category.png" />
+                <img className="img-fluid" src="/images/snapshot-by-category.png" style={{width: '100%', maxWidth: '800px'}} />
 
                 <h2 className='mt-5'>States to Watch</h2>
                 <div className="d-flex justify-content-lg-around justify-content-center align-items-center flex-column flex-md-row p-2">
