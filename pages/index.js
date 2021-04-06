@@ -6,6 +6,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import ReportMissingInfo from 'components/common/ReportMissingInfo'
 import ShareButtons from 'components/common/ShareButtons'
 import StateUpdates from 'components/common/StateUpdates'
+import TakeAction from 'components/common/TakeAction'
 import SharedLayout from 'components/SharedLayout'
 import StatesList from 'components/StatesList'
 import UsMap from 'components/UsMap'
@@ -109,6 +110,8 @@ function Home({ states }) {
                 <p>While survivors’ ability to build financial security is impacted by a wide range of policies, we chose the thirteen policy categories currently included within our scorecard after determining that they were most directly connected with survivors’ ability to protect their assets and build and save wealth.</p>
                 <p>While practice and policy may differ, the scorecard only measures policies as they are codified in state laws.</p>
                 <ModalButton text="Full Methodology" href="/methodology"/>
+
+                <TakeAction />
 
             </>
         </SharedLayout>
