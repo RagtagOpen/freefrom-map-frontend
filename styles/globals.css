@@ -10,6 +10,7 @@ body {
   font-weight: normal;
   font-size: 18px;
   line-height: 28px;
+  overflow-x: hidden;
 }
 
 #__next {
@@ -372,12 +373,16 @@ input {
 
 .ne-zoom-button {
   background-color: #ffffff;
-  color:  #000000;
+  color: #212529;
   border-radius: 2px;
   font-size:0.75em;
+  font-weight: 400;
   text-align: left;
-  /* width: 100px;
-  height: 100px; */
-  padding: 3.5px;
+  padding: 3px;
+  float: none;
+  width: 50px;
+  text-transform: uppercase;
+  text-align: center;
+  border: 1px solid #767676;
+  border-radius: 2px;
 }
-

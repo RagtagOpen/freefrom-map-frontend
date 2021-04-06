@@ -43,7 +43,7 @@
             function zoomNortheast() {
                 if(northeastZoom) {
                     // update the button text
-                    d3.select("#" + "northeast-focus-button").text("Zoom to small states")
+                    d3.select("#" + "northeast-focus-button").text("Zoom in")
                     document
                         .getElementById("us-map-svg")
                         .setAttribute("viewBox", "0 0 " + width + " " + height);
@@ -51,8 +51,8 @@
                     d3.select("#" + "northeast-focus-button").text("Zoom out")
                     // derived scaling factors to zoom to top right of map
                     let zoomXmin = (width/1.73);
-                    let zoomYmin = (height/5);
-                    let zoomWidth = (width/2.5)
+                    let zoomYmin = (height/7);
+                    let zoomWidth = (width/2.7)
                     document
                         .getElementById("us-map-svg")
                         .setAttribute("viewBox", zoomXmin + " " + zoomYmin + " " + zoomWidth + " " + height);
@@ -80,7 +80,7 @@
                 .geo
                 .albersUsa()
                 .translate([width / 2, height / 2])
-                .scale([width]);
+                .scale([width*1.25]);
 
             let path = d3
                 .geo
@@ -99,12 +99,14 @@
                 .select("#us-map")
                 .append("div")
                 .attr("id", "map-container")
-            
+                .style("max-width", width);
+
+
             // an svg for the map itself
             let svg = d3
                 .select("#map-container")
                 .append("svg")
-                .style("width", "90%")
+                .style("max-width", "74%")
                 .style("float", "left")
                 .attr("id", "us-map-svg")
                 .attr("viewBox", "0 0 " + width + " " + height)
@@ -125,10 +127,8 @@
                 .append("button")
                 .attr("id", "northeast-focus-button")
                 .attr("type", "button")
-                .text("Zoom to small states")
+                .text("Zoom in")
                 .attr("class", "ne-zoom-button")
-                .style("width", "10%")
-                .style("float", "right")
                 // the zoom function will reset the y axis location up or down the eastern seaboard based on the state name
                 .on("click", function(){ zoomNortheast(d3.select(this).text()) })
 
