@@ -137,7 +137,7 @@ const Comms = ({items, type}) => {
                         </a>
                     </li>
                 ))
-                : <li className='list-inline-item mr-3'>[No {type} found]</li>
+                : <span></span>
             }
         </>
     )
