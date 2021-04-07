@@ -36,7 +36,7 @@ function Home({ states }) {
                 <div className={`col-md-9${mapClass}`}>
                     <div aria-hidden='true' className={`mb-4 ml-3 d-md-flex flex-row justify-content-start${mapClass}`}>
                         <div className='d-flex flex-column'>
-                            <h4 className="mb-0">Key</h4>
+                            <h4 className="mb-1">Key</h4>
                             <img className="img-fluid" src="/images/legend.png" style={{maxWidth: '415px'}}/>
                         </div>
                     </div>
