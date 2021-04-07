@@ -5,7 +5,7 @@ workflows:
   heroku_deploy:
     jobs:
       - heroku/deploy-via-git:
-          app-name: freefrom-map-frontend
+          app-name: freefrom-map-frontend-staging
           filters:
             branches:
               only: staging
