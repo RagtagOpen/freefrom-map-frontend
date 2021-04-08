@@ -2,269 +2,277 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCaretDown,
-  faCaretUp,
-  faAward,
-  faLightbulb
+    faCaretDown,
+    faCaretUp
 } from "@fortawesome/free-solid-svg-icons";
-import { EmptySquare } from "./common/ScoringGuide";
 
 import ScoreLabel from "./common/ScoreLabel";
 import { OVERALL_SCORE_LABELS } from '../constants'
+import { toSlug } from 'utils'
 
 const resourceLinkType = PropTypes.shape({
-  active: PropTypes.bool,
-  category_id: PropTypes.number,
-  deactivated_at: PropTypes.string,
-  id: PropTypes.number,
-  state: PropTypes.string,
-  text: PropTypes.string,
-  url: PropTypes.string,
+    active: PropTypes.bool,
+    category_id: PropTypes.number,
+    deactivated_at: PropTypes.string,
+    id: PropTypes.number,
+    state: PropTypes.string,
+    text: PropTypes.string,
+    url: PropTypes.string,
 });
 
 const honorableMentionType = PropTypes.shape({
-  id: PropTypes.number,
-  category_id: PropTypes.number,
-  description: PropTypes.string,
-  text: PropTypes.string,
-  url: PropTypes.string,
+    id: PropTypes.number,
+    category_id: PropTypes.number,
+    description: PropTypes.string,
+    text: PropTypes.string,
+    url: PropTypes.string,
 });
 
 const innovativePolicyIdeaType = PropTypes.shape({
-  id: PropTypes.number,
-  category_id: PropTypes.number,
-  description: PropTypes.string,
-  text: PropTypes.string,
-  url: PropTypes.string,
+    id: PropTypes.number,
+    category_id: PropTypes.number,
+    description: PropTypes.string,
+    text: PropTypes.string,
+    url: PropTypes.string,
 });
 
 const categoryType = PropTypes.shape({
-  id: PropTypes.number,
-  title: PropTypes.string,
-  help_text: PropTypes.string,
-  criteria: PropTypes.arrayOf(
-    PropTypes.shape({
-      adverse: PropTypes.bool,
-      title: PropTypes.string,
-    })
-  ),
+    id: PropTypes.number,
+    title: PropTypes.string,
+    help_text: PropTypes.string,
+    criteria: PropTypes.arrayOf(
+        PropTypes.shape({
+            adverse: PropTypes.bool,
+            title: PropTypes.string,
+        })
+    ),
 });
 
 const criterionScoreType = PropTypes.shape({
-  criterion_id: PropTypes.number,
-  meets_criterion: PropTypes.string, // "yes", "no", "maybe"
+    criterion_id: PropTypes.number,
+    meets_criterion: PropTypes.string, // "yes", "no", "maybe"
 });
 
 const categoryGradeType = PropTypes.shape({
-  category_id: PropTypes.number,
-  grade: PropTypes.number,
+    category_id: PropTypes.number,
+    grade: PropTypes.number,
 });
 
 const stateDataType = PropTypes.shape({
-  category_grades: PropTypes.arrayOf(categoryGradeType),
-  code: PropTypes.string,
-  criterion_scores: PropTypes.arrayOf(criterionScoreType),
-  grade: PropTypes.shape({
-    grade: PropTypes.number,
-  }),
-  honorable_mentions: PropTypes.arrayOf(honorableMentionType),
-  innovative_policy_ideas: PropTypes.arrayOf(innovativePolicyIdeaType),
-  name: PropTypes.string,
-  resource_links: PropTypes.arrayOf(resourceLinkType),
+    category_grades: PropTypes.arrayOf(categoryGradeType),
+    code: PropTypes.string,
+    criterion_scores: PropTypes.arrayOf(criterionScoreType),
+    grade: PropTypes.shape({
+        grade: PropTypes.number,
+    }),
+    honorable_mentions: PropTypes.arrayOf(honorableMentionType),
+    innovative_policy_ideas: PropTypes.arrayOf(innovativePolicyIdeaType),
+    name: PropTypes.string,
+    resource_links: PropTypes.arrayOf(resourceLinkType),
 });
 
 const HonorableMention = ({ honorableMentionData }) => (
-  <div className="honorable-mention">
-    <div className="d-flex flex-row align-items-center">
-      <img src="/images/honorable-mention.png" className="checklistIcon" alt="Honorable Mention"/>
-      <h3 className="m-0" style={{ fontSize: "1em" }}>
+    <div className="honorable-mention">
+        <div className="d-flex flex-row align-items-center">
+            <img src="/images/honorable-mention.png" className="checklistIcon" alt="Honorable Mention"/>
+            <h3 className="m-0" style={{ fontSize: "1em" }}>
         Honorable Mention
-      </h3>
-    </div>
+            </h3>
+        </div>
 
-    <p className="card-body small m-0 pt-1">
-      {honorableMentionData.description} (
-      <a href={honorableMentionData.url} target="_blank" rel="noopener noreferrer">
-        {honorableMentionData.text}
-      </a>
+        <p className="card-body small m-0 pt-1">
+            {honorableMentionData.description} (
+            <a href={honorableMentionData.url} target="_blank" rel="noopener noreferrer">
+                {honorableMentionData.text}
+            </a>
       )
-    </p>
-  </div>
+        </p>
+    </div>
 );
 
 HonorableMention.propTypes = {
-  honorableMentionData: honorableMentionType,
+    honorableMentionData: honorableMentionType,
 };
 
 const InnovativePolicyIdea = ({ innovativePolicyIdeaData }) => (
-  <div className="honorable-mention">
-    <div className="d-flex flex-row align-items-center">
-      <img src="/images/innovative-idea.png" className="checklistIcon" alt="Innovative Idea"/>;
-      <h3 className="m-0" style={{ fontSize: "1em" }}>
+    <div className="honorable-mention">
+        <div className="d-flex flex-row align-items-center">
+            <img src="/images/innovative-idea.png" className="checklistIcon" alt="Innovative Idea"/>;
+            <h3 className="m-0" style={{ fontSize: "1em" }}>
         Innovative Policy Idea
-      </h3>
-    </div>
+            </h3>
+        </div>
 
-    <p className="card-body small m-0 pt-1">
-      {innovativePolicyIdeaData.description} (
-      <a href={innovativePolicyIdeaData.url} target="_blank" rel="noopener noreferrer">
-        {innovativePolicyIdeaData.text}
-      </a>
+        <p className="card-body small m-0 pt-1">
+            {innovativePolicyIdeaData.description} (
+            <a href={innovativePolicyIdeaData.url} target="_blank" rel="noopener noreferrer">
+                {innovativePolicyIdeaData.text}
+            </a>
       )
-    </p>
-  </div>
+        </p>
+    </div>
 );
 
 InnovativePolicyIdea.propTypes = {
-  innovativePolicyIdeaData: innovativePolicyIdeaType,
+    innovativePolicyIdeaData: innovativePolicyIdeaType,
 };
 
 const renderIcon = (implementsPolicy) => {
-  switch (implementsPolicy) {
+    switch (implementsPolicy) {
     case "yes":
-      return <img src="/images/criteria-met.png" className="checklistIcon" alt="Criteria Met"/>;
+        return <img src="/images/criteria-met.png" className="checklistIcon" alt="Criteria Met"/>;
     case "maybe":
-      return <img src="/images/criteria-maybe-met.png" className="checklistIcon" alt="Criteria Maybe Met"/>;
+        return <img src="/images/criteria-maybe-met.png" className="checklistIcon" alt="Criteria Maybe Met"/>;
     case "no":
-      return<img src="/images/criteria-not-met.png" className="checklistIcon" alt="Criteria Not Met"/>;
-  }
+        return<img src="/images/criteria-not-met.png" className="checklistIcon" alt="Criteria Not Met"/>;
+    }
 };
 
 const Policy = ({ policyData, score }) => (
-  <p className="card-body small m-0 d-flex flex-row">
-    {renderIcon(score.meets_criterion)}
-    {policyData.title}
-  </p>
+    <p className="card-body small m-0 d-flex flex-row">
+        {renderIcon(score.meets_criterion)}
+        {policyData.title}
+    </p>
 );
 
 Policy.propTypes = {
-  policyData: PropTypes.shape({
-    id: PropTypes.number,
-    title: PropTypes.string,
-    adverse: PropTypes.bool,
-  }),
-  score: PropTypes.shape({
-    meets_criterion: PropTypes.string,
-  }),
+    policyData: PropTypes.shape({
+        id: PropTypes.number,
+        title: PropTypes.string,
+        adverse: PropTypes.bool,
+    }),
+    score: PropTypes.shape({
+        meets_criterion: PropTypes.string,
+    }),
 };
 
 const ResourceLink = ({ link }) => (
-  <p className="card-body small m-0 d-flex flex-row">
-    <a href={link.url} target="_blank" rel="noopener noreferrer">
-      {link.text}
-    </a>
-  </p>
+    <p className="card-body small m-0 d-flex flex-row">
+        <a href={link.url} target="_blank" rel="noopener noreferrer">
+            {link.text}
+        </a>
+    </p>
 );
 
 ResourceLink.propTypes = { link: resourceLinkType };
 
 const Category = ({ category, expanded, onClickExpand, stateData }) => {
-  const categoryScore =
+    const categoryScore =
     stateData.category_grades.find((c) => c.category_id === category.id) || {};
-  const honorableMentionData =
+    const honorableMentionData =
     stateData.honorable_mentions.find((hm) => hm.category_id === category.id) ||
     null;
-  const innovativePolicyIdeaData =
+    const innovativePolicyIdeaData =
     stateData.innovative_policy_ideas.find(
-      (ip) => ip.category_id === category.id
+        (ip) => ip.category_id === category.id
     ) || null;
-  const modelPolicies = category.criteria.filter((c) => !c.adverse) || [];
-  const adversePolicies = category.criteria.filter((c) => c.adverse) || [];
-  const collapseId = `collapse-${category.id}`;
-  const headingId = `heading-${category.id}`;
-  const links =
+    const modelPolicies = category.criteria.filter((c) => !c.adverse) || [];
+    const adversePolicies = category.criteria.filter((c) => c.adverse) || [];
+    const collapseId = `collapse-${category.id}`;
+    const headingId = `heading-${category.id}`;
+    const links =
     stateData.resource_links.filter(
-      (l) => l.category_id === category.id && l.active
+        (l) => l.category_id === category.id && l.active
     ) || [];
-  return (
-    <div
-      className="category accordion-i"
-      style={{ borderTop: "1px solid black" }}
-    >
-      <div
-        id={headingId}
-        className="pt-3 pb-3"
-        type="button"
-        data-toggle="collapse"
-        data-target={`#${collapseId}`}
-        aria-expanded="false"
-        aria-controls={collapseId}
-        onClick={onClickExpand}
-      >
-        <h2
-          className="m-0 d-flex flex-row justify-content-between"
-          style={{ textTransform: "uppercase", fontSize: "0.75em" }}
+    console.log(toSlug(category.title))
+    return (
+        <div
+            className="category accordion-i"
+            style={{ borderTop: "1px solid black" }}
         >
-          {category.title}
-          <div className="d-flex flex-row justify-content-between">
-            <span className="mr-3">
-              <ScoreLabel score={categoryScore.grade} type="category" />
-            </span>
-            <FontAwesomeIcon className="fa-2x" icon={expanded ? faCaretUp : faCaretDown} />
-          </div>
-        </h2>
-      </div>
-      <div
-        id={collapseId}
-        className="collapse"
-        aria-labelledby={headingId}
-        data-parent="#scorecard"
-      >
-        <div className="p-0 pb-3 card-body small font-italic">
-          {category.help_text}
-        </div>
-        {honorableMentionData ? (
-          <HonorableMention honorableMentionData={honorableMentionData} />
-        ) : null}
-        {innovativePolicyIdeaData ? (
-          <InnovativePolicyIdea
-            innovativePolicyIdeaData={innovativePolicyIdeaData}
-          />
-        ) : null}
-        <div className="model-policies p-0 card-body small">
-          <h3 className="m-0" style={{ fontSize: "1em" }}>
+            <div
+                id={headingId}
+                className="pt-3 pb-3"
+                type="button"
+                data-toggle="collapse"
+                data-target={`#${collapseId}`}
+                aria-expanded="false"
+                aria-controls={collapseId}
+                onClick={onClickExpand}
+            >
+                <h2
+                    className="m-0 d-flex flex-row justify-content-between"
+                    style={{ textTransform: "uppercase", fontSize: "0.75em", fontWeight: 300 }}
+                >
+                    <div>
+                        <img
+                            className="img img-fluid mr-4"
+                            src={`../images/policy-category-icons/${category.id}.png`}
+                            alt={`${category.title} logo`}
+                            height="60" />
+                        {category.title}
+                    </div>
+                    <div className="d-flex flex-row justify-content-between mt-2">
+                        <span className="mr-3">
+                            <ScoreLabel score={categoryScore.grade} type="category" />
+                        </span>
+                        <FontAwesomeIcon className="fa-2x" icon={expanded ? faCaretUp : faCaretDown} />
+                    </div>
+                </h2>
+            </div>
+            <div
+                id={collapseId}
+                className="collapse"
+                aria-labelledby={headingId}
+                data-parent="#scorecard"
+            >
+                <div className="p-0 pb-3 card-body small font-italic">
+                    {category.help_text}
+                </div>
+                {honorableMentionData ? (
+                    <HonorableMention honorableMentionData={honorableMentionData} />
+                ) : null}
+                {innovativePolicyIdeaData ? (
+                    <InnovativePolicyIdea
+                        innovativePolicyIdeaData={innovativePolicyIdeaData}
+                    />
+                ) : null}
+                <div className="model-policies p-0 card-body small">
+                    <h3 className="m-0" style={{ fontSize: "1em" }}>
             Model policy checklist (these support survivors):
-          </h3>
-          {modelPolicies.map((policy) => {
-            const score = stateData.criterion_scores.find(
-              (s) => s.criterion_id === policy.id
-            );
-            return <Policy policyData={policy} score={score} key={policy.id} />;
-          })}
-        </div>
+                    </h3>
+                    {modelPolicies.map((policy) => {
+                        const score = stateData.criterion_scores.find(
+                            (s) => s.criterion_id === policy.id
+                        );
+                        return <Policy policyData={policy} score={score} key={policy.id} />;
+                    })}
+                </div>
 
-        <div className="adverse-policies p-0 card-body small">
-          <h3 className="m-0" style={{ fontSize: "1em" }}>
+                <div className="adverse-policies p-0 card-body small">
+                    <h3 className="m-0" style={{ fontSize: "1em" }}>
             Adverse policy checklist (these harm survivors):
-          </h3>
-          {adversePolicies.map((policy) => {
-            const score = stateData.criterion_scores.find(
-              (s) => s.criterion_id === policy.id
-            );
-            return <Policy policyData={policy} score={score} key={policy.id} />;
-          })}
-        </div>
+                    </h3>
+                    {adversePolicies.map((policy) => {
+                        const score = stateData.criterion_scores.find(
+                            (s) => s.criterion_id === policy.id
+                        );
+                        return <Policy policyData={policy} score={score} key={policy.id} />;
+                    })}
+                </div>
 
-        <div className="adverse-policies p-0 card-body mb-3 small">
-          <h3 className="m-0" style={{ fontSize: "1em" }}>
+                <div className="adverse-policies p-0 card-body mb-3 small">
+                    <h3 className="m-0" style={{ fontSize: "1em" }}>
             Related sources:
-          </h3>
-          {links.length > 0 ? (
-            links.map((link) => <ResourceLink link={link} key={link.id} />)
-          ) : (
-            <p className="card-body small m-0 d-flex flex-row">
+                    </h3>
+                    {links.length > 0 ? (
+                        links.map((link) => <ResourceLink link={link} key={link.id} />)
+                    ) : (
+                        <p className="card-body small m-0 d-flex flex-row">
               No {category.title} resources found for {stateData.name}.
-            </p>
-          )}
+                        </p>
+                    )}
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 Category.propTypes = {
-  category: categoryType,
-  stateData: stateDataType,
+    category: categoryType,
+    expanded: PropTypes.bool,
+    onClickExpand: PropTypes.func,
+    stateData: stateDataType,
 };
 
 const Scorecard = ({ categories, stateData }) => {
@@ -297,9 +305,9 @@ const Scorecard = ({ categories, stateData }) => {
 };
 
 Scorecard.propTypes = {
-  categories: PropTypes.arrayOf(categoryType),
-  overallScore: PropTypes.number,
-  stateData: stateDataType,
+    categories: PropTypes.arrayOf(categoryType),
+    overallScore: PropTypes.number,
+    stateData: stateDataType,
 };
 
 export default Scorecard;
