@@ -36,7 +36,7 @@ function Home({ states }) {
                 <div className={`col-md-9${mapClass}`}>
                     <div aria-hidden='true' className={`mb-4 ml-3 d-md-flex flex-row justify-content-start${mapClass}`}>
                         <div className='d-flex flex-column'>
-                            <h4 className="mb-0">Key</h4>
+                            <h4 className="mb-1">Key</h4>
                             <img className="img-fluid" src="/images/legend.png" style={{maxWidth: '415px'}}/>
                         </div>
                     </div>
@@ -63,11 +63,11 @@ function Home({ states }) {
             <>
 
                 <h2 className='mt-4'>Snapshot of Survivor Financial Security Policies By State</h2>
-                <img className="img-fluid" src="/images/snapshot-by-state.png" style={{width: '100%', maxWidth: '800px'}}/>
+                <img className="img-fluid" src="/images/snapshot-by-state.png" style={{width: '100%', maxWidth: '1000px'}}/>
 
                 <h2 className='mt-5'>States to Watch</h2>
                 <div className="d-flex justify-content-lg-around justify-content-center align-items-center flex-column flex-md-row p-2">
-                    <div className='d-flex flex-column flex-md-row justify-content-md-between' style={{minWidth: '60%'}}>
+                    <div className='d-flex flex-column flex-md-row justify-content-md-between'>
                         <div className='pr-3 mb-3'>
                             <strong className="mb-3">Maine leads the way in protecting survivors against coerced and fraudulent debt</strong>
                             <img className="img-fluid mb-3" src="/images/states/maine.png" />
@@ -90,7 +90,7 @@ function Home({ states }) {
                 </div>
 
                 <h2 className='mt-5'>Snapshot of Survivor Financial Security Policies By Category</h2>
-                <img className="img-fluid mb-5" src="/images/snapshot-by-category.png" />
+                <img className="img-fluid mb-5" src="/images/snapshot-by-category.png" style={{width: '100%', maxWidth: '1000px'}} />
 
                 <TakeAction />
 
