@@ -190,15 +190,19 @@ input {
 .footer {
   background-color: #47cccc;
   color: #fff;
+  text-align: center;
 }
 
 .footer h2 {
-  font-weight: 400;
+  font-weight: 600;
+  font-size: 36px;
   margin-bottom: 30px;
+  text-transform: none;
 }
 
 .footer .nav-item a {
   color: #fff;
+  font-weight: 600;
   font-size: 18px;
   line-height: 28px;
 }
