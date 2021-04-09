@@ -199,7 +199,8 @@ const Category = ({ category, expanded, onClickExpand, stateData }) => {
                             className="img img-fluid mr-4"
                             src={`../images/policy-category-icons/${category.id}.png`}
                             alt={`${category.title} logo`}
-                            height="60" />
+                            width="60px"
+                            height="60px" />
                         {category.title}
                     </div>
                     <div className="d-flex flex-row justify-content-between mt-2">
