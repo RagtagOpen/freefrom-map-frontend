@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import ReportMissingInfo from 'components/common/ReportMissingInfo'
 import ShareButtons from 'components/common/ShareButtons'
@@ -10,13 +8,17 @@ import TakeAction from 'components/common/TakeAction'
 import SharedLayout from 'components/SharedLayout'
 import StatesList from 'components/StatesList'
 import UsMap from 'components/UsMap'
-import Image from 'next/image'
+import CookiesConsent from 'components/CookiesConsent'
+import { getCookies } from 'utils'
 
 function Home({ states }) {
     const [visibleComponent, setVisibleComponent] = useState('list');
+    const [cookie, setCookie] = useState(getCookies());
+
     const showList = visibleComponent === 'list'
     const mapClass = showList ? ' d-none d-md-block' : ''
     const listClass = showList ? '' : ' d-none d-md-block'
+
     return (
         <SharedLayout>
             <>
@@ -95,6 +97,7 @@ function Home({ states }) {
                 <TakeAction />
 
             </>
+            { cookie != null && cookie != undefined ? null : <CookiesConsent setCookie={setCookie} /> }
         </SharedLayout>
     );
 }

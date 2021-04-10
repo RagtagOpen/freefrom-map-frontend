@@ -22,7 +22,8 @@
     "popper.js": "^1.16.1",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "slugify": "^1.4.7"
+    "slugify": "^1.4.7",
+    "universal-cookie": "^4.0.4"
   },
   "devDependencies": {
     "eslint": "^7.17.0",
