@@ -31,7 +31,7 @@ div.tooltip {
   position: absolute;
   padding: 2px;
   width: 375px;
-  font: 12px sans-serif;
+  font-family: 'Poppins';
   background: #fff;
   border: 0px;
   border-radius: 5px;
@@ -189,6 +189,22 @@ input {
 
 .header .nav-item-safety a {
   color: #f06449;
+}
+
+.card-body h5 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.card-body h6 {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.card-body p {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
 }
 
 .footer {
