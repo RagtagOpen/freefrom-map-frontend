@@ -13,6 +13,10 @@ body {
   overflow-x: hidden;
 }
 
+[type="button"] {
+  -webkit-appearance: none;
+}
+
 #__next {
   padding: 0;
   margin: 0;
