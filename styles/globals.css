@@ -306,6 +306,26 @@ input {
     text-transform: uppercase;
 }
 
+.policies h3 {
+  color: white;
+}
+
+.positive h3 {
+  background-color: #FFB400;
+}
+
+.adverse h3 {
+  background-color: #FF583D;
+}
+
+.positive-missing h3 {
+  background-color: #00CFCE;
+}
+
+.adverse-avoid h3 {
+  background-color: #FF9194;
+}
+
 .guide-heading {
     text-transform: uppercase;
 }

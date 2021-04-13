@@ -2,12 +2,9 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCaretDown,
-  faCaretUp,
-  faAward,
-  faLightbulb
+    faCaretDown,
+    faCaretUp
 } from "@fortawesome/free-solid-svg-icons";
-import { EmptySquare } from "./common/ScoringGuide";
 
 import ScoreLabel from "./common/ScoreLabel";
 import { OVERALL_SCORE_LABELS } from '../constants'
@@ -158,7 +155,22 @@ const ResourceLink = ({ link }) => (
 
 ResourceLink.propTypes = { link: resourceLinkType };
 
+function meetsCriterion (criterion) {
+  return criterion.score && criterion.score.meets_criterion === 'yes'
+}
+
+const NoPolicies = ({adverse}) => <p className="card-body small m-0 d-flex flex-row">
+  This state does not have {adverse ? 'adverse' : 'model'} policies in this category.
+</p>
+
 const Category = ({ category, expanded, onClickExpand, stateData }) => {
+  const criteriaWithScores = category.criteria.map(criteria => {
+      const score = stateData.criterion_scores.find(score => score.criterion_id === criteria.id)
+      return {
+        ...criteria,
+        score
+      }
+  })
   const categoryScore =
     stateData.category_grades.find((c) => c.category_id === category.id) || {};
   const honorableMentionData =
@@ -168,8 +180,10 @@ const Category = ({ category, expanded, onClickExpand, stateData }) => {
     stateData.innovative_policy_ideas.find(
       (ip) => ip.category_id === category.id
     ) || null;
-  const modelPolicies = category.criteria.filter((c) => !c.adverse) || [];
-  const adversePolicies = category.criteria.filter((c) => c.adverse) || [];
+  const positiveHasPolicies = criteriaWithScores.filter((c) => !c.adverse && meetsCriterion(c)) || [];
+  const positiveMissingPolicies = criteriaWithScores.filter((c) => !c.adverse && !meetsCriterion(c)) || [];
+  const adverseHasPolicies = criteriaWithScores.filter((c) => c.adverse && meetsCriterion(c)) || [];
+  const adverseMissingPolicies = criteriaWithScores.filter((c) => c.adverse && !meetsCriterion(c)) || [];
   const collapseId = `collapse-${category.id}`;
   const headingId = `heading-${category.id}`;
   const links =
@@ -221,28 +235,52 @@ const Category = ({ category, expanded, onClickExpand, stateData }) => {
             innovativePolicyIdeaData={innovativePolicyIdeaData}
           />
         ) : null}
-        <div className="model-policies p-0 card-body small">
-          <h3 className="m-0" style={{ fontSize: "1em" }}>
-            Model policy checklist (these support survivors):
+        <div className="policies positive model p-0 card-body small">
+          <h3 className="m-0 p-2" style={{ fontSize: "1em" }}>
+            Positive policies this state has
           </h3>
-          {modelPolicies.map((policy) => {
-            const score = stateData.criterion_scores.find(
-              (s) => s.criterion_id === policy.id
-            );
-            return <Policy policyData={policy} score={score} key={policy.id} />;
-          })}
+          {positiveHasPolicies.length > 0
+            ? positiveHasPolicies.map((policy) => {
+              return <Policy policyData={policy} score={policy.score} key={policy.id} />;
+            })
+            : <NoPolicies />
+          }
         </div>
 
-        <div className="adverse-policies p-0 card-body small">
-          <h3 className="m-0" style={{ fontSize: "1em" }}>
-            Adverse policy checklist (these harm survivors):
+        <div className="policies adverse p-0 card-body small">
+          <h3 className="m-0 p-2" style={{ fontSize: "1em" }}>
+            Adverse policies this state has
           </h3>
-          {adversePolicies.map((policy) => {
-            const score = stateData.criterion_scores.find(
-              (s) => s.criterion_id === policy.id
-            );
-            return <Policy policyData={policy} score={score} key={policy.id} />;
-          })}
+          {adverseHasPolicies.length > 0
+            ? adverseHasPolicies.map((policy) => {
+              return <Policy policyData={policy} score={policy.score} key={policy.id} />;
+            })
+            : <NoPolicies />
+          }
+        </div>
+
+        <div className="policies positive-missing p-0 card-body small">
+          <h3 className="m-0 p-2" style={{ fontSize: "1em" }}>
+            Positive policies this state should adopt
+          </h3>
+          {positiveMissingPolicies.length > 0
+            ? positiveMissingPolicies.map((policy) => {
+              return <Policy policyData={policy} score={policy.score} key={policy.id} />;
+            })
+            : <NoPolicies adverse />
+          }
+        </div>
+
+        <div className="policies adverse-avoid p-0 card-body small">
+          <h3 className="m-0 p-2" style={{ fontSize: "1em" }}>
+            Adverse policies this state should avoid
+          </h3>
+          {adverseMissingPolicies.length > 0
+            ? adverseMissingPolicies.map((policy) => {
+              return <Policy policyData={policy} score={policy.score} key={policy.id} />;
+            })
+            : <NoPolicies adverse />
+          }
         </div>
 
         <div className="adverse-policies p-0 card-body mb-3 small">
