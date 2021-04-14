@@ -149,10 +149,10 @@ Policy.propTypes = {
 };
 
 const ResourceLink = ({ link }) => (
-  <p className="card-body small m-0 d-flex flex-row">
-    <a href={link.url} target="_blank" rel="noopener noreferrer">
+  <p className="card-body small m-0 py-1 d-flex flex-row">
+    <strong><a href={link.url} target="_blank" rel="noopener noreferrer">
       {link.text}
-    </a>
+    </a></strong>
   </p>
 );
 
