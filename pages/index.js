@@ -8,12 +8,9 @@ import TakeAction from 'components/common/TakeAction'
 import SharedLayout from 'components/SharedLayout'
 import StatesList from 'components/StatesList'
 import UsMap from 'components/UsMap'
-import CookiesConsent from 'components/CookiesConsent'
-import { getCookies } from 'utils'
 
 function Home({ states }) {
     const [visibleComponent, setVisibleComponent] = useState('list');
-    const [cookie, setCookie] = useState(getCookies());
 
     const showList = visibleComponent === 'list'
     const mapClass = showList ? ' d-none d-md-block' : ''
@@ -95,9 +92,7 @@ function Home({ states }) {
                 <img className="img-fluid mb-5" src="/images/snapshot-by-category.png" style={{width: '100%', maxWidth: '1000px'}} />
 
                 <TakeAction />
-
             </>
-            { cookie != null && cookie != undefined ? null : <CookiesConsent setCookie={setCookie} /> }
         </SharedLayout>
     );
 }

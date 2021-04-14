@@ -1,10 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { setCookies } from 'utils';
-
-function setCookieInStorage(value) {
-  setCookies(value);
-}
+import { setCookiesInLocalStorage } from 'utils';
 
 function CookiesConsent({ setCookie }) {
   return (
@@ -33,7 +29,7 @@ function CookiesConsent({ setCookie }) {
             className="mr-3 btn btn-secondary"
             onClick={() => {
               setCookie(false);
-              setCookieInStorage(false);
+              setCookiesInLocalStorage(false);
             }}
           >
             Decline
@@ -43,7 +39,7 @@ function CookiesConsent({ setCookie }) {
             className="btn btn-primary"
             onClick={() => {
               setCookie(true);
-              setCookieInStorage(true);
+              setCookiesInLocalStorage(true);
             }}
           >
             Accept
