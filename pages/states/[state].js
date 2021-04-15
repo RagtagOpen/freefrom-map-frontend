@@ -42,7 +42,7 @@ function State({ categories, stateData }) {
                             <Glossary />
                             <ModalButton href="/methodology" text="Full methodology" />
                         </div>
-                        <TakeAction showPartnerLink />
+                        <TakeAction/>
                     </div>
                 </div>
             </div>
