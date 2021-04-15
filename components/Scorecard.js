@@ -236,7 +236,7 @@ const Category = ({ category, expanded, onClickExpand, stateData }) => {
           />
         ) : null}
         <div className="policies positive model p-0 card-body small">
-          <h3 className="m-0 p-2" style={{ fontSize: "1em" }}>
+          <h3 className="m-0 py-2 px-3" style={{ fontSize: "1em" }}>
             Positive policies this state has
           </h3>
           {positiveHasPolicies.length > 0
@@ -248,7 +248,7 @@ const Category = ({ category, expanded, onClickExpand, stateData }) => {
         </div>
 
         <div className="policies adverse p-0 card-body small">
-          <h3 className="m-0 p-2" style={{ fontSize: "1em" }}>
+          <h3 className="m-0 py-2 px-3" style={{ fontSize: "1em" }}>
             Adverse policies this state has
           </h3>
           {adverseHasPolicies.length > 0
@@ -260,7 +260,7 @@ const Category = ({ category, expanded, onClickExpand, stateData }) => {
         </div>
 
         <div className="policies positive-missing p-0 card-body small">
-          <h3 className="m-0 p-2" style={{ fontSize: "1em" }}>
+          <h3 className="m-0 py-2 px-3" style={{ fontSize: "1em" }}>
             Positive policies this state should adopt
           </h3>
           {positiveMissingPolicies.length > 0
@@ -272,7 +272,7 @@ const Category = ({ category, expanded, onClickExpand, stateData }) => {
         </div>
 
         <div className="policies adverse-avoid p-0 card-body small">
-          <h3 className="m-0 p-2" style={{ fontSize: "1em" }}>
+          <h3 className="m-0 py-2 px-3" style={{ fontSize: "1em" }}>
             Adverse policies this state should avoid
           </h3>
           {adverseMissingPolicies.length > 0
