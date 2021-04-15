@@ -280,15 +280,6 @@ input {
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
-.state-page .take-action > h1 {
-    font-size: 34px;
-}
-
-.state-page .take-action > h1 {
-    font-size: 34px;
-    margin-bottom: 0px;
-}
-
 .state-page .understanding-report button {
     font-size: 34px;
     margin-bottom: 0px;
