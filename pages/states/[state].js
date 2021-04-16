@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { useRouter } from 'next/router'
 
@@ -17,7 +18,7 @@ import { toSlug } from 'utils';
 function State({ categories, stateData }) {
     const router = useRouter()
     const { state } = router.query
-    const { name } = stateData;
+    const { name, quote } = stateData;
     const imageUrl = "../images/states/" + state + ".png"
     return (
         <SharedLayout>
@@ -27,9 +28,21 @@ function State({ categories, stateData }) {
                 <p>How well does { name } support survivors’ financial security?</p>
                 <div className="row">
                     <div className="col-12 col-md-4">
-                        <img className="img-fluid mb-3" src={imageUrl} />
-                        <h4 className="mb-0">Key</h4>
-                        <img className="img-fluid my-3" src="/images/key.png" />
+                        <img alt={name} className="img-fluid mb-3" src={imageUrl} />
+                        <h4 aria-hidden="true" className="mb-0">Key</h4>
+                        <img
+                            alt=""
+                            aria-hidden="true"
+                            className="img-fluid my-3"
+                            src="/images/key.png"
+                        />
+                        <figure className="align-items-center d-flex flex-column fw-600 m-4">
+                            <img alt="" src="/images/quote.png" />
+                            <blockquote className="fs-21px">{quote}</blockquote>
+                            <figcaption className="fs-16px text-ff-red text-uppercase">
+                                — Survivor from {name}
+                            </figcaption>
+                        </figure>
                         <StateUpdates />
                         <ReportMissingInfo />
                         <ShareButtons className="mt-3 mb-5" />
@@ -48,6 +61,11 @@ function State({ categories, stateData }) {
             </div>
         </SharedLayout>
     )
+}
+
+State.propTypes = {
+    categories: PropTypes.array,
+    stateData: PropTypes.object
 }
 
 export async function getStaticPaths() {
