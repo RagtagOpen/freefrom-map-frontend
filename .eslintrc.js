@@ -6,6 +6,7 @@ module.exports = {
     },
     "extends": [
         "eslint:recommended",
+        "plugin:jsx-a11y/recommended",
         "plugin:react/recommended"
     ],
     "globals": {
