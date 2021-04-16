@@ -418,7 +418,6 @@ input {
   border-radius: 2px;
   font-size:0.75em;
   font-weight: 400;
-  text-align: left;
   line-height: 20px;
   padding: 3px;
   float: none;
@@ -427,4 +426,16 @@ input {
   text-align: center;
   border: 1px solid #767676;
   border-radius: 2px;
+}
+
+.fs-16px {
+  font-size: 16px;
+}
+
+.fs-21px {
+  font-size: 21px;
+}
+
+.fw-600 {
+  font-weight: 600;
 }
