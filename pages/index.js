@@ -90,7 +90,7 @@ function Home({ states }) {
                 </div>
 
                 <h2 className='mt-5'>Snapshot of Survivor Financial Security Policies By Category</h2>
-                <img className="img-fluid mb-5" src="/images/snapshot-by-category.png" style={{width: '100%', maxWidth: '1000px'}} />
+                <img className="img-fluid" src="/images/snapshot-by-category.png" style={{width: '100%', maxWidth: '1000px'}} />
 
                 <TakeAction />
 
