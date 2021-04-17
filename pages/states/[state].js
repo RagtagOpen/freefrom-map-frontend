@@ -36,18 +36,26 @@ function State({ categories, stateData }) {
                             className="img-fluid my-3"
                             src="/images/key.png"
                         />
-                        <figure className="align-items-center d-flex flex-column fw-600 m-4">
-                            <img alt="" src="/images/quote.png" />
-                            <blockquote className="fs-21px">{quote}</blockquote>
-                            <figcaption className="fs-16px text-ff-red text-uppercase">
-                                — Survivor from {name}
-                            </figcaption>
-                        </figure>
                         <StateUpdates />
                         <ReportMissingInfo />
                         <ShareButtons className="mt-3 mb-5" />
                     </div>
                     <div className="col-12 col-md-7">
+                        {quote ? (
+                            <figure className="d-flex flex-column fw-600 my-4">
+                                <div className="d-flex flex-row">
+                                    <img alt="" src="/images/quote.png" width="59px" height="59px" className="p-0 m-0 mr-2"/>
+                                    <blockquote className="fs-21px">{quote}</blockquote>
+                                </div>
+                                <div className="d-flex flex-row justify-content-end">
+                                    <figcaption className="fs-16px text-ff-red text-uppercase">
+                                        — Survivor from {name}
+                                    </figcaption>
+                                </div>
+                            </figure>
+                        ) : (
+                            <span></span>
+                        )}
                         <Scorecard categories={categories} stateData={stateData} />
                         <div className="understanding-report">
                             <h2 className="mb-0" >Understanding this report</h2>
