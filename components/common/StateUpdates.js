@@ -24,7 +24,7 @@ const StateUpdates = () => {
                       className="alert-link"
                       onClick={() => setSubmitted(false)}
                   >
-                      Modify my subscription preferences
+                      Submit another response
                   </a>
               </div>
             }
@@ -48,13 +48,78 @@ const StateUpdates = () => {
                     onSubmit={() => setSubmitted(true)}
                     target="_blank">
                     <div id="mc_embed_signup_scroll">
-                        <div className="mc-field-group mb-3">
-                            <p className="mb-1 small">Your email <span className="asterisk">*</span></p>
-                            <input type="email" name="EMAIL" className="required email" id="mce-EMAIL"/>
+                        <div className="mc-field-group mb-4">
+                            <label for="mce-SURVIVOR" className="small mb-0 ml-1" style={{color: '#212529', fontWeight: '600'}}>Do you identify as a survivor? (optional) </label><br/>
+                            <select id="mce-SURVIVOR" name="SURVIVOR" className="small" style={{border: '0', borderBottom: '1px solid #292F36', borderRadius: '0'}}>
+                                <option value=""></option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
                         </div>
-                        <div className="mc-field-group input-group">
-                            <p className="mb-1 small">Which states would you like to receive updates for? <span className="asterisk">*</span></p>
-                            <ul className="no-indents no-bullets">
+                        <div className="mc-field-group mb-4">
+                            <label for="mce-YOUR_STATE" className="small mb-0 ml-1" style={{color: '#212529', fontWeight: '600'}}>Your state (optional)</label><br/>
+                            <select id="mce-YOUR_STATE" name="YOUR_STATE" className="small" style={{border: '0', borderBottom: '1px solid #292F36', borderRadius: '0'}}>
+                                <option value=""></option>
+                                <option value="Alabama">Alabama</option>
+                                <option value="Alaska">Alaska</option>
+                                <option value="Arizona">Arizona</option>
+                                <option value="Arkansas">Arkansas</option>
+                                <option value="California">California</option>
+                                <option value="Colorado">Colorado</option>
+                                <option value="Connecticut">Connecticut</option>
+                                <option value="Delaware">Delaware</option>
+                                <option value="District of Columbia">District of Columbia</option>
+                                <option value="Florida">Florida</option>
+                                <option value="Georgia">Georgia</option>
+                                <option value="Hawaii">Hawaii</option>
+                                <option value="Idaho">Idaho</option>
+                                <option value="Illinois">Illinois</option>
+                                <option value="Indiana">Indiana</option>
+                                <option value="Iowa">Iowa</option>
+                                <option value="Kansas">Kansas</option>
+                                <option value="Kentucky">Kentucky</option>
+                                <option value="Louisiana">Louisiana</option>
+                                <option value="Maine">Maine</option>
+                                <option value="Maryland">Maryland</option>
+                                <option value="Massachusetts">Massachusetts</option>
+                                <option value="Michigan">Michigan</option>
+                                <option value="Minnesota">Minnesota</option>
+                                <option value="Mississippi">Mississippi</option>
+                                <option value="Missouri">Missouri</option>
+                                <option value="Montana">Montana</option>
+                                <option value="Nebraska">Nebraska</option>
+                                <option value="Nevada">Nevada</option>
+                                <option value="New Hampshire">New Hampshire</option>
+                                <option value="New Jersey">New Jersey</option>
+                                <option value="New Mexico">New Mexico</option>
+                                <option value="New York">New York</option>
+                                <option value="North Carolina">North Carolina</option>
+                                <option value="North Dakota">North Dakota</option>
+                                <option value="Ohio">Ohio</option>
+                                <option value="Oklahoma">Oklahoma</option>
+                                <option value="Oregon">Oregon</option>
+                                <option value="Pennsylvania">Pennsylvania</option>
+                                <option value="Rhode Island">Rhode Island</option>
+                                <option value="South Carolina">South Carolina</option>
+                                <option value="South Dakota">South Dakota</option>
+                                <option value="Tennessee">Tennessee</option>
+                                <option value="Texas">Texas</option>
+                                <option value="Utah">Utah</option>
+                                <option value="Vermont">Vermont</option>
+                                <option value="Virginia">Virginia</option>
+                                <option value="Washington">Washington</option>
+                                <option value="West Virginia">West Virginia</option>
+                                <option value="Wisconsin">Wisconsin</option>
+                                <option value="Wyoming">Wyoming</option>
+                            </select>
+                        </div>
+                        <div className="mc-field-group mb-4">
+                            <p className="mb-1 small" style={{color: '#212529', fontWeight: '600'}}>Your email <span className="asterisk">*</span></p>
+                            <input type="email" name="EMAIL" className="required email small" id="mce-EMAIL"/>
+                        </div>
+                        <div className="mc-field-group input-group mb-4">
+                            <p className="mb-1 small" style={{color: '#212529', fontWeight: '600'}}>Which state(s) would you like to receive updates for? <span className="asterisk">*</span></p>
+                            <ul className="no-indents no-bullets mb-0">
                                 <li><input type="checkbox" value="16" name="group[30989][16]" id="mce-group[30989]-30989-0"/><label className="checkbox small" htmlFor="mce-group[30989]-30989-0">Alabama</label></li>
                                 <li><input type="checkbox" value="32" name="group[30989][32]" id="mce-group[30989]-30989-1"/><label className="checkbox small" htmlFor="mce-group[30989]-30989-1">Alaska</label></li>
                                 <li><input type="checkbox" value="64" name="group[30989][64]" id="mce-group[30989]-30989-2"/><label className="checkbox small" htmlFor="mce-group[30989]-30989-2">Arizona</label></li>
@@ -108,9 +173,9 @@ const StateUpdates = () => {
                                 <li><input type="checkbox" value="18014398509481984" name="group[30989][18014398509481984]" id="mce-group[30989]-30989-50"/><label className="checkbox small" htmlFor="mce-group[30989]-30989-50">Wyoming</label></li>
                             </ul>
                         </div>
-                        <div className="mc-field-group input-group">
-                            <p className="mb-1 small">How will updates be useful for you? <span className="asterisk">*</span></p>
-                            <ul className="no-indents no-bullets">
+                        <div className="mc-field-group input-group mb-4">
+                            <p className="mb-1 small" style={{color: '#212529', fontWeight: '600'}}>How will updates be useful for you? (optional)</p>
+                            <ul className="no-indents no-bullets mb-0">
                                 <li><input type="checkbox" value="1" name="group[30977][1]" id="mce-group[30977]-30977-0"/><label className="checkbox small" htmlFor="mce-group[30977]-30977-0">I am a survivor who might benefit from policy changes</label></li>
                                 <li><input type="checkbox" value="2" name="group[30977][2]" id="mce-group[30977]-30977-1"/><label className="checkbox small" htmlFor="mce-group[30977]-30977-1">Policy changes might help me better support survivors as a service provider</label></li>
                                 <li><input type="checkbox" value="4" name="group[30977][4]" id="mce-group[30977]-30977-2"/><label className="checkbox small" htmlFor="mce-group[30977]-30977-2">I am involved in policy advocacy and want to stay up to date</label></li>
