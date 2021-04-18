@@ -57,8 +57,12 @@ function ContactLegislators() {
                         <Submit />
                     </Form>
                 </Formik>
-                <div className='mb-5 pl-3' >
+                <div className='mb-3 pl-3' >
                     {officials.map(o => <Official key={o.name} official={o} />)}
+                </div>
+                <div className='mb-5 pl-3' >
+                    <strong>Sample phone message</strong>
+                    <p>Hello, (<em>optional:</em> my name is __, and) I am a constituent in your district. The #1 obstacle to safety for survivors of intimate partner violence is financial insecurity. I am calling because [state] can and must do more to help survivors build the financial security they need to stay safe. I urge you to visit FreeFrom’s National Financial Security Policy Map and Scorecard to see specific recommendations for how we can make policy changes to prioritize financial security and long-term safety for survivors in our state. Visit FreeFrom.org and check out the map to learn more. Thank you.</p>
                 </div>
                 <TakeAction />
             </SharedLayout>
@@ -77,12 +81,12 @@ const Official = ({official}) => (
     </div>
 )
 
-const SUBJECT = 'We need to prioritize the financial security of survivors of intimate partner violence'
-const BODY = 'Dear [Representative name],%0D%0A%0D%0ASurvivors of intimate partner violence need more legislative support to protect survivors of intimate partner violence.%0D%0A%0D%0A[Why this issue is important to me.]%0D%0A%0D%0ASincerely,%0D%0A%0D%0A[Your name]'
+const SUBJECT = 'Support intimate partner violence survivors’ financial security'
+const BODY = 'Dear [Legislator], %0D%0A%0D%0AAs a constituent in your district, I am writing to share with you FreeFrom’s National Survivor Financial Security Policy Map and Scorecard (link). [State] can do more to support intimate partner violence survivors’ financial security and long-term safety. I urge you to introduce and pass legislation that are survivor financial security centered such as; %0D%0A%0D%0A-	Expanding the definition of intimate partner violence to include economic abuse %0D%0A-	Protections and relief from coerced and fraudulent debt  %0D%0A-	Protections and relief from litigation abuse %0D%0A-	Improved accessibility to public benefits %0D%0A%0D%0AThank you, %0D%0A[Name]'
 
 const getUrlForType = (type, value) => {
     switch (type) {
-    case 'Twitter': return `https://twitter.com/intent/tweet?text=@${value}`
+    case 'Twitter': return `https://twitter.com/intent/tweet?text=@${value}%20[Insert%20fact%20about%20the%20map%20and%20scorecard]%20Now%20is%20the%20time%20to%20pass%20survivor-informed%20legislation.%20See%20how%20our%20state%20measures%20up%20in%20supporting%20survivors’%20financial%20security:%20http://mapandscorecard.freefrom.org`
     case 'Facebook': return `https://facebook.com/${value}`
     case 'email': return `mailto:${value}?subject=${SUBJECT}&body=${BODY}`
     case 'phone': return `tel:${value}`
@@ -111,7 +115,7 @@ const Channels = ({channels}) => (
                     </li>
                 )}
             )
-            : <li className='list-inline-item mr-3'>[No social media found]</li>
+            : <span></span>
         }
     </>
 )
@@ -133,7 +137,7 @@ const Comms = ({items, type}) => {
                         </a>
                     </li>
                 ))
-                : <li className='list-inline-item mr-3'>[No {type} found]</li>
+                : <span></span>
             }
         </>
     )

@@ -1,17 +1,18 @@
-.take-action-link {
-    font-family: 'Poppins';
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 24px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #32B4B4;
+.take-action-box {
+    width: 40%;
+    min-width: 280px;
+    max-width: 400px;
 }
 
-.take-action-link:hover {
-    color: #32B4B4;
+.take-action-image {
+    width: 100%;
 }
 
-.take-action-link:active {
-    color: #32B4B4;
+.take-action-text {
+    color: #fff;
+}
+
+.take-action-link:hover, .take-action-link:active {
+    text-decoration: underline;
+    text-decoration-color: #fff;
 }
