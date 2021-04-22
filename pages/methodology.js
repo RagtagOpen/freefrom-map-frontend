@@ -25,8 +25,8 @@ export default function Methodology() {
                 <li>Temporary Assistance Program (TANF) accessibility</li>
                 <li>Safe banking protections</li>
                 <li>Coerced and fraudulent debt protections</li>
-                <li>Rental Protections</li>
-                <li>Alternatives to Law Enforcement Responses</li>
+                <li>Rental protections</li>
+                <li>Alternatives to law enforcement responses</li>
             </ul>
 
             <h2>How we chose the Model Policy characteristics</h2>
@@ -264,8 +264,8 @@ export default function Methodology() {
             <p>For each characteristic, states were given the following:</p>
             <ul className="no-bullets">
                 <li><img src="images/criteria-met.png" className="checklistIcon" alt="Criteria Met"/> This state’s policy includes this characteristic</li>
-                <li><img src="images/criteria-maybe-met.png" className="checklistIcon" alt="Criteria Maybe Met"/> It is unclear whether this state’s policy includes this characteristic</li>
                 <li><img src="images/criteria-not-met.png" className="checklistIcon" alt="Criteria Not Met"/> This state’s policy does not include this characteristic</li>
+                <li><img src="images/criteria-maybe-met.png" className="checklistIcon" alt="Criteria Maybe Met"/> It is unclear whether this state’s policy includes this characteristic</li>
             </ul>
             <p>States were given recognition for innovative policy ideas and other policies that were similar to the policy categories but not quite aligned with the aspects in the scorecard. However, these items did not factor in the score.</p>
             <ul className="no-bullets">
@@ -289,7 +289,7 @@ export default function Methodology() {
             <p>While many states offer easy to understand and navigate systems to search for current state laws, a majority made this process much more difficult. For example, some states require a user to navigate multiple search engines and websites simply to find state laws and did not make it clear if there are other locations on their site a user should search.</p>
             <p>We also found that some states’ navigation systems made it difficult to link directly to a statute and /or locked users out after extended periods of searching. We did our best to cite directly to a state’s websites but in cases where this was not possible, we resulted in citing trusted third party websites.</p>
             <p>From a broader perspective, this lack of access creates a level of disenfranchisement to the citizens of those respective states. It is the duty of the state to make their laws readily accessible so their citizens can better find the laws that impact their lives. As part of our work with states to pass policies that support and center survivors’ financial security, we will also elevate this important access to justice issue.</p>
-            <p>We hope our Policy Map and Scorecard not only brings greater insight to the current landscape of policies across the nation that impact survivors’ financial security, but also sparks policy change and innovation in the coming years. With this, we will continue to update and add to this existing tool as new legislation is passed and innovate policies are made.</p>
+            <p>We hope our Policy Map and Scorecard not only brings greater insight to the current landscape of policies across the nation that impact survivors’ financial security, but also sparks policy change and innovation in the coming years. With this, we will continue to update and add to this existing tool as new legislation is passed and innovative policies are made.</p>
 
             <hr></hr>
             <div className="footnotes">

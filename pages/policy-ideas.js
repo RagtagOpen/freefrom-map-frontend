@@ -38,7 +38,7 @@ export default function PolicyIdeas() {
                         return (
                             <Form className="col-12 col-lg-8 mb-5">
                                 <Input className="text-uppercase" label="What policies and issues should FreeFrom prioritize?" name="policies_to_prioritize" required={ true } />
-                                <Input className="text-uppercase" label="What policies and issues are important to you but are not included on the map?" name="policies_not_included" required={ true } />
+                                <Input className="text-uppercase" label="What policies and issues are important to you but are not included on the policy map and scorecard?" name="policies_not_included" required={ true } />
                                 <Select className="text-uppercase" label="Your state" name="state" required={ true } options={ states }/>
                                 <Input className="text-uppercase" label="Your name (optional)" name="name" />
                                 <Input className="text-uppercase" label="Your pronouns (optional)" name="pronouns" />
