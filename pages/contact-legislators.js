@@ -51,7 +51,7 @@ function ContactLegislators() {
                             label="Enter your zip code or full address:"
                             name="zip_code"
                             required={ true }
-                            smallText='Your information will not be stored or used in any way except to show you your elected officials. For your state legislators, please include your full street address.'
+                            smallText='Your information will not be stored or used in any way except to show you your elected officials. For state elected officials in your district, please use your full street address.'
                             className="mb-0"
                         />
                         <Submit />
