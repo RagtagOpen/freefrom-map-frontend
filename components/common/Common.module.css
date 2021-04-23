@@ -1,7 +1,5 @@
 .take-action-box {
-    width: 40%;
-    min-width: 280px;
-    max-width: 400px;
+    width: 230px;
 }
 
 .take-action-image {
@@ -10,6 +8,7 @@
 
 .take-action-text {
     color: #fff;
+    font-size: 28px;
 }
 
 .take-action-link:hover, .take-action-link:active {
