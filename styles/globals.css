@@ -345,6 +345,8 @@ input {
 
 .guide-heading {
     text-transform: uppercase;
+    font-size: 24px;
+    line-height: 24px;
 }
 
 .empty-square-icon {
