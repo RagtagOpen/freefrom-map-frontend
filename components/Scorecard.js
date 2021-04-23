@@ -224,7 +224,7 @@ const Category = ({ category, expanded, onClickExpand, stateData }) => {
         aria-labelledby={headingId}
         data-parent="#scorecard"
       >
-        <div className="p-0 pb-3 card-body small font-italic">
+        <div className="p-0 pb-3 card-body small">
           {category.help_text}
         </div>
         {honorableMentionData ? (
@@ -313,9 +313,7 @@ const Scorecard = ({ categories, stateData }) => {
                 <span className="label mr-2">Overall:</span>
                 <ScoreLabel score={stateData.grade.grade} />
             </div>
-            <p>
-                <em>{OVERALL_SCORE_LABELS[stateData.grade.grade]}</em>
-            </p>
+            <p>{OVERALL_SCORE_LABELS[stateData.grade.grade]}</p>
             <div className="scorecard accordion" id="scorecard">
                 {categories.map((category) => {
                     const isExpanded = expanded === category.id
