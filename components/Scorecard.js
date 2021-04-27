@@ -309,7 +309,7 @@ const Scorecard = ({ categories, stateData }) => {
     const [expanded, setExpanded] = useState(null)
     return (
         <div className="scorecard-container">
-            <div className="overall mt-4 mb-3">
+            <div className="overall d-flex flex-wrap mt-4 mb-3">
                 <span className="label mr-2">Overall:</span>
                 <ScoreLabel score={stateData.grade.grade} />
             </div>
