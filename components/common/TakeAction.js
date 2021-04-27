@@ -27,7 +27,9 @@ export default function TakeAction() {
                         <div className={`${styles["take-action-box"]} mb-4 mr-4`} key={path} style={{backgroundColor: bgd}}>
                             <a className={`${styles["take-action-link"]}`} href={path}>
                                 <img src={"../../images/take-action" + path + ".jpg"} className={`${styles["take-action-image"]}`} alt={label}/>
-                                <h2 className={`${styles["take-action-text"]} p-3 m-0`}>{label}</h2>
+                                <div className={`${styles["take-action-text-area"]}`}>
+                                    <h2 className={`${styles["take-action-text"]} p-3 m-0`}>{label}</h2>
+                                </div>
                             </a>
                         </div>
                     )

@@ -1,10 +1,12 @@
-.take-action-box {
-    width: 346px;
-    height: 434px;
-}
-
 .take-action-image {
     height: 230px;
+    width: 346px;
+}
+
+.take-action-text-area {
+    display: flex;
+    align-items: center;
+    height: 204px;
     width: 346px;
 }
 
