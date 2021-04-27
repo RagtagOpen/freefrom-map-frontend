@@ -255,7 +255,7 @@ const Category = ({ category, expanded, onClickExpand, stateData }) => {
             ? adverseHasPolicies.map((policy) => {
               return <Policy policyData={policy} score={policy.score} key={policy.id} />;
             })
-            : <NoPolicies />
+            : <NoPolicies adverse />
           }
         </div>
 
@@ -267,7 +267,7 @@ const Category = ({ category, expanded, onClickExpand, stateData }) => {
             ? positiveMissingPolicies.map((policy) => {
               return <Policy policyData={policy} score={policy.score} key={policy.id} />;
             })
-            : <NoPolicies adverse />
+            : <NoPolicies />
           }
         </div>
 
