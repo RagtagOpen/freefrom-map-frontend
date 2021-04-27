@@ -1,18 +1,25 @@
-.take-action-box {
-    width: 40%;
-    min-width: 280px;
-    max-width: 400px;
+.take-action-image {
+    height: 230px;
+    width: 346px;
 }
 
-.take-action-image {
-    width: 100%;
+.take-action-text-area {
+    display: flex;
+    align-items: center;
+    height: 204px;
+    width: 346px;
 }
 
 .take-action-text {
     color: #fff;
+    font-size: 42px;
+    line-height: 42px;
 }
 
 .take-action-link:hover, .take-action-link:active {
-    text-decoration: underline;
-    text-decoration-color: #fff;
+    text-decoration: none;
+}
+
+.take-action-box:hover, .take-action-box:active {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.08) 0 0);
 }

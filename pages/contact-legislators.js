@@ -62,7 +62,7 @@ function ContactLegislators() {
                 </div>
                 <div className='mb-5 pl-3' >
                     <strong>Sample phone message</strong>
-                    <p>Hello, (<em>optional:</em> my name is __, and) I am a constituent in your district. The #1 obstacle to safety for survivors of intimate partner violence is financial insecurity. I am calling because [state] can and must do more to help survivors build the financial security they need to stay safe. I urge you to visit FreeFrom’s National Financial Security Policy Map and Scorecard to see specific recommendations for how we can make policy changes to prioritize financial security and long-term safety for survivors in our state. Visit FreeFrom.org and check out the map to learn more. Thank you.</p>
+                    <p>Hello, (optional: my name is __, and) I am a constituent in your district. The #1 obstacle to safety for survivors of intimate partner violence is financial insecurity. I am calling because [state] can and must do more to help survivors build the financial security they need to stay safe. I urge you to visit FreeFrom’s National Financial Security Policy Map and Scorecard to see specific recommendations for how we can make policy changes to prioritize financial security and long-term safety for survivors in our state. Visit FreeFrom.org and check out the map to learn more. Thank you.</p>
                 </div>
                 <TakeAction />
             </SharedLayout>

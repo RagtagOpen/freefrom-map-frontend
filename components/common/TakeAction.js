@@ -17,7 +17,7 @@ export default function TakeAction() {
     return (
         <div className="take-action-parent">
             <h2 className="mt-5">Take action</h2>
-            <div className="take-action-container d-flex flex-wrap">
+            <div className="take-action-container d-flex flex-wrap" style={{maxWidth: '750px'}}>
                 {links.map(({path, label, bgd}) => {
                     // Do not render the link if it links to the current page.
                     // In other words, if we're on the Policy Ideas page, we
@@ -27,7 +27,9 @@ export default function TakeAction() {
                         <div className={`${styles["take-action-box"]} mb-4 mr-4`} key={path} style={{backgroundColor: bgd}}>
                             <a className={`${styles["take-action-link"]}`} href={path}>
                                 <img src={"../../images/take-action" + path + ".jpg"} className={`${styles["take-action-image"]}`} alt={label}/>
-                                <h2 className={`${styles["take-action-text"]} p-3 m-0`}>{label}</h2>
+                                <div className={`${styles["take-action-text-area"]}`}>
+                                    <h2 className={`${styles["take-action-text"]} p-3 m-0`}>{label}</h2>
+                                </div>
                             </a>
                         </div>
                     )
