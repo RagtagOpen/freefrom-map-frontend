@@ -17,7 +17,7 @@ export default function TakeAction() {
     return (
         <div className="take-action-parent">
             <h2 className="mt-5">Take action</h2>
-            <div className="take-action-container d-flex flex-wrap">
+            <div className="take-action-container d-flex flex-wrap" style={{maxWidth: '750px'}}>
                 {links.map(({path, label, bgd}) => {
                     // Do not render the link if it links to the current page.
                     // In other words, if we're on the Policy Ideas page, we
