@@ -452,3 +452,17 @@ input {
   font-size: 14px;
   line-height: 24px;
 }
+
+@media screen and (max-width: 440px) {
+  .methodology-header {
+    font-size: 34px;
+    line-height: 34px;
+  }
+  .methodology-subheader {
+    font-size: 26px;
+    line-height: 26px;
+  }
+  .big-indents, .no-bullets {
+    padding-left: 30px;
+  }
+}

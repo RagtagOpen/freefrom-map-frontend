@@ -6,9 +6,9 @@ export default function Methodology() {
     return (
         <SharedLayout>
             <BackButton className="mt-3 mb-2" />
-            <h1 className="subpage-header">Methodology</h1>
+            <h1 className="methodology-header subpage-header">Methodology</h1>
 
-            <h2>How we chose these categories</h2>
+            <h2 className="methodology-subheader">How we chose these categories</h2>
             <p>We are working to build a world in which every policy maker at all levels of government considers survivors’ financial security as well as their unique circumstances and needs in all policies, regardless of whether they seem to directly relate to survivors or intimate partner violence.</p>
             <p>In the meantime, we selected thirteen policy categories to include within the National Survivor Financial Security Policy Map and Scorecard (Policy Map and Scorecard) that we identified as being the most directly connected to survivors’ ability to build financial security.</p>
             <p>Specifically, we identified these thirteen policy categories based on the lived experiences of survivors and with the benefit of survivor guidance and feedback.</p>
@@ -29,7 +29,7 @@ export default function Methodology() {
                 <li>Alternatives to law enforcement responses</li>
             </ul>
 
-            <h2>How we chose the Model Policy characteristics</h2>
+            <h2 className="methodology-subheader">How we chose the Model Policy characteristics</h2>
             <p>Once we identified our thirteen policy categories, we designed a Model Policy for each. These Model Policies include what we have identified as the most supportive protections and other characteristics that a policy should include to best support survivors’ financial security. Simply put, the Model Policies are our dream policies.</p>
             <p>The Model Policy characteristics were developed based on:</p>
             <ol className="big-indents">
@@ -39,7 +39,7 @@ export default function Methodology() {
                 <li>data and research.</li>
             </ol>
 
-            <h2>How we chose the Adverse Policy characteristics</h2>
+            <h2 className="methodology-subheader">How we chose the Adverse Policy characteristics</h2>
             <p>In order to provide an accurate evaluation of how well (or poorly) a state’s existing laws support survivors in building the financial security they need to stay safe, it was necessary for us to also identify what we describe as Adverse Policies.</p>
             <p>The Adverse Policy characteristics are those that restrict survivors’ access to resources, undermine their autonomy, require them to interact with law enforcement (despite the fact that 80% of survivors do not feel safe calling the police), or otherwise cause them harm. These characteristics are just as important to note as those of our Model Policies because they can turn an otherwise helpful policy into a harmful one.</p>
             <p>Like the Model Policy characteristics, the Adverse Policy characteristics were developed based on:</p>
@@ -50,10 +50,10 @@ export default function Methodology() {
                 <li>data and research.</li>
             </ol>
 
-            <h2>How we conducted the research</h2>
+            <h2 className="methodology-subheader">How we conducted the research</h2>
             <p>We conducted policy research for all 50 States, plus the District of Columbia with the support of pro bono law partners and legal researchers. The team researched each state’s respective government websites and used legal resources to identify statutes related to the thirteen policy categories listed above.</p>
 
-            <h2>Why include economic abuse in defining intimate partner violence...?</h2>
+            <h2 className="methodology-subheader">Why include economic abuse in defining intimate partner violence...?</h2>
             <p>We cannot begin to address economic abuse as it relates to intimate partner violence without properly acknowledging it in state laws. This requires that economic abuse be included in the legal definition of intimate partner violence. We know that in 99% of intimate partner violence cases, survivors also experience economic abuse, which occurs when a harm-doer exerts control over a survivor’s finances, rendering the survivor economically dependent on the harm-doer. Economic abuse tactics include monitoring and controlling a survivor’s bank accounts, incurring debt in a survivor’s name via coercion or fraud, and stealing a survivor’s paychecks. States must provide a comprehensive definition of economic abuse in their laws.</p>
             <strong>Model policy is a definition of intimate partner violence that includes all or similar language:</strong>
             <ul className="big-indents">
@@ -64,7 +64,7 @@ export default function Methodology() {
                 <li>A definition that explicitly excludes economic abuse or tactics</li>
             </ul>
 
-            <h2>Why include paid and protected leave...?</h2>
+            <h2 className="methodology-subheader">Why include paid and protected leave...?</h2>
             <p>Survivors have any number of urgent matters they must deal with as a result of the abuse they experience. And many of these matters - attending court, going to the hospital - must be dealt with during the workweek. Survivors need time off work to deal with the consequences of the abuse they’ve experienced. Without access to such leave, survivors lose wages, lose their jobs and become less employable over time. In fact, a CDC report<sup><a href="#fn1" id="ref1">1</a></sup> found that U.S. women lose 8 million days of paid work each year as a result of intimate partner violence, the equivalent of 32,000 full-time jobs. However, unpaid and unprotected leave is simply not enough. Most survivors can’t afford to take leave if it means missing a paycheck or that their job won’t be waiting for them when they come back. Without access to paid and protected leave, survivors are forced to choose between their job and their safety.</p>
             <strong>Model policies include the following characteristics:</strong>
             <ul className="big-indents">
@@ -83,7 +83,7 @@ export default function Methodology() {
                 <li>Survivors are required to produce a protective order or police report proving that intimate partner violence has occurred in order to access leave</li>
             </ul>
 
-            <h2>Why include safe workplace policies...?</h2>
+            <h2 className="methodology-subheader">Why include safe workplace policies...?</h2>
             <p>77% of survivors report that a harm-doer has prevented or disrupted their ability to earn an income, and survivors report losing an average of $23,076 in income as the result of intimate partner violence each year.<sup><a href="#fn2" id="ref2">2</a></sup> Steady and secure employment is vital to a survivor’s financial security. This means that it is not enough to simply help survivors find a job, but instead we must work to help survivors keep their jobs. At minimum, employers must be required to ensure that their survivor-employees are able to work in safe, secure workplaces with dignity. Safe work standards include availability to reasonable workplace accommodations, job protection, and privacy / confidentiality.</p>
             <strong>Model policies include the following characteristics:</strong>
             <ul className="big-indents">
@@ -100,7 +100,7 @@ export default function Methodology() {
                 <li>Survivors are required to produce a protective order or police report proving that intimate partner violence has occurred to access protections</li>
             </ul>
 
-            <h2>Why include Unemployment Insurance (UI) accessibility...?</h2>
+            <h2 className="methodology-subheader">Why include Unemployment Insurance (UI) accessibility...?</h2>
             <p>UI is a benefit for authorized U.S. workers who have been laid off to cover lost wages. A 2012 study<sup><a href="#fn3" id="ref3">3</a></sup> found that up to 60% of survivors lose their jobs due to intimate partner violence and 78% experience employment sabotage. Survivors who are forced to leave their job due to intimate partner violence are left without a stable income, causing increased financial vulnerability. Access to UI can help curb this impact by providing much-needed financial support while a survivor looks for new employment.</p>
             <ul className="big-indents">
                 <li>Model policies include the following characteristics:</li>
@@ -111,7 +111,7 @@ export default function Methodology() {
                 <li>Survivors are required to produce a protective order or police report proving that intimate partner violence has occurred to access the program</li>
             </ul>
 
-            <h2>Why include litigation abuse protections...?</h2>
+            <h2 className="methodology-subheader">Why include litigation abuse protections...?</h2>
             <p>One way harm-doers deplete resources and assets from survivors is through what is commonly referred to as litigation abuse. Harm-doers commit litigation abuse by misusing the legal system to assert power and control over a survivor, including by taking action in court or through their attorney to increase a survivor’s legal fees.</p>
             <strong>Model policies include the following characteristics:</strong>
             <ul className="big-indents">
@@ -126,7 +126,7 @@ export default function Methodology() {
                 <li>None</li>
             </ul>
 
-            <h2>Why include a designated intimate partner violence tort...?</h2>
+            <h2 className="methodology-subheader">Why include a designated intimate partner violence tort...?</h2>
             <p>Experiencing intimate partner violence is incredibly expensive. The CDC<sup><a href="#fn4" id="ref4">4</a></sup> estimates that the lifetime cost of intimate partner violence per female survivor in the U.S. is $103,767 and $23,414 per male survivor. Further, it is estimated that survivors incur $17,770<sup><a href="#fn5" id="ref5">5</a></sup> in property damage every year. Unfortunately, survivors are typically solely responsible for paying the expenses related to the harm they’ve experienced. Survivors should be afforded the right to bring a civil lawsuit against their harm-doer to recoup the costs of that harm.</p>
             <strong>Model policies include the following characteristics:</strong>
             <ul className="big-indents">
@@ -140,7 +140,7 @@ export default function Methodology() {
                 <li>Designated tort excludes any gender identities and sexualities</li>
             </ul>
 
-            <h2>Why include victims of crime compensation...?</h2>
+            <h2 className="methodology-subheader">Why include victims of crime compensation...?</h2>
             <p>Victims of Crime Compensation offers financial support for survivors to help pay for their expenses. Unfortunately, the eligibility and application process for compensation limits the availability of this important resource for many survivors. States can implement measures to guarantee greater accessibility and impact of the program.</p>
             <strong>Model policies include the following characteristics:</strong>
             <ul className="big-indents">
@@ -159,7 +159,7 @@ export default function Methodology() {
                 <li>Compensation is not available to survivors with a criminal record</li>
             </ul>
 
-            <h2>Why include Supplemental Nutrition Assistance Program (SNAP) accessibility...?</h2>
+            <h2 className="methodology-subheader">Why include Supplemental Nutrition Assistance Program (SNAP) accessibility...?</h2>
             <p>SNAP is a federal food assistance program administered at the state-level. SNAP plays an important role in meeting a survivor’s food security needs. In fact, a survey<sup><a href="#fn6" id="ref6">6</a></sup> of 1,126 intimate partner violence direct service providers indicated that 80% of survivors rely on SNAP to meet their basic needs. SNAP has shown to keep families out of poverty and reduce food insecurity.<sup><a href="#fn7" id="ref7">7</a></sup> Allowing survivors to access special considerations and exemptions from program requirements can offer the flexibility they need as they heal from the harm they’ve experienced while still remaining eligible for SNAP.</p>
             <strong>Model policies include the following characteristics:</strong>
             <ul className="big-indents">
@@ -175,7 +175,7 @@ export default function Methodology() {
                 <li>Survivors are required to produce a protective order or police report proving that intimate partner violence occurred to access exemptions and / or special considerations</li>
             </ul>
 
-            <h2>Why include Temporary Assistance for Needy Families (TANF) program accessibility...?</h2>
+            <h2 className="methodology-subheader">Why include Temporary Assistance for Needy Families (TANF) program accessibility...?</h2>
             <p>TANF is a federal cash assistance program administered at the state-level for the lowest income families. In fact, in a survey<sup><a href="#fn8" id="ref8">8</a></sup> of 1,126 intimate partner violence direct service providers indicated that two thirds of survivors rely on TANF to address their basic needs.<sup><a href="#fn9" id="ref9">9</a></sup> Giving survivors access to special considerations and exemptions from program requirements can offer the flexibility they need as they heal from the harm they’ve experienced while still remaining eligible for TANF.</p>
             <strong>Model policies include the following characteristics:</strong>
             <ul className="big-indents">
@@ -189,7 +189,7 @@ export default function Methodology() {
                 <li>Survivors are required to produce a protective order or police report proving that intimate partner violence has occurred to access exemptions or special considerations</li>
             </ul>
 
-            <h2>Why include safe banking protections for survivors...?</h2>
+            <h2 className="methodology-subheader">Why include safe banking protections for survivors...?</h2>
             <p>There are approximately 28.4 million<sup><a href="#fn10" id="ref10">10</a></sup> survivors unbanked and underserved in the U.S., and as the result of economic abuse, only about half of survivors report having access to a safe bank account. Without access to a secure account, survivors are unable to protect their assets and save the money they need to get to safety. In fact, survivors indicate that on average their harm-doer steals $1,280 from them each month, including by accessing and depleting their online bank accounts. Safeguards are needed to protect survivors’ assets and help them build the financial security they need to stay safe.</p>
             <strong>Model policies include the following characteristics:</strong>
             <ul className="big-indents">
@@ -204,7 +204,7 @@ export default function Methodology() {
                 <li>Survivors are required to produce a protective order or police report proving that intimate partner violence occurred to access protections</li>
             </ul>
 
-            <h2>Why include coerced and fraudulent debt protections...?</h2>
+            <h2 className="methodology-subheader">Why include coerced and fraudulent debt protections...?</h2>
             <p>A major contributing factor to the nexus between financial insecurity and the experience of intimate partner violence is coerced and fraudulent debt, which occurs when a harm-doer incurs debts in a survivor’s name without their knowledge or consent. Coerced and fraudulent debt is a widespread problem — 52% of survivors report experiencing it and at least 42% have incurred damaged credit as a result.<sup><a href="#fn11" id="ref11">11</a></sup> Moreover, these debts are significant in value. On average, harm-doers incur $15,936 in coerced or fraudulent debt in a survivor’s name each year. In order to build the financial security they need to stay safe, survivors need support for and relief from these debts.</p>
             <strong>Model policies include the following characteristics:</strong>
             <ul className="big-indents">
@@ -219,7 +219,7 @@ export default function Methodology() {
                 <li>Survivors are required to produce a protective order or police report proving that intimate partner violence occurred to access protections</li>
             </ul>
 
-            <h2>Why include rental protections...?</h2>
+            <h2 className="methodology-subheader">Why include rental protections...?</h2>
             <p>Survivors and their families need housing. However, for many survivors, finding housing can be difficult. In order to make housing more accessible, survivors must have the right to fair rental protections that consider their unique circumstances and needs. Survivors with damaged credit due to coerced and fraudulent will have difficulty getting approval for a rental unit. Survivors may need to terminate their lease early to leave their abusive situation and should not be held responsible for damage to the unit caused by their harm-doer.</p>
             <strong>Model policies include the following characteristics:</strong>
             <ul className="big-indents">
@@ -236,7 +236,7 @@ export default function Methodology() {
                 <li>Survivors are required to produce a protective order or police report proving intimate partner violence occurred to access protections</li>
             </ul>
 
-            <h2>Why include alternatives to law enforcement responses...?</h2>
+            <h2 className="methodology-subheader">Why include alternatives to law enforcement responses...?</h2>
             <p>Law enforcement responses to intimate partner violence often result in more harm to survivors and their families. In an NDVH report<sup><a href="#fn12" id="ref12">12</a></sup>, 24% of survivors who called law enforcement ended up being arrested instead of the harm-doer. An ACLU study<sup><a href="#fn13" id="ref13">13</a></sup> found that many survivors reported that they did not want their partners to be arrested because they relied on their income for support for themselves and their children. In the same study, 70% of survivors report that contact with the police sometimes or often results in the loss of housing, employment, or welfare benefits for either the survivor or their harm-doer. We must begin to implement solutions rooted in what survivors express they need and want.</p>
             <strong>Model policies include the following characteristics:</strong>
             <ul className="big-indents">
@@ -251,7 +251,7 @@ export default function Methodology() {
                 <li>“No-drop” policies</li>
             </ul>
 
-            <h2>How we interpreted and assigned a policy category score</h2>
+            <h2 className="methodology-subheader">How we interpreted and assigned a policy category score</h2>
             <p>Every state statute was interpreted to determine and measure the extent to which they aligned with the Model Policy characteristics as outlined in each policy category. Each policy category score was tabulated based on the number of possible Model Policy characteristics. However, in any case where a category has an Adverse Policy characteristic, the total possible number of Model Policy characteristics were negated and the category was assigned an Adverse Policy score. Adverse policy characteristics are parts of the policy that can be harmful to survivors and / or drastically reduce the accessibility of the respective protections, resources or services.</p>
             <p>Below is the grading criteria for each policy category:</p>
             <ul className="no-bullets">
@@ -273,7 +273,7 @@ export default function Methodology() {
                 <li><img src="images/honorable-mention.png" className="checklistIcon" alt="Honorable Mention"/> Honorable mention: A policy that is not quite aligned within the listed Model Policy categories and/or characteristics, but is promising nonetheless</li>
             </ul>
 
-            <h2>How we assigned an overall state score</h2>
+            <h2 className="methodology-subheader">How we assigned an overall state score</h2>
             <p>The overall state score was calculated based on the total number of Model Policy characteristics present in the state across all policy categories excluding any of those in a policy category scored as Adverse. For every policy category, each Model Policy characteristic received a plus one. The total number of possible Model Policy characteristics across all categories is 70.</p>
             <p>We assigned each state an overall score based on the following:</p>
             <ul className="no-bullets">
@@ -284,7 +284,7 @@ export default function Methodology() {
                 <li><strong>Little accountability by the state</strong> (7 characteristics or below, ~11% and below): This state does not prioritize survivors’ financial security or consider survivors’ unique circumstances or needs when passing legislation.</li>
             </ul>
 
-            <h2>Challenges and what’s next</h2>
+            <h2 className="methodology-subheader">Challenges and what’s next</h2>
             <p>While the majority of the researchers had access to legal search engines, we made it a point to use publicly available resources that link directly to state laws as the main citation source. In doing so, we found navigating states’ websites posed the greatest challenge.</p>
             <p>While many states offer easy to understand and navigate systems to search for current state laws, a majority made this process much more difficult. For example, some states require a user to navigate multiple search engines and websites simply to find state laws and did not make it clear if there are other locations on their site a user should search.</p>
             <p>We also found that some states’ navigation systems made it difficult to link directly to a statute and /or locked users out after extended periods of searching. We did our best to cite directly to a state’s websites but in cases where this was not possible, we resulted in citing trusted third party websites.</p>
