@@ -195,13 +195,14 @@ const Category = ({ category, expanded, onClickExpand, stateData }) => {
                     style={{ textTransform: "uppercase", fontSize: "0.75em", fontWeight: 300 }}
                 >
                     <div>
+                        <div className="d-block d-sm-none mt-2">{category.title}</div>
                         <img
                             className="img img-fluid mr-4"
                             src={`../images/policy-category-icons/${category.id}.png`}
                             alt={`${category.title} logo`}
                             width="60px"
                             height="60px" />
-                        {category.title}
+                        <div className="d-none d-sm-inline-flex">{category.title}</div>
                     </div>
                     <div className="d-flex flex-row justify-content-between mt-2">
                         <span className="mr-3">
