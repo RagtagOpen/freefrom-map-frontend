@@ -207,10 +207,19 @@ const Category = ({ category, expanded, onClickExpand, stateData }) => {
       >
         <h2
           className="m-0 d-flex flex-row justify-content-between"
-          style={{ textTransform: "uppercase", fontSize: "0.75em" }}
+          style={{ textTransform: "uppercase", fontSize: "0.75em", fontWeight: 300 }}
         >
-          {category.title}
-          <div className="d-flex flex-row justify-content-between">
+        <div>
+            <div className="d-block d-lg-none mt-2">{category.title}</div>
+            <img
+                className="img img-fluid mr-4"
+                src={`../images/policy-category-icons/${category.id}.png`}
+                alt={`${category.title} logo`}
+                height="60px"
+                width="60px" />
+            <div className="d-none d-lg-inline-flex">{category.title}</div>
+        </div>
+          <div className="d-flex flex-row justify-content-between mt-2">
             <span className="mr-3">
               <ScoreLabel score={categoryScore.grade} type="category" />
             </span>
