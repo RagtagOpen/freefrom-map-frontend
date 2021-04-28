@@ -8,7 +8,7 @@ import styles from './Common.module.css';
 const links = [
     {path: "/contact-legislators", label: "Contact Your Legislators", bgd: "#FFB600"},
     {path: "/survivor-power", label: "Build Collective Survivor Power", bgd: "#47CCCC"},
-    {path: "/partner-with-freefrom", label: "Partner with Freefrom", bgd: "#FF9797"},
+    {path: "/partner-with-freefrom", label: "Partner with FreeFrom", bgd: "#FF9797"},
     {path: "/policy-ideas", label: "Share Your Policy Ideas", bgd: "#F06449"}
 ]
 
