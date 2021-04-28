@@ -68,7 +68,7 @@ export default function GiveFeedback() {
                                 />
                                 <Select
                                     className="text-uppercase"
-                                    label="Did you learn anything about policies related to survivor wealth from the tool?"
+                                    label="Did you learn anything about policies related to survivor financial security from the tool?"
                                     name="learn_from_tool"
                                     options={learnFromTool}
                                     required={true}

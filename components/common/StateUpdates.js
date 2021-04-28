@@ -35,7 +35,7 @@ const StateUpdates = () => {
                 // is not connected" error will prevent form submission.
                 // See: https://stackoverflow.com/questions/42053775/getting-error-form-submission-canceled-because-the-form-is-not-connected#comment92670322_47848508
                 style={{display: submitted ? 'none' : undefined}}>
-                <p className="small font-italic">
+                <p className="small">
                   We&apos;ll be updating our mapping tool as states pass new policies. Sign up below and we&apos;ll send you an email when the state(s) you select passes a policy that impacts survivors&apos; financial security.
                 </p>
                 <form

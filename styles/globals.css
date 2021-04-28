@@ -30,7 +30,7 @@ body {
 div.tooltip {
   position: absolute;
   padding: 2px;
-  width: 375px;
+  width: min(100vw, 375px);
   font-family: 'Poppins';
   background: #fff;
   border: 0px;
@@ -246,7 +246,7 @@ input {
 .checklistIcon {
   height: 24px;
   width: 24px;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .orange-button {
@@ -345,6 +345,8 @@ input {
 
 .guide-heading {
     text-transform: uppercase;
+    font-size: 24px;
+    line-height: 24px;
 }
 
 .empty-square-icon {
@@ -362,7 +364,7 @@ input {
   border-radius: 30px;
   display: inline;
   font-size: 0.8em;
-  font-weight: 800;
+  font-weight: 600;
   padding: 10px 15px;
   text-transform: uppercase;
   width: fit-content;
@@ -438,4 +440,29 @@ input {
 
 .fw-600 {
   font-weight: 600;
+}
+
+.state-to-watch-headline {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.state-to-watch-text {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 440px) {
+  .methodology-header {
+    font-size: 34px;
+    line-height: 34px;
+  }
+  .methodology-subheader {
+    font-size: 26px;
+    line-height: 26px;
+  }
+  .big-indents, .no-bullets {
+    padding-left: 30px;
+  }
 }

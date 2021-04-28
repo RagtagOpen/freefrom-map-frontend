@@ -36,9 +36,13 @@ function State({ categories, stateData }) {
                             className="img-fluid my-3"
                             src="/images/key.png"
                         />
-                        <StateUpdates />
-                        <ReportMissingInfo />
-                        <ShareButtons className="mt-3 mb-5" />
+                        <div className="mb-3">
+                            <StateUpdates />
+                        </div>
+                        <div className="mb-3">
+                            <ReportMissingInfo />
+                        </div>
+                        <ShareButtons className="mb-5" />
                     </div>
                     <div className="col-12 col-md-7">
                         {quote ? (
