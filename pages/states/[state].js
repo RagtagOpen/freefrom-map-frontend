@@ -21,7 +21,7 @@ function State({ categories, stateData }) {
     const { name, quote } = stateData;
     const imageUrl = "../images/states/" + state + ".png"
     return (
-        <SharedLayout>
+        <SharedLayout title={name}>
             <div className='state-page'>
                 <Breadcrumbs currentPageTitle={ state } />
                 <h1>{ name } Survivor Financial Security Policy Scorecard</h1>

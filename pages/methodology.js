@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Methodology() {
     return (
-        <SharedLayout>
+        <SharedLayout title="Methodology">
             <BackButton className="mt-3 mb-2" />
             <h1 className="methodology-header subpage-header">Methodology</h1>
 

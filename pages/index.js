@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import ReportMissingInfo from 'components/common/ReportMissingInfo'
 import ShareButtons from 'components/common/ShareButtons'
@@ -10,7 +8,6 @@ import TakeAction from 'components/common/TakeAction'
 import SharedLayout from 'components/SharedLayout'
 import StatesList from 'components/StatesList'
 import UsMap from 'components/UsMap'
-import Image from 'next/image'
 
 function Home({ states }) {
     const [visibleComponent, setVisibleComponent] = useState('list');
