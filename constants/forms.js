@@ -76,3 +76,8 @@ export const mockSelect = [
     {  value: "2", label: "Option 2" },
     {  value: "3", label: "Option 3" }
 ]
+
+export const identifyAsSurvivor = [
+  { value: "yes", label: "Yes" },
+  { value: "no", label: "No" }
+]

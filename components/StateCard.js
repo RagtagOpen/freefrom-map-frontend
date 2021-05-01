@@ -11,10 +11,10 @@ const StateCard = ({hideLearnMore, state}) => {
 
     return (
         <div className="card-body p-2 mt-2">
-            <h5 className="card-title" style={{textTransform: 'uppercase'}}>{name}</h5>
-            <h6 className="card-subtitle mb-2 text-muted">Rank: {ordinal(rank)}</h6>
+            <h5 className="card-title mb-2 pb-1" style={{textTransform: 'uppercase'}}>{name}</h5>
+            <h6 className="card-subtitle mb-2 pb-1 text-muted">Rank: {ordinal(rank)}</h6>
             <ScoreLabel score={grade.grade} />
-            <p className="card-text mt-2 mb-1 font-weight-lighter font-italic small">
+            <p className="card-text mt-2 pt-1 mb-2">
                 {OVERALL_SCORE_LABELS[grade.grade]}
             </p>
             {hideLearnMore
