@@ -43,7 +43,7 @@
             function zoomNortheast() {
                 if(northeastZoom) {
                     // update the button text
-                    d3.select("#" + "northeast-focus-button").text("Zoom in")
+                    d3.select("#" + "northeast-focus-button").text("Zoom to Small States")
                     document
                         .getElementById("us-map-svg")
                         .setAttribute("viewBox", "0 0 " + width + " " + height);
@@ -127,7 +127,7 @@
                 .append("button")
                 .attr("id", "northeast-focus-button")
                 .attr("type", "button")
-                .text("Zoom in")
+                .text("Zoom to Small States")
                 .attr("class", "ne-zoom-button")
                 // the zoom function will reset the y axis location up or down the eastern seaboard based on the state name
                 .on("click", function(){ zoomNortheast(d3.select(this).text()) })
