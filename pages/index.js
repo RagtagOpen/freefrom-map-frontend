@@ -63,23 +63,33 @@ function Home({ states }) {
                 <img className="img-fluid" src="/images/snapshot-by-state.png" style={{width: '100%', maxWidth: '1000px'}}/>
 
                 <h2 className='mt-5'>States to Watch</h2>
-                <div className="d-flex justify-content-lg-around justify-content-center align-items-center flex-column flex-md-row p-2">
-                    <div className='d-flex flex-column flex-md-row justify-content-md-between'>
-                        <div className='pr-3 mb-3'>
+                <div className="d-flex flex-column col-lg-10 m-0 p-0">
+                    <div className='d-flex flex-row flex-wrap flex-md-nowrap mb-3'>
+                        <div className="mr-md-3">
+                            <img src="/images/states/maine.png" height="200px" width="200px"/>
+                        </div>
+                        <div>
                             <strong className="state-to-watch-headline mb-3">Maine leads the way in protecting survivors against coerced and fraudulent debt</strong>
-                            <img className="img-fluid mb-3" src="/images/states/maine.png" />
                             <p className="state-to-watch-text mb-1">Maine recently passed strong legislation that prevents debt collectors from collecting on debts incurred as a result of economic abuse, providing survivors with much needed relief.</p>
                             <a className="state-to-watch-text" href="https://www.mainelegislature.org/legis/statutes/10/title10sec1310-H.html" target="_blank" rel="noopener noreferrer">Me. Stat. tit. 10, § 1310-H</a>
                         </div>
-                        <div className='pr-3 mb-3'>
+                    </div>
+                    <div className='d-flex flex-row flex-wrap flex-md-nowrap mb-3'>
+                        <div className="mr-md-3">
+                            <img src="/images/states/washington.png" height="200px" width="200px"/>
+                        </div>
+                        <div>
                             <strong className="state-to-watch-headline mb-3">Washington demonstrates how to protect survivors against litigation abuse</strong>
-                            <img className="img-fluid mb-3" src="/images/states/washington.png" />
                             <p className="state-to-watch-text mb-1">Washington gives survivors the most comprehensive protections against litigation abuse in the nation. The State requires harm-doers to pay attorneys’ fees and costs associated with abusive litigation tactics, holding them accountable for misusing the court system to further harm and abuse survivors.</p>
                             <a className="state-to-watch-text" href="https://app.leg.wa.gov/RCW/default.aspx?cite=26.51&full=true#26.51.010" target="_blank" rel="noopener noreferrer">Wash. Rev. Code § 26.51.010 - 901</a>
                         </div>
+                    </div>
+                    <div className='d-flex flex-row flex-wrap flex-md-nowrap mb-3'>
+                        <div className="mr-md-3">
+                            <img src="/images/states/nevada.png" height="200px" width="200px"/>
+                        </div>
                         <div className='pr-3'>
                             <strong className="state-to-watch-headline mb-3">Nevada is <em>so close</em> to model paid and protected leave</strong>
-                            <img className="img-fluid mb-3" src="/images/states/nevada.png" />
                             <p className="state-to-watch-text mb-1">Nevada offers at least 10 days of protected leave for survivors to deal with the consequences of abuse that does not deplete accrued leave. If Nevada were to guarantee that the leave is paid it would be a Model policy.</p>
                             <a className="state-to-watch-text" href="https://www.leg.state.nv.us/nrs/nrs-608.html#NRS608Sec0198" target="_blank" rel="noopener noreferrer">N.R.S. § 608.0198</a>
                         </div>
