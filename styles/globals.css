@@ -320,7 +320,8 @@ input {
 .policies h3 {
   border-radius: 30px;
   border-width: 1px;
-  color: white;
+  color: #212529;
+  font-weight: 600;
 }
 
 .positive h3 {
