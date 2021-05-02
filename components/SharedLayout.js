@@ -14,6 +14,12 @@ export default function SharedLayout({ title, children }) {
         <>
             <Head>
                 <title> {title ? (`${ title } -`) : ''} { site.name }</title>
+                <meta property="og:title" content="The National Survivor Financial Security Policy Map and Scorecard"/>
+                <meta name="description" content="How well does your state support survivors’ financial security?"/>
+                <meta property="og:description" content="How well does your state support survivors’ financial security?"/>
+                <meta property="og:url" content="http://mapandscorecard.freefrom.org"/>
+                <meta property="og:image" content="http://mapandscorecard.freefrom.org/images/opengraph.png"/>
+                <meta property="og:type" content="website" />
             </Head>
 
             <div className='shared-layout'>
