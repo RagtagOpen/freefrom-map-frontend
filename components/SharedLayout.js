@@ -22,7 +22,7 @@ export default function SharedLayout({ title, children }) {
                 <meta property="og:type" content="website" />
             </Head>
 
-            <div className='shared-layout'>
+            <div className='shared-layout' lang='en'>
                 <Navbar />
                 <div className='container-fluid px-4 px-lg-5 px-md-5t st pb-5'>
                     { children }

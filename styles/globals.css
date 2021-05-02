@@ -455,19 +455,29 @@ input {
 }
 
 @media screen and (max-width: 440px) {
-  .methodology-header {
-    font-size: 34px;
-    line-height: 34px;
+  h1 {
+    font-size: 36px;
+    line-height: 36px;
   }
-  .methodology-subheader {
+  h2 {
     font-size: 26px;
     line-height: 26px;
+  }
+  .hyphenate {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
   }
   .big-indents, .no-bullets {
     padding-left: 30px;
   }
   .state-to-watch-headline {
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 22px;
+    line-height: 22px;
   }
 }
