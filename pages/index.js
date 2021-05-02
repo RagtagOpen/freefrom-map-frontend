@@ -60,7 +60,9 @@ function Home({ states }) {
             <>
 
                 <h2 className='mt-4'>Snapshot of Survivor Financial Security Policies By State</h2>
-                <img className="img-fluid" src="/images/snapshot-by-state.png" style={{width: '100%', maxWidth: '1000px'}}/>
+                <div className="d-flex flex-column col-10 p-0">
+                    <img className="img-fluid" src="/images/snapshot-by-state.png"/>
+                </div>
 
                 <h2 className='mt-5'>States to Watch</h2>
                 <div className="d-flex flex-column col-lg-10 m-0 p-0">
@@ -97,7 +99,9 @@ function Home({ states }) {
                 </div>
 
                 <h2 className='mt-5'>Snapshot of Survivor Financial Security Policies By Category</h2>
-                <img className="img-fluid mb-5" src="/images/snapshot-by-category.png" style={{width: '100%', maxWidth: '1000px'}} />
+                <div className="d-flex flex-column col-10 p-0">
+                    <img className="img-fluid" src="/images/snapshot-by-category.png"/>
+                </div>
 
                 <TakeAction />
 
