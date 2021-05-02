@@ -18,7 +18,7 @@ export default function SharedLayout({ title, children }) {
 
             <div className='shared-layout'>
                 <Navbar />
-                <div className='container-fluid px-4 px-md-5t st pb-5'>
+                <div className='container-fluid px-4 px-lg-5 px-md-5t st pb-5'>
                     { children }
                 </div>
                 <Footer />
