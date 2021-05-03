@@ -42,7 +42,7 @@ function State({ categories, stateData }) {
                         <div className="mb-3">
                             <ReportMissingInfo />
                         </div>
-                        <ShareButtons className="mb-5" />
+                        <ShareButtons className="mb-5" context="state page" />
                     </div>
                     <div className="col-12 col-md-7">
                         {quote ? (

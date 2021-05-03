@@ -164,7 +164,7 @@
                 // Navigate to state on click
                 const { name } = d.properties
                 window.location.href = `${window.location.href}states/${toSlug(name)}`
-                trackEvent('Click', 'Map', name)
+                trackEvent({category: 'Click', action: 'Map', label: name})
                 // for now right clicking removes the card
             }).on("contextmenu", () => {
                 d3.event.preventDefault();

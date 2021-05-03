@@ -46,7 +46,7 @@ function Home({ states }) {
             <div className='d-md-flex flex-row justify-content-start mt-4'>
                 <div className='d-flex flex-column flex-md-row' style={{minWidth: '60%'}}>
                     <div className='pr-3 mb-3'>
-                        <ShareButtons className='d-flex flex-row flex-nowrap' />
+                        <ShareButtons className='d-flex flex-row flex-nowrap' context='homepage'/>
                     </div>
                     <div className='pr-3 mb-3'>
                         <StateUpdates />

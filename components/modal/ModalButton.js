@@ -10,15 +10,24 @@ import styles from './Modal.module.css';
 export default function ModalButton({ href, target, text, onClick }) {
     if (href) {
         return (
-            <a href={href}>
-                <button type="button" className={`btn btn-primary modal-button ${styles.button} mx-0 mb-2`} data-toggle="modal" data-target={ `#${target}` } onClick={() => {onClick()}}>
-                    <FontAwesomeIcon icon={ faArrowRight } className="mr-1" /> { text }
-                </button>
+            <a
+                type="button"
+                className={`btn btn-primary modal-button ${styles.button} mx-0 mb-2`}
+                href={href}
+                onClick={onClick ? () => onClick() : null}
+            >
+                <FontAwesomeIcon icon={ faArrowRight } className="mr-1" /> { text }
             </a>
         )
     }
     return (
-        <button type="button" className={`btn btn-primary modal-button ${styles.button} mx-0 mb-2`} data-toggle="modal" data-target={ `#${target}` } onClick={() => {onClick()}}>
+        <button
+            type="button"
+            className={`btn btn-primary modal-button ${styles.button} mx-0 mb-2`}
+            data-toggle="modal"
+            data-target={ `#${target}` }
+            onClick={onClick ? () => onClick() : null}
+        >
             <FontAwesomeIcon icon={ faArrowRight } className="mr-1" /> { text }
         </button>
     )

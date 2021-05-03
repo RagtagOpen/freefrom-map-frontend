@@ -23,7 +23,7 @@ function StatesList({ states }) {
                             <li key={state.code}>
                                 <StateCard
                                     state={state}
-                                    onLearnMoreClick={() => { trackEvent('Click', 'State list', state) }}
+                                    onLearnMoreClick={() => { trackEvent({ category: 'Click', action: 'State list', label: state.name}) }}
                                 />
                                 <hr style={{margin: 0, width: '95%'}}/>
                             </li>

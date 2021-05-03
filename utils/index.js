@@ -1,7 +1,7 @@
 import { getCookiesFromLocalStorage, setCookiesInLocalStorage } from 'utils/cookies';
 import { checkFormStatus, submitForm } from 'utils/forms';
 import { toSlug } from 'utils/routing';
-import { trackEvent } from 'utils/tracking';
+import { trackEvent, trackModal, trackPageView } from 'utils/tracking';
 
 export {
     checkFormStatus,
@@ -10,4 +10,6 @@ export {
     getCookiesFromLocalStorage,
     setCookiesInLocalStorage,
     trackEvent,
+    trackModal,
+    trackPageView,
 }

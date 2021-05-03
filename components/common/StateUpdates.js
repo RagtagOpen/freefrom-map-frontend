@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
 import Modal from "components/modal/Modal";
-
 import Submit from "components/forms/Submit";
+import { trackEvent } from "utils";
 
 const StateUpdates = () => {
 
@@ -45,7 +45,11 @@ const StateUpdates = () => {
                     method="post"
                     name="mc-embedded-subscribe-form"
                     noValidate
-                    onSubmit={() => setSubmitted(true)}
+                    onSubmit={() => {
+                        setSubmitted(true)
+                        trackEvent({ category: 'Form', action: 'Submission', label: 'subscribe-state-updates'})
+
+                    }}
                     target="_blank">
                     <div id="mc_embed_signup_scroll">
                         <div className="mc-field-group mb-4">
