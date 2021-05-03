@@ -7,16 +7,18 @@ import styles from './Modal.module.css';
 
 // FIXME: Should this be renamed, since it defines a common button element that
 //  can be used for both modal buttons and link/href buttons for navigation?
-export default function ModalButton({ href, target, text }) {
+export default function ModalButton({ href, target, text, onClick }) {
     if (href) {
         return (
-            <a type="button" className={`btn btn-primary modal-button ${styles.button} mx-0 mb-2`} href={href}>
-                <FontAwesomeIcon icon={ faArrowRight } className="mr-1" /> { text }
+            <a href={href}>
+                <button type="button" className={`btn btn-primary modal-button ${styles.button} mx-0 mb-2`} data-toggle="modal" data-target={ `#${target}` } onClick={() => {onClick()}}>
+                    <FontAwesomeIcon icon={ faArrowRight } className="mr-1" /> { text }
+                </button>
             </a>
         )
     }
     return (
-        <button type="button" className={`btn btn-primary modal-button ${styles.button} mx-0 mb-2`} data-toggle="modal" data-target={ `#${target}` }>
+        <button type="button" className={`btn btn-primary modal-button ${styles.button} mx-0 mb-2`} data-toggle="modal" data-target={ `#${target}` } onClick={() => {onClick()}}>
             <FontAwesomeIcon icon={ faArrowRight } className="mr-1" /> { text }
         </button>
     )
@@ -25,5 +27,6 @@ export default function ModalButton({ href, target, text }) {
 ModalButton.propTypes = {
     href: PropTypes.string,
     target: PropTypes.string,
-    text: PropTypes.string
+    text: PropTypes.string,
+    onClick: PropTypes.func,
 }

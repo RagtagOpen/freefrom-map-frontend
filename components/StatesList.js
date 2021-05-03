@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import StateCard from './StateCard'
+import { trackEvent } from 'utils';
 
 function StatesList({ states }) {
     const [search, setSearch] = useState('')
@@ -20,7 +21,10 @@ function StatesList({ states }) {
                     ? <ul style={{backgroundColor: 'white', padding: 7}}>
                         {visibleStates.map(state => (
                             <li key={state.code}>
-                                <StateCard state={state} />
+                                <StateCard
+                                    state={state}
+                                    onLearnMoreClick={() => { trackEvent('Click', 'State list', state) }}
+                                />
                                 <hr style={{margin: 0, width: '95%'}}/>
                             </li>
                         ))}

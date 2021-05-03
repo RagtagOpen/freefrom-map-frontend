@@ -5,14 +5,8 @@ import { getCookiesFromLocalStorage } from 'utils';
 
 export default function Tracking({ children }) {
     useEffect(() => {
-        if(getCookiesFromLocalStorage) {
-            if(process.env.NEXT_PUBLIC_GA_ID != null && process.env.NEXT_PUBLIC_GA_ID != undefined) {
-                console.log("***** GOOGLE ANALYTICS *****");
-                console.log(process.env.NEXT_PUBLIC_GA_ID);
-
-                ReactGA.initialize(process.env.NEXT_PUBLIC_GA_ID);
-                ReactGA.pageview(window.location.href);
-            }
+        if(getCookiesFromLocalStorage && process.env.NEXT_PUBLIC_GA_ID) {
+            ReactGA.pageview(window.location.href);
         }
     });
 
