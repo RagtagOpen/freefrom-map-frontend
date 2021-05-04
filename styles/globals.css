@@ -454,6 +454,14 @@ input {
   line-height: 24px;
 }
 
+.state-to-watch-image {
+  height: auto;
+  width: 125px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 @media screen and (max-width: 440px) {
   h1 {
     font-size: 36px;

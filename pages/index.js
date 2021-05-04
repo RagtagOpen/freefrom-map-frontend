@@ -66,9 +66,9 @@ function Home({ states }) {
 
                 <h2 className='mt-5'>States to Watch</h2>
                 <div className="d-flex flex-column col-lg-10 m-0 p-0">
-                    <div className='d-flex flex-row flex-wrap flex-md-nowrap mb-3'>
-                        <div className="mr-md-3">
-                            <img src="/images/states/maine.png" height="200px" width="200px"/>
+                    <div className='d-flex flex-row flex-wrap flex-md-nowrap mb-4'>
+                        <div className="mb-2 mb-md-0 mr-md-3">
+                            <img className="state-to-watch-image" src="/images/states-to-watch/maine.png"/>
                         </div>
                         <div>
                             <strong className="state-to-watch-headline mb-3">Maine leads the way in protecting survivors against coerced and fraudulent debt</strong>
@@ -76,9 +76,9 @@ function Home({ states }) {
                             <a className="state-to-watch-text" href="https://www.mainelegislature.org/legis/statutes/10/title10sec1310-H.html" target="_blank" rel="noopener noreferrer">Me. Stat. tit. 10, § 1310-H</a>
                         </div>
                     </div>
-                    <div className='d-flex flex-row flex-wrap flex-md-nowrap mb-3'>
-                        <div className="mr-md-3">
-                            <img src="/images/states/washington.png" height="200px" width="200px"/>
+                    <div className='d-flex flex-row flex-wrap flex-md-nowrap mb-4'>
+                        <div className="mb-2 mb-md-0 mr-md-3">
+                            <img className="state-to-watch-image" src="/images/states-to-watch/washington.png"/>
                         </div>
                         <div>
                             <strong className="state-to-watch-headline mb-3">Washington demonstrates how to protect survivors against litigation abuse</strong>
@@ -86,9 +86,9 @@ function Home({ states }) {
                             <a className="state-to-watch-text" href="https://app.leg.wa.gov/RCW/default.aspx?cite=26.51&full=true#26.51.010" target="_blank" rel="noopener noreferrer">Wash. Rev. Code § 26.51.010 - 901</a>
                         </div>
                     </div>
-                    <div className='d-flex flex-row flex-wrap flex-md-nowrap mb-3'>
-                        <div className="mr-md-3">
-                            <img src="/images/states/nevada.png" height="200px" width="200px"/>
+                    <div className='d-flex flex-row flex-wrap flex-md-nowrap'>
+                        <div className="mb-2 mb-md-0 mr-md-3">
+                            <img className="state-to-watch-image" src="/images/states-to-watch/nevada.png"/>
                         </div>
                         <div className='pr-3'>
                             <strong className="state-to-watch-headline mb-3">Nevada is <em>so close</em> to model paid and protected leave</strong>
