@@ -79,7 +79,7 @@ const BODY = 'Dear [Legislator], %0D%0A%0D%0AAs a constituent in your district, 
 
 const getUrlForType = (type, value) => {
     switch (type) {
-    case 'Twitter': return `https://twitter.com/intent/tweet?text=@${value}%20[Insert%20fact%20about%20the%20map%20and%20scorecard]%20Now%20is%20the%20time%20to%20pass%20survivor-informed%20legislation.%20See%20how%20our%20state%20measures%20up%20in%20supporting%20survivors’%20financial%20security:%20http://mapandscorecard.freefrom.org`
+    case 'Twitter': return `https://twitter.com/intent/tweet?text=@${value}%20[Insert%20fact%20about%20the%20map%20and%20scorecard]%20Now%20is%20the%20time%20to%20pass%20survivor-informed%20legislation.%20See%20how%20our%20state%20measures%20up%20in%20supporting%20survivors’%20financial%20security:%20https://mapandscorecard.freefrom.org`
     case 'Facebook': return `https://facebook.com/${value}`
     case 'email': return `mailto:${value}?subject=${SUBJECT}&body=${BODY}`
     case 'phone': return `tel:${value}`

@@ -17,8 +17,8 @@ export default function SharedLayout({ title, children }) {
                 <meta property="og:title" content="The National Survivor Financial Security Policy Map and Scorecard"/>
                 <meta name="description" content="How well does your state support survivors’ financial security?"/>
                 <meta property="og:description" content="How well does your state support survivors’ financial security?"/>
-                <meta property="og:url" content="http://mapandscorecard.freefrom.org"/>
-                <meta property="og:image" content="http://mapandscorecard.freefrom.org/images/opengraph.png"/>
+                <meta property="og:url" content="https://mapandscorecard.freefrom.org"/>
+                <meta property="og:image" content="https://mapandscorecard.freefrom.org/images/opengraph.png"/>
                 <meta property="og:type" content="website" />
             </Head>
 
