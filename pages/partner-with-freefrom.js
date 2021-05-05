@@ -84,6 +84,7 @@ export default function PartnerWithFreefrom() {
                                 <Checkbox name="goals" value="policy_innovation_sprint">Request a policy innovation sprint</Checkbox>
                                 <Checkbox name="goals" value="help_drafting_legislation">Help with drafting legislation</Checkbox>
                                 <Checkbox name="goals" value="plan_event_or_webinar">Plan a policy related event or webinar</Checkbox>
+                                <Checkbox name="goals" value="join_survivor_wealth_policy_group">Join or learn more about FreeFrom’s Survivor Wealth Policy Group</Checkbox>
                                 <Checkbox name="goals" value="pass_survivor_wealth_centered_legislation">Pass survivor wealth centered legislation in my state</Checkbox>
                             </div>
                             {props.values.goals && props.values.goals.indexOf("pass_survivor_wealth_centered_legislation") !== -1 &&
