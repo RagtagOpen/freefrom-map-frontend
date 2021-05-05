@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import CookiesConsent from 'components/CookiesConsent'
+import Tracking from 'components/Tracking'
 import { getCookiesFromLocalStorage } from 'utils'
 import { site } from "constants/index"
 
@@ -22,14 +23,16 @@ export default function SharedLayout({ title, children }) {
                 <meta property="og:type" content="website" />
             </Head>
 
-            <div className='shared-layout' lang='en'>
-                <Navbar />
-                <div className='container-fluid px-4 px-lg-5 px-md-5t st pb-5'>
-                    { children }
+            <Tracking>
+                <div className='shared-layout' lang='en'>
+                    <Navbar />
+                    <div className='container-fluid px-4 px-lg-5 px-md-5t st pb-5'>
+                        { children }
+                    </div>
+                    <Footer />
+                    { cookie != null && cookie != undefined ? null : <CookiesConsent setCookie={setCookie} /> }
                 </div>
-                <Footer />
-                { cookie != null && cookie != undefined ? null : <CookiesConsent setCookie={setCookie} /> }
-            </div>
+            </Tracking>
         </>
     );
 }
