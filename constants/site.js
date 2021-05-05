@@ -1,5 +1,5 @@
 const site = {
-    name: 'FreeFrom'
+    name: 'FreeFrom Policy Map'
 }
 
 export default site

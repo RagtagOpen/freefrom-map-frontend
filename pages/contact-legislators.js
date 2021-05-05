@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { Formik, Form } from 'formik';
-import Head from 'next/head';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 import BackButton from "components/navigation/BackButton";
-import { site } from "constants/index"
 import SharedLayout from "components/SharedLayout";
 
 import Input from "components/forms/Input";
@@ -35,38 +33,33 @@ function ContactLegislators() {
         setOfficials(officials)
     }
     return (
-        <div>
-            <Head>
-                <title>Contact Your Legislators - { site.name }</title>
-            </Head>
-            <SharedLayout>
-                <BackButton className="mt-3 mb-2" />
-                <h1 className="subpage-header">Contact Your Legislators</h1>
-                <Formik
-                    initialValues={{}}
-                    onSubmit={submitZipCode}
-                >
-                    <Form className="col-9">
-                        <Input
-                            label="Enter your zip code or full address:"
-                            name="zip_code"
-                            required={ true }
-                            smallText='Your information will not be stored or used in any way except to show you your elected officials. For your state legislators, please include your full street address.'
-                            className="mb-0"
-                        />
-                        <Submit />
-                    </Form>
-                </Formik>
-                <div className='mb-3 pl-3' >
-                    {officials.map(o => <Official key={o.name} official={o} />)}
-                </div>
-                <div className='mb-5 pl-3' >
-                    <strong>Sample phone message</strong>
-                    <p>Hello, (<em>optional:</em> my name is __, and) I am a constituent in your district. The #1 obstacle to safety for survivors of intimate partner violence is financial insecurity. I am calling because [state] can and must do more to help survivors build the financial security they need to stay safe. I urge you to visit FreeFrom’s National Financial Security Policy Map and Scorecard to see specific recommendations for how we can make policy changes to prioritize financial security and long-term safety for survivors in our state. Visit FreeFrom.org and check out the map to learn more. Thank you.</p>
-                </div>
-                <TakeAction />
-            </SharedLayout>
-        </div>
+        <SharedLayout title="Contact Your Legislators">
+            <BackButton className="mt-3 mb-2" />
+            <h1 className="subpage-header">Contact Your Legislators</h1>
+            <Formik
+                initialValues={{}}
+                onSubmit={submitZipCode}
+            >
+                <Form className="col-12 col-md-9">
+                    <Input
+                        label="Enter your zip code or full address:"
+                        name="zip_code"
+                        required={ true }
+                        smallText='Your information will not be stored or used in any way except to show you your elected officials. For state elected officials in your district, please use your full street address.'
+                        className="mb-0"
+                    />
+                    <Submit />
+                </Form>
+            </Formik>
+            <div className='col-12 col-md-9 mb-5 pl-3' >
+                {officials.map(o => <Official key={o.name} official={o} />)}
+            </div>
+            <div className='col-12 col-md-9 mb-5 pl-3' >
+                <strong>Sample phone message</strong>
+                <p>Hello, (optional: my name is __, and) I am a constituent in your district. The #1 obstacle to safety for survivors of intimate partner violence is financial insecurity. I am calling because [state] can and must do more to help survivors build the financial security they need to stay safe. I urge you to visit FreeFrom’s National Financial Security Policy Map and Scorecard to see specific recommendations for how we can make policy changes to prioritize financial security and long-term safety for survivors in our state. Visit FreeFrom.org and check out the map to learn more. Thank you.</p>
+            </div>
+            <TakeAction />
+        </SharedLayout>
     )
 }
 
@@ -86,7 +79,7 @@ const BODY = 'Dear [Legislator], %0D%0A%0D%0AAs a constituent in your district, 
 
 const getUrlForType = (type, value) => {
     switch (type) {
-    case 'Twitter': return `https://twitter.com/intent/tweet?text=@${value}%20[Insert%20fact%20about%20the%20map%20and%20scorecard]%20Now%20is%20the%20time%20to%20pass%20survivor-informed%20legislation.%20See%20how%20our%20state%20measures%20up%20in%20supporting%20survivors’%20financial%20security:%20http://mapandscorecard.freefrom.org`
+    case 'Twitter': return `https://twitter.com/intent/tweet?text=@${value}%20[Insert%20fact%20about%20the%20map%20and%20scorecard]%20Now%20is%20the%20time%20to%20pass%20survivor-informed%20legislation.%20See%20how%20our%20state%20measures%20up%20in%20supporting%20survivors’%20financial%20security:%20https://mapandscorecard.freefrom.org`
     case 'Facebook': return `https://facebook.com/${value}`
     case 'email': return `mailto:${value}?subject=${SUBJECT}&body=${BODY}`
     case 'phone': return `tel:${value}`

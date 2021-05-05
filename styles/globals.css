@@ -30,7 +30,7 @@ body {
 div.tooltip {
   position: absolute;
   padding: 2px;
-  width: 375px;
+  width: min(100vw, 325px);
   font-family: 'Poppins';
   background: #fff;
   border: 0px;
@@ -246,7 +246,7 @@ input {
 .checklistIcon {
   height: 24px;
   width: 24px;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .orange-button {
@@ -320,7 +320,8 @@ input {
 .policies h3 {
   border-radius: 30px;
   border-width: 1px;
-  color: white;
+  color: #212529;
+  font-weight: 600;
 }
 
 .positive h3 {
@@ -345,6 +346,8 @@ input {
 
 .guide-heading {
     text-transform: uppercase;
+    font-size: 24px;
+    line-height: 24px;
 }
 
 .empty-square-icon {
@@ -362,7 +365,7 @@ input {
   border-radius: 30px;
   display: inline;
   font-size: 0.8em;
-  font-weight: 800;
+  font-weight: 600;
   padding: 10px 15px;
   text-transform: uppercase;
   width: fit-content;
@@ -416,7 +419,7 @@ input {
   background-color: #ffffff;
   color: #212529;
   border-radius: 2px;
-  font-size:0.75em;
+  font-size:0.6em;
   font-weight: 400;
   line-height: 20px;
   padding: 3px;
@@ -438,4 +441,51 @@ input {
 
 .fw-600 {
   font-weight: 600;
+}
+
+.state-to-watch-headline {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.state-to-watch-text {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.state-to-watch-image {
+  height: auto;
+  width: 125px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 440px) {
+  h1 {
+    font-size: 36px;
+    line-height: 36px;
+  }
+  h2 {
+    font-size: 26px;
+    line-height: 26px;
+  }
+  .hyphenate {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+  .big-indents, .no-bullets {
+    padding-left: 30px;
+  }
+  .state-to-watch-headline {
+    font-size: 22px;
+    line-height: 22px;
+  }
 }
