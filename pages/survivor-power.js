@@ -43,8 +43,8 @@ export default function BuildCollectiveSurvivorPower() {
                                 <Checkbox name="gender" value="agender">Agender</Checkbox>
                                 <Checkbox name="gender" value="two_spirit">Two-spirit</Checkbox>
                                 <Checkbox name="gender" value="cisgender">Cisgender</Checkbox>
-                                <Checkbox name="gender" value="woman_femme">Woman / femme</Checkbox>
-                                <Checkbox name="gender" value="man_masculine">Man / masculine</Checkbox>
+                                <Checkbox name="gender" value="female_femme">Female / femme</Checkbox>
+                                <Checkbox name="gender" value="male_masculine">Male / masculine</Checkbox>
                                 <Checkbox name="gender" value="prefer_not_to_say_gender">I prefer not to say</Checkbox>
                                 <Checkbox name="gender" value="prefer_to_self_describe_gender">I prefer to self-describe</Checkbox>
                             </div>
@@ -68,9 +68,9 @@ export default function BuildCollectiveSurvivorPower() {
                             }
                             <div className="form-group pb-4 mb-3">
                                 <div className="text-uppercase"><FormLabel required={ false }>What is your race or ethnicity? (select all that apply to you) (optional)</FormLabel></div>
-                                <Checkbox name="race_or_ethnicity" value="indigenous_american_indian_native_american_or_alaska_native">Indigenous or American Indian or Native American or Alaska Native</Checkbox>
+                                <Checkbox name="race_or_ethnicity" value="american_indian_or_alaska_native">American Indian or Alaska Native</Checkbox>
                                 <Checkbox name="race_or_ethnicity" value="asian_or_asian_american">Asian or Asian American</Checkbox>
-                                <Checkbox name="race_or_ethnicity" value="black_or_african_american_or_haitian_or_other_african_black">Black or African American or Haitian or other African/Black</Checkbox>
+                                <Checkbox name="race_or_ethnicity" value="black_or_african_american">Black or African American</Checkbox>
                                 <Checkbox name="race_or_ethnicity" value="hispanic_or_latinx">Hispanic or Latinx</Checkbox>
                                 <Checkbox name="race_or_ethnicity" value="middle_eastern_or_north_african">Middle Eastern or North African</Checkbox>
                                 <Checkbox name="race_or_ethnicity" value="mixed_race_or_ethnicity">Mixed race or ethnicity</Checkbox>
@@ -78,7 +78,7 @@ export default function BuildCollectiveSurvivorPower() {
                                 <Checkbox name="race_or_ethnicity" value="white">White</Checkbox>
                                 <Checkbox name="race_or_ethnicity" value="prefer_not_to_say_race">I prefer not to say</Checkbox>
                             </div>
-                            <Input className="text-uppercase" label="We'd also like to give you the opportunity to tell us your specific race or ethnicity in an open-ended format. Please feel free to list multiple groups. (For example: Korean, Mexican American, Italian, Navajo Nation, Southerner (American), Puerto Rican, etc.)." name="race_or_ethnicity_other" required={ false } />
+                            <Input className="text-uppercase" label="While we are required to report the above race and ethnicity categories, we understand these classifications have been used to subjugate, otherize, and/or exclude certain people. So, we'd like to give you the opportunity to tell us your specific race or ethnicity, free of boxes. Please feel free to list multiple groups. (For example: Korean, Mexican American, Italian, Navajo Nation, Southerner (American), Puerto Rican, etc.)" name="race_or_ethnicity_other" required={ false } />
                             <Select className="text-uppercase" label="Your state (optional)" name="state" required={ false } options={ states }/>
                             <div className="form-group pb-4 mb-3">
                                 <div className="text-uppercase"><FormLabel required={ true }>The safest way to contact you is...</FormLabel></div>
