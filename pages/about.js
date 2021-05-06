@@ -33,7 +33,7 @@ export default function About() {
             <p>The National Survivor Financial Security Policy Map and Scorecard evaluates legislation in each state that has either been passed or enacted. While we understand that there are an endless number of policies and issues that impact survivors’ ability to build wealth, we’ve selected policies that we have determined are most directly linked to a survivor’s ability to build and maintain financial security. This is a living tool, which means it will be regularly updated and expanded. Be sure to read the full methodology to learn more!</p>
 
             <h2 className='mt-5'>Cite this tool</h2>
-            <p><em>The National Survivor Financial Security Policy Map And Scorecard.</em> FreeFrom, May 11, 2021. <a href="https://mapandscorecard.freefrom.org" target="_blank">https://mapandscorecard.freefrom.org</a>. Current as of: May 11, 2021.</p>
+            <p><em>The National Survivor Financial Security Policy Map And Scorecard.</em> FreeFrom, May 11, 2021. <a href="https://mapandscorecard.freefrom.org" target="_blank" rel="noopener noreferrer">https://mapandscorecard.freefrom.org</a>. Current as of: May 11, 2021.</p>
 
             <h2 className='mt-5'>Methodology</h2>
             <p>We evaluated each state based on whether and to what extent its policies aligned with and provided the same protections as our set of model policies, the characteristics of which are included in each state’s scorecard. The scorecard only includes state-level policies and does not capture local policies or those that can only be addressed on the federal level.</p>
