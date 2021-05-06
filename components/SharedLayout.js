@@ -4,7 +4,6 @@ import Head from 'next/head';
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import CookiesConsent from 'components/CookiesConsent'
-import Tracking from 'components/Tracking'
 import { getCookiesFromLocalStorage } from 'utils'
 import { site } from "constants/index"
 
@@ -32,7 +31,9 @@ export default function SharedLayout({ title, children }) {
                     <Footer />
                     { cookie != null && cookie != undefined ? null : <CookiesConsent setCookie={setCookie} /> }
                 </div>
-            </Tracking>
+                <Footer />
+                { cookie != null && cookie != undefined ? null : <CookiesConsent setCookie={setCookie} /> }
+            </div>
         </>
     );
 }
