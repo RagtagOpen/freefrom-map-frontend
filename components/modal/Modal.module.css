@@ -32,12 +32,9 @@
 }
 
 .title {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 36px;
+    font-family: proxima-nova, sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
     letter-spacing: 0.05em;
-    margin: 18px 0 0 0;
-    text-transform: uppercase;
 }

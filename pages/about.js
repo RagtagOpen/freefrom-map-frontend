@@ -5,7 +5,7 @@ import ModalButton from 'components/modal/ModalButton'
 
 export default function About() {
     return (
-        <SharedLayout title="About">
+        <SharedLayout>
             <BackButton className="mt-3 mb-2" />
             <h1 className="subpage-header">About This Tool</h1>
 

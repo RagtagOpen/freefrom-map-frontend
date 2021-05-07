@@ -4,7 +4,7 @@ import BackButton from "components/navigation/BackButton";
 
 export default function PrivacyPolicy() {
     return (
-        <SharedLayout title="Privacy Policy">
+        <SharedLayout>
             <BackButton className="mt-3 mb-2" />
             <h1 className="subpage-header">Privacy Policy</h1>
             <p>Effective date: March 1, 2021</p>

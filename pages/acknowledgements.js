@@ -5,9 +5,9 @@ import BackButton from "components/navigation/BackButton";
 
 export default function Acknowledgements() {
     return (
-        <SharedLayout title="Acknowledgements">
+        <SharedLayout>
             <BackButton className="mt-3 mb-2" />
-            <h1 className="subpage-header hyphenate">Acknowledgements</h1>
+            <h1 className="subpage-header">Acknowledgements</h1>
             <p>We want to take a moment to acknowledge that the Policy Map and Scorecard could not have been made possible without the support and contributions made by the law firms, research volunteers and all those involved in this project! We thank you for all of your work and contribution to making this tool a success!</p>
             <h2>Pro Bono Partners</h2>
             <ul className="no-bullets no-indents">
@@ -63,17 +63,14 @@ export default function Acknowledgements() {
             </ul>
             <h2>FreeFrom Outreach and Dissemination Team</h2>
             <ul className="no-bullets no-indents">
-                <li>Anakaren Alcocer</li>
-                <li>Diana Ayala</li>
+                <li>Tannia Ventura</li>
                 <li>Chriseithia Collins</li>
-                <li>Kirkley Doyle</li>
-                <li>Pamela Guerra</li>
                 <li>Em Jackson</li>
                 <li>Dafne Jacobs</li>
-                <li>Hye Sun Kim</li>
+                <li>Diana Ayala</li>
+                <li>Ana Zimmermann</li>
                 <li>Sharon Lim</li>
-                <li>Tannia Ventura</li>
-                <li>Ana Zimmerman</li>
+                <li>Kirkley Doyle</li>
             </ul>
         </SharedLayout>
     )
