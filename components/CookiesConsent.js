@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from 'prop-types';
-import { setCookiesInLocalStorage } from 'utils';
+import { getCookiesFromLocalStorage, setCookiesInLocalStorage } from 'utils';
 
-function CookiesConsent({ setCookie }) {
+function CookiesConsent() {
+  const [cookie, setCookie] = useState(getCookiesFromLocalStorage());
+  const onClick = (value) => () => {
+    setCookie(value);
+    setCookiesInLocalStorage(value);
+  }
+  // If cookie is set to a boolean, consent has already been set by the
+  // user.
+  if (cookie || cookie === false) return null
   return (
     <div className="fixed-top d-flex flex-column w-100 h-100 z-index-2">
       <div
         className="flex-fill bg-dark opacity-5"
         style={{ opacity: 0.5 }}
-      ></div>
+      />
       <div
         className="bg-dark align-items-center p-5 d-flex flex-column"
         style={{ minWidth: "200px" }}
@@ -27,20 +35,14 @@ function CookiesConsent({ setCookie }) {
           <button
             type="button"
             className="mr-3 btn btn-secondary"
-            onClick={() => {
-              setCookie(false);
-              setCookiesInLocalStorage(false);
-            }}
+            onClick={onClick(false)}
           >
             Decline
           </button>
 
           <button
             className="btn btn-primary"
-            onClick={() => {
-              setCookie(true);
-              setCookiesInLocalStorage(true);
-            }}
+            onClick={onClick(true)}
           >
             Accept
           </button>
