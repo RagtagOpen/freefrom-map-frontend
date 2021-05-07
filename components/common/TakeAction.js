@@ -6,28 +6,29 @@ import { useRouter } from 'next/router'
 import styles from './Common.module.css';
 
 const links = [
-    {path: "/contact-legislators", label: "Contact Your Legislators", bgd: "#FFB600"},
-    {path: "/survivor-power", label: "Build Collective Survivor Power", bgd: "#47CCCC"},
-    {path: "/partner-with-freefrom", label: "Partner with Freefrom", bgd: "#FF9797"},
-    {path: "/policy-ideas", label: "Share Your Policy Ideas", bgd: "#F06449"}
+    {path: "/contact-legislators", label: "Contact Your Legislators"},
+    {path: "/survivor-power", label: "Build Collective Survivor Power"},
+    {path: "/partner-with-freefrom", label: "Partner with Freefrom"},
+    {path: "/policy-ideas", label: "Share Your Policy Ideas"}
 ]
+
+const arrow = <FontAwesomeIcon icon={ faArrowRight } className="mr-1" />
 
 export default function TakeAction() {
     const { pathname } = useRouter()
     return (
-        <div className="take-action-parent">
-            <h2 className="mt-5">Take action</h2>
-            <div className="take-action-container d-flex flex-wrap">
-                {links.map(({path, label, bgd}) => {
+        <div className={ `take-action mt-2 mb-5` }>
+            <h1>Take action</h1>
+            <div className="d-flex flex-column justify-content-start">
+                {links.map(({path, label}) => {
                     // Do not render the link if it links to the current page.
                     // In other words, if we're on the Policy Ideas page, we
                     // don't want to show that link.
                     if (path === pathname) return null
                     return (
-                        <div className={`${styles["take-action-box"]} mb-4 mr-4`} key={path} style={{backgroundColor: bgd}}>
-                            <a className={`${styles["take-action-link"]}`} href={path}>
-                                <img src={"../../images/take-action" + path + ".jpg"} className={`${styles["take-action-image"]}`} alt={label}/>
-                                <h2 className={`${styles["take-action-text"]} p-3 m-0`}>{label}</h2>
+                        <div className="ml-4 my-4" key={path}>
+                            <a href={path} className={`${styles["take-action-link"]}`}>
+                                {arrow}{' '}{label}
                             </a>
                         </div>
                     )

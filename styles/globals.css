@@ -10,11 +10,6 @@ body {
   font-weight: normal;
   font-size: 18px;
   line-height: 28px;
-  overflow-x: hidden;
-}
-
-[type="button"] {
-  -webkit-appearance: none;
 }
 
 #__next {
@@ -31,7 +26,7 @@ div.tooltip {
   position: absolute;
   padding: 2px;
   width: 375px;
-  font-family: 'Poppins';
+  font: 12px sans-serif;
   background: #fff;
   border: 0px;
   border-radius: 5px;
@@ -191,38 +186,18 @@ input {
   color: #f06449;
 }
 
-.card-body h5 {
-  font-size: 24px;
-  font-weight: 600;
-}
-
-.card-body h6 {
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.card-body p {
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 500;
-}
-
 .footer {
   background-color: #47cccc;
   color: #fff;
-  text-align: center;
 }
 
 .footer h2 {
-  font-weight: 600;
-  font-size: 36px;
+  font-weight: 400;
   margin-bottom: 30px;
-  text-transform: none;
 }
 
 .footer .nav-item a {
   color: #fff;
-  font-weight: 600;
   font-size: 18px;
   line-height: 28px;
 }
@@ -280,6 +255,15 @@ input {
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
+.state-page .take-action > h1 {
+    font-size: 34px;
+}
+
+.state-page .take-action > h1 {
+    font-size: 34px;
+    margin-bottom: 0px;
+}
+
 .state-page .understanding-report button {
     font-size: 34px;
     margin-bottom: 0px;
@@ -295,7 +279,7 @@ input {
     text-transform: uppercase;
     color: #32B4B4 !important;
     margin: 27px;
-    padding: 6.75px 10px;
+    padding: 0px;
     background-color: rgba(170,229,225,0.1) !important;
 }
 
@@ -315,32 +299,6 @@ input {
     font-size: 1.2em;
     font-weight: 600;
     text-transform: uppercase;
-}
-
-.policies h3 {
-  border-radius: 30px;
-  border-width: 1px;
-  color: white;
-}
-
-.positive h3 {
-  background-color: #FFB400;
-  border-color: #FFB400;
-}
-
-.adverse h3 {
-  background-color: #FF583D;
-  border-color: #FF583D;
-}
-
-.positive-missing h3 {
-  background-color: #00CFCE;
-  border-color: #00CFCE;
-}
-
-.adverse-avoid h3 {
-  background-color: #FF9194;
-  border-color: #FF9194;
 }
 
 .guide-heading {
@@ -414,28 +372,12 @@ input {
 
 .ne-zoom-button {
   background-color: #ffffff;
-  color: #212529;
+  color:  #000000;
   border-radius: 2px;
   font-size:0.75em;
-  font-weight: 400;
-  line-height: 20px;
-  padding: 3px;
-  float: none;
-  width: 50px;
-  text-transform: uppercase;
-  text-align: center;
-  border: 1px solid #767676;
-  border-radius: 2px;
+  text-align: left;
+  /* width: 100px;
+  height: 100px; */
+  padding: 3.5px;
 }
 
-.fs-16px {
-  font-size: 16px;
-}
-
-.fs-21px {
-  font-size: 21px;
-}
-
-.fw-600 {
-  font-weight: 600;
-}

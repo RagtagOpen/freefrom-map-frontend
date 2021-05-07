@@ -18,12 +18,6 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Deployment
-
-The [staging](https://github.com/RagtagOpen/freefrom-map-frontend/tree/staging) branch is continuously deployed to https://freefrom-map-frontend.herokuapp.com/.
-
-The [prod](https://github.com/RagtagOpen/freefrom-map-frontend/tree/prod) branch is continuously deployed to https://freefrom-map-frontend-prod.herokuapp.com/.
-
 ## Other repositories
 
 - Backend - [RagtagOpen/freefrom-map-backend](https://github.com/RagtagOpen/freefrom-map-backend)

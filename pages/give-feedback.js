@@ -12,8 +12,6 @@ import Checkbox from "components/forms/Checkbox";
 import FormLabel from "components/forms/FormLabel";
 import Submit from "components/forms/Submit";
 
-import { identifyAsSurvivor } from 'constants/forms';
-import { states } from 'constants/forms';
 import { toolUseful } from 'constants/forms';
 import { learnFromTool } from 'constants/forms';
 
@@ -41,20 +39,6 @@ export default function GiveFeedback() {
                             <Form className="col-12 col-lg-8 mb-5">
                                 <Select
                                     className="text-uppercase"
-                                    label="Do you identify as a survivor? (optional)"
-                                    name="survivor"
-                                    options={identifyAsSurvivor}
-                                    required={false}
-                                />
-                                <Select
-                                    className="text-uppercase"
-                                    label="Your state (optional)"
-                                    name="state"
-                                    required={false}
-                                    options={states}
-                                />
-                                <Select
-                                    className="text-uppercase"
                                     label="Was this tool useful?"
                                     name="tool_useful"
                                     options={toolUseful}
@@ -73,7 +57,7 @@ export default function GiveFeedback() {
                                     options={learnFromTool}
                                     required={true}
                                 />
-                                <div className="form-group pb-4 mb-3">
+                                <div className="form-group">
                                     <div className="text-uppercase"><FormLabel required={ true }>How do you plan to use this tool?</FormLabel></div>
                                     <Checkbox name="planned_use" value="inform_org_priorities">Inform my organization’s or state coalition’s policy priorities</Checkbox>
                                     <Checkbox name="planned_use" value="inform_state_priorities">Inform my state’s policy priorities</Checkbox>
@@ -87,7 +71,7 @@ export default function GiveFeedback() {
                               <Input className="text-uppercase" label="Please describe..." name="planned_use_other" required={ true } />
                                 }
                                 <Input
-                                    className="text-uppercase pb-4 mb-3"
+                                    className="text-uppercase"
                                     label="What can be improved or changed?"
                                     name="improve_or_change"
                                     required={true}
