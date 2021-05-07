@@ -92,7 +92,7 @@ const Channels = ({channels}) => (
             ? channels.map(c => {
                 const icon = c.type === 'Twitter'
                     ? faTwitter
-                    :'Facebook'
+                    : faFacebook
                 return (
                     <li className='list-inline-item mr-3' key={`${c.type}-${c.id}`}>
                         <FontAwesomeIcon icon={ icon } className="mr-1" />
