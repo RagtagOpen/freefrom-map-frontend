@@ -1,4 +1,5 @@
 import React from 'react'
+import { trackEvent } from 'utils'
 
 export const checkFormStatus = (props) => {
     // If status has not been updated, form has not yet been submitted.
@@ -53,6 +54,7 @@ export const submitForm = path => {
                 throw new Error(message)
             }
             setStatus({success: true})
+            trackEvent({ category: 'Form', action: 'Submission', label: path })
         } catch (error) {
             console.log(error)
             setStatus({success: false})
