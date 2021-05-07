@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Formik, Form } from 'formik';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 import BackButton from "components/navigation/BackButton";
@@ -67,7 +67,7 @@ const Official = ({official}) => (
     <div>
         <p>{official.name}</p>
         <ul className='list-inline small'>
-            {<Channels channels={official.channels} />}
+            {<Channels channels={official.channels.filter(channel => channel.type === 'Facebook' || channel.type === 'Twitter')} />}
             {<Comms type='email' items={official.emails} />}
             {<Comms type='phone' items={official.phones} />}
         </ul>
@@ -92,9 +92,7 @@ const Channels = ({channels}) => (
             ? channels.map(c => {
                 const icon = c.type === 'Twitter'
                     ? faTwitter
-                    : c.type === 'Facebook'
-                        ? faFacebook
-                        : faInstagram
+                    : faFacebook
                 return (
                     <li className='list-inline-item mr-3' key={`${c.type}-${c.id}`}>
                         <FontAwesomeIcon icon={ icon } className="mr-1" />
