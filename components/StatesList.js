@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import StateCard from './StateCard'
+import { trackEvent } from 'utils';
 
 function StatesList({ states }) {
     const [search, setSearch] = useState('')
@@ -15,12 +16,15 @@ function StatesList({ states }) {
                 style={{fontWeight: '600', height: '60px', width: '100%', paddingLeft: 7, border: '1px solid #767676', borderRadius: '2px'}}
                 value={search}
             />
-            <div className='mt-1' style={{height: '500px', overflowY: 'scroll'}}>
+            <div className='mt-1' style={{height: '500px', overflowY: 'scroll', border: '1px solid #DDDDDD'}}>
                 {visibleStates.length > 0
-                    ? <ul style={{border: '1px solid #DDDDDD', backgroundColor: 'white', padding: 7}}>
+                    ? <ul style={{backgroundColor: 'white', padding: 7}}>
                         {visibleStates.map(state => (
                             <li key={state.code}>
-                                <StateCard state={state} />
+                                <StateCard
+                                    state={state}
+                                    onLearnMoreClick={() => { trackEvent({ category: 'Click', action: 'State list', label: state.name}) }}
+                                />
                                 <hr style={{margin: 0, width: '95%'}}/>
                             </li>
                         ))}

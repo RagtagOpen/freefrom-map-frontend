@@ -1,16 +1,13 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import ReportMissingInfo from 'components/common/ReportMissingInfo'
 import ShareButtons from 'components/common/ShareButtons'
 import StateUpdates from 'components/common/StateUpdates'
+import TakeAction from 'components/common/TakeAction'
 import SharedLayout from 'components/SharedLayout'
 import StatesList from 'components/StatesList'
 import UsMap from 'components/UsMap'
-import ModalButton from 'components/modal/ModalButton'
-import Image from 'next/image'
 
 function Home({ states }) {
     const [visibleComponent, setVisibleComponent] = useState('list');
@@ -28,87 +25,85 @@ function Home({ states }) {
                 </p>
             </>
 
-            <div className='d-sm-block d-md-none mb-3'>
-                <button
-                    className='orange-button btn btn-primary'
-                    onClick={() => setVisibleComponent(showList ? 'map' : 'list')}>
-                    <FontAwesomeIcon icon={ faArrowRight } className="mr-1" />{' '}
-                    Switch to {showList ? 'map' : 'list'} view
-                </button>
-            </div>
-
             <div className='d-flex flex-row flex-fill'>
                 <div className={`col-md-3 p-0${listClass}`} style={{ minWidth: '300px' }}>
                     <StatesList states={states} />
                 </div>
 
                 <div className={`col-md-9${mapClass}`}>
+                    <div aria-hidden='true' className={`mb-4 ml-3 d-md-flex flex-row justify-content-start${mapClass}`}>
+                        <div className='d-flex flex-column'>
+                            <h4 className="mb-1">Key</h4>
+                            <img className="img-fluid" src="/images/legend.png" style={{maxWidth: '415px'}}/>
+                        </div>
+                    </div>
                     <UsMap states={states} />
+
+
                 </div>
             </div>
 
-            <div aria-hidden='true' className={`d-md-flex flex-row justify-content-end${mapClass}`}>
-                <div className='d-flex flex-column'>
-                    <h4 className="mb-0">Key</h4>
-                    <Image src="/images/legend.png" height="129" width="230"/>
-                </div>
-            </div>
-
-            <div className='d-md-flex flex-row justify-content-end mt-5'>
-                <div className='d-flex flex-column flex-md-row justify-content-md-between' style={{minWidth: '60%'}}>
-                    <div className='pr-3'>
+            <div className='d-md-flex flex-row justify-content-start mt-4'>
+                <div className='d-flex flex-column flex-md-row' style={{minWidth: '60%'}}>
+                    <div className='pr-3 mb-3'>
+                        <ShareButtons className='d-flex flex-row flex-nowrap' context='homepage'/>
+                    </div>
+                    <div className='pr-3 mb-3'>
                         <StateUpdates />
                     </div>
                     <div className='pr-3'>
                         <ReportMissingInfo />
                     </div>
-                    <ShareButtons className='d-flex flex-row flex-nowrap' />
                 </div>
             </div>
 
             <>
 
-                <h2 className='mt-5'>Snapshot of Survivor Financial Security Policies By State</h2>
-                <img className="img-fluid" src="/images/snapshot-by-state.png" />
-
-                <h2 className='mt-5'>Snapshot of Survivor Financial Security Policies By Category</h2>
-                <img className="img-fluid" src="/images/snapshot-by-category.png" />
+                <h2 className='mt-4'>Snapshot of Survivor Financial Security Policies By State</h2>
+                <div className="d-flex flex-column col-12 col-lg-10 p-0">
+                    <img className="img-fluid" src="/images/snapshot-by-state.png"/>
+                </div>
 
                 <h2 className='mt-5'>States to Watch</h2>
-                <div className="d-flex justify-content-lg-around justify-content-center align-items-center flex-column flex-md-row p-2">
-                    <div className='d-flex flex-column flex-md-row justify-content-md-between' style={{minWidth: '60%'}}>
-                        <div className='pr-3 mb-3'>
-                            <h3 className="mb-3">Maine</h3>
-                            <strong className="mb-3">Maine leads the way in protecting survivors against coerced and fraudulent debt</strong>
-                            <img className="img-fluid mb-3" src="/images/states/maine.png" />
-                            <p className="mb-1">Maine recently passed strong legislation that prevents debt collectors from collecting on debts incurred as a result of economic abuse, providing survivors with much needed relief.</p>
-                            <a href=" https://www.mainelegislature.org/legis/statutes/10/title10sec1310-H.html" target="_blank" rel="noopener noreferrer">Me. Stat. tit. 10, § 1310-H</a>
+                <div className="d-flex flex-column col-lg-10 m-0 p-0">
+                    <div className='d-flex flex-row flex-wrap flex-md-nowrap mb-4'>
+                        <div className="mb-2 mb-md-0 mr-md-3">
+                            <img className="state-to-watch-image" src="/images/states-to-watch/maine.png"/>
                         </div>
-                        <div className='pr-3 mb-3'>
-                            <h3 className="mb-3">Washington</h3>
-                            <strong className="mb-3">Washington demonstrates how to protect survivors against litigation abuse</strong>
-                            <img className="img-fluid mb-3" src="/images/states/washington.png" />
-                            <p className="mb-1">Washington gives survivors the most comprehensive protections against litigation abuse in the nation. The State requires harm-doers to pay attorneys’ fees and costs associated with abusive litigation tactics, holding them accountable for misusing the court system to further harm and abuse survivors.</p>
-                            <a href="https://app.leg.wa.gov/RCW/default.aspx?cite=26.51&full=true#26.51.010" target="_blank" rel="noopener noreferrer">Wash. Rev. Code § 26.51.010 - 901</a>
+                        <div>
+                            <strong className="state-to-watch-headline mb-3">Maine leads the way in protecting survivors against coerced and fraudulent debt</strong>
+                            <p className="state-to-watch-text mb-1">Maine recently passed strong legislation that prevents debt collectors from collecting on debts incurred as a result of economic abuse, providing survivors with much needed relief.</p>
+                            <a className="state-to-watch-text" href="https://www.mainelegislature.org/legis/statutes/10/title10sec1310-H.html" target="_blank" rel="noopener noreferrer">Me. Stat. tit. 10, § 1310-H</a>
                         </div>
-                        <div className='pr-3 mb-3'>
-                            <h3 className="mb-3">Nevada</h3>
-                            <strong className="mb-3">Nevada is <em>so close</em> to model paid and protected leave</strong>
-                            <img className="img-fluid mb-3" src="/images/states/nevada.png" />
-                            <p className="mb-1">Nevada offers at least 10 days of protected leave for survivors to deal with the consequences of abuse that does not deplete accrued leave. If Nevada were to guarantee that the leave is paid it would be a Model policy.</p>
-                            <a href="https://www.leg.state.nv.us/nrs/nrs-608.html#NRS608Sec0198" target="_blank" rel="noopener noreferrer">N.R.S. § 608.0198</a>
+                    </div>
+                    <div className='d-flex flex-row flex-wrap flex-md-nowrap mb-4'>
+                        <div className="mb-2 mb-md-0 mr-md-3">
+                            <img className="state-to-watch-image" src="/images/states-to-watch/washington.png"/>
+                        </div>
+                        <div>
+                            <strong className="state-to-watch-headline mb-3">Washington demonstrates how to protect survivors against litigation abuse</strong>
+                            <p className="state-to-watch-text mb-1">Washington gives survivors the most comprehensive protections against litigation abuse in the nation. The State requires harm-doers to pay attorneys’ fees and costs associated with abusive litigation tactics, holding them accountable for misusing the court system to further harm and abuse survivors.</p>
+                            <a className="state-to-watch-text" href="https://app.leg.wa.gov/RCW/default.aspx?cite=26.51&full=true#26.51.010" target="_blank" rel="noopener noreferrer">Wash. Rev. Code § 26.51.010 - 901</a>
+                        </div>
+                    </div>
+                    <div className='d-flex flex-row flex-wrap flex-md-nowrap'>
+                        <div className="mb-2 mb-md-0 mr-md-3">
+                            <img className="state-to-watch-image" src="/images/states-to-watch/nevada.png"/>
+                        </div>
+                        <div className='pr-3'>
+                            <strong className="state-to-watch-headline mb-3">Nevada is <em>so close</em> to model paid and protected leave</strong>
+                            <p className="state-to-watch-text mb-1">Nevada offers at least 10 days of protected leave for survivors to deal with the consequences of abuse that does not deplete accrued leave. If Nevada were to guarantee that the leave is paid it would be a Model policy.</p>
+                            <a className="state-to-watch-text" href="https://www.leg.state.nv.us/nrs/nrs-608.html#NRS608Sec0198" target="_blank" rel="noopener noreferrer">N.R.S. § 608.0198</a>
                         </div>
                     </div>
                 </div>
 
-                <h2 className='mt-5'>Important information</h2>
-                <p>The National Survivor Financial Security Policy Map and Scorecard evaluates legislation in each state that has either been passed or enacted. While we understand that there are an endless number of policies and issues that impact survivors’ ability to build wealth, we’ve selected policies that we have determined are most directly linked to a survivor’s ability to build and maintain financial security. This is a living tool, which means it will be regularly updated and expanded. Be sure to read the full methodology to learn more!</p>
+                <h2 className='mt-5'>Snapshot of Survivor Financial Security Policies By Category</h2>
+                <div className="d-flex flex-column col-12 col-lg-10 p-0">
+                    <img className="img-fluid" src="/images/snapshot-by-category.png"/>
+                </div>
 
-                <h2 className='mt-5'>Methodology</h2>
-                <p>We evaluated each state based on whether and to what extent its policies aligned with and provided the same protections as our set of model policies, the characteristics of which are included in each state’s scorecard. The scorecard only includes state-level policies and does not capture local policies or those that can only be addressed on the federal level.</p>
-                <p>While survivors’ ability to build financial security is impacted by a wide range of policies, we chose the thirteen policy categories currently included within our scorecard after determining that they were most directly connected with survivors’ ability to protect their assets and build and save wealth.</p>
-                <p>While practice and policy may differ, the scorecard only measures policies as they are codified in state laws.</p>
-                <ModalButton text="Full Methodology" href="/methodology"/>
+                <TakeAction />
 
             </>
         </SharedLayout>

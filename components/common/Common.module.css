@@ -1,17 +1,26 @@
-.take-action-link {
-    font-family: 'Poppins';
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 24px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #32B4B4;
+.take-action-image {
+    height: 230px;
+    width: 346px;
 }
 
-.take-action-link:hover {
-    color: #32B4B4;
+.take-action-text-area {
+    display: flex;
+    align-items: center;
+    height: 204px;
+    width: 346px;
 }
 
-.take-action-link:active {
-    color: #32B4B4;
+.take-action-text {
+    color: #fff;
+    font-size: 42px;
+    line-height: 42px;
+    text-transform: none;
+}
+
+.take-action-link:hover, .take-action-link:active {
+    text-decoration: none;
+}
+
+.take-action-box:hover, .take-action-box:active {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.08) 0 0);
 }
