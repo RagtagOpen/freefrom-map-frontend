@@ -11,7 +11,7 @@ app.prepare().then(() => {
     const server = express();
 
     // redirect to SSL
-    server.use(sslRedirect());
+    server.use(sslRedirect.default());
 
     server.all('*', (req, res) => {
         return handle(req, res);
