@@ -8,5 +8,5 @@ export const setCookiesInLocalStorage = value => {
 }
 
 export const getCookiesFromLocalStorage = () => {
-  return cookies.get(COOKIE_KEY, {path: '/'});
+  return cookies.get(COOKIE_KEY);
 }

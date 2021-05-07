@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types"
 import Head from 'next/head';
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import CookiesConsent from 'components/CookiesConsent'
 import Tracking from 'components/Tracking'
+import { getCookiesFromLocalStorage } from 'utils'
 import { site } from "constants/index"
 
 export default function SharedLayout({ title, children }) {
+    const [cookie, setCookie] = useState(getCookiesFromLocalStorage());
+
     return (
         <>
             <Head>
@@ -27,7 +30,7 @@ export default function SharedLayout({ title, children }) {
                         { children }
                     </div>
                     <Footer />
-                    <CookiesConsent />
+                    { cookie != null && cookie != undefined ? null : <CookiesConsent setCookie={setCookie} /> }
                 </div>
             </Tracking>
         </>
