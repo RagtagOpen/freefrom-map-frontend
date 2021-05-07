@@ -190,6 +190,8 @@ const Category = ({ category, expanded, onClickExpand, stateData }) => {
     stateData.resource_links.filter(
         (l) => l.category_id === category.id && l.active
     ) || [];
+    const categoryImageName = category.title.replace(/\(|\)/g, '').replace(/\s/g, '-').toLowerCase();
+
     return (
         <div
             className="category accordion-i"
@@ -213,7 +215,7 @@ const Category = ({ category, expanded, onClickExpand, stateData }) => {
                         <div className="d-block d-lg-none mt-2">{category.title}</div>
                         <img
                             className="img img-fluid mr-4"
-                            src={`../images/policy-category-icons/${category.id}.png`}
+                            src={`../images/policy-category-icons/${categoryImageName}.png`}
                             alt={`${category.title} logo`}
                             height="60px"
                             width="60px" />

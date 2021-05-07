@@ -6,7 +6,7 @@ import ScoreLabel from 'components/common/ScoreLabel'
 import ModalButton from "./modal/ModalButton"
 import { toSlug } from 'utils'
 
-const StateCard = ({hideLearnMore, state}) => {
+const StateCard = ({hideLearnMore, state, onLearnMoreClick}) => {
     const { grade, name, rank } = state
 
     return (
@@ -19,7 +19,7 @@ const StateCard = ({hideLearnMore, state}) => {
             </p>
             {hideLearnMore
                 ? null
-                : <ModalButton text="Learn more" href={`/states/${toSlug(name)}`}/>
+                : <ModalButton text="Learn more" href={`/states/${toSlug(name)}`} onClick={onLearnMoreClick} />
             }
         </div>
     )

@@ -46,7 +46,7 @@ function Footer() {
             <div className="mb-4 my-md-0">
                 <ul className="nav flex-column">
                     <li className="nav-item">
-                        <a className="nav-link" href="/acknowledgements">Acknowledgements</a>
+                        <a className="nav-link" href="/acknowledgments">Acknowledgments</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="/disclaimer">Disclaimer</a>

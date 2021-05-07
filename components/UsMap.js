@@ -4,7 +4,7 @@
 
     import StateCard from './StateCard'
     import usData from "../public/data/us-states.json"
-    import { toSlug } from 'utils'
+    import { toSlug, trackEvent } from 'utils'
 
     class UsMap extends Component {
         componentDidMount() {
@@ -121,7 +121,7 @@
                     // FIXME: Puerto Rico is undefined!
                     return color(d.properties.grade && d.properties.grade.grade)
                 });
-            
+
             // add zoom buttons for little northeastern states
             d3.select("#map-container")
                 .append("button")
@@ -164,6 +164,7 @@
                 // Navigate to state on click
                 const { name } = d.properties
                 window.location.href = `${window.location.href}states/${toSlug(name)}`
+                trackEvent({category: 'Click', action: 'Map', label: name})
                 // for now right clicking removes the card
             }).on("contextmenu", () => {
                 d3.event.preventDefault();
