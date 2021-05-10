@@ -67,7 +67,7 @@ const Official = ({official}) => (
     <div>
         <p>{official.name}</p>
         <ul className='list-inline small'>
-            {<Channels channels={official.channels.filter(channel => channel.type === 'Facebook' || channel.type === 'Twitter')} />}
+            {<Channels channels={official.channels}/>}
             {<Comms type='email' items={official.emails} />}
             {<Comms type='phone' items={official.phones} />}
         </ul>
@@ -89,7 +89,7 @@ const getUrlForType = (type, value) => {
 const Channels = ({channels}) => (
     <>
         {channels && channels.length > 0
-            ? channels.map(c => {
+            ? channels.filter(channel => channel.type === 'Facebook' || channel.type === 'Twitter').map(c => {
                 const icon = c.type === 'Twitter'
                     ? faTwitter
                     : faFacebook
