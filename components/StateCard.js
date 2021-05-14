@@ -16,6 +16,11 @@ const StateCard = ({hideLearnMore, state, onLearnMoreClick}) => {
             <ScoreLabel score={grade.grade} />
             <p className="card-text mt-2 pt-1 mb-2">
                 {OVERALL_SCORE_LABELS[grade.grade]}
+
+
+
+
+
             </p>
             {hideLearnMore
                 ? null
