@@ -15,8 +15,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx}": ["eslint --fix", "git add"],
-    "*.{json,css,md,html}": ["prettier --write", "git add"]
+    "components/**/*.js": ["yarn run lint", "yarn run format"]
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
