@@ -10,7 +10,7 @@
     "format": "prettier components/**/*.js components/*.js constants/**/*.js constants/*.js pages/**/*.js pages/*.js utils/**/*.js utils/*.js --write --config ./.prettierrc"
   },
   "lint-staged": {
-    "*.+{js}": [
+    "{**/*,**/**/*}.js": [
       "yarn run lint",
       "yarn run format"
     ]

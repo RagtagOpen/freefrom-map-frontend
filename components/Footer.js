@@ -5,10 +5,6 @@ import { faInstagram, faTwitter, faFacebookF } from '@fortawesome/free-brands-sv
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
 
 function Footer() {
-    const unusedVar = 4;
-
-
-
     return (
         <div
             className={
