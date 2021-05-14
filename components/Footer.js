@@ -5,6 +5,7 @@ import { faInstagram, faTwitter, faFacebookF } from '@fortawesome/free-brands-sv
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
 
 function Footer() {
+    const unusedVar = 4;
     return (
         <div
             className={
@@ -12,7 +13,7 @@ function Footer() {
             flex-column flex-md-row p-2 py-md-5'
             }
         >
-            <div className='py-2 my-md-0 mt-4'   >
+            <div className='py-2 my-md-0 mt-4'>
                 <h2 className='mt-0'>Follow FreeFrom</h2>
                 <div>
                     <a href='https://www.facebook.com/freefrom.org' target='_blank' rel='noopener noreferrer'>

@@ -9,6 +9,13 @@
     "lint": "eslint --fix components/**/*.js components/*.js constants/**/*.js constants/*.js pages/**/*.js pages/*.js utils/**/*.js utils/*.js",
     "format": "prettier components/**/*.js components/*.js constants/**/*.js constants/*.js pages/**/*.js pages/*.js utils/**/*.js utils/*.js --write --config ./.prettierrc"
   },
+  "lint-staged": {
+    "*.{js}": [
+      "yarn run lint",
+      "yarn run format",
+      "git add"
+    ]
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
