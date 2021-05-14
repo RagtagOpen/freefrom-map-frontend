@@ -6,6 +6,9 @@ import { faCircle } from '@fortawesome/free-solid-svg-icons'
 
 function Footer() {
     const unusedVar = 4;
+
+
+
     return (
         <div
             className={
