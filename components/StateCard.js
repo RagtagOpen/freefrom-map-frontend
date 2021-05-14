@@ -20,7 +20,6 @@ const StateCard = ({hideLearnMore, state, onLearnMoreClick}) => {
 
 
 
-
             </p>
             {hideLearnMore
                 ? null
