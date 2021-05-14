@@ -9,14 +9,6 @@
     "lint": "eslint --fix components/**/*.js constants/**/*.js pages/**/*.js utils/**/*.js",
     "format": "prettier components/**/*.js constants/**/*.js pages/**/*.js utils/**/*.js --write --config ./.prettierrc"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "./components/**/*.{js,jsx": ["yarn run lint", "yarn run format"]
-  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",

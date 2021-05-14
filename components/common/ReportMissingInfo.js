@@ -23,8 +23,10 @@ const ReportMissingInfo = () => (
                     <Form>
                         <Input
                             name='missing_or_outdated_info'
-                            label={'What information is missing or outdated? (Please provide as much \
-                                    information as you can.)'}
+                            label={
+                                'What information is missing or outdated? (Please provide as much \
+                                    information as you can.)'
+                            }
                             required={true}
                         />
                         <Input name='email' label='Your email (optional)' type='email' />
