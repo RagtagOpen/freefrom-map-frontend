@@ -6,8 +6,12 @@ import { faCircle } from '@fortawesome/free-solid-svg-icons'
 
 function Footer() {
     return (
-        <div className={'footer d-flex justify-content-lg-around justify-content-center align-items-center \
-            flex-column flex-md-row p-2 py-md-5'}>
+        <div
+            className={
+                'footer d-flex justify-content-lg-around justify-content-center align-items-center \
+            flex-column flex-md-row p-2 py-md-5'
+            }
+        >
             <div className='py-2 my-md-0 mt-4'>
                 <h2 className='mt-0'>Follow FreeFrom</h2>
                 <div>

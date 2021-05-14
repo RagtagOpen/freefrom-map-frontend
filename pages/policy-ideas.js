@@ -44,8 +44,10 @@ export default function PolicyIdeas() {
                             />
                             <Input
                                 className='text-uppercase'
-                                label={'What policies and issues are important to you but are not \
-                                    included on the policy map and scorecard?'}
+                                label={
+                                    'What policies and issues are important to you but are not \
+                                    included on the policy map and scorecard?'
+                                }
                                 name='policies_not_included'
                                 required={true}
                             />
@@ -108,13 +110,13 @@ export default function PolicyIdeas() {
                             </div>
                             {props.values.gender &&
                                 props.values.gender.indexOf('prefer_to_self_describe_gender') !== -1 && (
-                                <Input
-                                    className='text-uppercase'
-                                    label='Please describe...'
-                                    name='gender_other'
-                                    required={false}
-                                />
-                            )}
+                                    <Input
+                                        className='text-uppercase'
+                                        label='Please describe...'
+                                        name='gender_other'
+                                        required={false}
+                                    />
+                                )}
                             <div className='form-group pb-4 mb-3'>
                                 <div className='text-uppercase'>
                                     <FormLabel required={false}>
@@ -151,13 +153,13 @@ export default function PolicyIdeas() {
                             </div>
                             {props.values.sexuality &&
                                 props.values.sexuality.indexOf('prefer_to_self_describe_sexuality') !== -1 && (
-                                <Input
-                                    className='text-uppercase'
-                                    label='Please describe...'
-                                    name='sexuality_other'
-                                    required={false}
-                                />
-                            )}
+                                    <Input
+                                        className='text-uppercase'
+                                        label='Please describe...'
+                                        name='sexuality_other'
+                                        required={false}
+                                    />
+                                )}
                             <div className='form-group pb-4 mb-3'>
                                 <div className='text-uppercase'>
                                     <FormLabel required={false}>
@@ -200,17 +202,21 @@ export default function PolicyIdeas() {
                             </div>
                             <Input
                                 className='text-uppercase'
-                                label={"We'd also like to give you the opportunity to tell us your specific \
+                                label={
+                                    "We'd also like to give you the opportunity to tell us your specific \
                                     race or ethnicity in an open-ended format. Please feel free to list \
                                     multiple groups. (For example: Korean, Mexican American, Italian, \
-                                    Navajo Nation, Southerner (American), Puerto Rican, etc.)."}
+                                    Navajo Nation, Southerner (American), Puerto Rican, etc.)."
+                                }
                                 name='race_or_ethnicity_other'
                                 required={false}
                             />
                             <Select
                                 className='text-uppercase'
-                                label={'We’re eager to learn where new policy ideas and changes come from. \
-                                    If you’re comfortable, please tell us more about you.'}
+                                label={
+                                    'We’re eager to learn where new policy ideas and changes come from. \
+                                    If you’re comfortable, please tell us more about you.'
+                                }
                                 name='about_you'
                                 options={aboutYou}
                             />
@@ -236,6 +242,6 @@ PolicyIdeas.propTypes = {
     values: PropTypes.shape({
         gender: PropTypes.string,
         sexuality: PropTypes.string,
-        about_you: PropTypes.string,
+        about_you: PropTypes.string
     })
 }

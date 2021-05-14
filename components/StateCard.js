@@ -33,7 +33,7 @@ StateCard.propTypes = {
             grade: PropTypes.number
         }),
         name: PropTypes.string,
-        rank: PropTypes.number,
+        rank: PropTypes.number
     })
 }
 

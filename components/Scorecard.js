@@ -115,12 +115,12 @@ InnovativePolicyIdea.propTypes = {
 
 const renderIcon = (implementsPolicy) => {
     switch (implementsPolicy) {
-    case 'yes':
-        return <img src='/images/criteria-met.png' className='checklistIcon' alt='Criteria Met' />
-    case 'maybe':
-        return <img src='/images/criteria-maybe-met.png' className='checklistIcon' alt='Criteria Maybe Met' />
-    case 'no':
-        return <img src='/images/criteria-not-met.png' className='checklistIcon' alt='Criteria Not Met' />
+        case 'yes':
+            return <img src='/images/criteria-met.png' className='checklistIcon' alt='Criteria Met' />
+        case 'maybe':
+            return <img src='/images/criteria-maybe-met.png' className='checklistIcon' alt='Criteria Maybe Met' />
+        case 'no':
+            return <img src='/images/criteria-not-met.png' className='checklistIcon' alt='Criteria Not Met' />
     }
 }
 
@@ -301,7 +301,7 @@ Category.propTypes = {
     category: categoryType,
     stateData: stateDataType,
     expanded: PropTypes.bool,
-    onClickExpand: PropTypes.func,
+    onClickExpand: PropTypes.func
 }
 
 const Scorecard = ({ categories, stateData }) => {

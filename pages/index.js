@@ -34,7 +34,7 @@ function Home({ states }) {
                                 className='img-fluid'
                                 src='/images/legend.png'
                                 style={{ maxWidth: '415px' }}
-                                alt="Legend mapping colors to state scores"
+                                alt='Legend mapping colors to state scores'
                             />
                         </div>
                     </div>
@@ -62,10 +62,12 @@ function Home({ states }) {
                     <img
                         className='img-fluid'
                         src='/images/snapshot-by-state.png'
-                        alt={"Snapshot of survivor financial security policies by state; \
+                        alt={
+                            'Snapshot of survivor financial security policies by state; \
                             Model state: 0 states; financial security friendly: 2 states; \
                             taking steps: 11 states; some accountability: 17 states; \
-                            little accountability: 21 states"}
+                            little accountability: 21 states'
+                        }
                     />
                 </div>
 
@@ -76,7 +78,7 @@ function Home({ states }) {
                             <img
                                 className='state-to-watch-image'
                                 src='/images/states-to-watch/maine.png'
-                                alt="Outline of the state of Maine"
+                                alt='Outline of the state of Maine'
                             />
                         </div>
                         <div>

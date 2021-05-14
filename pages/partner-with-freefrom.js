@@ -97,13 +97,13 @@ export default function PartnerWithFreefrom() {
                             </div>
                             {props.values.gender &&
                                 props.values.gender.indexOf('prefer_to_self_describe_gender') !== -1 && (
-                                <Input
-                                    className='text-uppercase'
-                                    label='Please describe...'
-                                    name='gender_other'
-                                    required={false}
-                                />
-                            )}
+                                    <Input
+                                        className='text-uppercase'
+                                        label='Please describe...'
+                                        name='gender_other'
+                                        required={false}
+                                    />
+                                )}
                             <div className='form-group pb-4 mb-3'>
                                 <div className='text-uppercase'>
                                     <FormLabel required={false}>
@@ -140,13 +140,13 @@ export default function PartnerWithFreefrom() {
                             </div>
                             {props.values.sexuality &&
                                 props.values.sexuality.indexOf('prefer_to_self_describe_sexuality') !== -1 && (
-                                <Input
-                                    className='text-uppercase'
-                                    label='Please describe...'
-                                    name='sexuality_other'
-                                    required={false}
-                                />
-                            )}
+                                    <Input
+                                        className='text-uppercase'
+                                        label='Please describe...'
+                                        name='sexuality_other'
+                                        required={false}
+                                    />
+                                )}
                             <div className='form-group pb-4 mb-3'>
                                 <div className='text-uppercase'>
                                     <FormLabel required={false}>
@@ -189,10 +189,12 @@ export default function PartnerWithFreefrom() {
                             </div>
                             <Input
                                 className='text-uppercase'
-                                label={"We'd also like to give you the opportunity to tell us your \
+                                label={
+                                    "We'd also like to give you the opportunity to tell us your \
                                     specific race or ethnicity in an open-ended format. Please feel \
                                     free to list multiple groups. (For example: Korean, Mexican American, \
-                                    Italian, Navajo Nation, Southerner (American), Puerto Rican, etc.)."}
+                                    Italian, Navajo Nation, Southerner (American), Puerto Rican, etc.)."
+                                }
                                 name='race_or_ethnicity_other'
                                 required={false}
                             />
@@ -218,31 +220,31 @@ export default function PartnerWithFreefrom() {
                             </div>
                             {props.values.goals &&
                                 props.values.goals.indexOf('pass_survivor_wealth_centered_legislation') !== -1 && (
-                                <div className='form-group pb-4 mb-3'>
-                                    <div className='text-uppercase'>
-                                        <FormLabel required={true}>What phase of the process are you in?</FormLabel>
-                                    </div>
-                                    <Checkbox name='process_phase' value='need_guidance'>
+                                    <div className='form-group pb-4 mb-3'>
+                                        <div className='text-uppercase'>
+                                            <FormLabel required={true}>What phase of the process are you in?</FormLabel>
+                                        </div>
+                                        <Checkbox name='process_phase' value='need_guidance'>
                                             I need guidance on centering my organization’s policy priorities to be more
                                             survivor-wealth informed
-                                    </Checkbox>
-                                    <Checkbox name='process_phase' value='have_an_idea'>
+                                        </Checkbox>
+                                        <Checkbox name='process_phase' value='have_an_idea'>
                                             I have a policy idea but need help with getting started
-                                    </Checkbox>
-                                    <Checkbox name='process_phase' value='developed_a_coalition'>
+                                        </Checkbox>
+                                        <Checkbox name='process_phase' value='developed_a_coalition'>
                                             I’ve developed a coalition or a network to support my policy idea
-                                    </Checkbox>
-                                    <Checkbox name='process_phase' value='spoke_with_state'>
+                                        </Checkbox>
+                                        <Checkbox name='process_phase' value='spoke_with_state'>
                                             I’ve spoken with my state representative about my policy idea
-                                    </Checkbox>
-                                    <Checkbox name='process_phase' value='ready_to_introduce'>
+                                        </Checkbox>
+                                        <Checkbox name='process_phase' value='ready_to_introduce'>
                                             My state representative is ready to introduce my policy idea into a bill
-                                    </Checkbox>
-                                    <Checkbox name='process_phase' value='finish_line'>
+                                        </Checkbox>
+                                        <Checkbox name='process_phase' value='finish_line'>
                                             I need help getting a bill to the finish line
-                                    </Checkbox>
-                                </div>
-                            )}
+                                        </Checkbox>
+                                    </div>
+                                )}
                             <Submit />
                         </Form>
                     )
@@ -257,6 +259,6 @@ PartnerWithFreefrom.propTypes = {
     values: PropTypes.shape({
         gender: PropTypes.string,
         sexuality: PropTypes.string,
-        goals: PropTypes.string,
+        goals: PropTypes.string
     })
 }

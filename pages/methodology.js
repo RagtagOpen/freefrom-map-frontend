@@ -747,7 +747,7 @@ export default function Methodology() {
                         target='_blank'
                         rel='noopener noreferrer'
                     >
-                        { /*eslint-disable-next-line max-len */ }
+                        {/*eslint-disable-next-line max-len */}
                         https://static1.squarespace.com/static/56a24df4d8af10a5072bed7c/t/5f358b263ca8db1d891a3fc9/1597344678710/Survivors+Know+Best+Report.pdf
                     </a>{' '}
                     <a href='#ref2' title='Jump back to footnote 2 in the text.'>
@@ -791,7 +791,7 @@ export default function Methodology() {
                         target='_blank'
                         rel='noopener noreferrer'
                     >
-                        { /* eslint-disable-next-line max-len */}
+                        {/* eslint-disable-next-line max-len */}
                         https://static1.squarespace.com/static/56a24df4d8af10a5072bed7c/t/5f358b263ca8db1d891a3fc9/1597344678710/Survivors+Know+Best+Report.pdf
                     </a>{' '}
                     <a href='#ref5' title='Jump back to footnote 5 in the text.'>
@@ -808,7 +808,7 @@ export default function Methodology() {
                         target='_blank'
                         rel='noopener noreferrer'
                     >
-                        { /* eslint-disable-next-line max-len */}
+                        {/* eslint-disable-next-line max-len */}
                         https://vawnet.org/sites/default/files/assets/files/2018-01/TheDifferenceBetweenSurvivingandNotSurviving_Jan2018.pdf
                     </a>{' '}
                     <a href='#ref6' title='Jump back to footnote 6 in the text.'>
@@ -824,7 +824,7 @@ export default function Methodology() {
                         target='_blank'
                         rel='noopener noreferrer'
                     >
-                        { /* eslint-disable-next-line max-len */}
+                        {/* eslint-disable-next-line max-len */}
                         https://www.cbpp.org/research/food-assistance/policy-basics-the-supplemental-nutrition-assistance-program-snap
                     </a>{' '}
                     <a href='#ref7' title='Jump back to footnote 7 in the text.'>
@@ -841,7 +841,7 @@ export default function Methodology() {
                         target='_blank'
                         rel='noopener noreferrer'
                     >
-                        { /* eslint-disable-next-line max-len */}
+                        {/* eslint-disable-next-line max-len */}
                         https://vawnet.org/sites/default/files/assets/files/2018-01/TheDifferenceBetweenSurvivingandNotSurviving_Jan2018.pdf
                     </a>{' '}
                     <a href='#ref8' title='Jump back to footnote 8 in the text.'>
@@ -858,7 +858,7 @@ export default function Methodology() {
                         target='_blank'
                         rel='noopener noreferrer'
                     >
-                        { /* eslint-disable-next-line max-len */}
+                        {/* eslint-disable-next-line max-len */}
                         https://vawnet.org/sites/default/files/assets/files/2018-01/TheDifferenceBetweenSurvivingandNotSurviving_Jan2018.pdf
                     </a>{' '}
                     <a href='#ref9' title='Jump back to footnote 9 in the text.'>
@@ -908,7 +908,7 @@ export default function Methodology() {
                         target='_blank'
                         rel='noopener noreferrer'
                     >
-                        { /* eslint-disable-next-line max-len */}
+                        {/* eslint-disable-next-line max-len */}
                         https://www.aclu.org/sites/default/files/field_document/2015.10.20_report_-_responses_from_the_field.pdf
                     </a>{' '}
                     <a href='#ref13' title='Jump back to footnote 13 in the text.'>

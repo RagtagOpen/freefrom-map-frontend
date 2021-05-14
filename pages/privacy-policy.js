@@ -167,8 +167,7 @@ export default function PrivacyPolicy() {
                 analytics.js and dc.js) from sharing information with Google Analytics about visits activity.
             </p>
             <p>
-                For more information on the privacy practices of Google,
-                please visit the Google Privacy Terms web page:{' '}
+                For more information on the privacy practices of Google, please visit the Google Privacy Terms web page:{' '}
                 <a href='https://policies.google.com/privacy?hl=en' target='_blank' rel='noopener noreferrer'>
                     https://policies.google.com/privacy?hl=en
                 </a>

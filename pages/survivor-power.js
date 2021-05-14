@@ -95,13 +95,13 @@ export default function BuildCollectiveSurvivorPower() {
                             </div>
                             {props.values.gender &&
                                 props.values.gender.indexOf('prefer_to_self_describe_gender') !== -1 && (
-                                <Input
-                                    className='text-uppercase'
-                                    label='Please describe...'
-                                    name='gender_other'
-                                    required={false}
-                                />
-                            )}
+                                    <Input
+                                        className='text-uppercase'
+                                        label='Please describe...'
+                                        name='gender_other'
+                                        required={false}
+                                    />
+                                )}
                             <div className='form-group pb-4 mb-3'>
                                 <div className='text-uppercase'>
                                     <FormLabel required={false}>
@@ -138,13 +138,13 @@ export default function BuildCollectiveSurvivorPower() {
                             </div>
                             {props.values.sexuality &&
                                 props.values.sexuality.indexOf('prefer_to_self_describe_sexuality') !== -1 && (
-                                <Input
-                                    className='text-uppercase'
-                                    label='Please describe...'
-                                    name='sexuality_other'
-                                    required={false}
-                                />
-                            )}
+                                    <Input
+                                        className='text-uppercase'
+                                        label='Please describe...'
+                                        name='sexuality_other'
+                                        required={false}
+                                    />
+                                )}
                             <div className='form-group pb-4 mb-3'>
                                 <div className='text-uppercase'>
                                     <FormLabel required={false}>
@@ -187,10 +187,12 @@ export default function BuildCollectiveSurvivorPower() {
                             </div>
                             <Input
                                 className='text-uppercase'
-                                label={"We'd also like to give you the opportunity to tell us your specific \
+                                label={
+                                    "We'd also like to give you the opportunity to tell us your specific \
                                         race or ethnicity in an open-ended format. Please feel free to list multiple \
                                         groups. (For example: Korean, Mexican American, Italian, Navajo Nation, \
-                                        Southerner (American), Puerto Rican, etc.)."}
+                                        Southerner (American), Puerto Rican, etc.)."
+                                }
                                 name='race_or_ethnicity_other'
                                 required={false}
                             />
@@ -221,14 +223,14 @@ export default function BuildCollectiveSurvivorPower() {
                             {props.values.contact_method &&
                                 (props.values.contact_method.indexOf('call') !== -1 ||
                                     props.values.contact_method.indexOf('text') !== -1) && (
-                                <Input
-                                    className='text-uppercase'
-                                    label='Your phone number'
-                                    name='phone'
-                                    type='phone'
-                                    required={true}
-                                />
-                            )}
+                                    <Input
+                                        className='text-uppercase'
+                                        label='Your phone number'
+                                        name='phone'
+                                        type='phone'
+                                        required={true}
+                                    />
+                                )}
                             {props.values.contact_method && props.values.contact_method.indexOf('email') !== -1 && (
                                 <Input
                                     className='text-uppercase'
@@ -249,8 +251,8 @@ export default function BuildCollectiveSurvivorPower() {
                             <div className='form-group pb-4 mb-3'>
                                 <div className='text-uppercase'>
                                     <FormLabel required={true}>
-                                        Which of the following are you interested in?
-                                        (Select as many as you&apos;d like.)
+                                        Which of the following are you interested in? (Select as many as you&apos;d
+                                        like.)
                                     </FormLabel>
                                 </div>
                                 <Checkbox name='interest_area' value='be_policy_advocate'>
@@ -292,6 +294,6 @@ BuildCollectiveSurvivorPower.propTypes = {
         gender: PropTypes.string,
         sexuality: PropTypes.string,
         contact_method: PropTypes.string,
-        interest_area: PropTypes.string,
+        interest_area: PropTypes.string
     })
 }

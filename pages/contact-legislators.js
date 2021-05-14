@@ -46,10 +46,12 @@ function ContactLegislators() {
                         label='Enter your zip code or full address:'
                         name='zip_code'
                         required={true}
-                        smallText={'Your information will not be stored or used in any way except to show \
+                        smallText={
+                            'Your information will not be stored or used in any way except to show \
                             you your elected officials. For state elected officials in your district, \
                             please use your full street address. Information for the District of Columbia \
-                            is not available at this time.'}
+                            is not available at this time.'
+                        }
                         className='mb-0'
                     />
                     <Submit />
@@ -93,7 +95,7 @@ Official.propTypes = {
         name: PropTypes.string,
         channels: PropTypes.array,
         emails: PropTypes.array,
-        phones: PropTypes.array,
+        phones: PropTypes.array
     })
 }
 
@@ -109,15 +111,15 @@ const BODY =
 
 const getUrlForType = (type, value) => {
     switch (type) {
-    case 'Twitter':
-        // eslint-disable-next-line max-len
-        return `https://twitter.com/intent/tweet?text=@${value}%20Now%20is%20the%20time%20to%20pass%20survivor-informed%20legislation.%20See%20how%20our%20state%20measures%20up%20in%20supporting%20survivors’%20financial%20security:%20https://mapandscorecard.freefrom.org`
-    case 'Facebook':
-        return `https://facebook.com/${value}`
-    case 'email':
-        return `mailto:${value}?subject=${SUBJECT}&body=${BODY}`
-    case 'phone':
-        return `tel:${value}`
+        case 'Twitter':
+            // eslint-disable-next-line max-len
+            return `https://twitter.com/intent/tweet?text=@${value}%20Now%20is%20the%20time%20to%20pass%20survivor-informed%20legislation.%20See%20how%20our%20state%20measures%20up%20in%20supporting%20survivors’%20financial%20security:%20https://mapandscorecard.freefrom.org`
+        case 'Facebook':
+            return `https://facebook.com/${value}`
+        case 'email':
+            return `mailto:${value}?subject=${SUBJECT}&body=${BODY}`
+        case 'phone':
+            return `tel:${value}`
     }
 }
 
