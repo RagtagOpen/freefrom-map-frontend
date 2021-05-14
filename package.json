@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "node server.js",
-    "lint": "eslint --fix components/**/*.js constants/**/*.js pages/**/*.js utils/**/*.js",
-    "format": "prettier components/**/*.js constants/**/*.js pages/**/*.js utils/**/*.js --write --config ./.prettierrc"
+    "lint": "eslint --fix components/**/*.js components/*.js constants/**/*.js constants/*.js pages/**/*.js pages/*.js utils/**/*.js utils/*.js",
+    "format": "prettier components/**/*.js components/*.js constants/**/*.js constants/*.js pages/**/*.js pages/*.js utils/**/*.js utils/*.js --write --config ./.prettierrc"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
