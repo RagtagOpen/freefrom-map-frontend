@@ -15,7 +15,7 @@
     }
   },
   "lint-staged": {
-    "components/**/*.js": ["yarn run lint", "yarn run format"]
+    "./components/**/*.{js,jsx": ["yarn run lint", "yarn run format"]
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
