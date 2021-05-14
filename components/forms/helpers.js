@@ -1,7 +1,9 @@
+import React from 'react'
+
 export function checkRequired(bool) {
     if (!bool) {
-        return "";
+        return ''
     }
 
-    return <span className="text-ff-red ml-1">*</span>;
+    return <span className='text-ff-red ml-1'>*</span>
 }

@@ -5,7 +5,18 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node server.js"
+    "start": "node server.js",
+    "lint": "eslint --fix components/**/*.js constants/**/*.js pages/**/*.js utils/**/*.js",
+    "format": "prettier components/**/*.js constants/**/*.js pages/**/*.js utils/**/*.js --write --config ./.prettierrc"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint && yarn run format"
+    }
+  },
+  "lint-staged": {
+    "*.+(js|jsx)": ["eslint --fix", "git add"],
+    "*.+(json|css|md)": ["prettier --write", "git add"]
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
@@ -14,14 +25,19 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "bootstrap": "^4.5.3",
     "d3": "3",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "express": "^4.17.1",
     "formik": "^2.2.6",
     "heroku-ssl-redirect": "^0.1.1",
+    "husky": "^6.0.0",
     "jquery": "^3.5.1",
+    "lint-staged": "^11.0.0",
     "lodash": "^4.17.20",
     "next": "^10.0.7",
     "ordinal": "^1.0.3",
     "popper.js": "^1.16.1",
+    "prettier": "^2.3.0",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-ga": "^3.3.0",
