@@ -1,29 +1,32 @@
-import React from 'react';
-import { Field } from "formik";
-import PropTypes from 'prop-types';
+import React from 'react'
+import { Field } from 'formik'
+import PropTypes from 'prop-types'
 
-import { checkRequired } from './helpers';
-import styles from './FormStyles.module.css';
+import { checkRequired } from './helpers'
+import styles from './FormStyles.module.css'
 
 export default function Input({ className, type, label, name, smallText, required, placeholder }) {
     function small() {
-        if (smallText !== "") {
-            return <small className="form-text text-muted">{ smallText }</small>
+        if (smallText !== '') {
+            return <small className='form-text text-muted'>{smallText}</small>
         }
     }
 
     return (
-        <div className={ `form-group pb-4 ${className}` }>
-            <label htmlFor={ name } className={ styles.label }>{ label }{ checkRequired(required) }</label>
+        <div className={`form-group pb-4 ${className}`}>
+            <label htmlFor={name} className={styles.label}>
+                {label}
+                {checkRequired(required)}
+            </label>
             <Field
-                type={ type }
-                id={ name }
-                name={ name }
-                className={`form-control ${ styles.input }`}
-                placeholder={ placeholder }
-                required={ required }
+                type={type}
+                id={name}
+                name={name}
+                className={`form-control ${styles.input}`}
+                placeholder={placeholder}
+                required={required}
             />
-            { small() }
+            {small()}
         </div>
     )
 }
@@ -39,6 +42,6 @@ Input.propTypes = {
 }
 
 Input.defaultProps = {
-    type: "text",
-    placeholder: ""
+    type: 'text',
+    placeholder: ''
 }
