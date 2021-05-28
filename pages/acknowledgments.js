@@ -20,9 +20,10 @@ export default function Acknowledgments() {
                 <li>DLA Piper, LLP</li>
                 <li>Foley and Lardner, LLP</li>
                 <li>Lex Mundi Pro Bono Foundation</li>
-                <li>Morrison and Foerester, LLP</li>
+                <li>Morrison & Foerster, LLP</li>
                 <li>Proskauer Rose, LLP</li>
                 <li>Seyfarth Shaw, LLP</li>
+                <li>We the Action</li>
                 <li>Womble Bond Dickinson (US) LLP</li>
             </ul>
             <h2>Legal Research Volunteers</h2>
