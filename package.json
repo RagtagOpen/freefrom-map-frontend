@@ -36,7 +36,6 @@
     "universal-cookie": "^4.0.4"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^10.2.3",
     "eslint": "^7.17.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
