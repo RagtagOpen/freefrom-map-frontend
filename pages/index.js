@@ -35,6 +35,7 @@ function Home({ states }) {
                                 src='/images/legend.png'
                                 style={{ maxWidth: '415px' }}
                                 alt='Legend mapping colors to state scores'
+                                loading='lazy'
                             />
                         </div>
                     </div>
@@ -79,6 +80,7 @@ function Home({ states }) {
                                 className='state-to-watch-image'
                                 src='/images/states-to-watch/maine.png'
                                 alt='Outline of the state of Maine'
+                                loading='lazy'
                             />
                         </div>
                         <div>
@@ -106,6 +108,7 @@ function Home({ states }) {
                                 className='state-to-watch-image'
                                 src='/images/states-to-watch/washington.png'
                                 alt='outline of the state of Washington'
+                                loading='lazy'
                             />
                         </div>
                         <div>
@@ -134,6 +137,7 @@ function Home({ states }) {
                                 className='state-to-watch-image'
                                 src='/images/states-to-watch/nevada.png'
                                 alt='outline of the state of Nevada'
+                                loading='lazy'
                             />
                         </div>
                         <div className='pr-3'>
@@ -163,6 +167,7 @@ function Home({ states }) {
                         className='img-fluid'
                         src='/images/snapshot-by-category.png'
                         alt='snapshot of survivor financial security policies by category'
+                        loading='lazy'
                     />
                 </div>
 
