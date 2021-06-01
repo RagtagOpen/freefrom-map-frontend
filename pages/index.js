@@ -63,6 +63,7 @@ function Home({ states }) {
                     <img
                         className='img-fluid'
                         src='/images/snapshot-by-state.png'
+                        srcSet='/images/snapshot-by-state-371w.png 371w, /images/snapshot-by-state-742w.png 742w'
                         alt={
                             'Snapshot of survivor financial security policies by state; \
                             Model state: 0 states; financial security friendly: 2 states; \
@@ -79,6 +80,8 @@ function Home({ states }) {
                             <img
                                 className='state-to-watch-image'
                                 src='/images/states-to-watch/maine.png'
+                                // eslint-disable-next-line max-len
+                                srcSet='/images/states-to-watch/maine-125w.png 125w, /images/states-to-watch/maine-250w.png 250w'
                                 alt='Outline of the state of Maine'
                                 loading='lazy'
                             />
@@ -107,6 +110,8 @@ function Home({ states }) {
                             <img
                                 className='state-to-watch-image'
                                 src='/images/states-to-watch/washington.png'
+                                // eslint-disable-next-line max-len
+                                srcSet='/images/states-to-watch/washington-125w.png 125w, /images/states-to-watch/washington-250w.png 250w'
                                 alt='outline of the state of Washington'
                                 loading='lazy'
                             />
@@ -136,6 +141,8 @@ function Home({ states }) {
                             <img
                                 className='state-to-watch-image'
                                 src='/images/states-to-watch/nevada.png'
+                                // eslint-disable-next-line max-len
+                                srcSet='/images/states-to-watch/nevada-125w.png 125w, /images/states-to-watch/nevada-250w.png 250w'
                                 alt='outline of the state of Nevada'
                                 loading='lazy'
                             />
