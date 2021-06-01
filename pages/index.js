@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import ReportMissingInfo from 'components/common/ReportMissingInfo'
@@ -10,7 +10,7 @@ import StatesList from 'components/StatesList'
 import UsMap from 'components/UsMap'
 
 function Home({ states }) {
-    const [visibleComponent] = useState('list')
+    const visibleComponent = 'list'
     const showList = visibleComponent === 'list'
     const mapClass = showList ? ' d-none d-md-block' : ''
     const listClass = showList ? '' : ' d-none d-md-block'
