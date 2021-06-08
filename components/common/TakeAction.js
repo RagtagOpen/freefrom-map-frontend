@@ -32,6 +32,7 @@ export default function TakeAction() {
                                     src={'../../images/take-action' + path + '.jpg'}
                                     className={`${styles['take-action-image']}`}
                                     alt={label}
+                                    loading='lazy'
                                 />
                                 <div className={`${styles['take-action-text-area']}`}>
                                     <h2 className={`${styles['take-action-text']} p-3 m-0`}>{label}</h2>

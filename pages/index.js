@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import ReportMissingInfo from 'components/common/ReportMissingInfo'
@@ -10,7 +10,7 @@ import StatesList from 'components/StatesList'
 import UsMap from 'components/UsMap'
 
 function Home({ states }) {
-    const [visibleComponent] = useState('list')
+    const visibleComponent = 'list'
     const showList = visibleComponent === 'list'
     const mapClass = showList ? ' d-none d-md-block' : ''
     const listClass = showList ? '' : ' d-none d-md-block'
@@ -35,6 +35,7 @@ function Home({ states }) {
                                 src='/images/legend.png'
                                 style={{ maxWidth: '415px' }}
                                 alt='Legend mapping colors to state scores'
+                                loading='lazy'
                             />
                         </div>
                     </div>
@@ -62,6 +63,7 @@ function Home({ states }) {
                     <img
                         className='img-fluid'
                         src='/images/snapshot-by-state.png'
+                        srcSet='/images/snapshot-by-state-371w.png 371w, /images/snapshot-by-state-742w.png 742w'
                         alt={
                             'Snapshot of survivor financial security policies by state; \
                             Model state: 0 states; financial security friendly: 2 states; \
@@ -78,7 +80,10 @@ function Home({ states }) {
                             <img
                                 className='state-to-watch-image'
                                 src='/images/states-to-watch/maine.png'
+                                // eslint-disable-next-line max-len
+                                srcSet='/images/states-to-watch/maine-125w.png 125w, /images/states-to-watch/maine-250w.png 250w'
                                 alt='Outline of the state of Maine'
+                                loading='lazy'
                             />
                         </div>
                         <div>
@@ -105,7 +110,10 @@ function Home({ states }) {
                             <img
                                 className='state-to-watch-image'
                                 src='/images/states-to-watch/washington.png'
+                                // eslint-disable-next-line max-len
+                                srcSet='/images/states-to-watch/washington-125w.png 125w, /images/states-to-watch/washington-250w.png 250w'
                                 alt='outline of the state of Washington'
+                                loading='lazy'
                             />
                         </div>
                         <div>
@@ -133,7 +141,10 @@ function Home({ states }) {
                             <img
                                 className='state-to-watch-image'
                                 src='/images/states-to-watch/nevada.png'
+                                // eslint-disable-next-line max-len
+                                srcSet='/images/states-to-watch/nevada-125w.png 125w, /images/states-to-watch/nevada-250w.png 250w'
                                 alt='outline of the state of Nevada'
+                                loading='lazy'
                             />
                         </div>
                         <div className='pr-3'>
@@ -163,6 +174,7 @@ function Home({ states }) {
                         className='img-fluid'
                         src='/images/snapshot-by-category.png'
                         alt='snapshot of survivor financial security policies by category'
+                        loading='lazy'
                     />
                 </div>
 

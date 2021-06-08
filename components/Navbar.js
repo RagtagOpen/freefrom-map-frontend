@@ -9,7 +9,7 @@ function Navbar() {
             <a className='navbar-brand logo' href='/'>
                 <Image
                     className='img img-fluid'
-                    src='/images/freefrom-logo.png'
+                    src='/images/freefrom-logo-268w.png'
                     alt='FreeFrom'
                     width='134'
                     height='56'

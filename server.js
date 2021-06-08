@@ -1,3 +1,4 @@
+// https://nextjs.org/docs/advanced-features/custom-server
 const next = require('next');
 const express = require('express');
 const sslRedirect = require('heroku-ssl-redirect');
