@@ -14,6 +14,7 @@ import Glossary from 'components/common/Glossary'
 import ModalButton from 'components/modal/ModalButton'
 import Scorecard from 'components/Scorecard'
 import { toSlug } from 'utils'
+import { getCategories, getStateDetails, getStateNames } from 'lib/contentful-api'
 
 function State({ categories, stateData }) {
     const router = useRouter()
@@ -86,8 +87,7 @@ State.propTypes = {
 }
 
 export async function getStaticPaths() {
-    const res = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + '/states?details=false')
-    const states = await res.json()
+    const states = await getStateNames()
     return {
         paths: states.map((state) => ({ params: { state: toSlug(state.name) } })),
         fallback: false
@@ -95,15 +95,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    // Get all states so that we find the state code from the name param.
-    const res = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + '/states?details=false')
-    const states = await res.json()
-    const state = states.find((s) => toSlug(s.name) === params.state)
-    // Fetch state data by code.
-    const stateResponse = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + `/states/${state.code}`)
-    const stateData = await stateResponse.json()
-    const categoriesResponse = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + '/categories?withCriteria=true')
-    const categories = await categoriesResponse.json()
+    const [categories, stateData] = await Promise.all([
+        getCategories(),
+        getStateDetails({ name: params.state })
+    ])
     return {
         props: {
             categories,

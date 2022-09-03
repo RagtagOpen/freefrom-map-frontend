@@ -16,8 +16,8 @@ const StateCard = ({ hideLearnMore, state, onLearnMoreClick }) => {
                 {name}
             </h5>
             <h6 className='card-subtitle mb-2 pb-1 text-muted'>Rank: {ordinal(rank)}</h6>
-            <ScoreLabel score={grade.grade} />
-            <p className='card-text mt-2 pt-1 mb-2'>{OVERALL_SCORE_LABELS[grade.grade]}</p>
+            <ScoreLabel score={grade} />
+            <p className='card-text mt-2 pt-1 mb-2'>{OVERALL_SCORE_LABELS[grade]}</p>
             {hideLearnMore ? null : (
                 <ModalButton text='Learn more' href={`/states/${toSlug(name)}`} onClick={onLearnMoreClick} />
             )}

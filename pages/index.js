@@ -8,6 +8,7 @@ import TakeAction from 'components/common/TakeAction'
 import SharedLayout from 'components/SharedLayout'
 import StatesList from 'components/StatesList'
 import UsMap from 'components/UsMap'
+import { getStates } from 'lib/contentful-api'
 
 function Home({ states }) {
     const visibleComponent = 'list'
@@ -196,8 +197,7 @@ Home.propTypes = {
 }
 
 export async function getStaticProps() {
-    const res = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + '/states?details=false')
-    let states = await res.json()
+    let states = await getStates()
     // Assign rank to states list
     let lastTotal = Infinity
     let lastRank = 0

@@ -93,7 +93,7 @@ HonorableMention.propTypes = {
 const InnovativePolicyIdea = ({ innovativePolicyIdeaData }) => (
     <div className='honorable-mention'>
         <div className='d-flex flex-row align-items-center'>
-            <img src='/images/innovative-idea.png' className='checklistIcon' alt='Innovative Idea' />;
+            <img src='/images/innovative-idea.png' className='checklistIcon' alt='Innovative Idea' />
             <h3 className='m-0' style={{ fontSize: '1em' }}>
                 Innovative Policy Idea
             </h3>
@@ -126,7 +126,7 @@ const renderIcon = (implementsPolicy) => {
 
 const Policy = ({ policyData, score }) => (
     <p className='card-body small m-0 d-flex flex-row'>
-        {renderIcon(score.meets_criterion)}
+        {renderIcon(score ? score.meets_criterion : 'no' )}
         {policyData.title}
     </p>
 )
@@ -310,9 +310,9 @@ const Scorecard = ({ categories, stateData }) => {
         <div className='scorecard-container'>
             <div className='overall d-flex flex-wrap mt-4 mb-3'>
                 <span className='label mr-2'>Overall:</span>
-                <ScoreLabel score={stateData.grade.grade} />
+                <ScoreLabel score={stateData.grade} />
             </div>
-            <p>{OVERALL_SCORE_LABELS[stateData.grade.grade]}</p>
+            <p>{OVERALL_SCORE_LABELS[stateData.grade]}</p>
             <div className='scorecard accordion' id='scorecard'>
                 {categories.map((category) => {
                     const isExpanded = expanded === category.id
