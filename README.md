@@ -10,6 +10,8 @@ To install:
 yarn install
 ```
 
+Then copy `.env.example` to `.env.local` and add a valid value for `CONTENTFUL_ACCESS_TOKEN`.
+
 Then, run the development server:
 
 ```bash
