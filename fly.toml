@@ -1,0 +1,45 @@
+# fly.toml file generated for freefrom-map on 2022-09-05T16:37:57-07:00
+
+app = "freefrom-map"
+kill_signal = "SIGINT"
+kill_timeout = 5
+processes = []
+
+[build]
+  [build.args]
+    NEXT_CONTENTFUL_API_ENDPOINT = "https://graphql.contentful.com/content/v1/spaces/oxrfp7aoca0b"
+    NEXT_PUBLIC_API_ENDPOINT = "https://freefrom-map-api.herokuapp.com"
+    NEXT_PUBLIC_GOOGLE_API_KEY= "AIzaSyC0PnG1LlgPB_D4aZlwrTns9307tstZ_0A"
+
+[env]
+  PORT = "8080"
+  
+[experimental]
+  allowed_public_ports = []
+  auto_rollback = true
+
+[[services]]
+  http_checks = []
+  internal_port = 8080
+  processes = ["app"]
+  protocol = "tcp"
+  script_checks = []
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
+
+  [[services.ports]]
+    force_https = true
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  [[services.tcp_checks]]
+    grace_period = "1s"
+    interval = "15s"
+    restart_limit = 0
+    timeout = "2s"
