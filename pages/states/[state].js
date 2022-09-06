@@ -103,7 +103,8 @@ export async function getStaticProps({ params }) {
         props: {
             categories,
             stateData
-        }
+        },
+        revalidate: 60 // regenerate the page if it's been more than 1 minute
     }
 }
 

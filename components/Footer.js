@@ -75,7 +75,7 @@ function Footer() {
             </div>
             <div className='my-2 my-md-0'>
                 <Image
-                    className='img img-fluid'
+                    className='img img-fluid contentfulversion'
                     src='/images/empowered-by-ragtag.png'
                     alt='Empowered By Ragtag'
                     width='151'

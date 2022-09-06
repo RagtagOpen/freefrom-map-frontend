@@ -13,6 +13,9 @@ processes = []
 
 [env]
   PORT = "8080"
+  NEXT_CONTENTFUL_API_ENDPOINT = "https://graphql.contentful.com/content/v1/spaces/oxrfp7aoca0b"
+  NEXT_PUBLIC_API_ENDPOINT = "https://freefrom-map-api.herokuapp.com"
+  NEXT_PUBLIC_GOOGLE_API_KEY= "AIzaSyC0PnG1LlgPB_D4aZlwrTns9307tstZ_0A"
   
 [experimental]
   allowed_public_ports = []

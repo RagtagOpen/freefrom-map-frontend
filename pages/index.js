@@ -221,7 +221,8 @@ export async function getStaticProps() {
     return {
         props: {
             states
-        }
+        },
+        revalidate: 5 * 60 // regenerate the page if it's been more than 6 minutes
     }
 }
 
