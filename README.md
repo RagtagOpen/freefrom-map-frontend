@@ -22,9 +22,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Deployment
 
-The [staging](https://github.com/RagtagOpen/freefrom-map-frontend/tree/staging) branch is continuously deployed to https://freefrom-map-frontend.herokuapp.com/.
-
-The [prod](https://github.com/RagtagOpen/freefrom-map-frontend/tree/prod) branch is continuously deployed to https://freefrom-map-frontend-prod.herokuapp.com/.
+Staging is at https://freefrom-map-frontend-staging.herokuapp.com/, and prod is at https://freefrom-map-frontend-prod.herokuapp.com/. They are deployed by pushing to the Git remotes for the Heroku projects.
 
 ## Other repositories
 
