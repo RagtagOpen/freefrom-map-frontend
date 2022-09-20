@@ -108,7 +108,7 @@ class UsMap extends Component {
             .style('stroke-width', '1')
             .style('fill', function (d) {
                 // FIXME: Puerto Rico is undefined!
-                return color(d.properties.grade && d.properties.grade.grade)
+                return color(d.properties.grade && d.properties.grade)
             })
 
         // add zoom buttons for little northeastern states

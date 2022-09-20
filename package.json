@@ -21,6 +21,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "bootstrap": "^4.5.3",
+    "change-case": "^4.1.2",
     "d3": "3",
     "express": "^4.17.1",
     "formik": "^2.2.6",
@@ -29,6 +30,7 @@
     "next": "^10.0.7",
     "ordinal": "^1.0.3",
     "popper.js": "^1.16.1",
+    "prop-types": "^15.8.1",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-ga": "^3.3.0",
@@ -36,6 +38,9 @@
     "universal-cookie": "^4.0.4"
   },
   "devDependencies": {
+    "axios": "^0.27.2",
+    "contentful-management": "^10.12.1",
+    "dotenv": "^16.0.2",
     "eslint": "^7.17.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",

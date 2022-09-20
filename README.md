@@ -10,6 +10,8 @@ To install:
 yarn install
 ```
 
+Then copy `.env.example` to `.env.local` and add a valid value for `CONTENTFUL_ACCESS_TOKEN`.
+
 Then, run the development server:
 
 ```bash
@@ -20,9 +22,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Deployment
 
-The [staging](https://github.com/RagtagOpen/freefrom-map-frontend/tree/staging) branch is continuously deployed to https://freefrom-map-frontend.herokuapp.com/.
-
-The [prod](https://github.com/RagtagOpen/freefrom-map-frontend/tree/prod) branch is continuously deployed to https://freefrom-map-frontend-prod.herokuapp.com/.
+Staging is at https://freefrom-map-frontend-staging.herokuapp.com/, and prod is at https://freefrom-map-frontend-prod.herokuapp.com/. They are deployed by pushing to the Git remotes for the Heroku projects.
 
 ## Other repositories
 
